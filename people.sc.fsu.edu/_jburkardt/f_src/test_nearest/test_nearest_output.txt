@@ -1,0 +1,64 @@
+26 December 2012  10:36:40.287 PM
+
+TEST_NEAREST:
+  FORTRAN90 version
+  Consider various nearest neighbor algorithms.
+
+  M =        2 NR =  1000000  NS =       10
+  #1 time:   0.903860E-01  size =       10  i(1) =   798727
+
+  M =        2 NR =   100000  NS =      100
+  #1 time:   0.850030E-01  size =      100  i(1) =    87962
+
+  M =        2 NR =    10000  NS =     1000
+  #1 time:   0.850870E-01  size =     1000  i(1) =     1239
+
+  M =        2 NR =     1000  NS =    10000
+  #1 time:   0.847260E-01  size =    10000  i(1) =      249
+
+  M =        2 NR =      100  NS =   100000
+  #1 time:   0.931580E-01  size =   100000  i(1) =       35
+
+  M =        2 NR =       10  NS =  1000000
+  #1 time:   0.133210      size =  1000000  i(1) =        7
+
+  M =        4 NR =  1000000  NS =       10
+  #1 time:   0.126199      size =       10  i(1) =   504511
+
+  M =        4 NR =   100000  NS =      100
+  #1 time:   0.113638      size =      100  i(1) =    24242
+
+  M =        4 NR =    10000  NS =     1000
+  #1 time:   0.114169      size =     1000  i(1) =     6047
+
+  M =        4 NR =     1000  NS =    10000
+  #1 time:   0.115567      size =    10000  i(1) =      660
+
+  M =        4 NR =      100  NS =   100000
+  #1 time:   0.131995      size =   100000  i(1) =       65
+
+  M =        4 NR =       10  NS =  1000000
+  #1 time:   0.186506      size =  1000000  i(1) =        7
+
+  M =        8 NR =  1000000  NS =       10
+  #1 time:   0.192134      size =       10  i(1) =   165331
+
+  M =        8 NR =   100000  NS =      100
+  #1 time:   0.182694      size =      100  i(1) =     6062
+
+  M =        8 NR =    10000  NS =     1000
+  #1 time:   0.163322      size =     1000  i(1) =     5162
+
+  M =        8 NR =     1000  NS =    10000
+  #1 time:   0.165629      size =    10000  i(1) =      741
+
+  M =        8 NR =      100  NS =   100000
+  #1 time:   0.181441      size =   100000  i(1) =       11
+
+  M =        8 NR =       10  NS =  1000000
+  #1 time:   0.242807      size =  1000000  i(1) =        4
+
+TEST_NEAREST
+  Normal end of execution.
+
+26 December 2012  10:36:43.278 PM

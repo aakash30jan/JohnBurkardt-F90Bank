@@ -1,0 +1,267 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/triangle_io/triangle_io.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:30:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TRIANGLE_IO - Read and Write TRIANGLE Files
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TRIANGLE_IO <br> Read and Write TRIANGLE Files
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TRIANGLE_IO</b>
+      is a FORTRAN90 library which
+      can read or write some simple versions of some of the files
+      used by Jonathan Shewchuk's triangle() program.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TRIANGLE_IO</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/triangle_io/triangle_io.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_io/triangle_io.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/triangle_io/triangle_io.html">a FORTRAN77 version</a> and
+      <a href = "triangle_io.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/triangle_io/triangle_io.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../fem_to_triangle/fem_to_triangle.html">
+      FEM_TO_TRIANGLE</a>,
+      a FORTRAN90 program which
+      reads FEM files defining a 2D mesh of triangles, namely
+      a file of node coordinates and a file of elements defined by
+      node indices, and creates a corresponding pair of node
+      and element files for use by Jonathan Shewchuk's triangle program.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/data/poly/poly.html">
+      POLY</a>,
+      a data directory which
+      contains a description and examples of the POLY file format.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/showme/showme.html">
+      SHOWME</a>,
+      a C program which
+      can display the POLY files uses as input to <b>TRIANGLE</b>,
+      and the output files that define meshes and other objects.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/triangle/triangle.html">
+      TRIANGLE</a>,
+      a C program which
+      computes Voronoi diagrams and Delaunay triangulations,
+      and creates and manipulates files that can be displayed by <b>SHOWME</b>.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/triangle_display/triangle_display.html">
+      TRIANGLE_DISPLAY</a>,
+      a MATLAB program which
+      displays the nodes and elements of a triangulation
+      on the MATLAB graphics screen, assuming the data has been
+      stored in NODE and ELE files by the TRIANGLE program.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/data/triangle_files/triangle_files.html">
+      TRIANGLE_FILES</a>,
+      a data directory of examples of files used by the
+      <b>triangle</b> and <b>showme</b> programs.
+    </p>
+
+    <p>
+      <a href = "../triangle_to_fem/triangle_to_fem.html">
+      TRIANGLE_TO_FEM</a>,
+      a FORTRAN90 program which reads the NODE and ELE files created by triangle() to
+      describe a triangular mesh, and writes a corresponding pair of
+      node and element files in the 2D FEM format.
+    </p>
+
+    <p>
+      <a href = "../triangle_to_medit/triangle_to_medit.html">
+      TRIANGLE_TO_MEDIT</a>,
+      a FORTRAN90 program which reads the NODE and ELE files created by 
+      triangle() to describe a triangular mesh, and writes a corresponding 
+      MESH file for input to medit().
+    </p>
+
+    <p>
+      <a href = "../triangle_to_xml/triangle_to_xml.html">
+      TRIANGLE_TO_XML</a>,
+      a FORTRAN90 program which reads the NODE and ELE files created by triangle() to
+      describe a triangular mesh in 2D, and writes out a corresponding XML mesh
+      file for use by DOLFIN or FENICS.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangle_io.f90">triangle_io.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangle_io_prb.f90">triangle_io_prb.f90</a>
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "triangle_io_prb_output.txt">triangle_io_prb_output.txt</a>,
+          the output file.
+        </li>
+        <li>
+          <a href = "example.ele">example.ele</a>,
+          an example ".ele" file created by the program.
+        </li>
+        <li>
+          <a href = "example.node">example.node</a>,
+          an example ".node" file created by the program.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>CH_EQI</b> is a case insensitive comparison of two characters for equality.
+        </li>
+        <li>
+          <b>CH_TO_DIGIT</b> returns the integer value of a base 10 digit.
+        </li>
+        <li>
+          <b>ELEMENT_DATA_EXAMPLE</b> returns the element information for the example.
+        </li>
+        <li>
+          <b>ELEMENT_DATA_READ</b> reads the data from an element file.
+        </li>
+        <li>
+          <b>ELEMENT_SIZE_EXAMPLE</b> returns the element size information for the example.
+        </li>
+        <li>
+          <b>ELEMENT_SIZE_READ</b> reads the header information from an element file.
+        </li>
+        <li>
+          <b>ELEMENT_WRITE</b> writes a TRIANGLE ".ele" file.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>I4MAT_COPY</b> copies an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_TRANSPOSE_PRINT</b> prints an I4MAT, transposed.
+        </li>
+        <li>
+          <b>I4MAT_TRANSPOSE_PRINT_SOME</b> prints some of the transpose of an I4MAT.
+        </li>
+        <li>
+          <b>NODE_DATA_EXAMPLE</b> returns the node information for the example.
+        </li>
+        <li>
+          <b>NODE_DATA_READ</b> reads the data from a node file.
+        </li>
+        <li>
+          <b>NODE_SIZE_EXAMPLE</b> returns the sizes of node information for the example.
+        </li>
+        <li>
+          <b>NODE_SIZE_READ</b> reads the header information from a node file.
+        </li>
+        <li>
+          <b>NODE_WRITE</b> writes a TRIANGLE ".node" file.
+        </li>
+        <li>
+          <b>R8MAT_COPY</b> copies an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_TRANSPOSE_PRINT</b> prints an R8MAT, transposed.
+        </li>
+        <li>
+          <b>R8MAT_TRANSPOSE_PRINT_SOME</b> prints some of an R8MAT, transposed.
+        </li>
+        <li>
+          <b>S_TO_I4</b> reads an I4 from a string.
+        </li>
+        <li>
+          <b>S_TO_I4VEC</b> reads an I4VEC from a string.
+        </li>
+        <li>
+          <b>S_TO_R8</b> reads an R8 from a string.
+        </li>
+        <li>
+          <b>S_TO_R8VEC</b> reads an R8VEC from a string.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 11 October 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/triangle_io/triangle_io.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:30:21 GMT -->
+</html>

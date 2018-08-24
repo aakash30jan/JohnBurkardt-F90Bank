@@ -1,0 +1,305 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/hammersley/hammersley.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:46:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      HAMMERSLEY - The Hammersley Quasi Monte Carlo (QMC) Sequence
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HAMMERSLEY <br> The Hammersley Quasi Monte Carlo (QMC) Sequence
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HAMMERSLEY</b>
+      is a FORTRAN90 library which
+      computes elements of a Hammersley Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <p>
+      A more sophisticated library is available in HAMMERSLEY_ADVANCED,
+      but I find this simple version to be preferable for everyday use!
+    </p>
+
+    <p>
+      The standard M-dimensional Hammersley sequence based on N is simply 
+      composed of a first component of successive fractions 0/N, 1/N, ..., N/N, 
+      paired with M-1 1-dimensional van der Corput sequences, using as bases 
+      the first M-1 primes.
+    </p>
+
+    <p>
+      The HAMMERSLEY function will return the M-dimensional element of this
+      sequence with index I.
+    </p>
+
+    <p>
+      The HAMMERSLEY_SEQUENCE function will return the M-dimensional elements 
+      of this sequence with indices I1 through I2.
+    </p>
+
+    <p>
+      The HAMMERSLEY_INVERSE function accepts an M-dimensional value, presumably
+      computed by HAMMERSLEY, and returns its original index I.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>HAMMERSLEY</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/hammersley/hammersley.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/hammersley/hammersley.html">a C++ version</a> and
+      <a href = "hammersley.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/hammersley/hammersley.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/hammersley/hammersley.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../cvt/cvt.html">
+      CVT</a>,
+      a FORTRAN90 library which
+      computes elements of a Centroidal Voronoi Tessellation.
+    </p>
+
+    <p>
+      <a href = "../faure/faure.html">
+      FAURE</a>,
+      a FORTRAN90 library which
+      computes elements of a Faure sequence.
+    </p>
+
+    <p>
+      <a href = "../halton/halton.html">
+      HALTON</a>,
+      a FORTRAN90 library which
+      computes elements of a Halton Quasi Monte Carlo (QMC) sequence.
+    </p>
+
+    <p>
+      <a href = "../hammersley_advanced/hammersley_advanced.html">
+      HAMMERSLEY_ADVANCED</a>,
+      a FORTRAN90 library which
+      computes elements of a Hammersley Quasi Monte Carlo (QMC) sequence,
+      using an advanced interface with many input options.
+    </p>
+
+    <p>
+      <a href = "../hammersley_dataset/hammersley_dataset.html">
+      HAMMERSLEY_DATASET</a>,
+      a FORTRAN90 library which
+      creates a
+      Hammersley sequence and writes it to a file.
+    </p>
+
+    <p>
+      <a href = "../hex_grid/hex_grid.html">
+      HEX_GRID</a>,
+      a FORTRAN90 library which
+      computes elements of a hexagonal grid dataset.
+    </p>
+
+    <p>
+      <a href = "../ihs/ihs.html">
+      IHS</a>,
+      a FORTRAN90 library which
+      computes elements of
+      an improved distributed Latin hypercube dataset.
+    </p>
+
+    <p>
+      <a href = "../latin_center/latin_center.html">
+      LATIN_CENTER</a>,
+      a FORTRAN90 library which
+      computes elements of a
+      Latin Hypercube dataset, choosing center points.
+    </p>
+
+    <p>
+      <a href = "../latin_edge/latin_edge.html">
+      LATIN_EDGE</a>,
+      a FORTRAN90 library which
+      computes elements of a Latin Hypercube dataset, choosing edge points.
+    </p>
+
+    <p>
+      <a href = "../latin_random/latin_random.html">
+      LATIN_RANDOM</a>,
+      a FORTRAN90 library which
+      computes elements of a Latin Hypercube dataset, choosing
+      points at random.
+    </p>
+
+    <p>
+      <a href = "../lattice_rule/lattice_rule.html">
+      LATTICE_RULE</a>,
+      a FORTRAN90 library which
+      approximates multidimensional integrals using lattice rules.
+    </p>
+
+    <p>
+      <a href = "../lcvt/lcvt.html">
+      LCVT</a>,
+      a FORTRAN90 library which
+      computes a latinized Centroidal Voronoi Tessellation.
+    </p>
+
+    <p>
+      <a href = "../niederreiter2/niederreiter2.html">
+      NIEDERREITER2</a>,
+      a FORTRAN90 library which
+      computes elements of a Niederreiter sequence
+      using base 2.
+    </p>
+
+    <p>
+      <a href = "../sobol/sobol.html">
+      SOBOL</a>,
+      a FORTRAN90 library which
+      computes elements of a Sobol sequence.
+    </p>
+
+    <p>
+      <a href = "../toms647/toms647.html">
+      TOMS647</a>,
+      a FORTRAN90 library which
+      is a version of ACM TOMS algorithm 647,
+      for evaluating Faure, Hammersley and Sobol sequences.
+    </p>
+
+    <p>
+      <a href = "../uniform/uniform.html">
+      UNIFORM</a>,
+      a FORTRAN90 library which
+      computes elements of a uniform pseudorandom sequence.
+    </p>
+
+    <p>
+      <a href = "../van_der_corput/van_der_corput.html">
+      VAN_DER_CORPUT</a>,
+      a FORTRAN90 library which
+      computes elements of a 1D van der Corput Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Hammersley,
+          Monte Carlo methods for solving multivariable problems,
+          Proceedings of the New York Academy of Science,
+          Volume 86, 1960, pages 844-874.
+        </li>
+        <li>
+          Ladislav Kocis, William Whiten,<br>
+          Computational Investigations of Low-Discrepancy Sequences,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 23, Number 2, 1997, pages 266-294.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hammersley.f90">hammersley.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hammersley_prb.f90">hammersley_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "hammersley_prb_output.txt">hammersley_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>HAMMERSLEY</b> computes an element of a Hammersley sequence.
+        </li>
+        <li>
+          <b>HAMMERSLEY_INVERSE</b> inverts an element of the Hammersley sequence.
+        </li>
+        <li>
+          <b>HAMMERSLEY_SEQUENCE</b> computes elements I1 through I2 of a Hammersley sequence.
+        </li>
+        <li>
+          <b>PRIME</b> returns any of the first PRIME_MAX prime numbers.
+        </li>
+        <li>
+          <b>R8MAT_PRINT</b> prints an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT_SOME</b> prints some of an R8MAT.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 August 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/hammersley/hammersley.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:46:13 GMT -->
+</html>

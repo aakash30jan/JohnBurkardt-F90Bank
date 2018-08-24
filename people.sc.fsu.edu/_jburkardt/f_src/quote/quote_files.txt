@@ -1,0 +1,1 @@
+/home/jburkardt/public_html/f_src/quote/my_quotes.txt John Burkardt's Quotes of Note

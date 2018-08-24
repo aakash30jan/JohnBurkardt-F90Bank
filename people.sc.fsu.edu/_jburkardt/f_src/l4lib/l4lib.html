@@ -1,0 +1,196 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/l4lib/l4lib.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:52:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      L4LIB - A Utility Library for Logical Variables
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      4LIB <br> A Utility Library for Logical Variables
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>L4LIB</b>
+      is a FORTRAN90 library which
+      contains many utility routines for "L4" or "one byte logical"
+      arithmetic.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>L4LIB</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/l4lib/l4lib.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/l4lib/l4lib.html">a C++ version</a> and
+      <a href = "l4lib.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/l4lib/l4lib.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/l4lib/l4lib.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../c4lib/c4lib.html">
+      C4LIB</a>,
+      a FORTRAN90 library which
+      implements certain elementary functions for 
+      single precision complex (C4) variables.
+    </p>
+
+    <p>
+      <a href = "../c8lib/c8lib.html">
+      C8LIB</a>,
+      a FORTRAN90 library which
+      implements certain elementary functions for "C8"
+      or double precision complex variables;
+    </p>
+
+    <p>
+      <a href = "../i4lib/i4lib.html">
+      I4LIB</a>,
+      a FORTRAN90 library which
+      contains many utility routines, using "I4" or
+      "4 byte integer" arithmetic.
+    </p>
+
+    <p>
+      <a href = "../r8lib/r8lib.html">
+      R8LIB</a>,
+      a FORTRAN90 library which
+      contains many utility routines, using "R8" or
+      "double precision real" arithmetic.
+    </p>
+
+    <p>
+      <a href = "../subpak/subpak.html">
+      SUBPAK</a>,
+      a FORTRAN90 library which
+      contains many utility routines;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "l4lib.f90">l4lib.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "l4lib_prb.f90">l4lib_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "l4lib_prb_output.txt">l4lib_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_TO_L4</b> converts an I4 to an L4.
+        </li>
+        <li>
+          <b>I4_TO_L4VEC</b> converts an I4 into an L4VEC.
+        </li>
+        <li>
+          <b>L4_TO_I4</b> converts an L4 to an I4.
+        </li>
+        <li>
+          <b>L4_UNIFORM</b> returns a pseudorandom L4.
+        </li>
+        <li>
+          <b>L4_XOR</b> returns the exclusive OR of two L4's.
+        </li>
+        <li>
+          <b>L4MAT_PRINT</b> prints an L4MAT.
+        </li>
+        <li>
+          <b>L4MAT_PRINT_SOME</b> prints some of an L4MAT.
+        </li>
+        <li>
+          <b>L4MAT_TRANSPOSE_PRINT</b> prints an L4MAT, transposed.
+        </li>
+        <li>
+          <b>L4MAT_TRANSPOSE_PRINT_SOME</b> prints some of an L4MAT, transposed.
+        </li>
+        <li>
+          <b>L4MAT_UNIFORM</b> returns a pseudorandom L4MAT.
+        </li>
+        <li>
+          <b>L4VEC_NEXT</b> generates the next logical vector.
+        </li>
+        <li>
+          <b>L4VEC_PRINT</b> prints an L4VEC.
+        </li>
+        <li>
+          <b>L4VEC_PRINT_SOME</b> prints "some" of an L4VEC.
+        </li>
+        <li>
+          <b>L4VEC_UNIFORM</b> returns a pseudorandom L4VEC.
+        </li>
+        <li>
+          <b>S_TO_L4</b> reads a logical value from a string.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 19 November 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/l4lib/l4lib.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:52:03 GMT -->
+</html>

@@ -1,0 +1,3097 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_mat/test_mat.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:24:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TEST_MAT - Test Matrices
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_MAT <br> Test Matrices
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_MAT</b>
+      is a FORTRAN90 library which
+      defines test matrices for which some of the determinant, eigenvalues, 
+      inverse, null vectors, P*L*U factorization or linear system solution 
+      are already known, including the Vandermonde and Wathen matrix.
+    </p>
+
+    <p> 
+      A wide range of matrix 
+      dimensions, forms and properties are available.  These matrices may be 
+      useful in testing an algorithm for correctness on a variety of problems.
+    </p>
+
+    <p>
+      Some matrices can be rectangular, with the user specifying
+      the number of rows and columns.  Almost all the matrices can be
+      made of arbitrary size, with the user specifying the dimension.
+    </p>
+
+    <p>
+      Different matrix zero structures are available, including diagonal,
+      bidiagonal, tridiagonal, pentadiagonal, banded, upper and lower
+      triangular, and Hessenberg.
+    </p>
+
+    <p>
+      Different matrix symmetry patterns are available, including
+      symmetric, antisymmetric, persymmetric, circulant, Toeplitz, and
+      Hankel.
+    </p>
+
+    <p>
+      Matrices are available with known inverses, condition numbers, 
+      determinants, rank, eigenvalues, and characteristic polynomials.  Other 
+      matrix properties include positive definiteness, positivity, zero/one, 
+      and adjacency matrices.
+    </p>
+
+    <p>
+      Some matrices come from a MATLAB M file collection developed by 
+      Nicholas Higham, Department of Mathematics, University of Manchester.
+    </p>
+
+    <p>
+      An earlier version of the collection is available, again as MATLAB 
+      M files, in ACM TOMS Algorithm 694, in the TOMS directory of
+      <a href = "http://www.netlib.org/">the NETLIB web site</a>.
+    </p>
+
+    <p>
+      Some matrices are available at
+      <a href = "http://math.nist.gov/">
+                 http://math.nist.gov</a>,
+      the Matrix Market web site.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_MAT</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/test_mat/test_mat.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/test_mat/test_mat.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/test_mat/test_mat.html">a FORTRAN77 version</a> and
+      <a href = "test_mat.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/test_mat/test_mat.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/test_mat/test_mat.html">a Python version.</a>
+    </p>
+ 
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../arpack/arpack.html">
+      ARPACK</a>, 
+      a FORTRAN90 library which
+      computes eigenvalues for large matrices;
+    </p>
+
+    <p>
+      <a href = "../cg/cg.html">
+      CG</a>,
+      a FORTRAN90 library which
+      implements a simple version of the conjugate gradient (CG) method
+      for solving a system of linear equations of the form A*x=b, 
+      suitable for situations in which the matrix A is positive definite
+      (only real, positive eigenvalues) and symmetric.
+    </p>
+
+    <p>
+      <a href = "../condition/condition.html">
+      CONDITION</a>,
+      a FORTRAN90 library which
+      implements methods of computing or estimating the condition number 
+      of a matrix.
+    </p>
+
+    <p>
+      <a href = "../eispack/eispack.html">
+      EISPACK</a>,
+      a FORTRAN90 library which
+      carries out eigenvalue computations;
+      superseded by LAPACK;
+    </p>
+
+    <p>
+      <a href = "../jacobi_eigenvalue/jacobi_eigenvalue.html">
+      JACOBI_EIGENVALUE</a>,
+      a FORTRAN90 library which
+      implements the Jacobi iteration for the iterative determination
+      of the eigenvalues and eigenvectors of a real symmetric matrix.
+    </p>
+
+    <p>
+      <a href = "../lapack_examples/lapack_examples.html">
+      LAPACK_EXAMPLES</a>,
+      a FORTRAN90 program which
+      demonstrates the use of the LAPACK linear algebra library.
+    </p>
+
+    <p>
+      <a href = "../linpack/linpack.html">
+      LINPACK</a>,
+      a FORTRAN90 library which
+      factors and solves systems of linear equations in a variety of
+      formats and arithmetic types.
+    </p>
+
+    <p>
+      <a href = "../test_eigen/test_eigen.html">
+      TEST_EIGEN</a>,
+      a FORTRAN90 library which
+      implements test matrices for eigenvalue analysis. 
+    </p>
+ 
+    <p>
+      <a href = "../test_matrix_exponential/test_matrix_exponential.html">
+      TEST_MATRIX_EXPONENTIAL</a>,
+      a FORTRAN90 library which
+      defines a set of test cases for computing the matrix exponential.
+    </p>
+
+    <p>
+      <a href = "../wathen/wathen.html">
+      WATHEN</a>,
+      a FORTRAN90 library which
+      compares storage schemes (full, banded, sparse triplet) and 
+      solution strategies (Linpack full, Linpack banded, conjugate gradient) 
+      for linear systems involving the Wathen matrix, which can arise when 
+      solving a problem using the finite element method (FEM).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_mat.f90">test_mat.f90</a>, the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_mat_prb.f90">test_mat_prb.f90</a>, the calling program;
+        </li>
+        <li>
+          <a href = "test_mat_prb_output.txt">test_mat_prb_output.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>A123</b> returns the A123 matrix.
+        </li>
+        <li>
+          <b>A123_DETERMINANT</b> returns the determinant of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_EIGEN_LEFT</b> returns the left eigenvectors of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_EIGEN_RIGHT</b> returns the right eigenvectors of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_EIGENVALUES</b> returns the eigenvalues of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_INVERSE</b> returns the pseudo-inverse of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_NULL_LEFT</b> returns a left null vector of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_NULL_RIGHT</b> returns a right null vector of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_PLU</b> returns the PLU factors of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_QR</b> returns the QR factors of the A123 matrix.
+        </li>
+        <li>
+          <b>A123_RHS</b> returns the A123 right hand side.
+        </li>
+        <li>
+          <b>A123_SOLUTION</b> returns the A123 solution vector.
+        </li>
+        <li>
+          <b>A123_SVD</b> returns the SVD factors of the A123 matrix.
+        </li>
+        <li>
+          <b>AEGERTER</b> returns the AEGERTER matrix.
+        </li>
+        <li>
+          <b>AEGERTER_CONDITION:</b> L1 condition of the AEGERTER matrix.
+        </li>
+        <li>
+          <b>AEGERTER_DETERMINANT</b> returns the determinant of the AEGERTER matrix.
+        </li>
+        <li>
+          <b>AEGERTER_EIGENVALUES</b> returns the eigenvalues of the AEGERTER matrix.
+        </li>
+        <li>
+          <b>AEGERTER_INVERSE</b> returns the inverse of the AEGERTER matrix.
+        </li>
+        <li>
+          <b>ANTICIRCULANT</b> returns an ANTICIRCULANT matrix.
+        </li>
+        <li>
+          <b>ANTICIRCULANT_DETERMINANT:</b> the determinant of the ANTICIRCULANT matrix.
+        </li>
+        <li>
+          <b>ANTIHADAMARD</b> returns an approximate ANTIHADAMARD matrix.
+        </li>
+        <li>
+          <b>ANTIHADAMARD_DETERMINANT</b> returns the determinant of the ANTIHADAMARD matrix.
+        </li>
+        <li>
+          <b>ANTISYMM_RANDOM</b> returns an ANTISYMMETRIC matrix.
+        </li>
+        <li>
+          <b>ARCHIMEDES</b> returns the ARCHIMEDES matrix.
+        </li>
+        <li>
+          <b>ARCHIMEDES_NULL_RIGHT</b> returns a right null vector for the ARCHIMEDES matrix.
+        </li>
+        <li>
+          <b>BAB</b> returns the BAB matrix.
+        </li>
+        <li>
+          <b>BAB_CONDITION</b> returns the L1 condition of the BAB matrix.
+        </li>
+        <li>
+          <b>BAB_DETERMINANT</b> returns the determinant of the BAB matrix.
+        </li>
+        <li>
+          <b>BAB_EIGEN_RIGHT</b> returns the right eigenvectors of the BAB matrix.
+        </li>
+        <li>
+          <b>BAB_EIGENVALUES</b> returns the eigenvalues of the BAB matrix.
+        </li>
+        <li>
+          <b>BAB_INVERSE</b> returns the inverse of the BAB matrix.
+        </li>
+        <li>
+          <b>BALANC</b> balances a real matrix before eigenvalue calculations.
+        </li>
+        <li>
+          <b>BAUER</b> returns the BAUER matrix.
+        </li>
+        <li>
+          <b>BAUER_CONDITION</b> returns the L1 condition of the BAUER matrix.
+        </li>
+        <li>
+          <b>BAUER_DETERMINANT</b> returns the determinant of the BAUER matrix.
+        </li>
+        <li>
+          <b>BAUER_INVERSE</b> returns the inverse of the BAUER matrix.
+        </li>
+        <li>
+          <b>BERNSTEIN</b> returns the BERNSTEIN matrix.
+        </li>
+        <li>
+          <b>BERNSTEIN_DETERMINANT</b> returns the determinant of the BERNSTEIN matrix.
+        </li>
+        <li>
+          <b>BERNSTEIN_INVERSE</b> returns the inverse BERNSTEIN matrix.
+        </li>
+        <li>
+          <b>BIMARKOV_RANDOM</b> returns a BIMARKOV matrix.
+        </li>
+        <li>
+          <b>BIS</b> returns the BIS matrix.
+        </li>
+        <li>
+          <b>BIS_CONDITION</b> returns the L1 condition of the BIS matrix.
+        </li>
+        <li>
+          <b>BIS_DETERMINANT</b> returns the determinant of the BIS matrix.
+        </li>
+        <li>
+          <b>BIS_EIGENVALUES</b> returns the eigenvalues of the BIS matrix.
+        </li>
+        <li>
+          <b>BIS_INVERSE</b> returns the inverse of the BIS matrix.
+        </li>
+        <li>
+          <b>BIW</b> returns the BIW matrix.
+        </li>
+        <li>
+          <b>BIW_CONDITION</b> computes the L1 condition of the BIW matrix.
+        </li>
+        <li>
+          <b>BIW_DETERMINANT</b> computes the determinant of the BIW matrix.
+        </li>
+        <li>
+          <b>BIW_INVERSE</b> returns the inverse of the BIW matrix.
+        </li>
+        <li>
+          <b>BODEWIG</b> returns the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_CONDITION</b> returns the L1 condition of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_DETERMINANT</b> returns the determinant of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_EIGEN_RIGHT</b> returns the right eigenvectors of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_EIGENVALUES</b> returns the eigenvalues of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_INVERSE</b> returns the inverse of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_PLU</b> returns the PLU factors of the BODEWIG matrix.
+        </li>
+        <li>
+          <b>BODEWIG_RHS</b> returns the BODEWIG right hand side.
+        </li>
+        <li>
+          <b>BODEWIG_SOLUTION</b> returns the BODEWIG solution vector.
+        </li>
+        <li>
+          <b>BOOTHROYD</b> returns the BOOTHROYD matrix.
+        </li>
+        <li>
+          <b>BOOTHROYD_CONDITION</b> returns the L1 condition of the BOOTHROYD matrix.
+        </li>
+        <li>
+          <b>BOOTHROYD_DETERMINANT</b> returns the determinant of the BOOTHROYD matrix.
+        </li>
+        <li>
+          <b>BOOTHROYD_INVERSE</b> returns the inverse of the BOOTHROYD matrix.
+        </li>
+        <li>
+          <b>BORDERBAND</b> returns the BORDERBAND matrix.
+        </li>
+        <li>
+          <b>BORDERBAND_DETERMINANT</b> returns the determinant of the BORDERBAND matrix.
+        </li>
+        <li>
+          <b>BORDERBAND_INVERSE</b> returns the inverse of the BORDERBAND matrix.
+        </li>
+        <li>
+          <b>BORDERBAND_PLU</b> returns the PLU factors of the BORDERBAND matrix.
+        </li>
+        <li>
+          <b>BVEC_NEXT_GRLEX</b> generates the next binary vector in GRLEX order.
+        </li>
+        <li>
+          <b>C8_I</b> returns the value of the imaginary unit, i.
+        </li>
+        <li>
+          <b>C8_LE_L2</b> := X <= Y for complex values, and the L2 norm.
+        </li>
+        <li>
+          <b>C8_NORMAL_01</b> returns a unit pseudonormal C8.
+        </li>
+        <li>
+          <b>C8_ONE</b> returns the value of complex 1.
+        </li>
+        <li>
+          <b>C8_SWAP</b> swaps two C8's.
+        </li>
+        <li>
+          <b>C8_UNIFORM_01</b> returns a unit pseudorandom C8.
+        </li>
+        <li>
+          <b>C8_ZERO</b> returns the value of complex 0.
+        </li>
+        <li>
+          <b>C8MAT_HOUSE</b> constructs a complex Householder elementary reflector matrix.
+        </li>
+        <li>
+          <b>C8MAT_HOUSE_AXH</b> computes A*H where H is a compact Householder matrix.
+        </li>
+        <li>
+          <b>C8MAT_HOUSE_FORM</b> constructs a Householder matrix from its compact form.
+        </li>
+        <li>
+          <b>C8MAT_IDENTITY</b> sets a C8MAT to the identity.
+        </li>
+        <li>
+          <b>C8MAT_IS_COLUMN_ORTHOGONAL</b> checks if a C8MAT is column orthogonal.
+        </li>
+        <li>
+          <b>C8MAT_IS_HERMITIAN</b> checks if a C8MAT is hermitian.
+        </li>
+        <li>
+          <b>C8MAT_IS_INVERSE</b> determines if one C8MAT is the inverse of another.
+        </li>
+        <li>
+          <b>C8MAT_IS_INVERSE_LEFT</b> determines if one C8MAT is the left inverse of another.
+        </li>
+        <li>
+          <b>C8MAT_IS_INVERSE_RIGHT</b> determines if a C8MAT is the right inverse of another.
+        </li>
+        <li>
+          <b>C8MAT_IS_ROW_ORTHOGONAL</b> checks if a C8MAT is row orthogonal.
+        </li>
+        <li>
+          <b>C8MAT_IS_SYMMETRIC</b> checks a C8MAT for symmetry.
+        </li>
+        <li>
+          <b>C8MAT_IS_UNIT_COLUMN</b> checks whether a C8MAT has columns of unit norm.
+        </li>
+        <li>
+          <b>C8MAT_IS_UNIT_ROW</b> checks whether a C8MAT has rows of unit norm.
+        </li>
+        <li>
+          <b>C8MAT_IS_UNITARY</b> checks whether a C8MAT is unitary.
+        </li>
+        <li>
+          <b>C8MAT_NORM_FRO</b> returns the Frobenius norm of a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_PRINT</b> prints a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_PRINT_SOME</b> prints some of a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_UNIFORM_01</b> returns a unit pseudorandom C8MAT.
+        </li>
+        <li>
+          <b>C8VEC_HOUSE_COLUMN</b> defines a Householder premultiplier that "packs" a column.
+        </li>
+        <li>
+          <b>C8VEC_NORM_L2</b> returns the L2 norm of a C8VEC.
+        </li>
+        <li>
+          <b>C8VEC_NORM_SQUARED</b> returns the square of the L2 norm of a C8VEC.
+        </li>
+        <li>
+          <b>C8VEC_PRINT</b> prints a C8VEC, with an optional title.
+        </li>
+        <li>
+          <b>C8VEC_PRINT_SOME</b> prints some of a C8VEC.
+        </li>
+        <li>
+          <b>C8VEC_SORT_A_L2</b> ascending sorts a C8VEC by L2 norm.
+        </li>
+        <li>
+          <b>C8VEC_UNIFORM_01</b> returns a unit pseudorandom C8VEC.
+        </li>
+        <li>
+          <b>C8VEC_UNITY</b> returns the N roots of unity.
+        </li>
+        <li>
+          <b>CARRY</b> returns the CARRY matrix.
+        </li>
+        <li>
+          <b>CARRY_DETERMINANT</b> returns the determinant of the CARRY matrix.
+        </li>
+        <li>
+          <b>CARRY_EIGEN_LEFT</b> returns the left eigenvectors of the CARRY matrix.
+        </li>
+        <li>
+          <b>CARRY_EIGEN_RIGHT</b> returns the right eigenvectors of the CARRY matrix.
+        </li>
+        <li>
+          <b>CARRY_EIGENVALUES</b> returns the eigenvalues of the CARRY matrix.
+        </li>
+        <li>
+          <b>CARRY_INVERSE</b> returns the inverse of the CARRY matrix.
+        </li>
+        <li>
+          <b>CAUCHY</b> returns the CAUCHY matrix.
+        </li>
+        <li>
+          <b>CAUCHY_DETERMINANT</b> returns the determinant of the CAUCHY matrix.
+        </li>
+        <li>
+          <b>CAUCHY_INVERSE</b> returns the inverse of the CAUCHY matrix.
+        </li>
+        <li>
+          <b>CHEBY_DIFF1</b> returns the CHEBY_DIFF1 matrix.
+        </li>
+        <li>
+          <b>CHEBY_DIFF1_NULL_LEFT</b> returns a left null vector of the CHEBY_DIFF1 matrix.
+        </li>
+        <li>
+          <b>CHEBY_DIFF1_NULL_RIGHT</b> returns a right null vector of the CHEBY_DIFF1 matrix.
+        </li>
+        <li>
+          <b>CHEBY_T</b> returns the CHEBY_T matrix.
+        </li>
+        <li>
+          <b>CHEBY_T_DETERMINANT</b> returns the determinant of the CHEBY_T matrix.
+        </li>
+        <li>
+          <b>CHEBY_T_EIGENVALUES</b> returns the eigenvalues of the CHEBY_T matrix.
+        </li>
+        <li>
+          <b>CHEBY_T_INVERSE</b> returns the inverse of the CHEBY_T matrix.
+        </li>
+        <li>
+          <b>CHEBY_U</b> returns the CHEBY_U matrix.
+        </li>
+        <li>
+          <b>CHEBY_U_DETERMINANT</b> returns the determinant of the CHEBY_U matrix.
+        </li>
+        <li>
+          <b>CHEBY_U_EIGENVALUES</b> returns the eigenvalues of the CHEBY_U matrix.
+        </li>
+        <li>
+          <b>CHEBY_U_INVERSE</b> returns the inverse of the CHEBY_U matrix.
+        </li>
+        <li>
+          <b>CHEBY_U_POLYNOMIAL</b> evaluates the Chebyshev polynomials of the second kind.
+        </li>
+        <li>
+          <b>CHEBY_VAN1</b> returns the Chebyshev Vandermonde-like matrix for [A,B].
+        </li>
+        <li>
+          <b>CHEBY_VAN2</b> returns the CHEBY_VAN2 matrix.
+        </li>
+        <li>
+          <b>CHEBY_VAN2_DETERMINANT</b> returns the determinant of the CHEBY_VAN2 matrix.
+        </li>
+        <li>
+          <b>CHEBY_VAN2_INVERSE</b> returns the inverse of the CHEBY_VAN2 matrix.
+        </li>
+        <li>
+          <b>CHEBY_VAN3</b> returns the CHEBY_VAN3 matrix.
+        </li>
+        <li>
+          <b>CHEBY_VAN3_DETERMINANT</b> returns the determinant of the CHEBY_VAN3 matrix.
+        </li>
+        <li>
+          <b>CHEBY_VAN3_INVERSE</b> returns the inverse of the CHEBY_VAN3 matrix.
+        </li>
+        <li>
+          <b>CHOW</b> returns the CHOW matrix.
+        </li>
+        <li>
+          <b>CHOW_DETERMINANT</b> returns the determinant of the CHOW matrix.
+        </li>
+        <li>
+          <b>CHOW_EIGEN_LEFT</b> returns the left eigenvectors for the CHOW matrix.
+        </li>
+        <li>
+          <b>CHOW_EIGEN_RIGHT</b> returns the right eigenvectors for the CHOW matrix.
+        </li>
+        <li>
+          <b>CHOW_EIGENVALUES</b> returns the eigenvalues of the CHOW matrix.
+        </li>
+        <li>
+          <b>CHOW_INVERSE</b> returns the inverse of the CHOW matrix.
+        </li>
+        <li>
+          <b>CIRCULANT</b> returns the CIRCULANT matrix.
+        </li>
+        <li>
+          <b>CIRCULANT_DETERMINANT</b> returns the determinant of the CIRCULANT matrix.
+        </li>
+        <li>
+          <b>CIRCULANT_EIGENVALUES</b> returns the eigenvalues of the CIRCULANT matrix.
+        </li>
+        <li>
+          <b>CIRCULANT_INVERSE</b> returns the inverse of the CIRCULANT matrix.
+        </li>
+        <li>
+          <b>CIRCULANT2</b> returns the CIRCULANT2 matrix.
+        </li>
+        <li>
+          <b>CIRCULANT2_DETERMINANT</b> returns the determinant of the CIRCULANT2 matrix.
+        </li>
+        <li>
+          <b>CIRCULANT2_EIGENVALUES</b> returns the eigenvalues of the CIRCULANT2 matrix.
+        </li>
+        <li>
+          <b>CIRCULANT2_INVERSE</b> returns the inverse of the CIRCULANT2 matrix.
+        </li>
+        <li>
+          <b>CLEMENT1</b> returns the CLEMENT1 matrix.
+        </li>
+        <li>
+          <b>CLEMENT1_DETERMINANT</b> returns the determinant of the CLEMENT1 matrix.
+        </li>
+        <li>
+          <b>CLEMENT1_EIGENVALUES</b> returns the eigenvalues of the CLEMENT1 matrix.
+        </li>
+        <li>
+          <b>CLEMENT1_INVERSE</b> returns the inverse of the CLEMENT1 matrix.
+        </li>
+        <li>
+          <b>CLEMENT2</b> returns the CLEMENT2 matrix.
+        </li>
+        <li>
+          <b>CLEMENT2_DETERMINANT</b> returns the determinant of the CLEMENT2 matrix.
+        </li>
+        <li>
+          <b>CLEMENT2_INVERSE</b> returns the inverse of the CLEMENT2 matrix.
+        </li>
+        <li>
+          <b>COLLEAGUE</b> returns the COLLEAGUE matrix.
+        </li>
+        <li>
+          <b>COMBIN</b> returns the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMBIN_CONDITION</b> returns the L1 condition of the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMBIN_DETERMINANT</b> returns the determinant of the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMBIN_EIGEN_RIGHT</b> returns the right eigenvectors of the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMBIN_EIGENVALUES</b> returns the eigenvalues of the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMBIN_INVERSE</b> returns the inverse of the COMBIN matrix.
+        </li>
+        <li>
+          <b>COMPANION</b> returns the COMPANION matrix.
+        </li>
+        <li>
+          <b>COMPANION_CONDITION</b> returns the L1 condition of the COMPANION matrix.
+        </li>
+        <li>
+          <b>COMPANION_DETERMINANT</b> returns the determinant of the COMPANION matrix.
+        </li>
+        <li>
+          <b>COMPANION_INVERSE</b> returns the inverse of the COMPANION matrix.
+        </li>
+        <li>
+          <b>COMPLETE_SYMMETRIC_POLY</b> evaluates a complete symmetric polynomial.
+        </li>
+        <li>
+          <b>COMPLEX3</b> returns the COMPLEX3 matrix.
+        </li>
+        <li>
+          <b>COMPLEX3_INVERSE</b> returns the inverse of the COMPLEX3 matrix.
+        </li>
+        <li>
+          <b>COMPLEX_I</b> returns the COMPLEX_I matrix.
+        </li>
+        <li>
+          <b>COMPLEX_I_DETERMINANT</b> returns the determinant of the COMPLEX_I matrix.
+        </li>
+        <li>
+          <b>COMPLEX_I_INVERSE</b> returns the inverse of the COMPLEX_I matrix.
+        </li>
+        <li>
+          <b>CONEX1</b> returns the CONEX1 matrix.
+        </li>
+        <li>
+          <b>CONEX1_CONDITION</b> returns the L1 condition of the CONEX1 matrix.
+        </li>
+        <li>
+          <b>CONEX1_DETERMINANT</b> returns the determinant of the CONEX1 matrix.
+        </li>
+        <li>
+          <b>CONEX1_INVERSE</b> returns the inverse of the CONEX1 matrix.
+        </li>
+        <li>
+          <b>CONEX2</b> returns the CONEX2 matrix.
+        </li>
+        <li>
+          <b>CONEX2_CONDITION</b> returns the L1 condition of the CONEX2 matrix.
+        </li>
+        <li>
+          <b>CONEX2_DETERMINANT</b> returns the determinant of the CONEX2 matrix.
+        </li>
+        <li>
+          <b>CONEX2_INVERSE</b> returns the inverse of the CONEX2 matrix.
+        </li>
+        <li>
+          <b>CONEX3</b> returns the CONEX3 matrix.
+        </li>
+        <li>
+          <b>CONEX3_CONDITION</b> returns the L1 condition of the CONEX3 matrix.
+        </li>
+        <li>
+          <b>CONEX3_DETERMINANT</b> returns the determinant of the CONEX3 matrix.
+        </li>
+        <li>
+          <b>CONEX3_INVERSE</b> returns the inverse of the CONEX3 matrix.
+        </li>
+        <li>
+          <b>CONEX4</b> returns the CONEX4 matrix.
+        </li>
+        <li>
+          <b>CONEX4_CONDITION</b> returns the L1 condition of the CONEX4 matrix.
+        </li>
+        <li>
+          <b>CONEX4_DETERMINANT</b> returns the determinant of the CONEX4 matrix.
+        </li>
+        <li>
+          <b>CONEX4_INVERSE</b> returns the inverse CONEX4 matrix.
+        </li>
+        <li>
+          <b>CONFERENCE</b> returns the CONFERENCE matrix.
+        </li>
+        <li>
+          <b>CONFERENCE_DETERMINANT</b> returns the determinant of the CONFERENCE matrix.
+        </li>
+        <li>
+          <b>CONFERENCE_INVERSE</b> returns the inverse of the CONFERENCE matrix.
+        </li>
+        <li>
+          <b>COVAR</b> returns the covariance matrix for a square nonsingular matrix.
+        </li>
+        <li>
+          <b>COVAR2</b> returns the covariance matrix for a rectangular matrix.
+        </li>
+        <li>
+          <b>CREATION</b> returns the CREATION matrix.
+        </li>
+        <li>
+          <b>CREATION_DETERMINANT</b> returns the determinant of the CREATION matrix.
+        </li>
+        <li>
+          <b>CREATION_EIGENVALUES</b> returns the eigenvalues of the CREATION matrix.
+        </li>
+        <li>
+          <b>CREATION_NULL_LEFT</b> returns a left null vector of the CREATION matrix.
+        </li>
+        <li>
+          <b>CREATION_NULL_RIGHT</b> returns a right null vector of the CREATION matrix.
+        </li>
+        <li>
+          <b>CYCOL_RANDOM</b> returns the CYCOL_RANDOM matrix.
+        </li>
+        <li>
+          <b>DAUB2</b> returns the DAUB2 matrix.
+        </li>
+        <li>
+          <b>DAUB2_CONDITION</b> returns the L1 condition of the DAUB2 matrix.
+        </li>
+        <li>
+          <b>DAUB2_DETERMINANT</b> returns the determinant of the DAUB2 matrix.
+        </li>
+        <li>
+          <b>DAUB2_INVERSE</b> returns the inverse of the DAUB2 matrix.
+        </li>
+        <li>
+          <b>DAUB4</b> returns the DAUB4 matrix.
+        </li>
+        <li>
+          <b>DAUB4_CONDITION</b> returns the L1 condition of the DAUB4 matrix.
+        </li>
+        <li>
+          <b>DAUB4_DETERMINANT</b> returns the determinant of the DAUB4 matrix.
+        </li>
+        <li>
+          <b>DAUB4_INVERSE</b> returns the inverse of the DAUB4 matrix.
+        </li>
+        <li>
+          <b>DAUB6</b> returns the DAUB6 matrix.
+        </li>
+        <li>
+          <b>DAUB6_CONDITION</b> returns the L1 condition of the DAUB6 matrix.
+        </li>
+        <li>
+          <b>DAUB6_DETERMINANT</b> returns the determinant of the DAUB6 matrix.
+        </li>
+        <li>
+          <b>DAUB6_INVERSE</b> returns the inverse of the DAUB6 matrix.
+        </li>
+        <li>
+          <b>DAUB8</b> returns the DAUB8 matrix.
+        </li>
+        <li>
+          <b>DAUB8_CONDITION</b> returns the L1 condition of the DAUB8 matrix.
+        </li>
+        <li>
+          <b>DAUB8_DETERMINANT</b> returns the determinant of the DAUB8 matrix.
+        </li>
+        <li>
+          <b>DAUB8_INVERSE</b> returns the inverse of the DAUB8 matrix.
+        </li>
+        <li>
+          <b>DAUB10</b> returns the DAUB10 matrix.
+        </li>
+        <li>
+          <b>DAUB10_CONDITION</b> returns the L1 condition of the DAUB10 matrix.
+        </li>
+        <li>
+          <b>DAUB10_DETERMINANT</b> returns the determinant of the DAUB10 matrix.
+        </li>
+        <li>
+          <b>DAUB10_INVERSE</b> returns the inverse of the DAUB10 matrix.
+        </li>
+        <li>
+          <b>DAUB12</b> returns the DAUB12 matrix.
+        </li>
+        <li>
+          <b>DAUB12_CONDITION</b> returns the L1 condition of the DAUB12 matrix.
+        </li>
+        <li>
+          <b>DAUB12_DETERMINANT</b> returns the determinant of the DAUB12 matrix.
+        </li>
+        <li>
+          <b>DAUB12_INVERSE</b> returns the inverse of the DAUB12 matrix.
+        </li>
+        <li>
+          <b>DIAGONAL</b> returns the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_CONDITION</b> returns the L1 condition of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_DETERMINANT</b> returns the determinant of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_EIGEN_LEFT</b> returns the left eigenvectors of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_EIGEN_RIGHT</b> returns the right eigenvectors of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_EIGENVALUES</b> returns the eigenvalues of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIAGONAL_INVERSE</b> returns the inverse of the DIAGONAL matrix.
+        </li>
+        <li>
+          <b>DIF1</b> returns the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1_DETERMINANT</b> returns the determinant of the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1_EIGENVALUES</b> returns the eigenvalues of the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1_INVERSE</b> returns the inverse of the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1_NULL_LEFT</b> returns a left null vector of the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1_NULL_RIGHT</b> returns a right null vector of the DIF1 matrix.
+        </li>
+        <li>
+          <b>DIF1CYCLIC</b> returns the DIF1CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF1CYCLIC_DETERMINANT:</b> determinant of the DIF1CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF1CYCLIC_NULL_LEFT</b> returns a left null vector of the DIF1CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF1CYCLIC_NULL_RIGHT</b> returns a right null vector of the DIF1CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF2</b> returns the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_CONDITION</b> returns the L1 condition of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_DETERMINANT</b> returns the determinant of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_EIGEN_RIGHT</b> returns the right eigenvectors of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_EIGENVALUES</b> returns the eigenvalues of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_INVERSE</b> returns the inverse of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_LLT</b> returns the Cholesky factor of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_PLU</b> returns the PLU factors of the DIF2 matrix.
+        </li>
+        <li>
+          <b>DIF2_RHS</b> returns the DIF2 right hand side.
+        </li>
+        <li>
+          <b>DIF2_SOLUTION</b> returns the DIF2 solution matrix.
+        </li>
+        <li>
+          <b>DIF2CYCLIC</b> returns the DIF2CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF2CYCLIC_DETERMINANT:</b> determinant of the DIF2CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF2CYCLIC_NULL_LEFT</b> returns a left null vector of the DIF2CYCLIC matrix.
+        </li>
+        <li>
+          <b>DIF2CYCLIC_NULL_RIGHT</b> returns a right null vector of the DIF2CYCLIC matrix.
+        </li>
+        <li>
+          <b>DORR</b> returns the DORR matrix.
+        </li>
+        <li>
+          <b>DORR_DETERMINANT</b> computes the determinant of the DORR matrix.
+        </li>
+        <li>
+          <b>DORR_INVERSE</b> returns the inverse of the DORR matrix.
+        </li>
+        <li>
+          <b>DOWNSHIFT</b> returns the DOWNSHIFT matrix.
+        </li>
+        <li>
+          <b>DOWNSHIFT_CONDITION</b> returns the L1 condition of the DOWNSHIFT matrix.
+        </li>
+        <li>
+          <b>DOWNSHIFT_DETERMINANT</b> returns the determinant of the DOWNSHIFT matrix.
+        </li>
+        <li>
+          <b>DOWNSHIFT_EIGENVALUES</b> returns the eigenvalues of the DOWNSHIFT matrix.
+        </li>
+        <li>
+          <b>DOWNSHIFT_INVERSE</b> returns the inverse of the DOWNSHIFT matrix.
+        </li>
+        <li>
+          <b>DRMAC</b> returns the DRMAC matrix.
+        </li>
+        <li>
+          <b>DRMAC_INVERSE</b> returns the inverse of the DRMAC matrix.
+        </li>
+        <li>
+          <b>EBERLEIN</b> returns the EBERLEIN matrix.
+        </li>
+        <li>
+          <b>EBERLEIN_DETERMINANT</b> returns the determinant of the EBERLEIN matrix.
+        </li>
+        <li>
+          <b>EBERLEIN_EIGENVALUES</b> returns the eigenvalues of the EBERLEIN matrix.
+        </li>
+        <li>
+          <b>EBERLEIN_NULL_LEFT</b> returns a left null vector of the EBERLEIN matrix.
+        </li>
+        <li>
+          <b>ELMHES</b> transforms a real general matrix to upper Hessenberg form.
+        </li>
+        <li>
+          <b>EULERIAN</b> returns the EULERIAN matrix.
+        </li>
+        <li>
+          <b>EULERIAN_DETERMINANT</b> returns the determinant of the EULERIAN matrix.
+        </li>
+        <li>
+          <b>EULERIAN_INVERSE</b> computes the inverse of the EULERIAN matrix.
+        </li>
+        <li>
+          <b>EXCHANGE</b> returns the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>EXCHANGE_CONDITION</b> returns the L1 condition of the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>EXCHANGE_DETERMINANT</b> returns the determinant of the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>EXCHANGE_EIGEN_RIGHT</b> returns the right eigenvectors of the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>EXCHANGE_EIGENVALUES</b> returns the eigenvalues of the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>EXCHANGE_INVERSE</b> returns the inverse of the EXCHANGE matrix.
+        </li>
+        <li>
+          <b>FIBONACCI1</b> returns the FIBONACCI1 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI1_DETERMINANT</b> returns the determinant of the FIBONACCI1 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI1_NULL_LEFT</b> returns a left null vector of the FIBONACCI1 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI1_NULL_RIGHT</b> returns a right null vector of the FIBONACCI1 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI2</b> returns the FIBONACCI2 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI2_CONDITION</b> returns the L1 condition of the FIBONACCI2 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI2_DETERMINANT</b> returns the determinant of the FIBONACCI2 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI2_EIGENVALUES</b> returns the eigenvalues of the FIBONACCI2 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI2_INVERSE</b> returns the inverse of the FIBONACCI2 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI3</b> returns the FIBONACCI3 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI3_DETERMINANT</b> returns the determinant of the FIBONACCI3 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI3_EIGENVALUES</b> returns the eigenvalues of the FIBONACCI3 matrix.
+        </li>
+        <li>
+          <b>FIBONACCI3_INVERSE</b> returns the inverse of the FIBONACCI3 matrix.
+        </li>
+        <li>
+          <b>FIEDLER</b> returns the FIEDLER matrix.
+        </li>
+        <li>
+          <b>FIEDLER_DETERMINANT</b> returns the determinant of the FIEDLER matrix.
+        </li>
+        <li>
+          <b>FIEDLER_INVERSE</b> returns the inverse of the FIEDLER matrix.
+        </li>
+        <li>
+          <b>FORSYTHE</b> returns the FORSYTHE matrix.
+        </li>
+        <li>
+          <b>FORSYTHE_DETERMINANT</b> returns the determinant of the FORSYTHE matrix.
+        </li>
+        <li>
+          <b>FORSYTHE_EIGENVALUES</b> returns the eigenvalues of the FORSYTHE matrix.
+        </li>
+        <li>
+          <b>FORSYTHE_INVERSE</b> returns the inverse of the Forsythe matrix.
+        </li>
+        <li>
+          <b>FOURIER</b> returns the FOURIER matrix.
+        </li>
+        <li>
+          <b>FOURIER_DETERMINANT</b> returns the determinant of the FOURIER matrix.
+        </li>
+        <li>
+          <b>FOURIER_EIGENVALUES</b> returns the eigenvalues of the FOURIER matrix.
+        </li>
+        <li>
+          <b>FOURIER_INVERSE</b> returns the inverse of the FOURIER matrix.
+        </li>
+        <li>
+          <b>FOURIER_COSINE</b> returns the FOURIER_COSINE matrix.
+        </li>
+        <li>
+          <b>FOURIER_COSINE_DETERMINANT:</b> determinant of the FOURIER_COSINE matrix.
+        </li>
+        <li>
+          <b>FOURIER_COSINE_INVERSE</b> returns the inverse of the FOURIER_COSINE matrix.
+        </li>
+        <li>
+          <b>FOURIER_SINE</b> returns the FOURIER_SINE matrix.
+        </li>
+        <li>
+          <b>FOURIER_SINE_DETERMINANT</b> returns the determinant of the FOURIER_SINE matrix.
+        </li>
+        <li>
+          <b>FOURIER_SINE_INVERSE</b> returns the inverse of the FOURIER_SINE matrix.
+        </li>
+        <li>
+          <b>FRANK</b> returns the FRANK matrix.
+        </li>
+        <li>
+          <b>FRANK_DETERMINANT</b> returns the determinant of the FRANK matrix.
+        </li>
+        <li>
+          <b>FRANK_EIGENVALUES</b> returns the eigenvalues of the FRANK matrix.
+        </li>
+        <li>
+          <b>FRANK_INVERSE</b> returns the inverse of the FRANK matrix.
+        </li>
+        <li>
+          <b>FRANK_RHS</b> returns the FRANK right hand side.
+        </li>
+        <li>
+          <b>FRANK_SOLUTION</b> returns the FRANK solution matrix.
+        </li>
+        <li>
+          <b>GEAR</b> returns the GEAR matrix.
+        </li>
+        <li>
+          <b>GEAR_DETERMINANT</b> returns the determinant of the GEAR matrix.
+        </li>
+        <li>
+          <b>GEAR_EIGENVALUES</b> returns the eigenvalues of the GEAR matrix.
+        </li>
+        <li>
+          <b>GFPP</b> returns the GFPP matrix.
+        </li>
+        <li>
+          <b>GFPP_CONDITION</b> returns the L1 condition of the GFPP matrix.
+        </li>
+        <li>
+          <b>GFPP_DETERMINANT</b> returns the determinant of the GFPP matrix.
+        </li>
+        <li>
+          <b>GFPP_INVERSE</b> returns the inverse of the GFPP matrix.
+        </li>
+        <li>
+          <b>GFPP_PLU</b> returns the PLU factorization of the GFPP matrix.
+        </li>
+        <li>
+          <b>GIVENS</b> returns the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_CONDITION</b> returns the L1 condition of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_DETERMINANT</b> returns the determinant of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_EIGENVALUES</b> returns the eigenvalues of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_INVERSE</b> returns the inverse of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_LLT</b> returns the Cholesky factor of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GIVENS_PLU</b> returns the PLU factors of the GIVENS matrix.
+        </li>
+        <li>
+          <b>GK316</b> returns the GK316 matrix.
+        </li>
+        <li>
+          <b>GK316_DETERMINANT</b> returns the determinant of the GK316 matrix.
+        </li>
+        <li>
+          <b>GK316_EIGENVALUES</b> returns the eigenvalues of the GK316 matrix.
+        </li>
+        <li>
+          <b>GK316_INVERSE</b> returns the inverse of the GK316 matrix.
+        </li>
+        <li>
+          <b>GK323</b> returns the GK323 matrix.
+        </li>
+        <li>
+          <b>GK323_DETERMINANT</b> returns the determinant of the GK323 matrix.
+        </li>
+        <li>
+          <b>GK323_INVERSE</b> returns the inverse of the GK323 matrix.
+        </li>
+        <li>
+          <b>GK324</b> returns the GK324 matrix.
+        </li>
+        <li>
+          <b>GK324_DETERMINANT</b> returns the determinant of the GK324 matrix.
+        </li>
+        <li>
+          <b>GK324_INVERSE</b> returns the inverse of the GK324 matrix.
+        </li>
+        <li>
+          <b>GRCAR</b> returns the GRCAR matrix.
+        </li>
+        <li>
+          <b>HADAMARD</b> returns the HADAMARD matrix.
+        </li>
+        <li>
+          <b>HAMMING</b> computes the HAMMING matrix.
+        </li>
+        <li>
+          <b>HAMMING_NULL_RIGHT</b> returns a right null vector of the HAMMING matrix.
+        </li>
+        <li>
+          <b>HANKEL</b> returns the HANKEL matrix.
+        </li>
+        <li>
+          <b>HANKEL_N</b> returns the HANKEL_N matrix.
+        </li>
+        <li>
+          <b>HANKEL_N_CONDITION</b> returns the L1 condition of the HANKEL_N matrix.
+        </li>
+        <li>
+          <b>HANKEL_N_DETERMINANT</b> returns the determinant of the HANKEL_N matrix.
+        </li>
+        <li>
+          <b>HANKEL_N_INVERSE</b> returns the inverse of the HANKEL_N matrix.
+        </li>
+        <li>
+          <b>HANOWA</b> returns the HANOWA matrix.
+        </li>
+        <li>
+          <b>HANOWA_DETERMINANT</b> returns the determinant of the HANOWA matrix.
+        </li>
+        <li>
+          <b>HANOWA_EIGENVALUES</b> returns the eigenvalues of the HANOWA matrix.
+        </li>
+        <li>
+          <b>HANOWA_INVERSE</b> returns the inverse of the Hanowa matrix.
+        </li>
+        <li>
+          <b>HARMAN</b> returns the HARMAN matrix.
+        </li>
+        <li>
+          <b>HARMAN_CONDITION</b> returns the L1 condition of the HARMAN matrix.
+        </li>
+        <li>
+          <b>HARMAN_DETERMINANT</b> returns the determinant of the HARMAN matrix.
+        </li>
+        <li>
+          <b>HARMAN_EIGENVALUES</b> returns the eigenvalues of the HARMAN matrix.
+        </li>
+        <li>
+          <b>HARMAN_INVERSE</b> returns the inverse of the HARMAN matrix.
+        </li>
+        <li>
+          <b>HARTLEY</b> returns the HARTLEY matrix.
+        </li>
+        <li>
+          <b>HARTLEY_CONDITION</b> returns the L1 condition of the HARTLEY matrix.
+        </li>
+        <li>
+          <b>HARTLEY_DETERMINANT</b> returns the determinant of the HARTLEY matrix.
+        </li>
+        <li>
+          <b>HARTLEY_EIGENVALUES</b> returns the eigenvalues of the HARTLEY matrix.
+        </li>
+        <li>
+          <b>HARTLEY_INVERSE</b> returns the inverse of the HARTLEY matrix.
+        </li>
+        <li>
+          <b>HELMERT</b> returns the HELMERT matrix.
+        </li>
+        <li>
+          <b>HELMERT_DETERMINANT</b> returns the determinant of the HELMERT matrix.
+        </li>
+        <li>
+          <b>HELMERT_INVERSE</b> returns the inverse of the HELMERT matrix.
+        </li>
+        <li>
+          <b>HELMERT2</b> returns the HELMERT2 matrix.
+        </li>
+        <li>
+          <b>HELMERT2_INVERSE</b> returns the inverse of the HELMERT2 matrix.
+        </li>
+        <li>
+          <b>HERMITE</b> returns the HERMITE matrix.
+        </li>
+        <li>
+          <b>HERMITE_DETERMINANT</b> returns the determinant of the HERMITE matrix.
+        </li>
+        <li>
+          <b>HERMITE_INVERSE</b> returns the inverse of the HERMITE matrix.
+        </li>
+        <li>
+          <b>HERMITE_ROOTS</b> computes the roots of a Hermite polynomial.
+        </li>
+        <li>
+          <b>HERNDON</b> returns the HERNDON matrix.
+        </li>
+        <li>
+          <b>HERNDON_DETERMINANT</b> returns the determinant of the HERNDON matrix.
+        </li>
+        <li>
+          <b>HERNDON_EIGENVALUES</b> returns the eigenvalues of the HERNDON matrix.
+        </li>
+        <li>
+          <b>HERNDON_INVERSE</b> returns the inverse of the HERNDON matrix.
+        </li>
+        <li>
+          <b>HILBERT</b> returns the HILBERT matrix.
+        </li>
+        <li>
+          <b>HILBERT_DETERMINANT</b> returns the determinant of the HILBERT matrix.
+        </li>
+        <li>
+          <b>HILBERT_INVERSE</b> returns the inverse of the HILBERT matrix.
+        </li>
+        <li>
+          <b>HOFFMAN</b> computes the HOFFMAN matrix.
+        </li>
+        <li>
+          <b>HOFFMAN_RHS</b> returns the HOFFMAN right hand side.
+        </li>
+        <li>
+          <b>HOFFMAN_OPTIMUM</b> returns the HOFFMAN optimum solution.
+        </li>
+        <li>
+          <b>HOUSEHOLDER</b> constructs a HOUSEHOLDER matrix.
+        </li>
+        <li>
+          <b>HOUSEHOLDER_DETERMINANT</b> returns the determinant of a HOUSEHOLDER matrix.
+        </li>
+        <li>
+          <b>HOUSEHOLDER_EIGENVALUES</b> returns the eigenvalues of a HOUSEHOLDER matrix.
+        </li>
+        <li>
+          <b>HOUSEHOLDER_INVERSE</b> returns the inverse of a HOUSEHOLDER matrix.
+        </li>
+        <li>
+          <b>HQR</b> computes all eigenvalues of a real upper Hessenberg matrix.
+        </li>
+        <li>
+          <b>I4_FACTOR</b> factors an integer into prime factors.
+        </li>
+        <li>
+          <b>I4_IS_EVEN</b> returns TRUE if an I4 is even.
+        </li>
+        <li>
+          <b>I4_IS_ODD</b> returns TRUE if an I4 is odd.
+        </li>
+        <li>
+          <b>I4_IS_PRIME</b> reports whether an I4 is prime.
+        </li>
+        <li>
+          <b>I4_LOG_10</b> returns the integer part of the logarithm base 10 of abs ( X ).
+        </li>
+        <li>
+          <b>I4_MODP</b> returns the nonnegative remainder of integer division.
+        </li>
+        <li>
+          <b>I4_RISE</b> computes the rising factorial function [X]^N.
+        </li>
+        <li>
+          <b>I4_SIGN</b> evaluates the sign of an I4.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB</b> returns a scaled pseudorandom I4 between A and B.
+        </li>
+        <li>
+          <b>I4_WRAP</b> forces an integer to lie between given limits by wrapping.
+        </li>
+        <li>
+          <b>I4MAT_PRINT</b> prints an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_PRINT_SOME</b> prints some of an I4MAT.
+        </li>
+        <li>
+          <b>I4VEC_INDEX</b> returns the location of the first occurrence of a given value.
+        </li>
+        <li>
+          <b>I4VEC_INDICATOR</b> sets an integer vector to the indicator vector.
+        </li>
+        <li>
+          <b>I4VEC_PRINT</b> prints an I4VEC, with an optional title.
+        </li>
+        <li>
+          <b>IDEM_RANDOM</b> returns the IDEM_RANDOM matrix.
+        </li>
+        <li>
+          <b>IDEM_RANDOM_DETERMINANT</b> returns the determinant of the IDEM_RANDOM matrix.
+        </li>
+        <li>
+          <b>IDEM_RANDOM_EIGEN_RIGHT:</b> right eigenvectors of the IDEM_RANDOM matrix.
+        </li>
+        <li>
+          <b>IDEM_RANDOM_EIGENVALUES</b> returns the eigenvalues of the IDEM_RANDOM matrix.
+        </li>
+        <li>
+          <b>IDENTITY</b> returns the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_CONDITION</b> returns the L1 condition of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_DETERMINANT</b> returns the determinant of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_EIGEN_LEFT</b> returns the left eigenvectors of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_EIGEN_RIGHT</b> returns the right eigenvectors of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_EIGENVALUES</b> returns the eigenvalues of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IDENTITY_INVERSE</b> returns the inverse of the IDENTITY matrix.
+        </li>
+        <li>
+          <b>IJFACT1</b> returns the IJFACT1 matrix.
+        </li>
+        <li>
+          <b>IJFACT1_DETERMINANT</b> returns the determinant of the IJFACT1 matrix.
+        </li>
+        <li>
+          <b>IJFACT2</b> returns the IJFACT2 matrix.
+        </li>
+        <li>
+          <b>IJFACT2_DETERMINANT</b> returns the determinant of the IJFACT2 matrix.
+        </li>
+        <li>
+          <b>ILL3</b> returns the ILL3 matrix.
+        </li>
+        <li>
+          <b>ILL3_CONDITION</b> returns the L1 condition of the ILL3 matrix.
+        </li>
+        <li>
+          <b>ILL3_DETERMINANT</b> returns the determinant of the ILL3 matrix.
+        </li>
+        <li>
+          <b>ILL3_EIGEN_RIGHT</b> returns the right eigenvectors of the ILL3 matrix.
+        </li>
+        <li>
+          <b>ILL3_EIGENVALUES</b> returns the eigenvalues of the ILL3 matrix.
+        </li>
+        <li>
+          <b>ILL3_INVERSE</b> returns the inverse of the ILL3 matrix.
+        </li>
+        <li>
+          <b>INDICATOR</b> returns the INDICATOR matrix.
+        </li>
+        <li>
+          <b>INTEGRATION</b> returns the INTEGRATION matrix.
+        </li>
+        <li>
+          <b>INTEGRATION_DETERMINANT</b> returns the determinant of the INTEGRATION matrix.
+        </li>
+        <li>
+          <b>INTEGRATION_EIGENVALUES</b> returns the eigenvalues of the INTEGRATION matrix.
+        </li>
+        <li>
+          <b>INTEGRATION_INVERSE</b> returns the inverse of the INTEGRATION matrix.
+        </li>
+        <li>
+          <b>INVOL</b> returns the INVOL matrix.
+        </li>
+        <li>
+          <b>INVOL_DETERMINANT</b> returns the determinant of the INVOL matrix.
+        </li>
+        <li>
+          <b>INVOL_EIGENVALUES</b> returns the eigenvalues of the INVOL matrix.
+        </li>
+        <li>
+          <b>INVOL_INVERSE</b> returns the inverse of the INVOL matrix.
+        </li>
+        <li>
+          <b>INVOL_RANDOM</b> returns the INVOL_RANDOM matrix.
+        </li>
+        <li>
+          <b>JACOBI</b> returns the JACOBI matrix.
+        </li>
+        <li>
+          <b>JACOBI_DETERMINANT</b> returns the determinant of the JACOBI matrix.
+        </li>
+        <li>
+          <b>JACOBI_EIGENVALUES</b> returns the eigenvalues of the JACOBI matrix.
+        </li>
+        <li>
+          <b>JACOBI_INVERSE</b> returns the inverse of the JACOBI matrix.
+        </li>
+        <li>
+          <b>JACOBI_ITERATE</b> applies the Jacobi eigenvalue iteration to a symmetric matrix.
+        </li>
+        <li>
+          <b>JACOBI_SYMBOL</b> evaluates the Jacobi symbol (Q/P).
+        </li>
+        <li>
+          <b>JORDAN</b> returns the JORDAN matrix.
+        </li>
+        <li>
+          <b>JORDAN_CONDITION</b> returns the L1 condition of the JORDAN matrix.
+        </li>
+        <li>
+          <b>JORDAN_DETERMINANT</b> returns the determinant of the JORDAN matrix.
+        </li>
+        <li>
+          <b>JORDAN_EIGENVALUES</b> returns the eigenvalues of the JORDAN matrix.
+        </li>
+        <li>
+          <b>JORDAN_INVERSE</b> returns the inverse of the JORDAN matrix.
+        </li>
+        <li>
+          <b>KAHAN</b> returns the KAHAN matrix.
+        </li>
+        <li>
+          <b>KAHAN_DETERMINANT</b> returns the determinant of the KAHAN matrix.
+        </li>
+        <li>
+          <b>KAHAN_INVERSE</b> returns the inverse of the KAHAN matrix.
+        </li>
+        <li>
+          <b>KERSHAW</b> returns the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_CONDITION</b> returns the L1 condition of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_DETERMINANT</b> returns the determinant of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_EIGEN_RIGHT</b> returns the right eigenvectors of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_EIGENVALUES</b> returns the eigenvalues of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_INVERSE</b> returns the inverse of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAW_LLT</b> returns the Cholesky factor of the KERSHAW matrix.
+        </li>
+        <li>
+          <b>KERSHAWTRI</b> returns the KERSHAWTRI matrix.
+        </li>
+        <li>
+          <b>KERSHAWTRI_DETERMINANT</b> returns the determinant of the KERSHAWTRI matrix.
+        </li>
+        <li>
+          <b>KERSHAWTRI_INVERSE</b> returns the inverse of the KERSHAWTRI matrix.
+        </li>
+        <li>
+          <b>KMS</b> returns the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_DETERMINANT</b> returns the determinant of the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_EIGEN_RIGHT</b> returns the right eigenvectors of the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_EIGENVALUES</b> returns the eigenvalues of the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_EIGENVALUES_THETA</b> returns data needed to compute KMS eigenvalues.
+        </li>
+        <li>
+          <b>KMS_EIGENVALUES_THETA_F</b> evaluates a function for KMS eigenvalues.
+        </li>
+        <li>
+          <b>KMS_INVERSE</b> returns the inverse of the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_LDL</b> returns the LDL factorization of the KMS matrix.
+        </li>
+        <li>
+          <b>KMS_PLU</b> returns the PLU factors of the KMS matrix.
+        </li>
+        <li>
+          <b>KRYLOV</b> returns the KRYLOV matrix.
+        </li>
+        <li>
+          <b>LAGUERRE</b> returns the LAGUERRE matrix.
+        </li>
+        <li>
+          <b>LAGUERRE_DETERMINANT</b> returns the determinant of the LAGUERRE matrix.
+        </li>
+        <li>
+          <b>LAGUERRE_INVERSE</b> returns the inverse of the LAGUERRE matrix.
+        </li>
+        <li>
+          <b>LAUCHLI</b> returns the LAUCHLI matrix.
+        </li>
+        <li>
+          <b>LAUCHLI_NULL_LEFT</b> returns a left null vector of the LAUCHLI matrix.
+        </li>
+        <li>
+          <b>LEGENDRE</b> returns the LEGENDRE matrix.
+        </li>
+        <li>
+          <b>LEGENDRE_DETERMINANT</b> returns the determinant of the LEGENDRE matrix.
+        </li>
+        <li>
+          <b>LEGENDRE_INVERSE</b> returns the inverse of the LEGENDRE matrix.
+        </li>
+        <li>
+          <b>LEGENDRE_SYMBOL</b> evaluates the Legendre symbol (Q/P).
+        </li>
+        <li>
+          <b>LEGENDRE_VAN</b> returns the LEGENDRE_VAN matrix.
+        </li>
+        <li>
+          <b>LEGENDRE_ZEROS</b> computes the zeros of the Legendre polynomial.
+        </li>
+        <li>
+          <b>LEHMER</b> returns the LEHMER matrix.
+        </li>
+        <li>
+          <b>LEHMER_DETERMINANT</b> returns the determinant of the LEHMER matrix.
+        </li>
+        <li>
+          <b>LEHMER_INVERSE</b> returns the inverse of the LEHMER matrix.
+        </li>
+        <li>
+          <b>LEHMER_LLT</b> returns the Cholesky factor of the LEHMER matrix.
+        </li>
+        <li>
+          <b>LEHMER_PLU</b> returns the PLU factors of the LEHMER matrix.
+        </li>
+        <li>
+          <b>LESLIE</b> returns the LESLIE matrix.
+        </li>
+        <li>
+          <b>LESLIE_DETERMINANT</b> returns the determinant of the LESLIE matrix.
+        </li>
+        <li>
+          <b>LESP</b> returns the LESP matrix.
+        </li>
+        <li>
+          <b>LESP_DETERMINANT</b> computes the determinant of the LESP matrix.
+        </li>
+        <li>
+          <b>LESP_INVERSE</b> returns the inverse of the LESP matrix.
+        </li>
+        <li>
+          <b>LIETZKE</b> returns the LIETZKE matrix.
+        </li>
+        <li>
+          <b>LIETZKE_CONDITION</b> returns the L1 condition of the LIETZKE matrix.
+        </li>
+        <li>
+          <b>LIETZKE_DETERMINANT</b> returns the determinant of the LIETZKE matrix.
+        </li>
+        <li>
+          <b>LIETZKE_INVERSE</b> returns the inverse of the LIETZKE matrix.
+        </li>
+        <li>
+          <b>LIGHTS_OUT</b> returns the LIGHTS_OUT matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ</b> returns the LINE_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ_DETERMINANT</b> returns the determinant of the LINE_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ_EIGEN_RIGHT</b> returns the right eigenvectors of the BAB matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ_EIGENVALUES</b> returns the eigenvalues of the LINE_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ_NULL_LEFT</b> returns a left null vector of the LINE_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_ADJ_NULL_RIGHT</b> returns a right null vector of the LINE_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_LOOP_ADJ</b> returns the LINE_LOOP_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_LOOP_ADJ_DETERMINANT:</b> the determinant of the LINE_LOOP_ADJ matrix.
+        </li>
+        <li>
+          <b>LINE_LOOP_ADJ_EIGEN_RIGHT</b> returns the right eigenvectors of the BAB matrix.
+        </li>
+        <li>
+          <b>LINE_LOOP_ADJ_EIGENVALUES:</b> the eigenvalues of the LINE_LOOP_ADJ matrix.
+        </li>
+        <li>
+          <b>LOEWNER</b> returns the LOEWNER matrix.
+        </li>
+        <li>
+          <b>LOTKIN</b> returns the LOTKIN matrix.
+        </li>
+        <li>
+          <b>LOTKIN_DETERMINANT</b> returns the determinant of the LOTKIN matrix.
+        </li>
+        <li>
+          <b>LOTKIN_INVERSE</b> returns the inverse of the LOTKIN matrix.
+        </li>
+        <li>
+          <b>MAGIC</b> returns a magic matrix.
+        </li>
+        <li>
+          <b>MAGIC_A</b> is a utility routine for magic square computations.
+        </li>
+        <li>
+          <b>MAGIC_B</b> is a utility routine for magic square computations.
+        </li>
+        <li>
+          <b>MAGIC_BIMARKOV</b> returns a magic biMarkov matrix.
+        </li>
+        <li>
+          <b>MAGIC_C</b> is a utility routine for magic square computations.
+        </li>
+        <li>
+          <b>MAGIC_EVEN</b> constructs a magic square for the case where N is even.
+        </li>
+        <li>
+          <b>MAGIC_ODD</b> constructs a magic square for the case where N is odd.
+        </li>
+        <li>
+          <b>MARKOV_RANDOM</b> returns the MARKOV_RANDOM matrix.
+        </li>
+        <li>
+          <b>MAXIJ</b> returns the MAXIJ matrix.
+        </li>
+        <li>
+          <b>MAXIJ_CONDITION</b> returns the L1 condition of the MAXIJ matrix.
+        </li>
+        <li>
+          <b>MAXIJ_DETERMINANT</b> returns the determinant of the MAXIJ matrix.
+        </li>
+        <li>
+          <b>MAXIJ_INVERSE</b> returns the inverse of the MAXIJ matrix.
+        </li>
+        <li>
+          <b>MAXIJ_PLU</b> returns the PLU factors of the MAXIJ matrix.
+        </li>
+        <li>
+          <b>MERTENS</b> evaluates the Mertens function.
+        </li>
+        <li>
+          <b>MERTENS_VALUES</b> returns some values of the Mertens function.
+        </li>
+        <li>
+          <b>MILNES</b> returns the MILNES matrix.
+        </li>
+        <li>
+          <b>MILNES_DETERMINANT</b> returns the determinant of the MILNES matrix.
+        </li>
+        <li>
+          <b>MILNES_INVERSE</b> returns the inverse of the MILNES matrix.
+        </li>
+        <li>
+          <b>MINIJ</b> returns the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_CONDITION</b> returns the L1 condition of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_DETERMINANT</b> returns the determinant of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_EIGENVALUES</b> returns the eigenvalues of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_INVERSE</b> returns the inverse of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_LLT</b> returns the Cholesky factor of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MINIJ_PLU</b> returns the PLU factors of the MINIJ matrix.
+        </li>
+        <li>
+          <b>MOEBIUS</b> returns the value of MU(N), the Moebius function of N.
+        </li>
+        <li>
+          <b>MOEBIUS_VALUES</b> returns some values of the Moebius function.
+        </li>
+        <li>
+          <b>MOLER1</b> returns the MOLER1 matrix.
+        </li>
+        <li>
+          <b>MOLER1_DETERMINANT</b> returns the determinant of the MOLER1 matrix.
+        </li>
+        <li>
+          <b>MOLER1_INVERSE</b> returns the inverse of the MOLER1 matrix.
+        </li>
+        <li>
+          <b>MOLER1_LLT</b> returns the lower triangular Cholesky factor of the MOLER1 matrix.
+        </li>
+        <li>
+          <b>MOLER1_PLU</b> returns the PLU factors of the MOLER1 matrix.
+        </li>
+        <li>
+          <b>MOLER2</b> returns the MOLER2 matrix.
+        </li>
+        <li>
+          <b>MOLER2_DETERMINANT</b> returns the determinant of the MOLER2 matrix.
+        </li>
+        <li>
+          <b>MOLER2_EIGENVALUES</b> returns the eigenvalues of the MOLER2 matrix.
+        </li>
+        <li>
+          <b>MOLER2_NULL_LEFT</b> returns a left null vector for the MOLER2 matrix.
+        </li>
+        <li>
+          <b>MOLER2_NULL_RIGHT</b> returns a right null vector for the MOLER2 matrix.
+        </li>
+        <li>
+          <b>MOLER3</b> returns the MOLER3 matrix.
+        </li>
+        <li>
+          <b>MOLER3_DETERMINANT</b> returns the determinant of the MOLER3 matrix.
+        </li>
+        <li>
+          <b>MOLER3_INVERSE</b> returns the inverse of the MOLER3 matrix.
+        </li>
+        <li>
+          <b>MOLER3_LLT</b> returns the Cholesky factor of the MOLER3 matrix.
+        </li>
+        <li>
+          <b>MOLER3_PLU</b> returns the PLU factors of the MOLER3 matrix.
+        </li>
+        <li>
+          <b>MOLER4</b> returns the MOLER4 matrix.
+        </li>
+        <li>
+          <b>MOLER4_CONDITION</b> returns the L1 condition of the MOLER4 matrix.
+        </li>
+        <li>
+          <b>MOLER4_DETERMINANT</b> returns the determinant of the MOLER4 matrix.
+        </li>
+        <li>
+          <b>MOLER4_EIGENVALUES</b> returns the eigenvalues of the MOLER4 matrix.
+        </li>
+        <li>
+          <b>MOLER4_INVERSE</b> returns the inverse of the MOLER4 matrix.
+        </li>
+        <li>
+          <b>NEUMANN</b> returns the NEUMANN matrix.
+        </li>
+        <li>
+          <b>NEUMANN_DETERMINANT</b> returns the determinant of the NEUMANN matrix.
+        </li>
+        <li>
+          <b>NEUMANN_NULL_RIGHT</b> returns a right null vector of the NEUMANN matrix.
+        </li>
+        <li>
+          <b>ONE</b> returns the ONE matrix.
+        </li>
+        <li>
+          <b>ONE_DETERMINANT</b> returns the determinant of the ONE matrix.
+        </li>
+        <li>
+          <b>ONE_EIGEN_RIGHT</b> returns the right eigenvectors of the ONE matrix.
+        </li>
+        <li>
+          <b>ONE_EIGENVALUES</b> returns the eigenvalues of the ONE matrix.
+        </li>
+        <li>
+          <b>ONE_NULL_LEFT</b> returns a left null vector of the ONE matrix.
+        </li>
+        <li>
+          <b>ONE_NULL_RIGHT</b> returns a right null vector of the ONE matrix.
+        </li>
+        <li>
+          <b>ORTEGA</b> returns the ORTEGA matrix.
+        </li>
+        <li>
+          <b>ORTEGA_DETERMINANT</b> returns the determinant of the ORTEGA matrix.
+        </li>
+        <li>
+          <b>ORTEGA_EIGEN_RIGHT</b> returns the right eigenvectors of the ORTEGA matrix.
+        </li>
+        <li>
+          <b>ORTEGA_EIGENVALUES</b> returns the eigenvalues of the ORTEGA matrix.
+        </li>
+        <li>
+          <b>ORTEGA_INVERSE</b> returns the inverse of the ORTEGA matrix.
+        </li>
+        <li>
+          <b>ORTH_RANDOM</b> returns the ORTH_RANDOM matrix.
+        </li>
+        <li>
+          <b>ORTH_RANDOM_DETERMINANT</b> returns the determinant of the ORTH_RANDOM matrix.
+        </li>
+        <li>
+          <b>ORTH_RANDOM_INVERSE</b> returns the inverse of the ORTH_RANDOM matrix.
+        </li>
+        <li>
+          <b>ORTH_SYMM</b> returns the ORTH_SYMM matrix.
+        </li>
+        <li>
+          <b>ORTH_SYMM_CONDITION</b> returns the L1 condition of the ORTH_SYMM matrix.
+        </li>
+        <li>
+          <b>ORTH_SYMM_DETERMINANT</b> returns the determinant of the ORTH_SYMM matrix.
+        </li>
+        <li>
+          <b>ORTH_SYMM_EIGENVALUES</b> returns eigenvalues of the ORTH_SYMM matrix.
+        </li>
+        <li>
+          <b>ORTH_SYMM_INVERSE</b> returns the inverse of the ORTH_SYMM matrix.
+        </li>
+        <li>
+          <b>OTO</b> returns the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_CONDITION</b> returns the L1 condition of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_DETERMINANT</b> returns the determinant of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_EIGEN_RIGHT</b> returns the right eigenvectors of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_EIGENVALUES</b> returns the eigenvalues of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_INVERSE</b> returns the inverse of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_LLT</b> returns the Cholesky factor of the OTO matrix.
+        </li>
+        <li>
+          <b>OTO_PLU</b> returns the PLU factors of the OTO matrix.
+        </li>
+        <li>
+          <b>PARLETT</b> returns the PARLETT matrix.
+        </li>
+        <li>
+          <b>PARLETT_EIGENVALUES</b> returns the eigenvalues of the PARLETT matrix.
+        </li>
+        <li>
+          <b>PARTER</b> returns the PARTER matrix.
+        </li>
+        <li>
+          <b>PARTER_DETERMINANT</b> returns the determinant of the PARTER matrix.
+        </li>
+        <li>
+          <b>PARTER_INVERSE</b> returns the inverse of the PARTER matrix.
+        </li>
+        <li>
+          <b>PASCAL1</b> returns the PASCAL1 matrix.
+        </li>
+        <li>
+          <b>PASCAL1_CONDITION</b> returns the L1 condition of the PASCAL1 matrix.
+        </li>
+        <li>
+          <b>PASCAL1_DETERMINANT</b> returns the determinant of the PASCAL1 matrix.
+        </li>
+        <li>
+          <b>PASCAL1_EIGENVALUES</b> returns eigenvalues of the PASCAL1 matrix.
+        </li>
+        <li>
+          <b>PASCAL1_INVERSE</b> returns the inverse of the PASCAL1 matrix.
+        </li>
+        <li>
+          <b>PASCAL2</b> returns the PASCAL2 matrix.
+        </li>
+        <li>
+          <b>PASCAL2_DETERMINANT</b> returns the determinant of the PASCAL2 matrix.
+        </li>
+        <li>
+          <b>PASCAL2_INVERSE</b> returns the inverse of the PASCAL2 matrix.
+        </li>
+        <li>
+          <b>PASCAL2_LLT</b> returns the Cholesky factor of the PASCAL2 matrix.
+        </li>
+        <li>
+          <b>PASCAL2_PLU</b> returns the PLU factors of the PASCAL2 matrix.
+        </li>
+        <li>
+          <b>PASCAL3</b> returns the PASCAL3 matrix.
+        </li>
+        <li>
+          <b>PASCAL3_CONDITION</b> returns the L1 condition of the PASCAL3 matrix.
+        </li>
+        <li>
+          <b>PASCAL3_DETERMINANT</b> returns the determinant of the PASCAL3 matrix.
+        </li>
+        <li>
+          <b>PASCAL3_INVERSE</b> returns the inverse of the PASCAL3 matrix.
+        </li>
+        <li>
+          <b>PDS_RANDOM</b> returns the PDS_RANDOM matrix.
+        </li>
+        <li>
+          <b>PDS_RANDOM_DETERMINANT</b> returns the determinant of the PDS_RANDOM matrix.
+        </li>
+        <li>
+          <b>PDS_RANDOM_EIGEN_RIGHT:</b> right eigenvectors of the PDS_RANDOM matrix.
+        </li>
+        <li>
+          <b>PDS_RANDOM_EIGENVALUES</b> returns the eigenvalues of the PDS_RANDOM matrix.
+        </li>
+        <li>
+          <b>PDS_RANDOM_INVERSE</b> returns the inverse of the PDS_RANDOM matrix.
+        </li>
+        <li>
+          <b>PEI</b> returns the PEI matrix.
+        </li>
+        <li>
+          <b>PEI_CONDITION</b> returns the L1 condition of the PEI matrix.
+        </li>
+        <li>
+          <b>PEI_DETERMINANT</b> returns the determinant of the PEI matrix.
+        </li>
+        <li>
+          <b>PEI_EIGEN_RIGHT</b> returns the right eigenvectors of the PEI matrix.
+        </li>
+        <li>
+          <b>PEI_EIGENVALUES</b> returns the eigenvalues of the PEI matrix.
+        </li>
+        <li>
+          <b>PEI_INVERSE</b> returns the inverse of the PEI matrix.
+        </li>
+        <li>
+          <b>PERM_CHECK</b> checks that a vector represents a permutation.
+        </li>
+        <li>
+          <b>PERM_INVERSE</b> inverts a permutation "in place".
+        </li>
+        <li>
+          <b>PERM_MAT_TO_VEC</b> returns a permutation from a permutation matrix.
+        </li>
+        <li>
+          <b>PERM_SIGN</b> returns the sign of a permutation.
+        </li>
+        <li>
+          <b>PERM_VEC_TO_MAT</b> returns a permutation matrix.
+        </li>
+        <li>
+          <b>PERMUTATION_DETERMINANT</b> returns the determinant of a PERMUTATION matrix.
+        </li>
+        <li>
+          <b>PERMUTATION_RANDOM</b> returns the PERMUTATION_RANDOM matrix.
+        </li>
+        <li>
+          <b>PERMUTATION_RANDOM_DETERMINANT:</b> determinant of PERMUTATION_RANDOM matrix.
+        </li>
+        <li>
+          <b>PERMUTATION_RANDOM_INVERSE:</b> inverse of PERMUTATION_RANDOM matrix.
+        </li>
+        <li>
+          <b>PICK</b> returns the PICK matrix.
+        </li>
+        <li>
+          <b>PLU</b> returns a PLU matrix.
+        </li>
+        <li>
+          <b>PLU_DETERMINANT</b> returns the determinant of the PLU matrix.
+        </li>
+        <li>
+          <b>PLU_INVERSE</b> returns the inverse of the PLU matrix.
+        </li>
+        <li>
+          <b>PLU_PLU</b> returns the PLU factors of the PLU matrix.
+        </li>
+        <li>
+          <b>POISSON</b> returns the POISSON matrix.
+        </li>
+        <li>
+          <b>POISSON_DETERMINANT</b> returns the determinant of the POISSON matrix.
+        </li>
+        <li>
+          <b>POISSON_EIGENVALUES</b> returns the eigenvalues of the POISSON matrix.
+        </li>
+        <li>
+          <b>POISSON_RHS</b> returns the right hand side of a Poisson linear system.
+        </li>
+        <li>
+          <b>POISSON_SOLUTION</b> returns the solution of a Poisson linear system.
+        </li>
+        <li>
+          <b>PRIME</b> returns any of the first PRIME_MAX prime numbers.
+        </li>
+        <li>
+          <b>PROLATE</b> returns the PROLATE matrix.
+        </li>
+        <li>
+          <b>PROPA_NO_RANDOM</b> returns a PROPA_NO_RANDOM matrix.
+        </li>
+        <li>
+          <b>PROPA_YES_RANDOM</b> returns a PROPA_YES_RANDOM matrix.
+        </li>
+        <li>
+          <b>QUATERNION_I</b> returns a 4 by 4 matrix that behaves like the quaternion unit I.
+        </li>
+        <li>
+          <b>QUATERNION_J</b> returns a 4 by 4 matrix that behaves like the quaternion unit J.
+        </li>
+        <li>
+          <b>QUATERNION_K</b> returns a 4 by 4 matrix that behaves like the quaternion unit K.
+        </li>
+        <li>
+          <b>R8_CHOOSE</b> computes the binomial coefficient C(N,K) as an R8.
+        </li>
+        <li>
+          <b>R8_EPSILON</b> returns the R8 roundoff unit.
+        </li>
+        <li>
+          <b>R8_FACTORIAL</b> computes the factorial of N, also denoted "N!".
+        </li>
+        <li>
+          <b>R8_HUGE</b> returns a very large R8.
+        </li>
+        <li>
+          <b>R8_MOP</b> returns the I-th power of -1 as an R8 value.
+        </li>
+        <li>
+          <b>R8_NORMAL_01</b> returns a unit pseudonormal R8.
+        </li>
+        <li>
+          <b>R8_PI</b> returns the value of pi.
+        </li>
+        <li>
+          <b>R8_SWAP</b> switches two real values.
+        </li>
+        <li>
+          <b>R8_UNIFORM</b> returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01</b> returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_AB</b> returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <b>R8COL_SWAP</b> swaps columns I and J of a real array of column data.
+        </li>
+        <li>
+          <b>R8COL_TO_R8VEC</b> converts a matrix of columns into a vector.
+        </li>
+        <li>
+          <b>R8MAT_ANALYZE</b> analyzes an R8MAT for linear algebraic properties.
+        </li>
+        <li>
+          <b>R8MAT_CHOLESKY_FACTOR</b> computes the Cholesky factor of a symmetric R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_COPY</b> copies an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_DETERMINANT</b> computes the determinant of a square R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_DIAG_GET_VECTOR</b> gets the value of the diagonal of a square R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_EIGENVALUES</b> computes the eigenvalues of a square R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_GECO</b> factors an R8MAT and estimates its condition number.
+        </li>
+        <li>
+          <b>R8MAT_GEDET</b> computes the determinant of an R8MAT factored by R8MAT_GEFA.
+        </li>
+        <li>
+          <b>R8MAT_GEFA</b> factors an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_GEINVERSE</b> computes the inverse of an R8MAT factored by R8MAT_GEFA.
+        </li>
+        <li>
+          <b>R8MAT_GEPLU</b> produces the PLU factors of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_GESL</b> solves a system factored by R8MAT_GEFA.
+        </li>
+        <li>
+          <b>R8MAT_HOUSE_AXH</b> computes A*H where H is a compact Householder matrix.
+        </li>
+        <li>
+          <b>R8MAT_HOUSE_FORM</b> constructs a Householder matrix from its compact form.
+        </li>
+        <li>
+          <b>R8MAT_IDENTITY</b> sets an R8MAT to the identity.
+        </li>
+        <li>
+          <b>R8MAT_INVERSE</b> computes the inverse of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_IS_ADJACENCY</b> checks whether an R8MAT is an adjacency matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_ANTICIRCULANT</b> checks whether an R8MAT is an anticirculant matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_ANTIPERSYMM</b> checks an R8MAT for antipersymmetry.
+        </li>
+        <li>
+          <b>R8MAT_IS_ANTISYMM</b> checks an R8MAT for antisymmetry.
+        </li>
+        <li>
+          <b>R8MAT_IS_BAND</b> determines whether an R8MAT is banded.
+        </li>
+        <li>
+          <b>R8MAT_IS_CENTROSYMM</b> checks an R8MAT for centrosymmetry.
+        </li>
+        <li>
+          <b>R8MAT_IS_CIRCULANT</b> checks whether an R8MAT is a circulant matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_COLUMN_ORTHOGONAL</b> checks whether an R8MAT is column orthogonal.
+        </li>
+        <li>
+          <b>R8MAT_IS_CYCLIC_TRIDIAGONAL</b> determines if an R8MAT is cyclic tridiagonal.
+        </li>
+        <li>
+          <b>R8MAT_IS_DIAG2</b> counts the number of nonzero diagonals in an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_IS_DIAGDOM</b> checks whether an R8MAT is diagonally dominant.
+        </li>
+        <li>
+          <b>R8MAT_IS_EIGEN_LEFT</b> determines the error in a left eigensystem.
+        </li>
+        <li>
+          <b>R8MAT_IS_EIGEN_RIGHT</b> determines the error in a right eigensystem.
+        </li>
+        <li>
+          <b>R8MAT_IS_HANKEL</b> checks whether an R8MAT is Hankel.
+        </li>
+        <li>
+          <b>R8MAT_IS_IDENTITY</b> determines if an R8MAT is the identity.
+        </li>
+        <li>
+          <b>R8MAT_IS_INT</b> checks whether an R8MAT has only integer entries.
+        </li>
+        <li>
+          <b>R8MAT_IS_INVERSE</b> determines if one R8MAT is the inverse of another.
+        </li>
+        <li>
+          <b>R8MAT_IS_INVERSE_LEFT</b> determines if one R8MAT is the left inverse of another.
+        </li>
+        <li>
+          <b>R8MAT_IS_INVERSE_RIGHT:</b> is one R8MAT the right inverse of another.
+        </li>
+        <li>
+          <b>R8MAT_IS_IRREDUCIBLE</b> determines if an R8MAT is irreducible.
+        </li>
+        <li>
+          <b>R8MAT_IS_L</b> checks whether an R8MAT is an L matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_LLT</b> measures the error in a lower triangular Cholesky factorization.
+        </li>
+        <li>
+          <b>R8MAT_IS_M</b> checks whether an R8MAT is an M matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_NORMAL</b> determines whether an R8MAT is normal.
+        </li>
+        <li>
+          <b>R8MAT_IS_NULL_LEFT</b> determines if x is a left null vector of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_IS_NULL_RIGHT</b> determines if vector x is a null vector of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_IS_ORTHOGONAL</b> checks whether an R8MAT is orthogonal.
+        </li>
+        <li>
+          <b>R8MAT_IS_PDS</b> checks for if an R8MAT is positive definite symmetric.
+        </li>
+        <li>
+          <b>R8MAT_IS_PERM</b> checks whether an R8MAT is a permutation matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_PERSYMM</b> checks an R8MAT for persymmetry.
+        </li>
+        <li>
+          <b>R8MAT_IS_PLU</b> measures the error in a PLU factorization.
+        </li>
+        <li>
+          <b>R8MAT_IS_POSITIVE</b> checks whether an R8MAT is a positive matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_PROPA</b> checks whether an R8MAT has property A.
+        </li>
+        <li>
+          <b>R8MAT_IS_REF</b> determines whether an R8MAT is in row echelon form.
+        </li>
+        <li>
+          <b>R8MAT_IS_ROW_ORTHOGONAL</b> checks whether an R8MAT is row orthogonal.
+        </li>
+        <li>
+          <b>R8MAT_IS_SCALAR</b> checks whether an R8MAT is a scalar along rows, columns, etc.
+        </li>
+        <li>
+          <b>R8MAT_IS_SOLUTION</b> measures the error in a linear system solution.
+        </li>
+        <li>
+          <b>R8MAT_IS_SPARSE</b> counts the number of zero entries in an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_IS_SUM</b> checks whether an R8MAT has constant sums on rows or columns.
+        </li>
+        <li>
+          <b>R8MAT_IS_SYMMETRIC</b> checks an R8MAT for symmetry.
+        </li>
+        <li>
+          <b>R8MAT_IS_TOEPLITZ</b> checks if an R8MAT is a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_TOURNAMENT</b> checks if an R8MAT is a tournament matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_TRANSITION</b> checks whether an R8MAT is a transition matrix.
+        </li>
+        <li>
+          <b>R8MAT_IS_TRIANGULAR</b> determines whether an R8MAT is triangular.
+        </li>
+        <li>
+          <b>R8MAT_IS_UNIT_COLUMN</b> checks if an R8MAT has columns of unit Euclidean norm.
+        </li>
+        <li>
+          <b>R8MAT_IS_UNIT_ROW</b> checks whether an R8MAT has rows of unit Euclidean norm.
+        </li>
+        <li>
+          <b>R8MAT_IS_ZERO_ONE</b> checks whether an R8MAT is a zero/one matrix.
+        </li>
+        <li>
+          <b>R8MAT_NORM_EIS</b> returns the EISPACK norm of an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_NORM_FRO</b> returns the Frobenius norm of an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_NORM_L1</b> returns the matrix L1 norm of an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_NORM_L2</b> returns the matrix L2 norm of an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_NORM_LI</b> returns the matrix L-infinity norm of an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_NORM_SPEC</b> returns the spectral radius norm of an N by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PLOT</b> "plots" an R8MAT with an optional title.
+        </li>
+        <li>
+          <b>R8MAT_PLOT_SYMBOL</b> returns a symbol for a real number for matrix plotting.
+        </li>
+        <li>
+          <b>R8MAT_POLY_CHAR</b> computes the characteristic polynomial of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT</b> prints an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT_SOME</b> prints some of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT2</b> prints an M by N R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_SYMM_JACOBI</b> applies Jacobi eigenvalue iteration to a symmetric R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_TRACE</b> computes the trace of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_TRANSPOSE</b> makes a transposed copy of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_TRANSPOSE_IN_PLACE</b> transposes an R8MAT in place.
+        </li>
+        <li>
+          <b>R8MAT_UNIFORM_01</b> fills an R8MAT with unit pseudorandom numbers.
+        </li>
+        <li>
+          <b>R8MAT_UNIFORM_AB</b> returns a scaled pseudorandom R8MAT.
+        </li>
+        <li>
+          <b>R8POLY_DEGREE</b> returns the degree of a polynomial.
+        </li>
+        <li>
+          <b>R8POLY_PRINT</b> prints out a polynomial.
+        </li>
+        <li>
+          <b>R8ROW_SWAP</b> swaps two rows of a table.
+        </li>
+        <li>
+          <b>R8ROW_TO_R8VEC</b> converts a matrix of rows into a vector.
+        </li>
+        <li>
+          <b>R8VEC_COPY</b> copies an R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_HOUSE_COLUMN</b> defines a Householder premultiplier that "packs" a column.
+        </li>
+        <li>
+          <b>R8VEC_INDICATOR</b> sets a real vector to the indicator vector.
+        </li>
+        <li>
+          <b>R8VEC_LINSPACE</b> creates a vector of linearly spaced values.
+        </li>
+        <li>
+          <b>R8VEC_NORM_L2</b> returns the L2 norm of a vector.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints a real vector, with an optional title.
+        </li>
+        <li>
+          <b>R8VEC_SORT_BUBBLE_A</b> ascending sorts an R8VEC using bubble sort.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_01</b> returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_AB</b> returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>R8VEC2_PRINT</b> prints a pair of real vectors.
+        </li>
+        <li>
+          <b>RAYLEIGH</b> returns the Rayleigh quotient of the matrix A and the vector X.
+        </li>
+        <li>
+          <b>RAYLEIGH2</b> returns the generalized Rayleigh quotient.
+        </li>
+        <li>
+          <b>RECTANGLE_ADJ</b> returns the RECTANGLE_ADJ matrix.
+        </li>
+        <li>
+          <b>RECTANGLE_ADJ_DETERMINANT:</b> the determinant of the RECTANGLE_ADJ matrix.
+        </li>
+        <li>
+          <b>REDHEFFER</b> returns the REDHEFFER matrix.
+        </li>
+        <li>
+          <b>REDHEFFER_DETERMINANT</b> returns the determinant of the REDHEFFER matrix.
+        </li>
+        <li>
+          <b>REF_RANDOM</b> returns a REF_RANDOM matrix.
+        </li>
+        <li>
+          <b>REF_RANDOM_DETERMINANT:</b> determinant of a REF_RANDOM matrix.
+        </li>
+        <li>
+          <b>RIEMANN</b> returns the RIEMANN matrix.
+        </li>
+        <li>
+          <b>RING_ADJ</b> returns the RING_ADJ matrix.
+        </li>
+        <li>
+          <b>RING_ADJ_DETERMINANT</b> returns the determinant of the RING_ADJ matrix.
+        </li>
+        <li>
+          <b>RING_ADJ_NULL_LEFT</b> returns a left null vector of the RING_ADJ matrix.
+        </li>
+        <li>
+          <b>RING_ADJ_NULL_RIGHT</b> returns a right null vector of the RING_ADJ matrix.
+        </li>
+        <li>
+          <b>RIS</b> returns the RIS matrix.
+        </li>
+        <li>
+          <b>RIS_DETERMINANT</b> returns the determinant of the RIS matrix.
+        </li>
+        <li>
+          <b>RIS_INVERSE</b> returns the inverse of the RIS matrix.
+        </li>
+        <li>
+          <b>RODMAN</b> returns the RODMAN matrix.
+        </li>
+        <li>
+          <b>RODMAN_CONDITION</b> returns the L1 condition of the RODMAN matrix.
+        </li>
+        <li>
+          <b>RODMAN_DETERMINANT</b> returns the determinant of the RODMAN matrix.
+        </li>
+        <li>
+          <b>RODMAN_EIGEN_RIGHT</b> returns the right eigenvectors of the RODMAN matrix.
+        </li>
+        <li>
+          <b>RODMAN_EIGENVALUES</b> returns the eigenvalues of the RODMAN matrix.
+        </li>
+        <li>
+          <b>RODMAN_INVERSE</b> returns the inverse of the RODMAN matrix.
+        </li>
+        <li>
+          <b>ROSSER1</b> returns the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_DETERMINANT</b> returns the determinant of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_EIGEN_LEFT</b> returns the left eigenvectors of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_EIGEN_RIGHT</b> returns the right eigenvectors of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_EIGENVALUES</b> returns the eigenvalues of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_NULL_LEFT</b> returns a left null vector of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROSSER1_NULL_RIGHT</b> returns a right null vector of the ROSSER1 matrix.
+        </li>
+        <li>
+          <b>ROUTH</b> returns the ROUTH matrix.
+        </li>
+        <li>
+          <b>ROUTH_DETERMINANT</b> returns the determinant of the ROUTH matrix.
+        </li>
+        <li>
+          <b>ROWCOLSUM_MATRIX</b> returns the ROWCOLSUM matrix.
+        </li>
+        <li>
+          <b>RUTIS1</b> returns the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS1_CONDITION</b> returns the L1 condition of the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS1_DETERMINANT</b> returns the determinant of the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS1_EIGEN_RIGHT</b> returns the right eigenvectors of the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS1_EIGENVALUES</b> returns the eigenvalues of the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS1_INVERSE</b> returns the inverse of the RUTIS1 matrix.
+        </li>
+        <li>
+          <b>RUTIS2</b> returns the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS2_CONDITION</b> returns the L1 condition of the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS2_DETERMINANT</b> returns the determinant of the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS2_EIGEN_RIGHT</b> returns the right eigenvectors of the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS2_EIGENVALUES</b> returns the eigenvalues of the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS2_INVERSE</b> returns the inverse of the RUTIS2 matrix.
+        </li>
+        <li>
+          <b>RUTIS3</b> returns the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_CONDITION</b> returns the L1 condition of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_DETERMINANT</b> returns the determinant of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_EIGEN_LEFT</b> returns the left eigenvectors of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_EIGEN_RIGHT</b> returns the right eigenvectors of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_EIGENVALUES</b> returns the eigenvalues of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS3_INVERSE</b> returns the inverse of the RUTIS3 matrix.
+        </li>
+        <li>
+          <b>RUTIS4</b> returns the RUTIS4 matrix.
+        </li>
+        <li>
+          <b>RUTIS4_DETERMINANT</b> returns the determinant of the RUTIS4 matrix.
+        </li>
+        <li>
+          <b>RUTIS4_EIGENVALUES</b> returns the eigenvalues of the RUTIS4 matrix.
+        </li>
+        <li>
+          <b>RUTIS4_INVERSE</b> returns the inverse of the RUTIS4 matrix.
+        </li>
+        <li>
+          <b>RUTIS5</b> returns the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>RUTIS5_CONDITION</b> returns the L1 condition of the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>RUTIS5_DETERMINANT</b> returns the determinant of the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>RUTIS5_EIGEN_RIGHT</b> returns the right eigenvectors of the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>RUTIS5_EIGENVALUES</b> returns the eigenvalues of the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>RUTIS5_INVERSE</b> returns the inverse of the RUTIS5 matrix.
+        </li>
+        <li>
+          <b>SCHUR_BLOCK</b> returns the SCHUR_BLOCK matrix.
+        </li>
+        <li>
+          <b>SCHUR_BLOCK_DETERMINANT</b> returns the determinant of the SCHUR_BLOCK matrix.
+        </li>
+        <li>
+          <b>SCHUR_BLOCK_EIGENVALUES</b> returns the eigenvalues of the SCHUR_BLOCK matrix.
+        </li>
+        <li>
+          <b>SCHUR_BLOCK_INVERSE</b> returns the inverse of the SCHUR_BLOCK matrix.
+        </li>
+        <li>
+          <b>SKEW_CIRCULANT</b> returns a SKEW_CIRCULANT matrix.
+        </li>
+        <li>
+          <b>SKEW_CIRCULANT_DETERMINANT:</b> the determinant of the SKEW_CIRCULANT matrix.
+        </li>
+        <li>
+          <b>SKEW_CIRCULANT_EIGENVALUES</b> returns eigenvalues of the SKEW_CIRCULANT matrix.
+        </li>
+        <li>
+          <b>SMOKE1</b> returns the SMOKE1 matrix.
+        </li>
+        <li>
+          <b>SMOKE1_DETERMINANT</b> returns the determinant of the SMOKE1 matrix.
+        </li>
+        <li>
+          <b>SMOKE1_EIGENVALUES</b> returns the eigenvalues of the SMOKE1 matrix.
+        </li>
+        <li>
+          <b>SMOKE2</b> returns the SMOKE2 matrix.
+        </li>
+        <li>
+          <b>SMOKE2_DETERMINANT</b> returns the determinant of the SMOKE2 matrix.
+        </li>
+        <li>
+          <b>SMOKE2_EIGENVALUES</b> returns the eigenvalues of the SMOKE2 matrix.
+        </li>
+        <li>
+          <b>SNAKES</b> returns the Snakes and Ladders transition matrix.
+        </li>
+        <li>
+          <b>SORT_HEAP_EXTERNAL</b> externally sorts a list of items into ascending order.
+        </li>
+        <li>
+          <b>SPLINE</b> returns the SPLINE matrix.
+        </li>
+        <li>
+          <b>SPLINE_DETERMINANT</b> computes the determinant of the SPLINE matrix.
+        </li>
+        <li>
+          <b>SPLINE_INVERSE</b> returns the inverse of the SPLINE matrix.
+        </li>
+        <li>
+          <b>STIRLING</b> returns the STIRLING matrix.
+        </li>
+        <li>
+          <b>STIRLING_DETERMINANT</b> returns the determinant of the STIRLING matrix.
+        </li>
+        <li>
+          <b>STIRLING_EIGENVALUES</b> returns the eigenvalues of the STIRLING matrix.
+        </li>
+        <li>
+          <b>STIRLING_INVERSE</b> returns the inverse of the STIRLING matrix.
+        </li>
+        <li>
+          <b>STRIPE</b> returns the STRIPE matrix.
+        </li>
+        <li>
+          <b>SUBSET_RANDOM</b> selects a random subset of an N-set.
+        </li>
+        <li>
+          <b>SUMMATION</b> returns the SUMMATION matrix.
+        </li>
+        <li>
+          <b>SUMMATION_CONDITION:</b> L1 condition of the SUMMATION matrix.
+        </li>
+        <li>
+          <b>SUMMATION_DETERMINANT</b> returns the determinant of the SUMMATION matrix.
+        </li>
+        <li>
+          <b>SUMMATION_EIGENVALUES</b> returns the eigenvalues of the SUMMATION matrix.
+        </li>
+        <li>
+          <b>SUMMATION_INVERSE</b> returns the inverse of the SUMMATION matrix.
+        </li>
+        <li>
+          <b>SWEET1</b> returns the SWEET1 matrix.
+        </li>
+        <li>
+          <b>SWEET1_CONDITION</b> returns the L1 condition of the SWEET1 matrix.
+        </li>
+        <li>
+          <b>SWEET1_DETERMINANT</b> returns the determinant of the SWEET1 matrix.
+        </li>
+        <li>
+          <b>SWEET1_INVERSE</b> returns the inverse of the SWEET1 matrix.
+        </li>
+        <li>
+          <b>SWEET2</b> returns the SWEET2 matrix.
+        </li>
+        <li>
+          <b>SWEET2_CONDITION</b> returns the L1 condition of the SWEET2 matrix.
+        </li>
+        <li>
+          <b>SWEET2_DETERMINANT</b> returns the determinant of the SWEET2 matrix.
+        </li>
+        <li>
+          <b>SWEET2_INVERSE</b> returns the inverse of the SWEET2 matrix.
+        </li>
+        <li>
+          <b>SWEET3</b> returns the SWEET3 matrix.
+        </li>
+        <li>
+          <b>SWEET3_CONDITION</b> returns the L1 condition of the SWEET3 matrix.
+        </li>
+        <li>
+          <b>SWEET3_DETERMINANT</b> returns the determinant of the SWEET3 matrix.
+        </li>
+        <li>
+          <b>SWEET3_INVERSE</b> returns the inverse of the SWEET3 matrix.
+        </li>
+        <li>
+          <b>SWEET4</b> returns the SWEET4 matrix.
+        </li>
+        <li>
+          <b>SWEET4_CONDITION</b> returns the L1 condition of the SWEET4 matrix.
+        </li>
+        <li>
+          <b>SWEET4_DETERMINANT</b> returns the determinant of the SWEET4 matrix.
+        </li>
+        <li>
+          <b>SWEET4_INVERSE</b> returns the inverse of the SWEET4 matrix.
+        </li>
+        <li>
+          <b>SYLVESTER</b> returns the SYLVESTER matrix.
+        </li>
+        <li>
+          <b>SYLVESTER_KAC</b> returns the SYLVESTER_KAC matrix.
+        </li>
+        <li>
+          <b>SYLVESTER_KAC_DETERMINANT:</b> determinant of the SYLVESTER_KAC matrix.
+        </li>
+        <li>
+          <b>SYLVESTER_KAC_EIGEN_RIGHT:</b> right eigenvectors of the SYLVESTER_KAC matrix.
+        </li>
+        <li>
+          <b>SYLVESTER_KAC_EIGENVALUES:</b> eigenvalues of the SYLVESTER_KAC matrix.
+        </li>
+        <li>
+          <b>SYLVESTER_KAC_INVERSE</b> returns the inverse of the SYLVESTER_KAC matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM</b> returns the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM_DETERMINANT</b> returns the determinant of the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM_EIGEN_LEFT</b> returns left eigenvectors of the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM_EIGEN_RIGHT</b> returns right eigenvectors of the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM_EIGENVALUES</b> returns the eigenvalues of the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>SYMM_RANDOM_INVERSE</b> returns the inverse of the SYMM_RANDOM matrix.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TOEPLITZ</b> returns a TOEPLITZ matrix.
+        </li>
+        <li>
+          <b>TOEPLITZ_5DIAG</b> returns the TOEPLITZ_5DIAG matrix.
+        </li>
+        <li>
+          <b>TOEPLITZ_5S</b> returns the TOEPLITZ_5S matrix.
+        </li>
+        <li>
+          <b>TOEPLITZ_5S_DETERMINANT</b> returns the determinant of the TOEPLITZ_5S matrix.
+        </li>
+        <li>
+          <b>TOEPLITZ_5S_EIGENVALUES</b> returns the eigenvalues of the TOEPLITZ_5S matrix.
+        </li>
+        <li>
+          <b>TOEPLITZ_PDS</b> returns the TOEPLITZ_PDS matrix.
+        </li>
+        <li>
+          <b>TOURNAMENT_RANDOM</b> returns the TOURNAMENT_RANDOM matrix.
+        </li>
+        <li>
+          <b>TOURNAMENT_RANDOM_DETERMINANT:</b> determinant of the TOURNAMENT_RANDOM matrix.
+        </li>
+        <li>
+          <b>TRANSITION_RANDOM</b> returns the TRANSITION_RANDOM matrix.
+        </li>
+        <li>
+          <b>TRENCH</b> returns the TRENCH matrix.
+        </li>
+        <li>
+          <b>TRI_L1_INVERSE</b> inverts a unit lower triangular R8MAT.
+        </li>
+        <li>
+          <b>TRI_U_INVERSE</b> inverts an upper triangular R8MAT.
+        </li>
+        <li>
+          <b>TRI_UPPER</b> returns the TRI_UPPER matrix.
+        </li>
+        <li>
+          <b>TRI_UPPER_CONDITION</b> returns the L1 condition of the TRI_UPPER matrix.
+        </li>
+        <li>
+          <b>TRI_UPPER_DETERMINANT</b> returns the determinant of the TRI_UPPER matrix.
+        </li>
+        <li>
+          <b>TRI_UPPER_EIGENVALUES</b> returns the eigenvalues of the TRI_UPPER matrix.
+        </li>
+        <li>
+          <b>TRI_UPPER_INVERSE</b> returns the inverse of the TRI_UPPER matrix.
+        </li>
+        <li>
+          <b>TRIDIAGONAL_DETERMINANT</b> computes the determinant of a tridiagonal matrix.
+        </li>
+        <li>
+          <b>TRIS</b> returns the TRIS matrix.
+        </li>
+        <li>
+          <b>TRIS_DETERMINANT</b> returns the determinant of the TRIS matrix.
+        </li>
+        <li>
+          <b>TRIS_EIGENVALUES</b> returns the eigenvalues of the TRIS matrix.
+        </li>
+        <li>
+          <b>TRIS_INVERSE</b> returns the inverse of the TRIS matrix.
+        </li>
+        <li>
+          <b>TRIV</b> returns the TRIV matrix.
+        </li>
+        <li>
+          <b>TRIV_DETERMINANT</b> computes the determinant of the TRIV matrix.
+        </li>
+        <li>
+          <b>TRIV_INVERSE</b> returns the inverse of the TRIV matrix.
+        </li>
+        <li>
+          <b>TRIW</b> returns the TRIW matrix.
+        </li>
+        <li>
+          <b>TRIW_DETERMINANT</b> returns the determinant of the TRIW matrix.
+        </li>
+        <li>
+          <b>TRIW_EIGENVALUES</b> returns the eigenvalues of the TRIW matrix.
+        </li>
+        <li>
+          <b>TRIW_INVERSE</b> sets the inverse of the TRIW matrix.
+        </li>
+        <li>
+          <b>UNITARY_RANDOM</b> returns the UNITARY_RANDOM matrix.
+        </li>
+        <li>
+          <b>UNITARY_RANDOM_DETERMINANT:</b> determinant of a UNITARY_RANDOM matrix.
+        </li>
+        <li>
+          <b>UNITARY_RANDOM_INVERSE</b> returns the inverse of a UNITARY_RANDOM matrix.
+        </li>
+        <li>
+          <b>UPSHIFT</b> returns the UPSHIFT matrix.
+        </li>
+        <li>
+          <b>UPSHIFT_CONDITION</b> returns the L1 condition of the UPSHIFT matrix.
+        </li>
+        <li>
+          <b>UPSHIFT_DETERMINANT</b> returns the determinant of the UPSHIFT matrix.
+        </li>
+        <li>
+          <b>UPSHIFT_EIGENVALUES</b> returns the eigenvalues of the UPSHIFT matrix.
+        </li>
+        <li>
+          <b>UPSHIFT_INVERSE</b> returns the inverse of the UPSHIFT matrix.
+        </li>
+        <li>
+          <b>VAND1</b> returns the VAND1 matrix.
+        </li>
+        <li>
+          <b>VAND1_DETERMINANT</b> returns the determinant of the VAND1 matrix.
+        </li>
+        <li>
+          <b>VAND1_INVERSE</b> returns the inverse of the VAND1 matrix.
+        </li>
+        <li>
+          <b>VAND1_INVERSE_UL</b> returns the UL factors of the Vandermonde1 inverse.
+        </li>
+        <li>
+          <b>VAND2</b> returns the VAND2 matrix.
+        </li>
+        <li>
+          <b>VAND2_DETERMINANT</b> returns the determinant of the VAND2 matrix.
+        </li>
+        <li>
+          <b>VAND2_INVERSE</b> returns the inverse of the VAND2 matrix.
+        </li>
+        <li>
+          <b>VAND2_INVERSE_UL</b> returns the UL factors of the Vandermonde2 inverse.
+        </li>
+        <li>
+          <b>VAND2_LU</b> returns the LU factors of the Vandermonde2 matrix.
+        </li>
+        <li>
+          <b>VAND2_PLU</b> returns the PLU factors of the Vandermonde2 matrix.
+        </li>
+        <li>
+          <b>WATHEN</b> returns the WATHEN matrix.
+        </li>
+        <li>
+          <b>WATHEN_ORDER</b> returns the order of the WATHEN matrix.
+        </li>
+        <li>
+          <b>WILK03</b> returns the WILK03 matrix.
+        </li>
+        <li>
+          <b>WILK03_CONDITION</b> returns the L1 condition of the WILK03 matrix.
+        </li>
+        <li>
+          <b>WILK03_DETERMINANT</b> returns the determinant of the WILK03 matrix.
+        </li>
+        <li>
+          <b>WILK03_EIGENVALUES</b> returns the eigenvalues of the WILK03 matrix.
+        </li>
+        <li>
+          <b>WILK03_INVERSE</b> returns the inverse of the WILK03 matrix.
+        </li>
+        <li>
+          <b>WILK03_RHS</b> returns the right hand side of the WILK03 linear system.
+        </li>
+        <li>
+          <b>WILK03_SOLUTION</b> returns the solution of the WILK03 linear system.
+        </li>
+        <li>
+          <b>WILK04</b> returns the WILK04 matrix.
+        </li>
+        <li>
+          <b>WILK04_CONDITION</b> returns the L1 condition of the WILK04 matrix.
+        </li>
+        <li>
+          <b>WILK04_DETERMINANT</b> returns the determinant of the WILK04 matrix.
+        </li>
+        <li>
+          <b>WILK04_EIGENVALUES</b> returns the eigenvalues of the WILK04 matrix.
+        </li>
+        <li>
+          <b>WILK04_INVERSE</b> returns the inverse of the WILK04 matrix.
+        </li>
+        <li>
+          <b>WILK04_RHS</b> returns the right hand side of the WILK04 linear system.
+        </li>
+        <li>
+          <b>WILK04_SOLUTION</b> returns the solution of the WILK04 linear system.
+        </li>
+        <li>
+          <b>WILK05</b> returns the WILK05 matrix.
+        </li>
+        <li>
+          <b>WILK05_CONDITION</b> returns the L1 condition of the WILK05 matrix.
+        </li>
+        <li>
+          <b>WILK05_DETERMINANT</b> returns the determinant of the WILK05 matrix.
+        </li>
+        <li>
+          <b>WILK05_INVERSE</b> returns the inverse of the WILK05 matrix.
+        </li>
+        <li>
+          <b>WILK12</b> returns the WILK12 matrix.
+        </li>
+        <li>
+          <b>WILK12_DETERMINANT</b> returns the determinant of the WILK12 matrix.
+        </li>
+        <li>
+          <b>WILK12_EIGEN_RIGHT</b> returns the right eigenvectors of the WILK12 matrix.
+        </li>
+        <li>
+          <b>WILK12_EIGENVALUES</b> returns the eigenvalues of the WILK12 matrix.
+        </li>
+        <li>
+          <b>WILK20</b> returns the WILK20 matrix.
+        </li>
+        <li>
+          <b>WILK21</b> returns the WILK21 matrix.
+        </li>
+        <li>
+          <b>WILK21_DETERMINANT</b> computes the determinant of the WILK21 matrix.
+        </li>
+        <li>
+          <b>WILK21_INVERSE</b> returns the inverse of the WILK21 matrix.
+        </li>
+        <li>
+          <b>WILSON</b> returns the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_CONDITION</b> returns the L1 condition of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_DETERMINANT</b> returns the determinant of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_EIGEN_RIGHT</b> returns the right eigenvectors of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_EIGENVALUES</b> returns the eigenvalues of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_INVERSE</b> returns the inverse of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_LLT</b> returns the lower Cholesky factor of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_PLU</b> returns the PLU factors of the WILSON matrix.
+        </li>
+        <li>
+          <b>WILSON_RHS</b> returns the WILSON right hand side.
+        </li>
+        <li>
+          <b>WILSON_SOLUTION</b> returns the WILSON solution.
+        </li>
+        <li>
+          <b>ZERO</b> returns the ZERO matrix.
+        </li>
+        <li>
+          <b>ZERO_DETERMINANT</b> returns the determinant of the ZERO matrix.
+        </li>
+        <li>
+          <b>ZERO_EIGEN_RIGHT</b> returns the right eigenvectors of the ZERO matrix.
+        </li>
+        <li>
+          <b>ZERO_EIGENVALUES</b> returns the eigenvalues of the ZERO matrix.
+        </li>
+        <li>
+          <b>ZERO_NULL_LEFT</b> returns a left null vector of the ZERO matrix.
+        </li>
+        <li>
+          <b>ZERO_NULL_RIGHT</b> returns a right null vector of the ZERO matrix.
+        </li>
+        <li>
+          <b>ZIELKE</b> returns the ZIELKE matrix.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 April 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_mat/test_mat.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:24:29 GMT -->
+</html>

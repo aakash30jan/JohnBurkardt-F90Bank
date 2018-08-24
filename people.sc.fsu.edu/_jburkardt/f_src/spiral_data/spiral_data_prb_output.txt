@@ -1,0 +1,33 @@
+18 January 2015  10:18:27.603 AM
+
+SPIRAL_DATA_PRB
+  FORTRAN90 version
+  Test the SPIRAL_DATA library.
+
+TEST01
+  Sample a spiral velocity field and estimate
+  the range of the solution values.
+
+           Minimum       Maximum
+
+  U:      -1.85404         2.22494    
+  V:      -2.23154         1.85234    
+
+TEST02:
+  Sample a spiral velocity field and estimate the
+  range of residuals in the continuity equation.
+
+           Minimum       Maximum
+
+  Pr:       0.00000         0.00000    
+
+TEST03:
+  Generate a spiral velocity field on a regular grid.
+  Store in GNUPLOT data and command files.
+
+  Data written to "spiral_data.txt".
+  Commands written to "spiral_commands.txt".
+
+SPIRAL_DATA_TEST
+  Normal end of execution.
+18 January 2015  10:18:27.615 AM

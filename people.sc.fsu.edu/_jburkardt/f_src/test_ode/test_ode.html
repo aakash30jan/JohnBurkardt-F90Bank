@@ -1,0 +1,1614 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_ode/test_ode.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:25:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TEST_ODE - Initial Value Test Problems
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_ODE <br> Test Problems for <br> Initial Value Solvers
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_ODE</b>
+      is a FORTRAN90 library which
+      defines a set of test initial
+      value problems for ordinary differential equations.
+    </p>
+
+    <p>
+      These problems have the common form:
+      <blockquote>
+        determine (some values of) the function <b>Y(T)</b>
+      </blockquote>
+      given
+      <blockquote>
+        <b>Y'(T) = F(T,Y)</b>
+      </blockquote>
+      with initial value
+      <blockquote>
+        <b>Y(T<sub>0</sub>) = Y<sub>0</sub></b>
+      </blockquote>
+    </p>
+
+    <p>
+      A uniform interface makes it easy to solve all the problems
+      automatically, or to concentrate on a single one.
+    </p>
+
+    <p>
+      The problems include:
+      <ol>
+        <li>
+          Enright and Pryce #A1,<br>
+          neqn = 1,<br>
+          y' = -y;
+        </li>
+        <li>
+          Enright and Pryce #A2,<br>
+          neqn = 1,<br>
+          y' = -y^3/2;
+        </li>
+        <li>
+          Enright and Pryce #A3,<br>
+          neqn = 1,<br>
+          y' = cos(t)*y;
+        </li>
+        <li>
+          Enright and Pryce #A4,<br>
+          neqn = 1,<br>
+          y' = y*(20-y)/80;
+        </li>
+        <li>
+          Enright and Pryce #A5,<br>
+          neqn = 1,<br>
+          y' = (y-t)/(y+t);
+        </li>
+        <li>
+          Enright and Pryce #B1,<br>
+          neqn = 2,<br>
+          y1' = 2*y1*(1-y2)<br>
+          y2' = - y2*(1-y1);
+        </li>
+        <li>
+          Enright and Pryce #B2,<br>
+          neqn = 3,<br>
+          y1' = -y1+y2<br>
+          y2' = y1-2*y2+y3<br>
+          y3' = y2-y3;
+        </li>
+        <li>
+          Enright and Pryce #B3,<br>
+          neqn = 3,<br>
+          y1' = -y1<br>
+          y2' = y1-y2^2<br>
+          y3' = y2^2;
+        </li>
+        <li>
+          Enright and Pryce #B4,<br>
+          neqn = 3,<br>
+          y1' = (-y2-y1*y3) / sqrt(y1^2+y2^2)<br>
+          y2' = (y1-y2*y3) / sqrt(y1^2+y2^2)<br>
+          y3' = y1 / sqrt(y1^2+y2^2);
+        </li>
+        <li>
+          Enright and Pryce #B5,<br>
+          neqn = 3,<br>
+          y1' = y2*y3<br>
+          y2' = -y1*y3<br>
+          y3' = -0.51*y1*y2;
+        </li>
+        <li>
+          Enright and Pryce #C1,<br>
+          neqn = 10;
+        </li>
+        <li>
+          Enright and Pryce #C2,<br>
+          neqn = 10;
+        </li>
+        <li>
+          Enright and Pryce #C3,<br>
+          neqn = 10;
+        </li>
+        <li>
+          Enright and Pryce #C4,<br>
+          neqn = 51;
+        </li>
+        <li>
+          Enright and Pryce #C5,<br>
+          neqn = 30;
+        </li>
+        <li>
+          Enright and Pryce #D1,<br>
+          neqn = 4;
+        </li>
+        <li>
+          Enright and Pryce #D2,<br>
+          neqn = 4;
+        </li>
+        <li>
+          Enright and Pryce #D3,<br>
+          neqn = 4;
+        </li>
+        <li>
+          Enright and Pryce #D4,<br>
+          neqn = 4;
+        </li>
+        <li>
+          Enright and Pryce #D5,<br>
+          neqn = 4;
+        </li>
+        <li>
+          Enright and Pryce #E1,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #E2,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #E3,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #E4,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #E5,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #F1,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #F2,<br>
+          neqn = 1;
+        </li>
+        <li>
+          Enright and Pryce #F3,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Enright and Pryce #F4,<br>
+          neqn = 1;
+        </li>
+        <li>
+          Enright and Pryce #F5,<br>
+          neqn = 1;
+        </li>
+        <li>
+          Lotka-Volterra Predator-Prey Equations,<br>
+          neqn = 2;
+        </li>
+        <li>
+          The Lorenz System,<br>
+          neqn = 3;
+        </li>
+        <li>
+          The Van der Pol equation,<br>
+          neqn = 2;
+        </li>
+        <li>
+          The Linearized Damped Pendulum,<br>
+          neqn = 2;
+        </li>
+        <li>
+          The Nonlinear Damped Pendulum,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Duffing's Equation,<br>
+          neqn = 2,
+        </li>
+        <li>
+          Duffing's Equation with Damping and Forcing,<br>
+          neqn = 2;
+        </li>
+        <li>
+          Shampine's Ball of Flame,<br>
+          neqn = 1,<br>
+          y' = y^2-y^3;
+        </li>
+        <li>
+          Polking's First Order System,<br>
+          neqn = 1,<br>
+          y' = y^2-a*t+b;
+        </li>
+        <li>
+          the Knee problem,<br>
+          neqn = 1,<br>
+          y' = y*(y-t)/eps;
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_ODE</b> is available in
+      <a href = "test_ode.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/test_ode/test_ode.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../lorenz_ode/lorenz_ode.html">
+      LORENZ_ODE</a>,
+      a FORTRAN90 program which
+      approximates solutions to the Lorenz system,
+      creating output files that can be displayed by Gnuplot.
+    </p>
+
+    <p>
+      <a href = "../nms/nms.html">
+      NMS</a>,
+      a FORTRAN90 library which
+      includes the <b>ddriv</b> package of ODE solvers.
+    </p>
+
+    <p>
+      <a href = "../ode/ode.html">
+      ODE</a>,
+      a FORTRAN90 library which
+      implements the Shampine and Allen ODE solver.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/odepack/odepack.html">
+      ODEPACK</a>,
+      a FORTRAN77 library which
+      contains nine ODE solvers, including LSODE, LSODES, LSODA,
+      LSODAR, LSODPK, LSODKR, LSODI, LSOIBT, and LSODIS,
+      by Alan Hindmarsh.
+    </p>
+
+    <p>
+      <a href = "../rkf45/rkf45.html">
+      RKF45</a>,
+      a FORTRAN90 library which
+      implements a Runge-Kutta-Fehlberg ODE solver.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/toms648_nsd/toms648_nsd.html">
+      TOMS648_NSD</a>,
+      a FORTRAN77 library which
+      defines the non-stiff Enright and Pryce test ODE problems,
+      using double precision arithmetic.
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          David Arnold, John Polking,<br>
+          Ordinary Differential Equations using Matlab,<br>
+          Second Edition,<br>
+          Prentice Hall, 1999,<br>
+          ISBN: 0130113816.
+        </li>
+        <li>
+          Wayne Enright, John Pryce,<br>
+          Two FORTRAN packages for assessing initial value methods,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 13, Number 1, March 1987, pages 1-27.
+        </li>
+        <li>
+          Wayne Enright, John Pryce,<br>
+          Algorithm 648:
+          NSDTST and STDTST,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 13, Number 1, March 1987, pages 28-34.
+        </li>
+        <li>
+          Thomas Hull, Wayne Enright, BM Fellen, Arthur Sedgwick,<br>
+          Comparing numerical methods for ordinary differential equations,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 9, 1972, pages 603-637.
+        </li>
+        <li>
+          Cleve Moler,<br>
+          Cleve's Corner: Stiff Differential Equations,<br>
+          MATLAB News and Notes,<br>
+          May 2003, pages 12-13.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <a href = "http://pitagora.dm.uniba.it/~testset/">
+          http://pitagora.dm.uniba.it/~testset/</a>,
+          Test Set for IVP Solvers.
+        </li>
+        <li>
+          <a href =
+          "http://www.unige.ch/math/~hairer/testset/testset.html">
+           http://www.unige.ch/math/~hairer/testset/testset.html</a>
+          Stiff ODE test set of Hairer and Wanner.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_ode.f90">test_ode.f90</a>, the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_ode_prb.f90">test_ode_prb.f90</a>, a sample
+          calling program;
+        </li>
+        <li>
+          <a href = "test_ode_prb_output.txt">test_ode_prb_output.txt</a>, output from
+          the calling program;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>ERROR_F</b> evaluates the error function ERF(X).
+        </li>
+        <li>
+          <b>EULER_TEST</b> uses the Euler method on a test problem.
+        </li>
+        <li>
+          <b>P00_AUTONOMOUS</b> reports whether a given problem is autonomous.
+        </li>
+        <li>
+          <b>P00_EQUIL</b> returns equilibrium solutions of any problem.
+        </li>
+        <li>
+          <b>P00_EULER_STEP</b> takes a single Euler step from (T0,Y0) to (T1,Y1).
+        </li>
+        <li>
+          <b>P00_FUN</b> evaluates the derivative function for any problem.
+        </li>
+        <li>
+          <b>P00_JAC</b> evaluates the jacobian for any problem.
+        </li>
+        <li>
+          <b>P00_NEQN</b> returns the number of equations for any problem.
+        </li>
+        <li>
+          <b>P00_RK_STEP</b> takes a single Runge-Kutta step from (T0,Y0) to (T1,Y1).
+        </li>
+        <li>
+          <b>P00_SCALE</b> returns scale factors for any problem.
+        </li>
+        <li>
+          <b>P00_START</b> returns the starting point for any problem.
+        </li>
+        <li>
+          <b>P00_STOP</b> returns the stopping point for any problem.
+        </li>
+        <li>
+          <b>P00_TEST_NUM</b> returns the number of problems available.
+        </li>
+        <li>
+          <b>P00_TITLE</b> returns the title for any problem.
+        </li>
+        <li>
+          <b>P01_AUTONOMOUS</b> reports whether problem p1 is autonomous.
+        </li>
+        <li>
+          <b>P01_EQUIL</b> returns equilibrium solutions of problem p1.
+        </li>
+        <li>
+          <b>P01_FUN</b> evaluates the function for problem p01.
+        </li>
+        <li>
+          <b>P01_JAC</b> evaluates the jacobian for problem p01.
+        </li>
+        <li>
+          <b>P01_NEQN</b> returns the number of equations for problem p01.
+        </li>
+        <li>
+          <b>P01_SCALE</b> returns scale factors for problem p01.
+        </li>
+        <li>
+          <b>P01_START</b> returns the starting point for problem p01.
+        </li>
+        <li>
+          <b>P01_STOP</b> returns the stopping point for problem p01.
+        </li>
+        <li>
+          <b>P01_TITLE</b> returns the title of problem p01.
+        </li>
+        <li>
+          <b>P02_AUTONOMOUS</b> reports whether problem p02 is autonomous.
+        </li>
+        <li>
+          <b>P02_EQUIL</b> returns equilibrium solutions of problem p02.
+        </li>
+        <li>
+          <b>P02_FUN</b> evaluates the function for problem p02.
+        </li>
+        <li>
+          <b>P02_JAC</b> evaluates the jacobian for problem p02.
+        </li>
+        <li>
+          <b>P02_NEQN</b> returns the number of equations for problem p02.
+        </li>
+        <li>
+          <b>P02_SCALE</b> returns scale factors for problem p02.
+        </li>
+        <li>
+          <b>P02_START</b> returns the starting point for problem p02.
+        </li>
+        <li>
+          <b>P02_STOP</b> returns the stopping point for problem p02.
+        </li>
+        <li>
+          <b>P02_TITLE</b> returns the title of problem p02.
+        </li>
+        <li>
+          <b>P03_AUTONOMOUS</b> reports whether problem p03 is autonomous.
+        </li>
+        <li>
+          <b>P03_EQUIL</b> returns equilibrium solutions of problem p03.
+        </li>
+        <li>
+          <b>P03_FUN</b> evaluates the function for problem p03.
+        </li>
+        <li>
+          <b>P03_JAC</b> evaluates the jacobian for problem p03.
+        </li>
+        <li>
+          <b>P03_NEQN</b> returns the number of equations for problem p03.
+        </li>
+        <li>
+          <b>P03_SCALE</b> returns scale factors for problem p03.
+        </li>
+        <li>
+          <b>P03_START</b> returns the starting point for problem p03.
+        </li>
+        <li>
+          <b>P03_STOP</b> returns the stopping point for problem p03.
+        </li>
+        <li>
+          <b>P03_TITLE</b> returns the title of problem p03.
+        </li>
+        <li>
+          <b>P04_AUTONOMOUS</b> reports whether problem p04 is autonomous.
+        </li>
+        <li>
+          <b>P04_EQUIL</b> returns equilibrium solutions of problem p04.
+        </li>
+        <li>
+          <b>P04_FUN</b> evaluates the function for problem p04.
+        </li>
+        <li>
+          <b>P04_JAC</b> evaluates the jacobian for problem p04.
+        </li>
+        <li>
+          <b>P04_NEQN</b> returns the number of equations for problem p04.
+        </li>
+        <li>
+          <b>P04_SCALE</b> returns scale factors for problem p04.
+        </li>
+        <li>
+          <b>P04_START</b> returns the starting point for problem p04.
+        </li>
+        <li>
+          <b>P04_STOP</b> returns the stopping point for problem p04.
+        </li>
+        <li>
+          <b>P04_TITLE</b> returns the title of problem p04.
+        </li>
+        <li>
+          <b>P05_AUTONOMOUS</b> reports whether problem p05 is autonomous.
+        </li>
+        <li>
+          <b>P05_EQUIL</b> returns equilibrium solutions of problem p05.
+        </li>
+        <li>
+          <b>P05_FUN</b> evaluates the function for problem p05.
+        </li>
+        <li>
+          <b>P05_JAC</b> evaluates the jacobian for problem p05.
+        </li>
+        <li>
+          <b>P05_NEQN</b> returns the number of equations for problem p05.
+        </li>
+        <li>
+          <b>P05_SCALE</b> returns scale factors for problem p05.
+        </li>
+        <li>
+          <b>P05_START</b> returns the starting point for problem p05.
+        </li>
+        <li>
+          <b>P05_STOP</b> returns the stopping point for problem p05.
+        </li>
+        <li>
+          <b>P05_TITLE</b> returns the title of problem p05.
+        </li>
+        <li>
+          <b>P06_AUTONOMOUS</b> reports whether problem p06 is autonomous.
+        </li>
+        <li>
+          <b>P06_EQUIL</b> returns equilibrium solutions of problem p06.
+        </li>
+        <li>
+          <b>P06_FUN</b> evaluates the function for problem p06.
+        </li>
+        <li>
+          <b>P06_JAC</b> evaluates the jacobian for problem p06.
+        </li>
+        <li>
+          <b>P06_NEQN</b> returns the number of equations for problem p06.
+        </li>
+        <li>
+          <b>P06_SCALE</b> returns scale factors for problem p06.
+        </li>
+        <li>
+          <b>P06_START</b> returns the starting point for problem p06.
+        </li>
+        <li>
+          <b>P06_STOP</b> returns the stopping point for problem p06.
+        </li>
+        <li>
+          <b>P06_TITLE</b> returns the title of problem p06.
+        </li>
+        <li>
+          <b>P07_AUTONOMOUS</b> reports whether problem p07 is autonomous.
+        </li>
+        <li>
+          <b>P07_EQUIL</b> returns equilibrium solutions of problem p07.
+        </li>
+        <li>
+          <b>P07_FUN</b> evaluates the function for problem p07.
+        </li>
+        <li>
+          <b>P07_JAC</b> evaluates the jacobian for problem p07.
+        </li>
+        <li>
+          <b>P07_NEQN</b> returns the number of equations for problem p07.
+        </li>
+        <li>
+          <b>P07_SCALE</b> returns scale factors for problem p07.
+        </li>
+        <li>
+          <b>P07_START</b> returns the starting point for problem p07.
+        </li>
+        <li>
+          <b>P07_STOP</b> returns the stopping point for problem p07.
+        </li>
+        <li>
+          <b>P07_TITLE</b> returns the title of problem p07.
+        </li>
+        <li>
+          <b>P08_AUTONOMOUS</b> reports whether problem p08 is autonomous.
+        </li>
+        <li>
+          <b>P08_EQUIL</b> returns equilibrium solutions of problem p08.
+        </li>
+        <li>
+          <b>P08_FUN</b> evaluates the function for problem p08.
+        </li>
+        <li>
+          <b>P08_JAC</b> evaluates the jacobian for problem p08.
+        </li>
+        <li>
+          <b>P08_NEQN</b> returns the number of equations for problem p08.
+        </li>
+        <li>
+          <b>P08_SCALE</b> returns scale factors for problem p08.
+        </li>
+        <li>
+          <b>P08_START</b> returns the starting point for problem p08.
+        </li>
+        <li>
+          <b>P08_STOP</b> returns the stopping point for problem p08.
+        </li>
+        <li>
+          <b>P08_TITLE</b> returns the title of problem p08.
+        </li>
+        <li>
+          <b>P09_AUTONOMOUS</b> reports whether problem p09 is autonomous.
+        </li>
+        <li>
+          <b>P09_EQUIL</b> returns equilibrium solutions of problem p09.
+        </li>
+        <li>
+          <b>P09_FUN</b> evaluates the function for problem p09.
+        </li>
+        <li>
+          <b>P09_JAC</b> evaluates the jacobian for problem p09.
+        </li>
+        <li>
+          <b>P09_NEQN</b> returns the number of equations for problem p09.
+        </li>
+        <li>
+          <b>P09_SCALE</b> returns scale factors for problem p09.
+        </li>
+        <li>
+          <b>P09_START</b> returns the starting point for problem p09.
+        </li>
+        <li>
+          <b>P09_STOP</b> returns the stopping point for problem p09.
+        </li>
+        <li>
+          <b>P09_TITLE</b> returns the title of problem p09.
+        </li>
+        <li>
+          <b>P10_AUTONOMOUS</b> reports whether problem p10 is autonomous.
+        </li>
+        <li>
+          <b>P10_EQUIL</b> returns equilibrium solutions of problem p10.
+        </li>
+        <li>
+          <b>P10_FUN</b> evaluates the function for problem p10.
+        </li>
+        <li>
+          <b>P10_JAC</b> evaluates the jacobian for problem p10.
+        </li>
+        <li>
+          <b>P10_NEQN</b> returns the number of equations for problem p10.
+        </li>
+        <li>
+          <b>P10_SCALE</b> returns scale factors for problem p10.
+        </li>
+        <li>
+          <b>P10_START</b> returns the starting point for problem p10.
+        </li>
+        <li>
+          <b>P10_STOP</b> returns the stopping point for problem p10.
+        </li>
+        <li>
+          <b>P10_TITLE</b> returns the title of problem p10.
+        </li>
+        <li>
+          <b>P11_AUTONOMOUS</b> reports whether problem p11 is autonomous.
+        </li>
+        <li>
+          <b>P11_EQUIL</b> returns equilibrium solutions of problem p11.
+        </li>
+        <li>
+          <b>P11_FUN</b> evaluates the function for problem p11.
+        </li>
+        <li>
+          <b>P11_JAC</b> evaluates the jacobian for problem p11.
+        </li>
+        <li>
+          <b>P11_NEQN</b> returns the number of equations for problem p11.
+        </li>
+        <li>
+          <b>P11_SCALE</b> returns scale factors for problem p11.
+        </li>
+        <li>
+          <b>P11_START</b> returns the starting point for problem p11.
+        </li>
+        <li>
+          <b>P11_STOP</b> returns the stopping point for problem p11.
+        </li>
+        <li>
+          <b>P11_TITLE</b> returns the title of problem p11.
+        </li>
+        <li>
+          <b>P12_AUTONOMOUS</b> reports whether problem p12 is autonomous.
+        </li>
+        <li>
+          <b>P12_EQUIL</b> returns equilibrium solutions of problem p12.
+        </li>
+        <li>
+          <b>P12_FUN</b> evaluates the function for problem p12.
+        </li>
+        <li>
+          <b>P12_JAC</b> evaluates the jacobian for problem p12.
+        </li>
+        <li>
+          <b>P12_NEQN</b> returns the number of equations for problem p12.
+        </li>
+        <li>
+          <b>P12_SCALE</b> returns scale factors for problem p12.
+        </li>
+        <li>
+          <b>P12_START</b> returns the starting point for problem p12.
+        </li>
+        <li>
+          <b>P12_STOP</b> returns the stopping point for problem p12.
+        </li>
+        <li>
+          <b>P12_TITLE</b> returns the title of problem p12.
+        </li>
+        <li>
+          <b>P13_AUTONOMOUS</b> reports whether problem p13 is autonomous.
+        </li>
+        <li>
+          <b>P13_EQUIL</b> returns equilibrium solutions of problem p13.
+        </li>
+        <li>
+          <b>P13_FUN</b> evaluates the function for problem p13.
+        </li>
+        <li>
+          <b>P13_JAC</b> evaluates the jacobian for problem p13.
+        </li>
+        <li>
+          <b>P13_NEQN</b> returns the number of equations for problem p13.
+        </li>
+        <li>
+          <b>P13_SCALE</b> returns scale factors for problem p13.
+        </li>
+        <li>
+          <b>P13_START</b> returns the starting point for problem p13.
+        </li>
+        <li>
+          <b>P13_STOP</b> returns the stopping point for problem p13.
+        </li>
+        <li>
+          <b>P13_TITLE</b> returns the title of problem p13.
+        </li>
+        <li>
+          <b>P14_AUTONOMOUS</b> reports whether problem p14 is autonomous.
+        </li>
+        <li>
+          <b>P14_EQUIL</b> returns equilibrium solutions of problem p14.
+        </li>
+        <li>
+          <b>P14_FUN</b> evaluates the function for problem p14.
+        </li>
+        <li>
+          <b>P14_JAC</b> evaluates the jacobian for problem p14.
+        </li>
+        <li>
+          <b>P14_NEQN</b> returns the number of equations for problem p14.
+        </li>
+        <li>
+          <b>P14_SCALE</b> returns scale factors for problem p14.
+        </li>
+        <li>
+          <b>P14_START</b> returns the starting point for problem p14.
+        </li>
+        <li>
+          <b>P14_STOP</b> returns the stopping point for problem p14.
+        </li>
+        <li>
+          <b>P14_TITLE</b> returns the title of problem p14.
+        </li>
+        <li>
+          <b>P15_AUTONOMOUS</b> reports whether problem p15 is autonomous.
+        </li>
+        <li>
+          <b>P15_EQUIL</b> returns equilibrium solutions of problem p15.
+        </li>
+        <li>
+          <b>P15_FUN</b> evaluates the function for problem p15.
+        </li>
+        <li>
+          <b>P15_JAC</b> evaluates the jacobian for problem p15.
+        </li>
+        <li>
+          <b>P15_NEQN</b> returns the number of equations for problem p15.
+        </li>
+        <li>
+          <b>P15_PARAM</b> handles the parameters for problem p15.
+        </li>
+        <li>
+          <b>P15_SCALE</b> returns scale factors for problem p15.
+        </li>
+        <li>
+          <b>P15_START</b> returns the starting point for problem p15.
+        </li>
+        <li>
+          <b>P15_STOP</b> returns the stopping point for problem p15.
+        </li>
+        <li>
+          <b>P15_TITLE</b> returns the title of problem p15.
+        </li>
+        <li>
+          <b>P16_AUTONOMOUS</b> reports whether problem p16 is autonomous.
+        </li>
+        <li>
+          <b>P16_EQUIL</b> returns equilibrium solutions of problem p16.
+        </li>
+        <li>
+          <b>P16_FUN</b> evaluates the function for problem p16.
+        </li>
+        <li>
+          <b>P16_JAC</b> evaluates the jacobian for problem p16.
+        </li>
+        <li>
+          <b>P16_NEQN</b> returns the number of equations for problem p16.
+        </li>
+        <li>
+          <b>P16_PARAM</b> handles the parameters for problem p16.
+        </li>
+        <li>
+          <b>P16_SCALE</b> returns scale factors for problem p16.
+        </li>
+        <li>
+          <b>P16_START</b> returns the starting point for problem p16.
+        </li>
+        <li>
+          <b>P16_STOP</b> returns the stopping point for problem p16.
+        </li>
+        <li>
+          <b>P16_TITLE</b> returns the title of problem p16.
+        </li>
+        <li>
+          <b>P17_AUTONOMOUS</b> reports whether problem p17 is autonomous.
+        </li>
+        <li>
+          <b>P17_EQUIL</b> returns equilibrium solutions of problem p17.
+        </li>
+        <li>
+          <b>P17_FUN</b> evaluates the function for problem p17.
+        </li>
+        <li>
+          <b>P17_JAC</b> evaluates the jacobian for problem p17.
+        </li>
+        <li>
+          <b>P17_NEQN</b> returns the number of equations for problem p17.
+        </li>
+        <li>
+          <b>P17_PARAM</b> handles the parameters for problem p17.
+        </li>
+        <li>
+          <b>P17_SCALE</b> returns scale factors for problem p17.
+        </li>
+        <li>
+          <b>P17_START</b> returns the starting point for problem p17.
+        </li>
+        <li>
+          <b>P17_STOP</b> returns the stopping point for problem p17.
+        </li>
+        <li>
+          <b>P17_TITLE</b> returns the title of problem p17.
+        </li>
+        <li>
+          <b>P18_AUTONOMOUS</b> reports whether problem p18 is autonomous.
+        </li>
+        <li>
+          <b>P18_EQUIL</b> returns equilibrium solutions of problem p18.
+        </li>
+        <li>
+          <b>P18_FUN</b> evaluates the function for problem p18.
+        </li>
+        <li>
+          <b>P18_JAC</b> evaluates the jacobian for problem p18.
+        </li>
+        <li>
+          <b>P18_NEQN</b> returns the number of equations for problem p18.
+        </li>
+        <li>
+          <b>P18_PARAM</b> handles the parameters for problem p18.
+        </li>
+        <li>
+          <b>P18_SCALE</b> returns scale factors for problem p18.
+        </li>
+        <li>
+          <b>P18_START</b> returns the starting point for problem p18.
+        </li>
+        <li>
+          <b>P18_STOP</b> returns the stopping point for problem p18.
+        </li>
+        <li>
+          <b>P18_TITLE</b> returns the title of problem p18.
+        </li>
+        <li>
+          <b>P19_AUTONOMOUS</b> reports whether problem p19 is autonomous.
+        </li>
+        <li>
+          <b>P19_EQUIL</b> returns equilibrium solutions of problem p19.
+        </li>
+        <li>
+          <b>P19_FUN</b> evaluates the function for problem p19.
+        </li>
+        <li>
+          <b>P19_JAC</b> evaluates the jacobian for problem p19.
+        </li>
+        <li>
+          <b>P19_NEQN</b> returns the number of equations for problem p19.
+        </li>
+        <li>
+          <b>P19_PARAM</b> handles the parameters for problem p19.
+        </li>
+        <li>
+          <b>P19_SCALE</b> returns scale factors for problem p19.
+        </li>
+        <li>
+          <b>P19_START</b> returns the starting point for problem p19.
+        </li>
+        <li>
+          <b>P19_STOP</b> returns the stopping point for problem p19.
+        </li>
+        <li>
+          <b>P19_TITLE</b> returns the title of problem p19.
+        </li>
+        <li>
+          <b>P20_AUTONOMOUS</b> reports whether problem p20 is autonomous.
+        </li>
+        <li>
+          <b>P20_EQUIL</b> returns equilibrium solutions of problem p20.
+        </li>
+        <li>
+          <b>P20_FUN</b> evaluates the function for problem p20.
+        </li>
+        <li>
+          <b>P20_JAC</b> evaluates the jacobian for problem p20.
+        </li>
+        <li>
+          <b>P20_NEQN</b> returns the number of equations for problem p20.
+        </li>
+        <li>
+          <b>P20_PARAM</b> handles the parameters for problem p20.
+        </li>
+        <li>
+          <b>P20_SCALE</b> returns scale factors for problem p20.
+        </li>
+        <li>
+          <b>P20_START</b> returns the starting point for problem p20.
+        </li>
+        <li>
+          <b>P20_STOP</b> returns the stopping point for problem p20.
+        </li>
+        <li>
+          <b>P20_TITLE</b> returns the title of problem p20.
+        </li>
+        <li>
+          <b>P21_AUTONOMOUS</b> reports whether problem p21 is autonomous.
+        </li>
+        <li>
+          <b>P21_EQUIL</b> returns equilibrium solutions of problem p21.
+        </li>
+        <li>
+          <b>P21_FUN</b> evaluates the function for problem p21.
+        </li>
+        <li>
+          <b>P21_JAC</b> evaluates the jacobian for problem p21.
+        </li>
+        <li>
+          <b>P21_NEQN</b> returns the number of equations for problem p21.
+        </li>
+        <li>
+          <b>P21_SCALE</b> returns scale factors for problem p21.
+        </li>
+        <li>
+          <b>P21_START</b> returns the starting point for problem p21.
+        </li>
+        <li>
+          <b>P21_STOP</b> returns the stopping point for problem p21.
+        </li>
+        <li>
+          <b>P21_TITLE</b> returns the title of problem p21.
+        </li>
+        <li>
+          <b>P22_AUTONOMOUS</b> reports whether problem p22 is autonomous.
+        </li>
+        <li>
+          <b>P22_EQUIL</b> returns equilibrium solutions of problem p22.
+        </li>
+        <li>
+          <b>P22_FUN</b> evaluates the function for problem p22.
+        </li>
+        <li>
+          <b>P22_JAC</b> evaluates the jacobian for problem p22.
+        </li>
+        <li>
+          <b>P22_NEQN</b> returns the number of equations for problem p22.
+        </li>
+        <li>
+          <b>P22_SCALE</b> returns scale factors for problem p22.
+        </li>
+        <li>
+          <b>P22_START</b> returns the starting point for problem p22.
+        </li>
+        <li>
+          <b>P22_STOP</b> returns the stopping point for problem p22.
+        </li>
+        <li>
+          <b>P22_TITLE</b> returns the title of problem p22.
+        </li>
+        <li>
+          <b>P23_AUTONOMOUS</b> reports whether problem p23 is autonomous.
+        </li>
+        <li>
+          <b>P23_EQUIL</b> returns equilibrium solutions of problem p23.
+        </li>
+        <li>
+          <b>P23_FUN</b> evaluates the function for problem p23.
+        </li>
+        <li>
+          <b>P23_JAC</b> evaluates the jacobian for problem p23.
+        </li>
+        <li>
+          <b>P23_NEQN</b> returns the number of equations for problem p23.
+        </li>
+        <li>
+          <b>P23_SCALE</b> returns scale factors for problem p23.
+        </li>
+        <li>
+          <b>P23_START</b> returns the starting point for problem p23.
+        </li>
+        <li>
+          <b>P23_STOP</b> returns the stopping point for problem p23.
+        </li>
+        <li>
+          <b>P23_TITLE</b> returns the title of problem p23.
+        </li>
+        <li>
+          <b>P24_AUTONOMOUS</b> reports whether problem p24 is autonomous.
+        </li>
+        <li>
+          <b>P24_EQUIL</b> returns equilibrium solutions of problem p24.
+        </li>
+        <li>
+          <b>P24_FUN</b> evaluates the function for problem p24.
+        </li>
+        <li>
+          <b>P24_JAC</b> evaluates the jacobian for problem p24.
+        </li>
+        <li>
+          <b>P24_NEQN</b> returns the number of equations for problem p24.
+        </li>
+        <li>
+          <b>P24_SCALE</b> returns scale factors for problem p24.
+        </li>
+        <li>
+          <b>P24_START</b> returns the starting point for problem p24.
+        </li>
+        <li>
+          <b>P24_STOP</b> returns the stopping point for problem p24.
+        </li>
+        <li>
+          <b>P24_TITLE</b> returns the title of problem p24.
+        </li>
+        <li>
+          <b>P25_AUTONOMOUS</b> reports whether problem p25 is autonomous.
+        </li>
+        <li>
+          <b>P25_EQUIL</b> returns equilibrium solutions of problem p25.
+        </li>
+        <li>
+          <b>P25_FUN</b> evaluates the function for problem p25.
+        </li>
+        <li>
+          <b>P25_JAC</b> evaluates the jacobian for problem p25.
+        </li>
+        <li>
+          <b>P25_NEQN</b> returns the number of equations for problem p25.
+        </li>
+        <li>
+          <b>P25_SCALE</b> returns scale factors for problem p25.
+        </li>
+        <li>
+          <b>P25_START</b> returns the starting point for problem p25.
+        </li>
+        <li>
+          <b>P25_STOP</b> returns the stopping point for problem p25.
+        </li>
+        <li>
+          <b>P25_TITLE</b> returns the title of problem p25.
+        </li>
+        <li>
+          <b>P26_AUTONOMOUS</b> reports whether problem p26 is autonomous.
+        </li>
+        <li>
+          <b>P26_EQUIL</b> returns equilibrium solutions of problem p26.
+        </li>
+        <li>
+          <b>P26_FUN</b> evaluates the function for problem p26.
+        </li>
+        <li>
+          <b>P26_JAC</b> evaluates the jacobian for problem p26.
+        </li>
+        <li>
+          <b>P26_NEQN</b> returns the number of equations for problem p26.
+        </li>
+        <li>
+          <b>P26_PARAM</b> handles the parameters for problem p26.
+        </li>
+        <li>
+          <b>P26_SCALE</b> returns scale factors for problem p26.
+        </li>
+        <li>
+          <b>P26_START</b> returns the starting point for problem p26.
+        </li>
+        <li>
+          <b>P26_STOP</b> returns the stopping point for problem p26.
+        </li>
+        <li>
+          <b>P26_TITLE</b> returns the title of problem p26.
+        </li>
+        <li>
+          <b>P27_AUTONOMOUS</b> reports whether problem p27 is autonomous.
+        </li>
+        <li>
+          <b>P27_EQUIL</b> returns equilibrium solutions of problem p27.
+        </li>
+        <li>
+          <b>P27_FUN</b> evaluates the function for problem p27.
+        </li>
+        <li>
+          <b>P27_JAC</b> evaluates the jacobian for problem p27.
+        </li>
+        <li>
+          <b>P27_NEQN</b> returns the number of equations for problem p27.
+        </li>
+        <li>
+          <b>P27_SCALE</b> returns scale factors for problem p27.
+        </li>
+        <li>
+          <b>P27_START</b> returns the starting point for problem p27.
+        </li>
+        <li>
+          <b>P27_STOP</b> returns the stopping point for problem p27.
+        </li>
+        <li>
+          <b>P27_TITLE</b> returns the title of problem p27.
+        </li>
+        <li>
+          <b>P28_AUTONOMOUS</b> reports whether problem p14 is autonomous.
+        </li>
+        <li>
+          <b>P28_EQUIL</b> returns equilibrium solutions of problem p28.
+        </li>
+        <li>
+          <b>P28_FUN</b> evaluates the function for problem p28.
+        </li>
+        <li>
+          <b>P28_JAC</b> evaluates the jacobian for problem p28.
+        </li>
+        <li>
+          <b>P28_NEQN</b> returns the number of equations for problem p28.
+        </li>
+        <li>
+          <b>P28_SCALE</b> returns scale factors for problem p28.
+        </li>
+        <li>
+          <b>P28_START</b> returns the starting point for problem p28.
+        </li>
+        <li>
+          <b>P28_STOP</b> returns the stopping point for problem p28.
+        </li>
+        <li>
+          <b>P28_TITLE</b> returns the title of problem p28.
+        </li>
+        <li>
+          <b>P29_AUTONOMOUS</b> reports whether problem p29 is autonomous.
+        </li>
+        <li>
+          <b>P29_EQUIL</b> returns equilibrium solutions of problem p29.
+        </li>
+        <li>
+          <b>P29_FUN</b> evaluates the function for problem p29.
+        </li>
+        <li>
+          <b>P29_JAC</b> evaluates the jacobian for problem p29.
+        </li>
+        <li>
+          <b>P29_NEQN</b> returns the number of equations for problem p29.
+        </li>
+        <li>
+          <b>P29_SCALE</b> returns scale factors for problem p29.
+        </li>
+        <li>
+          <b>P29_START</b> returns the starting point for problem p29.
+        </li>
+        <li>
+          <b>P29_STOP</b> returns the stopping point for problem p29.
+        </li>
+        <li>
+          <b>P29_TITLE</b> returns the title of problem p29.
+        </li>
+        <li>
+          <b>P30_AUTONOMOUS</b> reports whether problem p30 is autonomous.
+        </li>
+        <li>
+          <b>P30_EQUIL</b> returns equilibrium solutions of problem p30.
+        </li>
+        <li>
+          <b>P30_FUN</b> evaluates the function for problem p30.
+        </li>
+        <li>
+          <b>P30_JAC</b> evaluates the jacobian for problem p30.
+        </li>
+        <li>
+          <b>P30_NEQN</b> returns the number of equations for problem p30.
+        </li>
+        <li>
+          <b>P30_SCALE</b> returns scale factors for problem p30.
+        </li>
+        <li>
+          <b>P30_START</b> returns the starting point for problem p30.
+        </li>
+        <li>
+          <b>P30_STOP</b> returns the stopping point for problem p30.
+        </li>
+        <li>
+          <b>P30_TITLE</b> returns the title of problem p30.
+        </li>
+        <li>
+          <b>P31_AUTONOMOUS</b> reports whether problem p31 is autonomous.
+        </li>
+        <li>
+          <b>P31_EQUIL</b> returns equilibrium solutions of problem p31.
+        </li>
+        <li>
+          <b>P31_FUN</b> evaluates the function for problem p31.
+        </li>
+        <li>
+          <b>P31_JAC</b> evaluates the jacobian for problem p31.
+        </li>
+        <li>
+          <b>P31_NEQN</b> returns the number of equations for problem p31.
+        </li>
+        <li>
+          <b>P31_PARAM</b> handles the parameters for problem p31.
+        </li>
+        <li>
+          <b>P31_SCALE</b> returns scale factors for problem p31.
+        </li>
+        <li>
+          <b>P31_START</b> returns the starting point for problem p31.
+        </li>
+        <li>
+          <b>P31_STOP</b> returns the stopping point for problem p31.
+        </li>
+        <li>
+          <b>P31_TITLE</b> returns the title of problem p31.
+        </li>
+        <li>
+          <b>P32_AUTONOMOUS</b> reports whether problem p32 is autonomous.
+        </li>
+        <li>
+          <b>P32_EQUIL</b> returns equilibrium solutions of problem p32.
+        </li>
+        <li>
+          <b>P32_FUN</b> evaluates the function for problem p32.
+        </li>
+        <li>
+          <b>P32_JAC</b> evaluates the jacobian for problem p32.
+        </li>
+        <li>
+          <b>P32_NEQN</b> returns the number of equations for problem p32.
+        </li>
+        <li>
+          <b>P32_PARAM</b> handles the parameters for problem p32.
+        </li>
+        <li>
+          <b>P32_SCALE</b> returns scale factors for problem p32.
+        </li>
+        <li>
+          <b>P32_START</b> returns the starting point for problem p32.
+        </li>
+        <li>
+          <b>P32_STOP</b> returns the stopping point for problem p32.
+        </li>
+        <li>
+          <b>P32_TITLE</b> returns the title of problem p32.
+        </li>
+        <li>
+          <b>P33_AUTONOMOUS</b> reports whether problem p33 is autonomous.
+        </li>
+        <li>
+          <b>P33_EQUIL</b> returns equilibrium solutions of problem p33.
+        </li>
+        <li>
+          <b>P33_FUN</b> evaluates the function for problem p33.
+        </li>
+        <li>
+          <b>P33_JAC</b> evaluates the jacobian for problem p33.
+        </li>
+        <li>
+          <b>P33_NEQN</b> returns the number of equations for problem p33.
+        </li>
+        <li>
+          <b>P33_PARAM</b> handles the parameters for problem p33.
+        </li>
+        <li>
+          <b>P33_SCALE</b> returns scale factors for problem p33.
+        </li>
+        <li>
+          <b>P33_START</b> returns the starting point for problem p33.
+        </li>
+        <li>
+          <b>P33_STOP</b> returns the stopping point for problem p33.
+        </li>
+        <li>
+          <b>P33_TITLE</b> returns the title of problem p33.
+        </li>
+        <li>
+          <b>P34_AUTONOMOUS</b> reports whether problem p34 is autonomous.
+        </li>
+        <li>
+          <b>P34_EQUIL</b> returns equilibrium solutions of problem p34.
+        </li>
+        <li>
+          <b>P34_FUN</b> evaluates the function for problem p34.
+        </li>
+        <li>
+          <b>P34_JAC</b> evaluates the jacobian for problem p34.
+        </li>
+        <li>
+          <b>P34_NEQN</b> returns the number of equations for problem p34.
+        </li>
+        <li>
+          <b>P34_PARAM</b> handles the parameters for problem p34.
+        </li>
+        <li>
+          <b>P34_SCALE</b> returns scale factors for problem p34.
+        </li>
+        <li>
+          <b>P34_START</b> returns the starting point for problem p34.
+        </li>
+        <li>
+          <b>P34_STOP</b> returns the stopping point for problem p34.
+        </li>
+        <li>
+          <b>P34_TITLE</b> returns the title of problem p34.
+        </li>
+        <li>
+          <b>P35_AUTONOMOUS</b> reports whether problem p35 is autonomous.
+        </li>
+        <li>
+          <b>P35_EQUIL</b> returns equilibrium solutions of problem p35.
+        </li>
+        <li>
+          <b>P35_FUN</b> evaluates the function for problem p35.
+        </li>
+        <li>
+          <b>P35_JAC</b> evaluates the jacobian for problem p35.
+        </li>
+        <li>
+          <b>P35_NEQN</b> returns the number of equations for problem p35.
+        </li>
+        <li>
+          <b>P35_PARAM</b> handles the parameters for problem p35.
+        </li>
+        <li>
+          <b>P35_SCALE</b> returns scale factors for problem p35.
+        </li>
+        <li>
+          <b>P35_START</b> returns the starting point for problem p35.
+        </li>
+        <li>
+          <b>P35_STOP</b> returns the stopping point for problem p35.
+        </li>
+        <li>
+          <b>P35_TITLE</b> returns the title of problem p35.
+        </li>
+        <li>
+          <b>P36_AUTONOMOUS</b> reports whether problem p36 is autonomous.
+        </li>
+        <li>
+          <b>P36_EQUIL</b> returns equilibrium solutions of problem p36.
+        </li>
+        <li>
+          <b>P36_FUN</b> evaluates the function for problem p36.
+        </li>
+        <li>
+          <b>P36_JAC</b> evaluates the jacobian for problem p36.
+        </li>
+        <li>
+          <b>P36_NEQN</b> returns the number of equations for problem p36.
+        </li>
+        <li>
+          <b>P36_SCALE</b> returns scale factors for problem p36.
+        </li>
+        <li>
+          <b>P36_START</b> returns the starting point for problem p36.
+        </li>
+        <li>
+          <b>P36_STOP</b> returns the stopping point for problem p36.
+        </li>
+        <li>
+          <b>P36_TITLE</b> returns the title of problem p36.
+        </li>
+        <li>
+          <b>P37_AUTONOMOUS</b> reports whether problem p37 is autonomous.
+        </li>
+        <li>
+          <b>P37_EQUIL</b> returns equilibrium solutions of problem p37.
+        </li>
+        <li>
+          <b>P37_FUN</b> evaluates the function for problem p37.
+        </li>
+        <li>
+          <b>P37_JAC</b> evaluates the jacobian for problem p37.
+        </li>
+        <li>
+          <b>P37_NEQN</b> returns the number of equations for problem p37.
+        </li>
+        <li>
+          <b>P37_PARAM</b> handles the parameters for problem p37.
+        </li>
+        <li>
+          <b>P37_SCALE</b> returns scale factors for problem p37.
+        </li>
+        <li>
+          <b>P37_START</b> returns the starting point for problem p37.
+        </li>
+        <li>
+          <b>P37_STOP</b> returns the stopping point for problem p37.
+        </li>
+        <li>
+          <b>P37_TITLE</b> returns the title of problem p37.
+        </li>
+        <li>
+          <b>P38_AUTONOMOUS</b> reports whether problem p38 is autonomous.
+        </li>
+        <li>
+          <b>P38_EQUIL</b> returns equilibrium solutions of problem p38.
+        </li>
+        <li>
+          <b>P38_FUN</b> evaluates the function for problem p38.
+        </li>
+        <li>
+          <b>P38_JAC</b> evaluates the jacobian for problem p38.
+        </li>
+        <li>
+          <b>P38_NEQN</b> returns the number of equations for problem p38.
+        </li>
+        <li>
+          <b>P38_PARAM</b> handles the parameters for problem p38.
+        </li>
+        <li>
+          <b>P38_SCALE</b> returns scale factors for problem p38.
+        </li>
+        <li>
+          <b>P38_START</b> returns the starting point for problem p38.
+        </li>
+        <li>
+          <b>P38_STOP</b> returns the stopping point for problem p38.
+        </li>
+        <li>
+          <b>P38_TITLE</b> returns the title of problem p38.
+        </li>
+        <li>
+          <b>P39_AUTONOMOUS</b> reports whether problem p39 is autonomous.
+        </li>
+        <li>
+          <b>P39_EQUIL</b> returns equilibrium solutions of problem p39.
+        </li>
+        <li>
+          <b>P39_FUN</b> evaluates the function for problem p39.
+        </li>
+        <li>
+          <b>P39_JAC</b> evaluates the jacobian for problem p39.
+        </li>
+        <li>
+          <b>P39_NEQN</b> returns the number of equations for problem p39.
+        </li>
+        <li>
+          <b>P39_PARAM</b> handles the parameters for problem p39.
+        </li>
+        <li>
+          <b>P39_SCALE</b> returns scale factors for problem p39.
+        </li>
+        <li>
+          <b>P39_START</b> returns the starting point for problem p39.
+        </li>
+        <li>
+          <b>P39_STOP</b> returns the stopping point for problem p39.
+        </li>
+        <li>
+          <b>P39_TITLE</b> returns the title of problem p39.
+        </li>
+        <li>
+          <b>P40_AUTONOMOUS</b> reports whether problem p40 is autonomous.
+        </li>
+        <li>
+          <b>P40_EQUIL</b> returns equilibrium solutions of problem p40.
+        </li>
+        <li>
+          <b>P40_FUN</b> evaluates the function for problem p40.
+        </li>
+        <li>
+          <b>P40_JAC</b> evaluates the jacobian for problem p40.
+        </li>
+        <li>
+          <b>P40_NEQN</b> returns the number of equations for problem p40.
+        </li>
+        <li>
+          <b>P40_PARAM</b> handles the parameters for problem p40.
+        </li>
+        <li>
+          <b>P40_SCALE</b> returns scale factors for problem p40.
+        </li>
+        <li>
+          <b>P40_START</b> returns the starting point for problem p40.
+        </li>
+        <li>
+          <b>P40_STOP</b> returns the stopping point for problem p40.
+        </li>
+        <li>
+          <b>P40_TITLE</b> returns the title of problem p40.
+        </li>
+        <li>
+          <b>R8_CUBE_ROOT</b> returns the cube root of a real number.
+        </li>
+        <li>
+          <b>R8_SIGN</b> returns the sign of an R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_AB</b> returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <b>R8MAT_NORM_FRO_AFFINE</b> returns the Frobenius norm of an R8MAT difference.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_ABVEC</b> returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>RK_TEST</b> uses a Runge-Kutta method on a test problem.
+        </li>
+        <li>
+          <b>S_EQI</b> is a case insensitive comparison of two strings for equality.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 February 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_ode/test_ode.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:25:13 GMT -->
+</html>

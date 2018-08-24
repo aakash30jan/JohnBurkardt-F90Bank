@@ -1,0 +1,183 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/romberg/romberg.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:13:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      ROMBERG - Integral Estimation using Repeated Quadrature and Extrapolation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ROMBERG <br> Integral Estimation using Repeated Quadrature and Extrapolation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ROMBERG</b>
+      is a FORTRAN90 library which
+      estimates the integral of a function f(x) over an interval [a,b]
+      using one of:
+      <ul>
+        <li>
+          the trapezoidal rule;
+        </li>
+        <li>
+          the composite trapezoidal rule;
+        </li>
+        <li>
+          a sequence of composite trapezoidal rules;
+        </li>
+        <li>
+          a sequence of composite trapezoidal rules and Romberg extrapolation.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ROMBERG</b> is available in
+      <a href = "romberg.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../clenshaw_curtis_rule/clenshaw_curtis_rule.html">
+      CLENSHAW_CURTIS_RULE</a>,
+      a FORTRAN90 program which
+      defines a Clenshaw Curtis quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../intlib/intlib.html">
+      INTLIB</a>,
+      a FORTRAN90 library which
+      contains a variety
+      of routines for numerical estimation of integrals in 1D.
+    </p>
+
+    <p>
+      <a href = "../quadpack/quadpack.html">
+      QUADPACK</a>,
+      a FORTRAN90 library which
+      contains a variety of routines for
+      numerical estimation of integrals in 1D.
+    </p>
+
+    <p>
+      <a href = "../quadrule/quadrule.html">
+      QUADRULE</a>,
+      a FORTRAN90 library which
+      defines quadrature rules for 1D domains.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "romberg.f90">romberg.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "romberg_prb.f90">romberg_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "romberg_prb_output.txt">romberg_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>ROMBERG_TRAP</b> approximates an integral by extrapolating the trapezoidal rule.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TRAPEZOID</b> carries out the composite trapezoid rule.
+        </li>
+        <li>
+          <b>TRAPEZOID_REFINE</b> carries out a step of trapezoidal refinement.
+        </li>
+        <li>
+          <b>TRAPEZOID_TOL</b> repeatedly refines the trapezoid rule til a tolerance is met.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 28 February 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/romberg/romberg.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:13:04 GMT -->
+</html>

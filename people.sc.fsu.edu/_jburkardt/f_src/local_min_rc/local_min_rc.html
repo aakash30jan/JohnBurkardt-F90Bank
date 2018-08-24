@@ -1,0 +1,264 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/local_min_rc/local_min_rc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:55:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      LOCAL_MIN_RC - Reverse Communication Function for Local Minimum, by Richard Brent
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LOCAL_MIN_RC <br> Reverse Communication Function for Local Minimum, by Richard Brent
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LOCAL_MIN_RC</b> 
+      is a FORTRAN90 library which 
+      seeks a local minimum of a scalar function of a scalar variable,
+      without requiring derivatives, or assuming the function is differentiable,
+      using reverse communication (RC),
+      by Richard Brent.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LOCAL_MIN_RC</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/local_min_rc/local_min_rc.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/local_min_rc/local_min_rc.html">a C++ version</a> and
+      <a href = "local_min_rc.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/local_min_rc/local_min_rc.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/local_min_rc/local_min_rc.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../asa047/asa047.html">
+      ASA047</a>,
+      a FORTRAN90 library which
+      minimizes a scalar function of several variables using the Nelder-Mead algorithm.
+    </p>
+
+    <p>
+      <a href = "../backtrack_binary_rc/backtrack_binary_rc.html">
+      BACKTRACK_BINARY_RC</a>,
+      a FORTRAN90 library which
+      carries out a backtrack search for a set of binary decisions, using
+      reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../bisection_rc/bisection_rc.html">
+      BISECTION_RC</a>,
+      a FORTRAN90 library which
+      demonstrates the simple bisection method for solving a scalar nonlinear
+      equation in a change of sign interval, using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../brent/brent.html">
+      BRENT</a>,
+      a FORTRAN90 library which 
+      contains routines for finding zeroes or minima of a scalar function of a scalar variable, 
+      without the use of derivative information, including a reverse communication (RC) option, 
+      by Richard Brent. 
+    </p>
+
+    <p>
+      <a href = "../cg_rc/cg_rc.html">
+      CG_RC</a>,
+      a FORTRAN90 library which
+      implements the conjugate gradient (CG) method for solving 
+      a positive definite sparse linear system A*x=b, 
+      using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../compass_search/compass_search.html">
+      COMPASS_SEARCH</a>,
+      a FORTRAN90 library which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm that does not use derivatives.
+    </p>
+
+    <p>
+      <a href = "../nms/nms.html">
+      NMS</a>,
+      a FORTRAN90 library which
+      includes versions of Brent's minimizer and zero finder.
+    </p>
+
+    <p>
+      <a href = "../praxis/praxis.html">
+      PRAXIS</a>,
+      a FORTRAN90 library which
+      minimizes a scalar function of several variables.
+    </p>
+
+    <p>
+      <a href = "../root_rc/root_rc.html">
+      ROOT_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a scalar nonlinear equation f(x) = 0, 
+      or a system of nonlinear equations,
+      using reverse communication (RC), by Gaston Gonnet.
+    </p>
+
+    <p>
+      <a href = "../roots_rc/roots_rc.html">
+      ROOTS_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a system of nonlinear equations f(x) = 0, 
+      using reverse communication (RC), by Gaston Gonnet.
+    </p>
+
+    <p>
+      <a href = "../sort_rc/sort_rc.html">
+      SORT_RC</a>,
+      a FORTRAN90 library which
+      can sort a list of any kind of objects,
+      using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../test_opt/test_opt.html">
+      TEST_OPT</a>,
+      a FORTRAN90 library which 
+      defines test problems
+      requiring the minimization of a scalar function of several variables.
+    </p>
+
+    <p>
+      <a href = "../test_optimization/test_optimization.html">
+      TEST_OPTIMIZATION</a>,
+      a FORTRAN90 library which
+      defines test problems for the minimization of a scalar function
+      of several variables, as described by Molga and Smutnicki.
+    </p>
+
+    <p>
+      <a href = "../toms178/toms178.html">
+      TOMS178</a>,
+      a FORTRAN90 library which
+      optimizes a scalar functional of multiple variables using the 
+      Hooke-Jeeves method.
+    </p>
+
+    <p>
+      <a href = "../zero_rc/zero_rc.html">
+      ZERO_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a scalar nonlinear equation f(x) = 0, 
+      using reverse communication (RC), by Richard Brent.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original FORTRAN77 version by Richard Brent;
+      FORTRAN90 version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Richard Brent,<br>
+          Algorithms for Minimization without Derivatives,<br>
+          Dover, 2002,<br>
+          ISBN: 0-486-41998-3,<br>
+          LC: QA402.5.B74.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "local_min_rc.f90">local_min_rc.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "local_min_rc_prb.f90">local_min_rc_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "local_min_rc_prb_output.txt">local_min_rc_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>LOCAL_MIN_RC</b> seeks a minimizer of a scalar function of a scalar variable.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 November 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/local_min_rc/local_min_rc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:55:10 GMT -->
+</html>

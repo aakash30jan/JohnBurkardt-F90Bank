@@ -1,0 +1,45 @@
+January 11 2013   3:36:50.452 PM
+ 
+NSPCG_PRB
+  FORTRAN90 version
+ 
+  Test the routines in the NSPCG library.
+ 
+TEST01
+  Demonstrate a simple use of NSPCG.
+ 
+  We use "primary storage" for the matrix
+  (storage mode 1).
+ 
+  Initialize parameters to default values.
+ 
+  Call NSPCG to solve the system.
+ 
+  The preconditioner is MIC1;
+  The accelerator is CG.
+ 
+  Computed solution:
+ 
+   1.000   2.000   3.000   4.000   5.000   6.000   7.000   8.000   9.000  10.000
+ 
+TEST02
+  Demonstrate a simple use of NSPCG.
+ 
+  We use "nonsymmetric coordinate storage" 
+  for the matrix (storage mode 5).
+ 
+  Initialize parameters to default values.
+ 
+  Call NSPCG to solve the system.
+ 
+  The preconditioner is JAC5;
+  The accelerator is CG.
+ 
+  Computed solution:
+ 
+   1.000   2.000   3.000   4.000   5.000   6.000   7.000   8.000   9.000  10.000
+ 
+NSPCG_PRB
+  Normal end of execution.
+ 
+January 11 2013   3:36:50.452 PM

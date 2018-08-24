@@ -1,0 +1,367 @@
+
+EX_QAG:
+  Use QAQ to estimate the integral of a function
+  over a 1D interval.
+
+ Results for key =   1
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44676993E-01
+ Estimate of absolute error =  1.08E-03
+ Number of function evaluattions =   135
+
+ Results for key =   2
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44670156E-01
+ Estimate of absolute error =  1.10E-03
+ Number of function evaluattions =   189
+
+ Results for key =   3
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44675548E-01
+ Estimate of absolute error =  3.05E-03
+ Number of function evaluattions =   217
+
+ Results for key =   4
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44688417E-01
+ Estimate of absolute error =  1.56E-03
+ Number of function evaluattions =   205
+
+ Results for key =   5
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44845059E-01
+ Estimate of absolute error =  6.05E-04
+ Number of function evaluattions =    51
+
+ Results for key =   6
+ Results for epsrel =  1.00E-02
+ Integral approximation =  3.44700813E-01
+ Estimate of absolute error =  2.75E-03
+ Number of function evaluattions =   183
+
+ Results for key =   1
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44670425E-01
+ Estimate of absolute error =  3.10E-04
+ Number of function evaluattions =   165
+
+ Results for key =   2
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44668462E-01
+ Estimate of absolute error =  3.16E-04
+ Number of function evaluattions =   231
+
+ Results for key =   3
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44668420E-01
+ Estimate of absolute error =  2.51E-04
+ Number of function evaluattions =   341
+
+ Results for key =   4
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44669481E-01
+ Estimate of absolute error =  1.29E-04
+ Number of function evaluattions =   369
+
+ Results for key =   5
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44718690E-01
+ Estimate of absolute error =  1.74E-04
+ Number of function evaluattions =   153
+
+ Results for key =   6
+ Results for epsrel =  1.00E-03
+ Integral approximation =  3.44670504E-01
+ Estimate of absolute error =  2.27E-04
+ Number of function evaluattions =   427
+
+ Results for key =   1
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44667997E-01
+ Estimate of absolute error =  2.56E-05
+ Number of function evaluattions =   225
+
+ Results for key =   2
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44667836E-01
+ Estimate of absolute error =  2.60E-05
+ Number of function evaluattions =   315
+
+ Results for key =   3
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44667832E-01
+ Estimate of absolute error =  2.07E-05
+ Number of function evaluattions =   465
+
+ Results for key =   4
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44667920E-01
+ Estimate of absolute error =  1.06E-05
+ Number of function evaluattions =   533
+
+ Results for key =   5
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44671978E-01
+ Estimate of absolute error =  1.43E-05
+ Number of function evaluattions =   357
+
+ Results for key =   6
+ Results for epsrel =  1.00E-04
+ Integral approximation =  3.44668004E-01
+ Estimate of absolute error =  1.87E-05
+ Number of function evaluattions =   671
+
+ Results for key =   1
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44667797E-01
+ Estimate of absolute error =  2.11E-06
+ Number of function evaluattions =   285
+
+ Results for key =   2
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44667784E-01
+ Estimate of absolute error =  2.15E-06
+ Number of function evaluattions =   399
+
+ Results for key =   3
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44667784E-01
+ Estimate of absolute error =  1.71E-06
+ Number of function evaluattions =   589
+
+ Results for key =   4
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44667820E-01
+ Estimate of absolute error =  3.06E-06
+ Number of function evaluattions =   615
+
+ Results for key =   5
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44668126E-01
+ Estimate of absolute error =  1.18E-06
+ Number of function evaluattions =   561
+
+ Results for key =   6
+ Results for epsrel =  1.00E-05
+ Integral approximation =  3.44667798E-01
+ Estimate of absolute error =  1.54E-06
+ Number of function evaluattions =   915
+
+ Results for key =   1
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667781E-01
+ Estimate of absolute error =  1.74E-07
+ Number of function evaluattions =   345
+
+ Results for key =   2
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667780E-01
+ Estimate of absolute error =  1.77E-07
+ Number of function evaluattions =   483
+
+ Results for key =   3
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667780E-01
+ Estimate of absolute error =  1.41E-07
+ Number of function evaluattions =   713
+
+ Results for key =   4
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667783E-01
+ Estimate of absolute error =  2.52E-07
+ Number of function evaluattions =   779
+
+ Results for key =   5
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667879E-01
+ Estimate of absolute error =  3.39E-07
+ Number of function evaluattions =   663
+
+ Results for key =   6
+ Results for epsrel =  1.00E-06
+ Integral approximation =  3.44667781E-01
+ Estimate of absolute error =  1.27E-07
+ Number of function evaluattions =  1159
+
+ Results for key =   1
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.44E-08
+ Number of function evaluattions =   405
+
+ Results for key =   2
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.46E-08
+ Number of function evaluattions =   567
+
+ Results for key =   3
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.16E-08
+ Number of function evaluattions =   837
+
+ Results for key =   4
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667780E-01
+ Estimate of absolute error =  2.08E-08
+ Number of function evaluattions =   943
+
+ Results for key =   5
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667787E-01
+ Estimate of absolute error =  2.80E-08
+ Number of function evaluattions =   867
+
+ Results for key =   6
+ Results for epsrel =  1.00E-07
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.05E-08
+ Number of function evaluattions =  1403
+
+ Results for key =   1
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.20E-09
+ Number of function evaluattions =   465
+
+ Results for key =   2
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.20E-09
+ Number of function evaluattions =   651
+
+ Results for key =   3
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  3.34E-09
+ Number of function evaluattions =   899
+
+ Results for key =   4
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.71E-09
+ Number of function evaluattions =  1107
+
+ Results for key =   5
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667780E-01
+ Estimate of absolute error =  2.31E-09
+ Number of function evaluattions =  1071
+
+ Results for key =   6
+ Results for epsrel =  1.00E-08
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  3.02E-09
+ Number of function evaluattions =  1525
+
+ Results for key =   1
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.13E-10
+ Number of function evaluattions =   525
+
+ Results for key =   2
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  9.93E-11
+ Number of function evaluattions =   735
+
+ Results for key =   3
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.75E-10
+ Number of function evaluattions =  1023
+
+ Results for key =   4
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.41E-10
+ Number of function evaluattions =  1271
+
+ Results for key =   5
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.90E-10
+ Number of function evaluattions =  1275
+
+ Results for key =   6
+ Results for epsrel =  1.00E-09
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.49E-10
+ Number of function evaluattions =  1769
+
+ Results for key =   1
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.34E-11
+ Number of function evaluattions =   585
+
+ Results for key =   2
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.85E-11
+ Number of function evaluattions =   777
+
+ Results for key =   3
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.27E-11
+ Number of function evaluattions =  1147
+
+ Results for key =   4
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.17E-11
+ Number of function evaluattions =  1435
+
+ Results for key =   5
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.57E-11
+ Number of function evaluattions =  1479
+
+ Results for key =   6
+ Results for epsrel =  1.00E-10
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.05E-11
+ Number of function evaluattions =  2013
+
+ Results for key =   1
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.93E-12
+ Number of function evaluattions =   705
+
+ Results for key =   2
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  2.35E-12
+ Number of function evaluattions =   861
+
+ Results for key =   3
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.88E-12
+ Number of function evaluattions =  1271
+
+ Results for key =   4
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  3.35E-12
+ Number of function evaluattions =  1517
+
+ Results for key =   5
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.30E-12
+ Number of function evaluattions =  1683
+
+ Results for key =   6
+ Results for epsrel =  1.00E-11
+ Integral approximation =  3.44667779E-01
+ Estimate of absolute error =  1.70E-12
+ Number of function evaluattions =  2257
+
+EX_QAG:
+  Normal end of execution.

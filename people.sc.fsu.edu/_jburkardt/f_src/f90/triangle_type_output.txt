@@ -1,0 +1,15 @@
+
+TRIANGLE_TYPE:
+  Demonstrate how to create a derived data type.
+  The TYPE statement names the type, and components.
+  The percent sign is used to access a component.
+
+  Triangle information:
+
+  Vertices:
+
+   0.00000       0.00000    
+   1.00000       0.00000    
+   0.00000       2.00000    
+
+  Area =    1.00000    

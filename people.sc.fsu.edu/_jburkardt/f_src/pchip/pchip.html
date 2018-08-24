@@ -1,0 +1,554 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/pchip/pchip.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:00:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      PCHIP - Piecewise Cubic Hermite Interpolant Package
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      PCHIP <br> Piecewise Cubic Hermite Interpolant Package
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>PCHIP</b>
+      is a FORTRAN90 library which
+      can construct a piecewise cubic Hermite interpolant to data, and
+      carry out various related operations, by Fred Fritsch.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>PCHIP</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/pchip/pchip.html">a FORTRAN77 version</a> and
+      <a href = "pchip.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../barycentric_interp_1d/barycentric_interp_1d.html">
+      BARYCENTRIC_INTERP_1D</a>,
+      a FORTRAN90 library which
+      defines and evaluates the barycentric Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+      The barycentric approach means that very high degree polynomials can
+      safely be used.
+    </p>
+
+    <p>
+      <a href = "../chebyshev_interp_1d/chebyshev_interp_1d.html">
+      CHEBYSHEV_INTERP_1D</a>,
+      a FORTRAN90 library which
+      determines the combination of Chebyshev polynomials which 
+      interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/dataset/interpolation/interpolation.html">
+      INTERPOLATION</a>,
+      a dataset directory which
+      contains datasets to be interpolated.
+    </p>
+
+    <p>
+      <a href = "../lagrange_interp_1d/lagrange_interp_1d.html">
+      LAGRANGE_INTERP_1D</a>,
+      a FORTRAN90 library which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../nearest_interp_1d/nearest_interp_1d.html">
+      NEAREST_INTERP_1D</a>,
+      a FORTRAN90 library which
+      interpolates a set of data using a piecewise constant interpolant
+      defined by the nearest neighbor criterion,
+      creating graphics files for processing by gnuplot.
+    </p>
+
+    <p>
+      <a href = "../nms/nms.html">
+      NMS</a>,
+      a FORTRAN90 library which
+      includes a wide variety of numerical software, including
+      solvers for linear systems of equations, 
+      a Piecewise Cubic Hermite Interpolation Package (PCHIP),
+      numerical quadrature, linear least squares data fitting,
+      the solution of nonlinear equations, 
+      ordinary differential equations (ODE's),
+      optimization and nonlinear least squares, simulation and random numbers,
+      trigonometric approximation and Fast Fourier Transforms (FFT).
+    </p>
+
+    <p>
+      <a href = "../pwl_interp_1d/pwl_interp_1d.html">
+      PWL_INTERP_1D</a>,
+      a FORTRAN90 library which
+      interpolates a set of data using a piecewise linear function,
+      creating graphics files for processing by gnuplot.
+    </p>
+
+    <p>
+      <a href = "../test_interp/test_interp.html">
+      TEST_INTERP</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation, 
+      provided as a set of (x,y) data.
+    </p>
+
+    <p>
+      <a href = "../test_interp_1d/test_interp_1d.html">
+      TEST_INTERP_1D</a>,
+      a FORTRAN90 library which
+      defines test problems for interpolation of data y(x),
+      depending on a 1D argument.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Carl deBoor,<br>
+          A Practical Guide to Splines,<br>
+          Springer, 2001,<br>
+          ISBN: 0387953663,<br>
+          LC: QA1.A647.v27.
+        </li>
+        <li>
+          Carl deBoor, <br>
+          Package for calculating with B-splines,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 14, Number 3, June 1977, pages 441-472.
+        </li>
+        <li>
+          Fred Fritsch,<br>
+          Representations for Parametric Cubic Splines,<br>
+          Computer Aided Geometric Design,<br>
+          Volume 6, 1989, pages 79-82.
+        </li>
+        <li>
+          Fred Fritsch,<br>
+          Piecewise Cubic Hermite Interpolation Package, Final Specifications,<br>
+          Lawrence Livermore National Laboratory,<br>
+          Computer Documentation UCID-30194, August 1982.
+        </li>
+        <li>
+          Fred Fritsch, Judy Butland,<br>
+          A Method for Constructing Local Monotone Piecewise
+          Cubic Interpolants,<br>
+          SIAM Journal on Scientific and Statistical Computing,<br>
+          Volume 5, Number 2, June 1984, pages 300-304.
+        </li>
+        <li>
+          Fred Fritsch, Ralph Carlson,<br>
+          Monotone Piecewise Cubic Interpolation,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 17, Number 2, April 1980, pages 238-246.
+        </li>
+        <li>
+          Ron Jones, David Kahaner,<br>
+          XERROR, The SLATEC Error Handling Package,<br>
+          Software: Practice and Experience,<br>
+          Volume 13, Number 3, 1983, pages 251-257.
+        </li>
+        <li>
+          David Kahaner, Cleve Moler, Steven Nash,<br>
+          Numerical Methods and Software,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0-13-627258-4,<br>
+          LC: TA345.K34.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "pchip.f90">pchip.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "pchip_prb.f90">pchip_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "pchip_prb_output.txt">pchip_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TEST02</b> generates some files that can be input to GNUPLOT
+      to illustrate the problem of interpolating monotonic data with
+      a piecewise cubic Hermite spline.
+      <ul>
+        <li>
+          <a href = "test02_commands.txt">test02_commands.txt</a>,
+          input commands to GNUPLOT.
+        </li>
+        <li>
+          <a href = "test02_data.txt">test02_data.txt</a>,
+          specifies the data to be interpolated.
+        </li>
+        <li>
+          <a href = "test02_interp.txt">test02_interp.txt</a>,
+          samples the interpolant at many points.
+        </li>
+        <li>
+          <a href = "test02.png">test02.png</a>,
+          a PNG version of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TEST03</b> generates some files that can be input to GNUPLOT
+      to illustrate the problem of interpolating monotonic data with
+      a cubic spline.
+      <ul>
+        <li>
+          <a href = "test03_commands.txt">test03_commands.txt</a>,
+          input commands to GNUPLOT.
+        </li>
+        <li>
+          <a href = "test03_data.txt">test03_data.txt</a>,
+          specifies the data to be interpolated.
+        </li>
+        <li>
+          <a href = "test03_interp.txt">test03_interp.txt</a>,
+          samples the interpolant at many points.
+        </li>
+        <li>
+          <a href = "test03.png">test03.png</a>,
+          a PNG version of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>BVALU</b> evaluates a B-spline or its derivatives.
+        </li>
+        <li>
+          <b>CHFCM</b> checks a single cubic for monotonicity.
+        </li>
+        <li>
+          <b>CHFDV</b> evaluates a cubic polynomial and derivative in Hermite form.
+        </li>
+        <li>
+          <b>CHFEV</b> evaluates a cubic polynomial in Hermite form.
+        </li>
+        <li>
+          <b>CHFIE</b> evaluates the integral of a single cubic for PCHIA.
+        </li>
+        <li>
+          <b>COMP</b> compares actual and expected values of error flag.
+        </li>
+        <li>
+          <b>D1MACH</b> returns real ( kind = 8 ) real machine constants.
+        </li>
+        <li>
+          <b>DBVALU</b> evaluates a B-spline or its derivatives.
+        </li>
+        <li>
+          <b>DCHFCM</b> checks a single cubic for monotonicity.
+        </li>
+        <li>
+          <b>DCHFDV</b> evaluates a cubic Hermite polynomial and derivative at many points.
+        </li>
+        <li>
+          <b>DCHFEV</b> evaluates a cubic Hermite polynomial at many points.
+        </li>
+        <li>
+          <b>DCHFIE</b> evaluates the integral of a single cubic for DPCHIA.
+        </li>
+        <li>
+          <b>DEVCHK</b> tests evaluation accuracy of DCHFDV and DCHFEV for DPCHQ1.
+        </li>
+        <li>
+          <b>DEVERK</b> tests error returns from DPCHIP evaluators for DPCHQ1.
+        </li>
+        <li>
+          <b>DEVPCK</b> tests usage of increment argument in DPCHFD and DPCHFE for DPCHQ1.
+        </li>
+        <li>
+          <b>DFDTRU</b> computes exact function values for DEVCHK.
+        </li>
+        <li>
+          <b>DINTRV</b> finds the interval containing a point.
+        </li>
+        <li>
+          <b>DPCHBS:</b> Piecewise cubic Hermite to B-Spline converter.
+        </li>
+        <li>
+          <b>DPCHCE</b> sets boundary conditions for DPCHIC.
+        </li>
+        <li>
+          <b>DPCHCI</b> sets interior derivatives for DPCHIC.
+        </li>
+        <li>
+          <b>DPCHCM</b> checks a cubic Hermite function for monotonicity.
+        </li>
+        <li>
+          <b>DPCHCS</b> adjusts derivative values for DPCHIC.
+        </li>
+        <li>
+          <b>DPCHDF</b> computes divided differences for DPCHCE and DPCHSP.
+        </li>
+        <li>
+          <b>DPCHEV:</b> value and derivative of spline or cubic Hermite at many points.
+        </li>
+        <li>
+          <b>DPCHEZ</b> sets up a spline or cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>DPCHFD</b> evaluates a piecewise cubic Hermite and derivative at many points.
+        </li>
+        <li>
+          <b>DPCHFE</b> evaluates a piecewise cubic Hermite function at many points.
+        </li>
+        <li>
+          <b>DPCHIA</b> evaluates the definite integral of a piecewise cubic Hermite function.
+        </li>
+        <li>
+          <b>DPCHIC</b> sets derivatives for a monotone piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>DPCHID:</b> integral of a piecewise cubic Hermite function between data points.
+        </li>
+        <li>
+          <b>DPCHIM</b> sets derivatives for a monotone piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>DPCHKT</b> computes the B-spline knot sequence for DPCHBS.
+        </li>
+        <li>
+          <b>DPCHQ1:</b> Test the PCHIP evaluators DCHFDV, DCHFEV, DPCHFD, DPCHFE.
+        </li>
+        <li>
+          <b>DPCHQ2</b> tests the PCHIP integrators DPCHIA and DPCHID.
+        </li>
+        <li>
+          <b>DPCHQ3</b> tests the PCHIP interpolators DPCHIC, DPCHIM, DPCHSP.
+        </li>
+        <li>
+          <b>DPCHQ4</b> tests the PCHIP monotonicity checker DPCHCM.
+        </li>
+        <li>
+          <b>DPCHQ5</b> tests the PCH to B-spline conversion routine DPCHBS.
+        </li>
+        <li>
+          <b>DPCHQA:</b> definite integral of spline or piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>DPCHSP:</b> derivatives for Hermite representation of cubic spline interpolant.
+        </li>
+        <li>
+          <b>DPCHST:</b> carry out a sign test.
+        </li>
+        <li>
+          <b>DPCHSW</b> limits excursion from data for DPCHCS.
+        </li>
+        <li>
+          <b>EVCHK</b> tests evaluation accuracy of CHFDV and DHFEV for PCHQK1.
+        </li>
+        <li>
+          <b>EVERCK</b> tests error returns from PCHIP evaluators for PCHQK1.
+        </li>
+        <li>
+          <b>EVPCCK</b> tests usage of increment argument in PCHFD and PCHFE for PCHQK1.
+        </li>
+        <li>
+          <b>FDTRUE</b> computes exact function values for EVCHCK.
+        </li>
+        <li>
+          <b>FDUMP</b> can be used to print a symbolic dump.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>I1MACH</b> returns integer machine constants.
+        </li>
+        <li>
+          <b>INTRV</b> seeks the interval containing or nearest to a given point.
+        </li>
+        <li>
+          <b>J4SAVE</b> saves or recalls global variables needed by the error handler.
+        </li>
+        <li>
+          <b>PCHBS:</b> Piecewise cubic Hermite to B-Spline converter.
+        </li>
+        <li>
+          <b>PCHCE</b> sets boundary conditions for PCHIC.
+        </li>
+        <li>
+          <b>PCHCI</b> sets interior derivatives for PCHIC.
+        </li>
+        <li>
+          <b>PCHCM</b> checks a cubic Hermite function for monotonicity.
+        </li>
+        <li>
+          <b>PCHCS</b> adjusts derivative values for PCHIC.
+        </li>
+        <li>
+          <b>PCHDF</b> computes divided differences for PCHCE and PCHSP.
+        </li>
+        <li>
+          <b>PCHEV:</b> value and derivative of spline or cubic Hermite at many points.
+        </li>
+        <li>
+          <b>PCHEZ</b> sets up a spline or cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>PCHFD</b> evaluates a piecewise cubic Hermite and derivative at many points.
+        </li>
+        <li>
+          <b>PCHFE</b> evaluates a piecewise cubic Hermite function at many points.
+        </li>
+        <li>
+          <b>PCHIA</b> evaluates the definite integral of a piecewise cubic Hermite function.
+        </li>
+        <li>
+          <b>PCHIC</b> sets derivatives for a monotone piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>PCHID:</b> integral of a piecewise cubic Hermite function between data points.
+        </li>
+        <li>
+          <b>PCHIM</b> sets derivatives for a monotone piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>PCHKT</b> computes the B-spline knot sequence for PCHBS.
+        </li>
+        <li>
+          <b>PCHQA:</b> definite integral of spline or piecewise cubic Hermite interpolant.
+        </li>
+        <li>
+          <b>PCHQK1</b> tests the PCHIP evaluators CHFDV, CHFEV, PCHFD, PCHFE.
+        </li>
+        <li>
+          <b>PCHQK2</b> tests the PCHIP integrators PCHIA and PCHID.
+        </li>
+        <li>
+          <b>PCHQK3</b> tests the PCHIP interpolators PCHIC, PCHIM, PCHSP.
+        </li>
+        <li>
+          <b>PCHQK4</b> tests the PCHIP monotonicity checker PCHCM.
+        </li>
+        <li>
+          <b>PCHQK5</b> tests the PCH to B-spline conversion routine PCHBS.
+        </li>
+        <li>
+          <b>PCHSP:</b> derivatives for Hermite representation of cubic spline interpolant.
+        </li>
+        <li>
+          <b>PCHST:</b> carry out a sign test.
+        </li>
+        <li>
+          <b>PCHSW</b> limits excursion from data for PCHCS.
+        </li>
+        <li>
+          <b>R1MACH</b> returns single precision real machine constants.
+        </li>
+        <li>
+          <b>RAND</b> generates a uniformly distributed random number.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>XERCNT</b> allows user control over handling of errors.
+        </li>
+        <li>
+          <b>XERDMP</b> prints the error tables, then clears them.
+        </li>
+        <li>
+          <b>XERHLT</b> halts program execution after a fatal error.
+        </li>
+        <li>
+          <b>XERMSG</b> processes error messages.
+        </li>
+        <li>
+          <b>XERPRN</b> prints error messages from XERMSG.
+        </li>
+        <li>
+          <b>XERSVE</b> records that an error has occurred.
+        </li>
+        <li>
+          <b>XGETF</b> returns the current value of the error control flag.
+        </li>
+        <li>
+          <b>XGETUA</b> returns error unit numbers.
+        </li>
+        <li>
+          <b>XSETF</b> sets the error control flag.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 April 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/pchip/pchip.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:00:34 GMT -->
+</html>

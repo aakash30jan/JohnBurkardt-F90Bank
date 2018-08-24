@@ -1,0 +1,579 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/r8col/r8col.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:10:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      R8COL - Arrays of Columns
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      R8COL <br> Arrays of Columns
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>R8COL</b> 
+      is a FORTRAN90 library which 
+      contains utility routines for R8COL's, that is,
+      double precision real MxN arrays, considered as N column vectors,
+      each of length M.  The data may be thought of as a matrix of
+      multiple columns, and many operations will be carried out columnwise.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>R8COL</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/r8col/r8col.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/r8col/r8col.html">a C++ version</a> and
+      <a href = "r8col.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/r8col/r8col.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/r8col/r8col.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../r83/r83.html">
+      R83</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83 matrices
+      (real, 64 bit, tridiagonal 3xN format).
+    </p>
+
+    <p>
+      <a href = "../r83_np/r83_np.html">
+      R83_NP</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83_NP matrices
+      (real, 64 bit, tridiagonal 3xN format, nonpivoting factorization).
+    </p>
+
+    <p>
+      <a href = "../r83p/r83p.html">
+      R83P</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83P matrices
+      (real, 64 bit, tridiagonal periodic format).
+    </p>
+
+    <p>
+      <a href = "../r83s/r83s.html">
+      R83S</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83S matrices
+      (real, 64 bit, tridiagonal scalar format).
+    </p>
+
+    <p>
+      <a href = "../r83t/r83t.html">
+      R83T</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83T matrices
+      (real, 64 bit, tridiagonal Mx3 format).
+    </p>
+
+    <p>
+      <a href = "../r83v/r83v.html">
+      R83V</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83V matrices
+      (real, 64 bit, tridiagonal three vector format).
+    </p>
+
+    <p>
+      <a href = "../r85/r85.html">
+      R85</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R85 matrices
+      (real, 64 bit, pentadiagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8bb/r8bb.html">
+      R8BB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BB matrices
+      (real, 64 bit, border banded format).
+    </p>
+
+    <p>
+      <a href = "../r8blt/r8blt.html">
+      R8BLT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BLT matrices
+      (real, 64 bit, band lower triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8bto/r8bto.html">
+      R8BTO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BTO matrices
+      (real, 64 bit, block Toeplitz format).
+    </p>
+
+    <p>
+      <a href = "../r8but/r8but.html">
+      R8BUT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BUT matrices
+      (real, 64 bit, band upper triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8cb/r8cb.html">
+      R8CB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CB matrices
+      (real, 64 bit, Compressed Band format).
+    </p>
+
+    <p>
+      <a href = "../r8cbb/r8cbb.html">
+      R8CBB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CBB matrices
+      (real, 64 bit, Compressed Border Banded format).
+    </p>
+
+    <p>
+      <a href = "../r8cc/r8cc.html">
+      R8CC</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CC matrices
+      (real, 64 bit, Compressed Column (Colptr,Row,Value) format).
+    </p>
+
+    <p>
+      <a href = "../r8ci/r8ci.html">
+      R8CI</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CI matrices
+      (real, 64 bit, circulant format).
+    </p>
+
+    <p>
+      <a href = "../r8gb/r8gb.html">
+      R8GB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GB matrices
+      (real, 64 bit, General Banded format).
+    </p>
+
+    <p>
+      <a href = "../r8gd/r8gd.html">
+      R8GD</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GD matrices
+      (real, 64 bit, general diagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8ge/r8ge.html">
+      R8GE</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GE matrices
+      (real, 64 bit, General format).
+    </p>
+
+    <p>
+      <a href = "../r8ge_np/r8ge_np.html">
+      R8GE_NP</a>,
+      a FORTRAN90 library which
+      contains nonpivoting linear algebra routines for R8GE matrices
+      (real, 64 bit, General Nonpivoting format).
+    </p>
+
+    <p>
+      <a href = "../r8lt/r8lt.html">
+      R8LT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8LT matrices
+      (real, 64 bit, lower triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8ltt/r8ltt.html">
+      R8LTT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8LTT matrices
+      (real, 64 bit, lower triangular Toeplitz format).
+    </p>
+
+    <p>
+      <a href = "../r8ncf/r8ncf.html">
+      R8NCF</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8NCF matrices
+      (real, 64 bit, nonsymmetric coordinate format).
+    </p>
+
+    <p>
+      <a href = "../r8pbl/r8pbl.html">
+      R8PBL</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PBL matrices
+      (real, 64 bit, positive definite symmetric band lower format).
+    </p>
+
+    <p>
+      <a href = "../r8pbu/r8pbu.html">
+      R8PBU</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PBU matrices
+      (real, 64 bit, positive definite symmetric band upper format).
+    </p>
+
+    <p>
+      <a href = "../r8po/r8po.html">
+      R8PO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PO matrices
+      (real, 64 bit, positive definite symmetric format).
+    </p>
+
+    <p>
+      <a href = "../r8pp/r8pp.html">
+      R8PP</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PP matrices
+      (real, 64 bit, positive definite symmetric packed format).
+    </p>
+
+    <p>
+      <a href = "../r8ri/r8ri.html">
+      R8RI</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8RI matrices
+      (real, 64 bit, row indexed format).
+    </p>
+
+    <p>
+      <a href = "../r8row/r8row.html">
+      R8ROW</a>,
+      a FORTRAN90 library which 
+      contains utility routines for R8ROW's, that is,
+      double precision real MxN arrays, considered as M row vectors,
+      each of length N.  The data may be thought of as a matrix of
+      multiple rows, and many operations will be carried out rowwise.
+    </p>
+
+    <p>
+      <a href = "../r8s3/r8s3.html">
+      R8S3</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8S3 matrices
+      (real, 64 bit, SLAP Triad (I,J,AIJ) format).
+    </p>
+
+    <p>
+      <a href = "../r8sd/r8sd.html">
+      R8SD</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SD matrices
+      (real, 64 bit, symmetric diagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8sm/r8sm.html">
+      R8SM</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SM (Sherman-Morrison) matrices
+      (real, 64 bit, A-u*v' format).
+    </p>
+
+    <p>
+      <a href = "../r8sp/r8sp.html">
+      R8SP</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SP matrices
+      (real, 64 bit, SLAP Triad (I,J,AIJ) format).
+    </p>
+
+    <p>
+      <a href = "../r8sr/r8sr.html">
+      R8SR</a>,
+      a FORTRAN90 library which 
+      carries out linear algebra operations for R8SR matrices
+      (real, 64 bit, diagonal + compressed row offdiagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8ss/r8ss.html">
+      R8SS</a>,
+      a FORTRAN90 library which 
+      carries out linear algebra operations for R8SS matrices
+      (real, 64 bit, symmetric skyline format).
+    </p>
+
+    <p>
+      <a href = "../r8sto/r8sto.html">
+      R8STO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8STO matrices
+      (real, 64 bit, symmetric Toeplitz N format).
+    </p>
+
+    <p>
+      <a href = "../r8to/r8to.html">
+      R8TO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8TO matrices
+      (real, 64 bit, Toeplitz 2*N-1 format).
+    </p>
+
+    <p>
+      <a href = "../r8ut/r8ut.html">
+      R8UT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8UT matrices
+      (real, 64 bit, upper triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8vm/r8vm.html">
+      R8VM</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8VM matrices
+      (real, 64 bit, Vandermonde format).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "r8col.f90">r8col.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "r8col_prb.f90">r8col_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "r8col_prb_output.txt">r8col_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_LOG_10</b> returns the integer part of the logarithm base 10 of an I4.
+        </li>
+        <li>
+          <b>I4VEC_PRINT</b> prints an I4VEC.
+        </li>
+        <li>
+          <b>PERM1_CHECK</b> checks a 1-based permutation.
+        </li>
+        <li>
+          <b>R8COL_COMPARE</b> compares columns in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_DUPLICATES</b> generates an R8COL with some duplicate columns.
+        </li>
+        <li>
+          <b>R8COL_FIND</b> seeks a column value in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_FIRST_INDEX</b> indexes the first occurrence of values in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_INDICATOR</b> sets up an "indicator" R8COL.
+        </li>
+        <li>
+          <b>R8COL_INSERT</b> inserts a column into an R8COL.
+        </li>
+        <li>
+          <b>R8COL_MAX</b> returns the maximums in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_MAX_INDEX</b> returns the indices of column maximums in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_MAX_ONE</b> rescales an R8COL so each column maximum is 1.
+        </li>
+        <li>
+          <b>R8COL_MEAN</b> returns the column means of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_MIN</b> returns the column minimums of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_MIN_INDEX</b> returns the indices of column minimums in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_NORMALIZE_LI</b> normalizes an R8COL with the column infinity norm.
+        </li>
+        <li>
+          <b>R8COL_PART_QUICK_A</b> reorders the columns of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_PERMUTE</b> permutes an R8COL in place.
+        </li>
+        <li>
+          <b>R8COL_PRINT</b> prints an R8COL.
+        </li>
+        <li>
+          <b>R8COL_PRINT_SOME</b> prints some of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_REVERSE</b> reverses the order of columns in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SEPARATION</b> returns the "separation" of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORT_HEAP_A</b> ascending heapsorts an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORT_HEAP_INDEX_A</b> does an indexed heap ascending sort of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORT_QUICK_A</b> ascending quick sorts an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_TOL_UNDEX</b> indexes tolerably unique entries in a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_TOL_UNIQUE</b> keeps tolerably unique elements in a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_TOL_UNIQUE_COUNT:</b> tolerably unique elements in a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_UNDEX</b> returns unique sorted indexes for a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_UNIQUE</b> keeps unique elements in a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTED_UNIQUE_COUNT</b> counts unique elements in a sorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_SORTR_A</b> ascending sorts one column of an R8COL, adjusting all columns.
+        </li>
+        <li>
+          <b>R8COL_SUM</b> sums the columns of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_SWAP</b> swaps columns I and J of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_TO_R8VEC</b> converts an R8COL to an R8VEC.
+        </li>
+        <li>
+          <b>R8COL_TOL_UNDEX</b> indexes tolerably unique entries of an R8COL.
+        </li>
+        <li>
+          <b>R8COL_TOL_UNIQUE_COUNT</b> counts tolerably unique entries in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_TOL_UNIQUE_INDEX</b> indexes tolerably unique entries in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_TRANSPOSE_PRINT</b> prints an R8COL, transposed.
+        </li>
+        <li>
+          <b>R8COL_TRANSPOSE_PRINT_SOME</b> prints some of an R8COL, transposed.
+        </li>
+        <li>
+          <b>R8COL_UNDEX</b> returns unique sorted indexes for an R8COL.
+        </li>
+        <li>
+          <b>R8COL_UNIFORM_AB</b> returns a scaled pseudorandom R8COL.
+        </li>
+        <li>
+          <b>R8COL_UNIFORM_ABVEC</b> fills an R8COL with scaled pseudorandom numbers.
+        </li>
+        <li>
+          <b>R8COL_UNIQUE_COUNT</b> counts the unique columns in an unsorted R8COL.
+        </li>
+        <li>
+          <b>R8COL_UNIQUE_INDEX</b> indexes the unique occurrence of values in an R8COL.
+        </li>
+        <li>
+          <b>R8COL_VARIANCE</b> returns the variances of an R8COL.
+        </li>
+        <li>
+          <b>R8VEC_COMPARE</b> compares two R8VEC's.
+        </li>
+        <li>
+          <b>R8VEC_EQ</b> is true if two R8VECs are equal.
+        </li>
+        <li>
+          <b>R8VEC_GT</b> == ( A1 > A2 ) for R8VEC's.
+        </li>
+        <li>
+          <b>R8VEC_LT</b> == ( A1 < A2 ) for R8VEC's.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_SWAP</b> swaps the entries of two R8VECs.
+        </li>
+        <li>
+          <b>SORT_HEAP_EXTERNAL</b> externally sorts a list of items into ascending order.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 February 2016.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/r8col/r8col.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:10:09 GMT -->
+</html>

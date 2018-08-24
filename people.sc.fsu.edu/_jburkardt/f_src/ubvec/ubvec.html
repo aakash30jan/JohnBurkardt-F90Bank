@@ -1,0 +1,209 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/ubvec/ubvec.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:34:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      UBVEC - Unsigned Binary Vectors
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      UBVEC <br> Unsigned Binary Vectors
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>UBVEC</b>
+      is a FORTRAN90 library which
+      demonstrates how unsigned binary vectors, strings of 0's and 1's,
+      can represent nonnegative integers or subsets or other mathematical
+      objects, for which various arithmetic and logical operations can
+      be defined. 
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>UBVEC</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/ubvec/ubvec.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/ubvec/ubvec.html">a C++ version</a> and
+      <a href = "ubvec.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/ubvec/ubvec.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/ubvec/ubvec.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../bvec/bvec.html">
+      BVEC</a>,
+      a FORTRAN90 library which
+      demonstrates how signed integers can be stored as
+      binary vectors, and arithmetic can be performed on them.
+    </p>
+
+    <p>
+      <a href = "../subset/subset.html">
+      SUBSET</a>,
+      a FORTRAN90 library which
+      enumerates, generates, randomizes, ranks and unranks combinatorial objects
+      including combinations, compositions, Gray codes, index sets, partitions, 
+      permutations, polynomials, subsets, and Young tables.  Backtracking 
+      routines are included to solve some combinatorial problems.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ubvec.f90">ubvec.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ubvec_prb.f90">ubvec_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "ubvec_prb_output.txt">ubvec_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_CHOOSE</b> computes the binomial coefficient C(N,K) as an I4.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB</b> returns a scaled pseudorandom I4 between A and B.
+        </li>
+        <li>
+          <b>KSUBSET_COLEX_UNRANK</b> computes the K subset of given colex rank.
+        </li>
+        <li>
+          <b>MORSE_THUE</b> generates a Morse_Thue number.
+        </li>
+        <li>
+          <b>NIM_SUM</b> computes the Nim sum of two integers.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>UBVEC_ADD</b> adds two unsigned binary vectors.
+        </li>
+        <li>
+          <b>UBVEC_AND</b> computes the AND of two unsigned binary vectors.
+        </li>
+        <li>
+          <b>UBVEC_CHECK</b> checks an unsigned binary vector.
+        </li>
+        <li>
+          <b>UBVEC_COMPLEMENT1</b> computes the one's complement of an unsigned binary vector.
+        </li>
+        <li>
+          <b>UBVEC_ENUM</b> enumerates the unsigned binary vectors of length N.
+        </li>
+        <li>
+          <b>UBVEC_NEXT</b> generates the next UBVEC.
+        </li>
+        <li>
+          <b>UBVEC_NEXT_GRAY</b> computes the next UBVEC in the Gray code.
+        </li>
+        <li>
+          <b>UBVEC_NEXT_GRLEX</b> generates the next UBVEC in GRLEX order.
+        </li>
+        <li>
+          <b>UBVEC_OR</b> computes the OR of two unsigned binary vectors.
+        </li>
+        <li>
+          <b>UBVEC_PRINT</b> prints a UBVEC, with an optional title.
+        </li>
+        <li>
+          <b>UBVEC_RANDOM</b> returns a pseudorandom BVEC.
+        </li>
+        <li>
+          <b>UBVEC_RANK_GRAY</b> ranks a UBVEC according to the Gray ordering.
+        </li>
+        <li>
+          <b>UBVEC_REVERSE</b> reverses a UBVEC.
+        </li>
+        <li>
+          <b>UBVEC_TO_UI4</b> makes an unsigned integer from an unsigned binary vector.
+        </li>
+        <li>
+          <b>UBVEC_UNRANK_GRAY</b> unranks a UBVEC.
+        </li>
+        <li>
+          <b>UBVEC_UNRANK_GRLEX</b> unranks a UBVEC using the GRLEX ordering.
+        </li>
+        <li>
+          <b>UBVEC_XOR</b> computes the exclusive OR of two unsigned binary vectors.
+        </li>
+        <li>
+          <b>UI4_RANK_GRAY</b> ranks a Gray code.
+        </li>
+        <li>
+          <b>UI4_TO_UBVEC</b> makes an unsigned binary vector from an unsigned integer.
+        </li>
+        <li>
+          <b>UI4_UNRANK_GRAY</b> unranks a Gray code.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 September 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/ubvec/ubvec.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:34:16 GMT -->
+</html>

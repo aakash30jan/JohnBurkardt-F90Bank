@@ -1,0 +1,240 @@
+11 November 2013   9:17:09.070 AM
+ 
+DIFFER_PRB:
+  FORTRAN90 version
+  Test the DIFFER library.
+ 
+TEST01
+  Demonstrate that the DIFFER matrix is "really"
+  a Vandermonde matrix.
+ 
+  Stencil matrix:
+ 
+  Col          1             2             3             4      
+  Row
+ 
+    1:   2.50000       3.30000      -1.30000      0.500000    
+    2:   6.25000       10.8900       1.69000      0.250000    
+    3:   15.6250       35.9370      -2.19700      0.125000    
+    4:   39.0625       118.592       2.85610      0.625000E-01
+ 
+  Solution of DIFFER system:
+ 
+         1:    1.0000000    
+         2:    2.0000000    
+         3:    3.0000000    
+         4:    4.0000000    
+ 
+  Solution of VANDERMONDE system:
+ 
+         1:    2.5000000    
+         2:    6.5999999    
+         3:   -3.8999999    
+         4:    2.0000000    
+ 
+  Transformed solution of VANDERMONDE system:
+ 
+         1:    1.0000000    
+         2:    2.0000000    
+         3:    3.0000000    
+         4:    4.0000000    
+
+TEST02
+  DIFFER_INVERSE returns the inverse of a DIFFER matrix;
+
+   N    Inverse error
+
+   2     0.00000    
+   2    0.444089E-15
+   2    0.888185E-15
+   2    0.444089E-15
+   2     0.00000    
+
+   3    0.117776E-13
+   3    0.165635E-12
+   3    0.287917E-14
+   3    0.512266E-13
+   3    0.188970E-13
+
+   4    0.314213E-13
+   4    0.850150E-13
+   4    0.571398E-13
+   4    0.428707E-13
+   4    0.280585E-11
+
+   5    0.143579E-09
+   5    0.145624E-11
+   5    0.181003E-10
+   5    0.230649E-11
+   5    0.119425E-10
+
+   6    0.831044E-09
+   6    0.846168E-10
+   6    0.755719E-11
+   6    0.724273E-11
+   6    0.181026E-10
+
+   7    0.473678E-09
+   7    0.559992E-10
+   7    0.532315E-09
+   7    0.201382E-10
+   7    0.307994E-10
+
+   8    0.589396E-09
+   8    0.592820E-09
+   8    0.939620E-08
+   8    0.104455E-08
+   8    0.177870E-08
+ 
+TEST03
+  Reproduce a specific example.
+ 
+  Solution of DIFFER system:
+ 
+         1:  -0.83333333E-01
+         2:   0.50000000    
+         3:   -1.5000000    
+         4:   0.25000000    
+ 
+  DFDX =            3.66931    
+  d exp(x) /dx =    3.66930    
+
+TEST04
+  DIFFER_FORWARD,
+  DIFFER_BACKWARD, and
+  DIFFER_CENTRAL produce coefficients for difference
+  approximations of the O-th derivative,
+  with error of order H^P, for a uniform spacing of H.
+
+  Use a spacing of H =    1.00000     for all examples.
+ 
+  Forward difference coefficients, O =  3, P =  1
+ 
+     1     0.00000        -1.00000    
+     2     1.00000         3.00000    
+     3     2.00000        -3.00000    
+     4     3.00000         1.00000    
+ 
+  Backward difference coefficients, O =  3, P =  1
+ 
+     1    -3.00000        -1.00000    
+     2    -2.00000         3.00000    
+     3    -1.00000        -3.00000    
+     4     0.00000         1.00000    
+ 
+  Central difference coefficients, O =  3, P =  2
+ 
+     1    -2.00000       -0.500000    
+     2    -1.00000         1.00000    
+     3     0.00000         0.00000    
+     4     1.00000        -1.00000    
+     5     2.00000        0.500000    
+ 
+  Central difference coefficients, O =  3, P =  4
+ 
+     1    -3.00000        0.125000    
+     2    -2.00000        -1.00000    
+     3    -1.00000         1.62500    
+     4     0.00000         0.00000    
+     5     1.00000        -1.62500    
+     6     2.00000         1.00000    
+     7     3.00000       -0.125000    
+ 
+  Forward difference coefficients, O =  4, P =  1
+ 
+     1     0.00000         1.00000    
+     2     1.00000        -4.00000    
+     3     2.00000         6.00000    
+     4     3.00000        -4.00000    
+     5     4.00000         1.00000    
+ 
+  Backward difference coefficients, O =  4, P =  1
+ 
+     1    -4.00000         1.00000    
+     2    -3.00000        -4.00000    
+     3    -2.00000         6.00000    
+     4    -1.00000        -4.00000    
+     5     0.00000         1.00000    
+ 
+  Central difference coefficients, O =  4, P =  3
+ 
+     1    -3.00000       -0.166667    
+     2    -2.00000         2.00000    
+     3    -1.00000        -6.50000    
+     4     0.00000         9.33333    
+     5     1.00000        -6.50000    
+     6     2.00000         2.00000    
+     7     3.00000       -0.166667    
+
+TEST05
+  DIFFER_STENCIL produces coefficients for difference
+  approximations of the O-th derivative,
+  using arbitrarily spaced data, with maximum spacing H
+  with error of order H^P.
+
+  For all tests, let X0 =    0.00000    
+  and use a uniformly spacing of    1.00000    
+  so we can compare with previous results.
+ 
+  Forward difference coefficients, O =  3, P =  1
+ 
+     1     0.00000        -1.00000    
+     2     1.00000         3.00000    
+     3     2.00000        -3.00000    
+     4     3.00000         1.00000    
+ 
+  Backward difference coefficients, O =  3, P =  1
+ 
+     1    -3.00000        -1.00000    
+     2    -2.00000         3.00000    
+     3    -1.00000        -3.00000    
+     4    -0.00000         1.00000    
+ 
+  Central difference coefficients, O =  3, P =  2
+ 
+     1    -2.00000       -0.500000    
+     2    -1.00000         1.00000    
+     3     0.00000         0.00000    
+     4     1.00000        -1.00000    
+     5     2.00000        0.500000    
+ 
+  Central difference coefficients, O =  3, P =  4
+ 
+     1    -3.00000        0.125000    
+     2    -2.00000        -1.00000    
+     3    -1.00000         1.62500    
+     4     0.00000         0.00000    
+     5     1.00000        -1.62500    
+     6     2.00000         1.00000    
+     7     3.00000       -0.125000    
+ 
+  Forward difference coefficients, O =  4, P =  1
+ 
+     1     0.00000         1.00000    
+     2     1.00000        -4.00000    
+     3     2.00000         6.00000    
+     4     3.00000        -4.00000    
+     5     4.00000         1.00000    
+ 
+  Backward difference coefficients, O =  4, P =  1
+ 
+     1    -4.00000         1.00000    
+     2    -3.00000        -4.00000    
+     3    -2.00000         6.00000    
+     4    -1.00000        -4.00000    
+     5    -0.00000         1.00000    
+ 
+  Central difference coefficients, O =  4, P =  3
+ 
+     1    -3.00000       -0.166667    
+     2    -2.00000         2.00000    
+     3    -1.00000        -6.50000    
+     4     0.00000         9.33333    
+     5     1.00000        -6.50000    
+     6     2.00000         2.00000    
+     7     3.00000       -0.166667    
+ 
+DIFFER_PRB:
+  Normal end of execution.
+ 
+11 November 2013   9:17:09.071 AM

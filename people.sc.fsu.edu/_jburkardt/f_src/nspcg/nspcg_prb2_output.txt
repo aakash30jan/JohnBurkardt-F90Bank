@@ -1,0 +1,817 @@
+January 11 2013   3:36:53.286 PM
+ 
+NSPCG_PRB2
+  FORTRAN90 version
+ 
+  Tests for NSPCG.
+ 
+TEST01
+  Set up and solve Laplace's equation
+  inside the unit square, using a mesh
+  of NX =       10 by NY =       10
+  strictly interior nodes.
+ 
+  Initialize NSPCG parameters to default values.
+ 
+  Call NSPCG to solve the system.
+  We use the CG conjugate gradient module.
+  
+ Initial iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              0    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              2    (ipropa)
+          iparm(19) =             -1    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.00000000E+00    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+  
+ Initial iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =             50    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.20000000E+01    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.00000000E+00    (digit1)
+          rparm( 8) = 0.00000000E+00    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+ cg
+
+     intermediate output after each iteration
+ iteration           convergence      emax         emin
+       n       s        test
+
+       0       0     0.99366E+01  0.20000E+01  0.10000E+01
+       1       1     0.46168E-01  0.10010E+01  0.10010E+01
+       2       2     0.57189E-02  0.20232E+01  0.10002E+01
+       3       3     0.12254E-02  0.24166E+01  0.10001E+01
+       4       4     0.23767E-03  0.24166E+01  0.10001E+01
+       5       5     0.49318E-04  0.24166E+01  0.10001E+01
+
+ cg  has converged in     5 iterations
+  
+ Final iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =              5    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.24165638E+01    (emax  )
+          rparm( 3) = 0.10001466E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.43069904E+01    (digit1)
+          rparm( 8) = 0.40523585E+01    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+  
+ Final iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              0    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              1    (ipropa)
+          iparm(19) =             -1    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.00000000E+00    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+ 
+  Computed solution:
+ 
+       I       J      X         Y        U(exact)      U(computed)
+ 
+       1       1    0.0909    0.0909     1.00826         1.00827    
+       2       1    0.1818    0.0909     1.01653         1.01652    
+       3       1    0.2727    0.0909     1.02479         1.02477    
+       4       1    0.3636    0.0909     1.03306         1.03304    
+       5       1    0.4545    0.0909     1.04132         1.04133    
+       6       1    0.5455    0.0909     1.04959         1.04960    
+       7       1    0.6364    0.0909     1.05785         1.05786    
+       8       1    0.7273    0.0909     1.06612         1.06611    
+       9       1    0.8182    0.0909     1.07438         1.07436    
+      10       1    0.9091    0.0909     1.08264         1.08259    
+       1       2    0.0909    0.1818     1.01653         1.01654    
+       2       2    0.1818    0.1818     1.03306         1.03306    
+       3       2    0.2727    0.1818     1.04959         1.04954    
+       4       2    0.3636    0.1818     1.06612         1.06607    
+       5       2    0.4545    0.1818     1.08264         1.08264    
+       6       2    0.5455    0.1818     1.09917         1.09918    
+       7       2    0.6364    0.1818     1.11570         1.11571    
+       8       2    0.7273    0.1818     1.13223         1.13226    
+       9       2    0.8182    0.1818     1.14876         1.14881    
+      10       2    0.9091    0.1818     1.16529         1.16531    
+       1       3    0.0909    0.2727     1.02479         1.02481    
+       2       3    0.1818    0.2727     1.04959         1.04960    
+       3       3    0.2727    0.2727     1.07438         1.07435    
+       4       3    0.3636    0.2727     1.09917         1.09912    
+       5       3    0.4545    0.2727     1.12397         1.12397    
+       6       3    0.5455    0.2727     1.14876         1.14879    
+       7       3    0.6364    0.2727     1.17355         1.17356    
+       8       3    0.7273    0.2727     1.19835         1.19836    
+       9       3    0.8182    0.2727     1.22314         1.22314    
+      10       3    0.9091    0.2727     1.24793         1.24799    
+       1       4    0.0909    0.3636     1.03306         1.03309    
+       2       4    0.1818    0.3636     1.06612         1.06615    
+       3       4    0.2727    0.3636     1.09917         1.09918    
+       4       4    0.3636    0.3636     1.13223         1.13219    
+       5       4    0.4545    0.3636     1.16529         1.16531    
+       6       4    0.5455    0.3636     1.19835         1.19841    
+       7       4    0.6364    0.3636     1.23140         1.23142    
+       8       4    0.7273    0.3636     1.26446         1.26446    
+       9       4    0.8182    0.3636     1.29752         1.29751    
+      10       4    0.9091    0.3636     1.33058         1.33063    
+       1       5    0.0909    0.4545     1.04132         1.04136    
+       2       5    0.1818    0.4545     1.08264         1.08267    
+       3       5    0.2727    0.4545     1.12397         1.12401    
+       4       5    0.3636    0.4545     1.16529         1.16526    
+       5       5    0.4545    0.4545     1.20661         1.20664    
+       6       5    0.5455    0.4545     1.24793         1.24801    
+       7       5    0.6364    0.4545     1.28926         1.28928    
+       8       5    0.7273    0.4545     1.33058         1.33055    
+       9       5    0.8182    0.4545     1.37190         1.37192    
+      10       5    0.9091    0.4545     1.41322         1.41326    
+       1       6    0.0909    0.5455     1.04959         1.04963    
+       2       6    0.1818    0.5455     1.09917         1.09918    
+       3       6    0.2727    0.5455     1.14876         1.14885    
+       4       6    0.3636    0.5455     1.19835         1.19835    
+       5       6    0.4545    0.5455     1.24793         1.24795    
+       6       6    0.5455    0.5455     1.29752         1.29760    
+       7       6    0.6364    0.5455     1.34711         1.34713    
+       8       6    0.7273    0.5455     1.39669         1.39664    
+       9       6    0.8182    0.5455     1.44628         1.44632    
+      10       6    0.9091    0.5455     1.49587         1.49589    
+       1       7    0.0909    0.6364     1.05785         1.05789    
+       2       7    0.1818    0.6364     1.11570         1.11567    
+       3       7    0.2727    0.6364     1.17355         1.17365    
+       4       7    0.3636    0.6364     1.23140         1.23144    
+       5       7    0.4545    0.6364     1.28926         1.28926    
+       6       7    0.5455    0.6364     1.34711         1.34716    
+       7       7    0.6364    0.6364     1.40496         1.40499    
+       8       7    0.7273    0.6364     1.46281         1.46274    
+       9       7    0.8182    0.6364     1.52066         1.52070    
+      10       7    0.9091    0.6364     1.57851         1.57851    
+       1       8    0.0909    0.7273     1.06612         1.06615    
+       2       8    0.1818    0.7273     1.13223         1.13219    
+       3       8    0.2727    0.7273     1.19835         1.19840    
+       4       8    0.3636    0.7273     1.26446         1.26449    
+       5       8    0.4545    0.7273     1.33058         1.33055    
+       6       8    0.5455    0.7273     1.39669         1.39671    
+       7       8    0.6364    0.7273     1.46281         1.46285    
+       8       8    0.7273    0.7273     1.52893         1.52888    
+       9       8    0.8182    0.7273     1.59504         1.59507    
+      10       8    0.9091    0.7273     1.66116         1.66114    
+       1       9    0.0909    0.8182     1.07438         1.07439    
+       2       9    0.1818    0.8182     1.14876         1.14876    
+       3       9    0.2727    0.8182     1.22314         1.22315    
+       4       9    0.3636    0.8182     1.29752         1.29751    
+       5       9    0.4545    0.8182     1.37190         1.37184    
+       6       9    0.5455    0.8182     1.44628         1.44624    
+       7       9    0.6364    0.8182     1.52066         1.52067    
+       8       9    0.7273    0.8182     1.59504         1.59503    
+       9       9    0.8182    0.8182     1.66942         1.66947    
+      10       9    0.9091    0.8182     1.74380         1.74379    
+       1      10    0.0909    0.9091     1.08264         1.08259    
+       2      10    0.1818    0.9091     1.16529         1.16528    
+       3      10    0.2727    0.9091     1.24793         1.24795    
+       4      10    0.3636    0.9091     1.33058         1.33060    
+       5      10    0.4545    0.9091     1.41322         1.41322    
+       6      10    0.5455    0.9091     1.49587         1.49585    
+       7      10    0.6364    0.9091     1.57851         1.57850    
+       8      10    0.7273    0.9091     1.66116         1.66114    
+       9      10    0.8182    0.9091     1.74380         1.74383    
+      10      10    0.9091    0.9091     1.82645         1.82645    
+ 
+TEST02
+  
+ Initial iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              0    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              1    (ipropa)
+          iparm(19) =             10    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.00000000E+00    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+  
+ Initial iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =            100    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.20000000E+01    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.00000000E+00    (digit1)
+          rparm( 8) = 0.00000000E+00    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+ cg
+
+     intermediate output after each iteration
+ iteration           convergence      emax         emin
+       n       s        test
+
+       0       0     0.93609E+01  0.20000E+01  0.10000E+01
+       1       1     0.20106E+00  0.90960E+00  0.90960E+00
+       2       2     0.11033E-01  0.98654E+00  0.69433E+00
+       3       3     0.58904E-03  0.99653E+00  0.68876E+00
+       4       4     0.35547E-04  0.99653E+00  0.68676E+00
+
+ cg  has converged in     4 iterations
+  
+ Final iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =              4    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.99653306E+00    (emax  )
+          rparm( 3) = 0.68675735E+00    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.99900000E-03    (timit )
+          rparm( 7) = 0.44491977E+01    (digit1)
+          rparm( 8) = 0.44664127E+01    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+  
+ Final iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              0    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              1    (ipropa)
+          iparm(19) =             10    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.99900000E-03    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+ 
+  Computed solution:
+ 
+   1.008   1.017   1.025   1.033   1.041   1.050   1.058   1.066   1.074   1.083
+   1.017   1.033   1.050   1.066   1.083   1.099   1.116   1.132   1.149   1.165
+   1.025   1.050   1.074   1.099   1.124   1.149   1.174   1.198   1.223   1.248
+   1.033   1.066   1.099   1.132   1.165   1.198   1.231   1.264   1.297   1.331
+   1.041   1.083   1.124   1.165   1.207   1.248   1.289   1.331   1.372   1.413
+   1.050   1.099   1.149   1.198   1.248   1.298   1.347   1.397   1.446   1.496
+   1.058   1.116   1.174   1.231   1.289   1.347   1.405   1.463   1.521   1.579
+   1.066   1.132   1.198   1.264   1.331   1.397   1.463   1.529   1.595   1.661
+   1.074   1.149   1.223   1.298   1.372   1.446   1.521   1.595   1.669   1.744
+   1.083   1.165   1.248   1.331   1.413   1.496   1.579   1.661   1.744   1.826
+ 
+TEST03
+  
+ Initial iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              1    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              1    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              2    (ipropa)
+          iparm(19) =             -1    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              0    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.00000000E+00    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+  
+ Initial iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =            100    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.20000000E+01    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.00000000E+00    (digit1)
+          rparm( 8) = 0.00000000E+00    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+ cg
+
+     intermediate output after each iteration
+ iteration           convergence      emax         emin
+       n       s        test
+
+       0       0     0.58026E+01  0.20000E+01  0.10000E+01
+       1       1     0.43389E+00  0.63392E+00  0.63392E+00
+       2       2     0.39789E+00  0.86043E+00  0.29993E+00
+       3       3     0.35008E+00  0.89943E+00  0.23342E+00
+       4       4     0.20493E+00  0.92939E+00  0.17756E+00
+       5       5     0.11954E+00  0.94384E+00  0.14690E+00
+       6       6     0.50149E-01  0.95187E+00  0.12840E+00
+       7       7     0.17806E-01  0.95187E+00  0.11654E+00
+       8       8     0.12054E-01  0.95187E+00  0.10937E+00
+       9       9     0.52370E-02  0.95187E+00  0.10626E+00
+      10      10     0.18003E-02  0.95187E+00  0.10407E+00
+      11      11     0.94850E-03  0.95187E+00  0.10252E+00
+      12      12     0.31768E-03  0.95187E+00  0.10252E+00
+      13      13     0.10928E-03  0.95187E+00  0.10252E+00
+      14      14     0.34477E-04  0.95187E+00  0.10252E+00
+
+ cg  has converged in    14 iterations
+  
+ Final iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =             14    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.95187034E+00    (emax  )
+          rparm( 3) = 0.10252110E+00    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.10000000E-02    (timit )
+          rparm( 7) = 0.44624762E+01    (digit1)
+          rparm( 8) = 0.48736558E+01    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+  
+ Final iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              1    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              1    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              2    (ipropa)
+          iparm(19) =             -1    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              0    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.10000000E-02    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+ 
+  Computed solution:
+ 
+   1.008   1.017   1.025   1.033   1.041   1.050   1.058   1.066   1.074   1.083
+   1.017   1.033   1.050   1.066   1.083   1.099   1.116   1.132   1.149   1.165
+   1.025   1.050   1.074   1.099   1.124   1.149   1.174   1.198   1.223   1.248
+   1.033   1.066   1.099   1.132   1.165   1.198   1.231   1.264   1.298   1.331
+   1.041   1.083   1.124   1.165   1.207   1.248   1.289   1.331   1.372   1.413
+   1.050   1.099   1.149   1.198   1.248   1.298   1.347   1.397   1.446   1.496
+   1.058   1.116   1.174   1.231   1.289   1.347   1.405   1.463   1.521   1.579
+   1.066   1.132   1.198   1.264   1.331   1.397   1.463   1.529   1.595   1.661
+   1.074   1.149   1.223   1.298   1.372   1.446   1.521   1.595   1.669   1.744
+   1.083   1.165   1.248   1.331   1.413   1.496   1.579   1.661   1.744   1.826
+ 
+TEST04
+  
+ Initial iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              1    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              2    (ipropa)
+          iparm(19) =             10    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.00000000E+00    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+  
+ Initial iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =            100    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.20000000E+01    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.00000000E+00    (digit1)
+          rparm( 8) = 0.00000000E+00    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+ sor
+
+
+
+
+     intermediate output after each iteration
+
+ number of           convergence     emax        omega       spectral
+ iterations             test                                  radius
+
+
+       0       0     0.10000E+04  0.20000E+01  0.10000E+01  0.00000E+00
+       1       0     0.10000E+04  0.20000E+01  0.10000E+01  0.00000E+00
+       2       0     0.10000E+04  0.20000E+01  0.10000E+01  0.61609E+00
+       3       0     0.60559E+00  0.20000E+01  0.10000E+01  0.63475E+00
+       4       0     0.65576E+00  0.20000E+01  0.10000E+01  0.77061E+00
+       5       0     0.67933E+00  0.91212E+00  0.10000E+01  0.83197E+00
+       6       1     0.67933E+00  0.91212E+00  0.14185E+01  0.14752E+01
+       7       1     0.67933E+00  0.91212E+00  0.14185E+01  0.10876E+01
+       8       1     0.67933E+00  0.91212E+00  0.14185E+01  0.77707E+00
+       9       1     0.36291E+00  0.91212E+00  0.14185E+01  0.71832E+00
+      10       1     0.23778E+00  0.91212E+00  0.14185E+01  0.69934E+00
+      11       1     0.10202E+00  0.91212E+00  0.14185E+01  0.69195E+00
+      12       1     0.69782E-01  0.91212E+00  0.14185E+01  0.68947E+00
+      13       1     0.47922E-01  0.91212E+00  0.14185E+01  0.68862E+00
+      14       1     0.32945E-01  0.91212E+00  0.14185E+01  0.68826E+00
+      15       1     0.22660E-01  0.91212E+00  0.14185E+01  0.68813E+00
+      16       1     0.14844E-01  0.94045E+00  0.14185E+01  0.68808E+00
+      17       2     0.14844E-01  0.94045E+00  0.14926E+01  0.74939E+00
+      18       2     0.14844E-01  0.94045E+00  0.14926E+01  0.74302E+00
+      19       2     0.14844E-01  0.94045E+00  0.14926E+01  0.65901E+00
+      20       2     0.27382E-02  0.94045E+00  0.14926E+01  0.61710E+00
+      21       2     0.15091E-02  0.94045E+00  0.14926E+01  0.59201E+00
+      22       2     0.83411E-03  0.94045E+00  0.14926E+01  0.57533E+00
+      23       2     0.45715E-03  0.94045E+00  0.14926E+01  0.56343E+00
+      24       2     0.24843E-03  0.94045E+00  0.14926E+01  0.55452E+00
+      25       2     0.13395E-03  0.94045E+00  0.14926E+01  0.54759E+00
+      26       2     0.71687E-04  0.94045E+00  0.14926E+01  0.54206E+00
+
+ sor  has converged in    26 iterations
+  
+ Final iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =             26    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.94045018E+00    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.10000000E-02    (timit )
+          rparm( 7) = 0.41445625E+01    (digit1)
+          rparm( 8) = 0.43694766E+01    (digit2)
+          rparm( 9) = 0.14926136E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.54205562E+00    (specr )
+  
+ Final iterative parameters
+  
+  
+ Preprocessor and preconditioner parameters
+  
+          iparm(12) =              2    (nstore)
+          iparm(13) =              0    (iscale)
+          iparm(14) =              1    (iperm )
+          iparm(15) =              1    (ifact )
+          iparm(16) =              0    (lvfill)
+          iparm(17) =              0    (ltrunc)
+          iparm(18) =              1    (ipropa)
+          iparm(19) =             10    (kblsz )
+          iparm(20) =             -1    (nbl2d )
+          iparm(21) =              1    (ifctv )
+          iparm(22) =              1    (iqlr  )
+          iparm(23) =              2    (isymm )
+          iparm(24) =              0    (ielim )
+          iparm(25) =              1    (ndeg  )
+          rparm(13) = 0.00000000E+00    (timfac)
+          rparm(14) = 0.10000000E-02    (timtot)
+          rparm(15) = 0.11102230E-12    (tol   )
+          rparm(16) = 0.00000000E+00    (ainf  )
+ 
+  Computed solution:
+ 
+   1.008   1.017   1.025   1.033   1.041   1.050   1.058   1.066   1.074   1.083
+   1.017   1.033   1.050   1.066   1.083   1.099   1.116   1.132   1.149   1.165
+   1.025   1.050   1.074   1.099   1.124   1.149   1.173   1.198   1.223   1.248
+   1.033   1.066   1.099   1.132   1.165   1.198   1.231   1.264   1.297   1.331
+   1.041   1.083   1.124   1.165   1.207   1.248   1.289   1.331   1.372   1.413
+   1.050   1.099   1.149   1.198   1.248   1.297   1.347   1.397   1.446   1.496
+   1.058   1.116   1.173   1.231   1.289   1.347   1.405   1.463   1.521   1.578
+   1.066   1.132   1.198   1.264   1.331   1.397   1.463   1.529   1.595   1.661
+   1.074   1.149   1.223   1.297   1.372   1.446   1.521   1.595   1.669   1.744
+   1.083   1.165   1.248   1.331   1.413   1.496   1.578   1.661   1.744   1.826
+ 
+TEST05
+  SORW implements the SOR iteration.
+ 
+  Initialize parameters to default values.
+  
+ Initial iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =            100    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.20000000E+01    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.00000000E+00    (timit )
+          rparm( 7) = 0.00000000E+00    (digit1)
+          rparm( 8) = 0.00000000E+00    (digit2)
+          rparm( 9) = 0.10000000E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.00000000E+00    (specr )
+ sor
+
+
+
+
+     intermediate output after each iteration
+
+ number of           convergence     emax        omega       spectral
+ iterations             test                                  radius
+
+
+       0       0     0.10000E+04  0.20000E+01  0.10000E+01  0.00000E+00
+       1       0     0.10000E+04  0.20000E+01  0.10000E+01  0.00000E+00
+       2       0     0.10000E+04  0.20000E+01  0.10000E+01  0.53872E+00
+       3       0     0.72510E+00  0.20000E+01  0.10000E+01  0.70482E+00
+       4       0     0.70622E+00  0.20000E+01  0.10000E+01  0.78917E+00
+       5       0     0.70165E+00  0.91538E+00  0.10000E+01  0.83791E+00
+       6       1     0.70165E+00  0.91538E+00  0.14259E+01  0.18722E+01
+       7       1     0.70165E+00  0.91538E+00  0.14259E+01  0.81405E+00
+       8       1     0.70165E+00  0.91538E+00  0.14259E+01  0.82807E+00
+       9       1     0.73605E+00  0.91538E+00  0.14259E+01  0.83682E+00
+      10       1     0.63941E+00  0.91538E+00  0.14259E+01  0.84186E+00
+      11       1     0.33339E+00  0.91538E+00  0.14259E+01  0.84339E+00
+      12       1     0.27588E+00  0.91538E+00  0.14259E+01  0.84086E+00
+      13       1     0.22191E+00  0.91538E+00  0.14259E+01  0.83484E+00
+      14       1     0.17539E+00  0.91538E+00  0.14259E+01  0.82715E+00
+      15       1     0.13764E+00  0.91538E+00  0.14259E+01  0.81950E+00
+      16       1     0.96272E-01  0.91538E+00  0.14259E+01  0.81267E+00
+      17       1     0.75684E-01  0.91538E+00  0.14259E+01  0.80756E+00
+      18       1     0.59578E-01  0.91538E+00  0.14259E+01  0.80356E+00
+      19       1     0.46828E-01  0.91538E+00  0.14259E+01  0.80005E+00
+      20       1     0.36758E-01  0.91538E+00  0.14259E+01  0.79698E+00
+      21       1     0.27787E-01  0.91538E+00  0.14259E+01  0.79457E+00
+      22       1     0.21859E-01  0.91538E+00  0.14259E+01  0.79294E+00
+      23       1     0.17235E-01  0.91538E+00  0.14259E+01  0.79201E+00
+      24       1     0.13613E-01  0.91538E+00  0.14259E+01  0.79156E+00
+      25       1     0.10761E-01  0.91538E+00  0.14259E+01  0.79133E+00
+      26       1     0.84056E-02  0.91538E+00  0.14259E+01  0.79115E+00
+      27       1     0.66418E-02  0.91538E+00  0.14259E+01  0.79095E+00
+      28       1     0.52485E-02  0.91538E+00  0.14259E+01  0.79079E+00
+      29       1     0.41482E-02  0.91538E+00  0.14259E+01  0.79070E+00
+      30       1     0.32789E-02  0.91538E+00  0.14259E+01  0.79065E+00
+      31       1     0.25824E-02  0.95950E+00  0.14259E+01  0.79061E+00
+      32       2     0.25824E-02  0.95950E+00  0.15604E+01  0.10364E+01
+      33       2     0.25824E-02  0.95950E+00  0.15604E+01  0.75286E+00
+      34       2     0.25824E-02  0.95950E+00  0.15604E+01  0.74180E+00
+      35       2     0.85513E-03  0.95950E+00  0.15604E+01  0.73207E+00
+      36       2     0.59580E-03  0.95950E+00  0.15604E+01  0.72253E+00
+      37       2     0.40982E-03  0.95950E+00  0.15604E+01  0.71257E+00
+      38       2     0.27715E-03  0.95950E+00  0.15604E+01  0.70174E+00
+      39       2     0.18370E-03  0.95950E+00  0.15604E+01  0.68966E+00
+      40       2     0.11890E-03  0.95950E+00  0.15604E+01  0.67592E+00
+      41       2     0.74841E-04  0.95950E+00  0.15604E+01  0.66017E+00
+
+ sor  has converged in    41 iterations
+  
+ Final iterative parameters
+  
+  
+ General and acceleration parameters
+  
+          iparm( 1) =              2    (ntest )
+          iparm( 2) =             41    (itmax )
+          iparm( 3) =              3    (level )
+          iparm( 4) =              6    (nout  )
+          iparm( 5) =              0    (idgts )
+          iparm( 6) =              1    (maxadp)
+          iparm( 7) =              1    (minadp)
+          iparm( 8) =              1    (iomgad)
+          iparm( 9) =              5    (ns1   )
+          iparm(10) =         100000    (ns2   )
+          iparm(11) =              0    (ns3   )
+          rparm( 1) = 0.10000000E-03    (zeta  )
+          rparm( 2) = 0.95950463E+00    (emax  )
+          rparm( 3) = 0.10000000E+01    (emin  )
+          rparm( 4) = 0.75000000E+00    (ff    )
+          rparm( 5) = 0.75000000E+00    (fff   )
+          rparm( 6) = 0.10000000E-02    (timit )
+          rparm( 7) = 0.41258586E+01    (digit1)
+          rparm( 8) = 0.47067582E+01    (digit2)
+          rparm( 9) = 0.15604363E+01    (omega )
+          rparm(10) = 0.00000000E+00    (alphab)
+          rparm(11) = 0.25000000E+00    (betab )
+          rparm(12) = 0.66017339E+00    (specr )
+ 
+  Computed solution:
+ 
+   1.008   1.016   1.025   1.033   1.041   1.050   1.058   1.066   1.074   1.083
+   1.016   1.033   1.049   1.066   1.083   1.099   1.116   1.132   1.149   1.165
+   1.025   1.049   1.074   1.099   1.124   1.149   1.174   1.198   1.223   1.248
+   1.033   1.066   1.099   1.132   1.165   1.198   1.231   1.264   1.298   1.331
+   1.041   1.083   1.124   1.165   1.207   1.248   1.289   1.331   1.372   1.413
+   1.050   1.099   1.149   1.198   1.248   1.297   1.347   1.397   1.446   1.496
+   1.058   1.116   1.173   1.231   1.289   1.347   1.405   1.463   1.521   1.579
+   1.066   1.132   1.198   1.264   1.331   1.397   1.463   1.529   1.595   1.661
+   1.074   1.149   1.223   1.298   1.372   1.446   1.521   1.595   1.669   1.744
+   1.083   1.165   1.248   1.331   1.413   1.496   1.579   1.661   1.744   1.826
+ 
+NSPCG_PRB2
+  Normal end of execution.
+ 
+January 11 2013   3:36:53.293 PM

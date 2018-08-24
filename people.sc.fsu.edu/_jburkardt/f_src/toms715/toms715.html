@@ -1,0 +1,280 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/toms715/toms715.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:28:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TOMS715 - Special Functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TOMS715 <br> Special Functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TOMS715</b>
+      is a FORTRAN90 library which
+      evaluates special functions, including the Bessel I, J, K, and Y functions
+      of order 0, of order 1, and of any real order, Dawson's integral, 
+      the error function, exponential integrals, the gamma function, 
+      the normal distribution function, the psi function.
+      This is a version of ACM TOMS algorithm 715.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TOMS715</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/toms715/toms715.html">a FORTRAN77 version</a> and
+      <a href = "toms715.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../fn/fn.html">
+      FN</a>,
+      a FORTRAN90 library which
+      approximates elementary and special functions using Chebyshev polynomials;
+      functions include Airy, Bessel I, J, K and Y, beta, 
+      confluent hypergeometric, error, gamma, log gamma, Pochhammer, Spence; 
+      integrals include hyperbolic cosine, cosine, Dawson, exponential, 
+      logarithmic, hyperbolic sine, sine; by Wayne Fullerton.
+    </p>
+
+    <p>
+      <a href = "../specfun/specfun.html">
+      SPECFUN</a>,
+      a FORTRAN90 library which
+      computes special functions, including Bessel I, J, K and Y functions,
+      and the Dawson, E1, EI, Erf, Gamma, log Gamma, Psi/Digamma functions,
+      by William Cody and Laura Stoltz;
+    </p>
+
+    <p>
+      <a href = "../special_functions/special_functions.html">
+      SPECIAL_FUNCTIONS</a>,
+      a FORTRAN90 library which
+      computes the Beta, Error, Gamma, Lambda, Psi functions,
+      the Airy, Bessel I, J, K and Y, Hankel, Jacobian elliptic, Kelvin, 
+      Mathieu, Struve functions,
+      spheroidal angular functions, parabolic cylinder functions,
+      hypergeometric functions,
+      the Bernoulli and Euler numbers,
+      the Hermite, Laguerre and Legendre polynomials, 
+      the cosine, elliptic, exponential, Fresnel and sine integrals,
+      by Shanjie Zhang, Jianming Jin;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          William Cody,<br>
+          Algorithm 715:
+          SPECFUN - A Portable FORTRAN Package of
+          Special Function Routines and Test Drivers,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 19, Number 1, March 1993, pages 22-32.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "toms715.f90">toms715.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "toms715_prb.f90">toms715_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "toms715_prb_output.txt">toms715_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>ANORM</b> evaluates the normal distribution function.
+        </li>
+        <li>
+          <b>BESEI0</b> evaluates the exponentially scaled Bessel I function of order 0.
+        </li>
+        <li>
+          <b>BESEI1</b> evaluates the exponentially scaled Bessel I function of order 1.
+        </li>
+        <li>
+          <b>BESEK0</b> evaluates the exponentially scaled Bessel K function of order 0.
+        </li>
+        <li>
+          <b>BESEK1</b> evaluates the exponentially scaled Bessel K function of order 1.
+        </li>
+        <li>
+          <b>BESI0</b> evaluates the modified Bessel I function of order 0.
+        </li>
+        <li>
+          <b>BESI1</b> evaluates the modified Bessel I function of order 1.
+        </li>
+        <li>
+          <b>BESJ0</b> evaluates the Bessel J function of order 0.
+        </li>
+        <li>
+          <b>BESJ1</b> evaluates the Bessel J function of order 1.
+        </li>
+        <li>
+          <b>BESK0</b> evaluates the modified Bessel K function of order 0.
+        </li>
+        <li>
+          <b>BESK1</b> evaluates the modified Bessel K function of order 1.
+        </li>
+        <li>
+          <b>BESY0</b> evaluates the Bessel Y function of order 0.
+        </li>
+        <li>
+          <b>BESY1</b> evaluates the Bessel Y function of order 1.
+        </li>
+        <li>
+          <b>CALCEI</b> computes exponential integrals.
+        </li>
+        <li>
+          <b>CALCI0</b> evaluates modified Bessel I functions of order 0.
+        </li>
+        <li>
+          <b>CALCI1</b> evaluates modified Bessel I functions of order 1.
+        </li>
+        <li>
+          <b>CALCK0</b> evaluates modified Bessel K functions of order 0.
+        </li>
+        <li>
+          <b>CALCK1</b> evaluates modifies Bessel K functions of order 1.
+        </li>
+        <li>
+          <b>CALJY0</b> evaluates Bessel J and Y functions of order 0.
+        </li>
+        <li>
+          <b>CALJY1</b> evaluates Bessel J and Y functions of order 1.
+        </li>
+        <li>
+          <b>CALERF</b> evaluates the error function and related quantities.
+        </li>
+        <li>
+          <b>DAW</b> evaluates Dawson's integral
+        </li>
+        <li>
+          <b>DLGAMA</b> calculates the logarithm of the gamma function.
+        </li>
+        <li>
+          <b>DSUBN</b> evaluates derivatives of Ei(X).
+        </li>
+        <li>
+          <b>EI</b> evaluates the exponential integral Ei(x).
+        </li>
+        <li>
+          <b>EONE</b> evaluates the exponential integral E1(x).
+        </li>
+        <li>
+          <b>DERF</b> evaluates the error function.
+        </li>
+        <li>
+          <b>DERFC</b> evaluates the complementary error function.
+        </li>
+        <li>
+          <b>DERFCX</b> evaluates exp(x^2) * erfc(x).
+        </li>
+        <li>
+          <b>EXPEI</b> evaluates exp(-x) * Ei(x).
+        </li>
+        <li>
+          <b>DGAMMA</b> evaluates the gamma function.
+        </li>
+        <li>
+          <b>MACHAR</b> determines the machine arithmetic parameters.
+        </li>
+        <li>
+          <b>PSI</b> evaluates the Psi function.
+        </li>
+        <li>
+          <b>REN</b> is a random number generator.
+        </li>
+        <li>
+          <b>RIBESL</b> evaluates a sequence of Bessel I functions.
+        </li>
+        <li>
+          <b>RJBESL</b> evaluates a sequence of Bessel J functions.
+        </li>
+        <li>
+          <b>RKBESL</b> evaluates a sequence of Bessel K functions.
+        </li>
+        <li>
+          <b>RYBESL</b> evaluates a sequence of Bessel Y functions.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints out the current YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 January 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/toms715/toms715.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:28:52 GMT -->
+</html>

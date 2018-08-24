@@ -1,0 +1,14 @@
+# test03_commands.txt
+#
+# Usage:
+#  gnuplot < test03_commands.txt
+#
+set term png
+set output "test03.png"
+set xlabel "<---X--->"
+set ylabel "<---Y--->"
+set title "Data and Cubic Spline interpolant"
+set grid
+set style data lines
+plot "test03_data.txt" using 1:2 with points pt 7 ps 2 lc rgb "blue",\
+     "test03_interp.txt" using 1:2 lw 3 linecolor rgb "red"

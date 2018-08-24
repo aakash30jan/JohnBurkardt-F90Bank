@@ -1,0 +1,121 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_return/f90_return.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      F90_RETURN - FORTRAN Programs Can Return Program Status Value 
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      F90_RETURN <br> FORTRAN Programs Can Return Program Status Value 
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>F90_RETURN</b>
+      is a FORTRAN90 program which
+      demonstrates how a FORTRAN90 program can return a program status value.
+    </p>
+
+    <p>
+      C and C++ programs can return an integer value signalling the status
+      of the program's execution.  By convention, a return value of 0 indicates
+      that the program executed successfully, while a nonzero value indicates
+      some kind of error.
+    </p>
+
+    <p>
+      The return value of such a program can be retrieved and used to make
+      decisions.  In particular, if the execution of the program is part of
+      a script, then the failure of the program can be detected, and the
+      script can terminate gracefully.
+    </p>
+
+    <p>
+      For an example in the BASH shell, we might have a script that reads:
+      <pre>
+        ./prog
+        if [ $? -ne 0 ]; then
+          echo "Errors while running prog."
+          exit
+        fi
+      </pre>
+      Here, $? is a BASH symbol that returns the most recent program status
+      value, and the script exits if that value is not zero.
+    </p>
+
+    <p>
+      FORTRAN has always had the option to include a constant integer value 
+      as part of the STOP statement.  At least some FORTRAN compilers can
+      treat this value as a  program status value that is returned to the
+      calling environment, and hence can signal whether certain errors
+      have occurred.
+    </p>
+
+    <p>
+      Here, we show a simple example in which the program is guaranteed
+      to fail, and in that case will return the arbitrary but nonzero value 13.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>F90_RETURN</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/f90_return/f90_return.html">a FORTRAN77 version</a> and
+      <a href = "f90_return.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "f90_return.f90">f90_return.f90</a>, the source code.
+        </li>
+        <li>
+          <a href = "f90_return_output.txt">f90_return_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 August 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_return/f90_return.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:05 GMT -->
+</html>

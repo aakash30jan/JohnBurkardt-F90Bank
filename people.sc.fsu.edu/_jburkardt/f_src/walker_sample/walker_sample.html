@@ -1,0 +1,276 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/walker_sample/walker_sample.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:36:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      WALKER_SAMPLE - Efficient Probability Vector Sampling
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      WALKER_SAMPLE <br> Efficient Probability Vector Sampling
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>WALKER_SAMPLE</b>
+      is a FORTRAN90 library which
+      efficiently samples a discrete probability vector.
+    </p>
+
+    <p>
+      For outcomes labeled 1, 2, 3, ..., N, a discrete probability vector
+      X is an array of N non-negative values which sum to 1, such that X[i]
+      is the probability of outcome i.
+    </p>
+
+    <p>
+      To sample the probability vector is to produce a sequence of outcomes
+      i1, i2, i3, ..., which are each drawn with probability corresponding 
+      to X.  For a general discrete probability vector X, a single sample
+      operation might be expected to take a time that is proportional to O(N),
+      the number of outcomes.  Walker showed that, by constructing a new
+      data structure, it was possible to carry out a sample in time of order 
+      O(1), that is, independent of the number of possible outcomes.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>WALKER_SAMPLE</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/walker_sample/walker_sample.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/walker_sample/walker_sample.html">a C++ version</a> and
+      <a href = "walker_sample.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/walker_sample/walker_sample.html">a Matlab version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/walker_sample/walker_sample.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../histogram_data_2d_sample/histogram_data_2d_sample.html">
+      HISTOGRAM_DATA_2D_SAMPLE</a>,
+      a FORTRAN90 program which
+      demonstrates how to construct a Probability Density Function (PDF)
+      from a frequency table over a 2D domain, and then to use that PDF 
+      to create new samples.
+    </p>
+
+    <p>
+      <a href = "../ieee_uniform_sample/ieee_uniform_sample.html">
+      IEEE_UNIFORM_SAMPLE</a>,
+      a FORTRAN90 library which
+      tries to uniformly sample the discrete set of values that represent the
+      legal IEEE real numbers;
+    </p>
+
+    <p>
+      <a href = "../pdflib/pdflib.html">
+      PDFLIB</a>,
+      a FORTRAN90 library which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <p>
+      <a href = "../prob/prob.html">
+      PROB</a>,
+      a FORTRAN90 library which
+      evaluates, samples, inverts, and characterizes a number of 
+      Probability Density Functions (PDF's) 
+      and Cumulative Density Functions (CDF's), including anglit, arcsin,
+      benford, birthday, bernoulli, beta_binomial, beta, binomial, bradford,
+      burr, cardiod, cauchy, chi, chi squared, circular, cosine, deranged,
+      dipole, dirichlet mixture, discrete, empirical, english sentence and
+      word length, error, exponential, extreme values, f, fisk, folded normal,
+      frechet, gamma, generalized logistic, geometric, gompertz, gumbel,
+      half normal, hypergeometric, inverse gaussian, laplace, levy, logistic,
+      log normal, log series, log uniform, lorentz, maxwell, multinomial,
+      nakagami, negative binomial, normal, pareto, planck, poisson,
+      power, quasigeometric, rayleigh, reciprocal, runs, sech, semicircular,
+      student t, triangle, uniform, von mises, weibull, zipf.
+    </p>
+
+    <p>
+      <a href = "../ranlib/ranlib.html">
+      RANLIB</a>,
+      a FORTRAN90 library which
+      produces random samples from Probability Density Functions (PDF's), 
+      including Beta, Chi-square Exponential, F, Gamma, Multivariate normal,
+      Noncentral chi-square, Noncentral F, Univariate normal, 
+      random permutations, Real uniform, Binomial, Negative Binomial,
+      Multinomial, Poisson and Integer uniform,
+      by Barry Brown and James Lovato.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Donald Knuth,<br>
+          Seminumerical algorithms,<br>
+          Addison-Wesley-Longman, 1999.
+        </li>
+        <li>
+          Warren Smith,<br>
+          How to sample from a probability distribution,<br>
+          April 18, 2002.
+        </li>
+        <li>
+          Alastair Walker,<br>
+          An efficient method for generating discrete random variables
+          with general distributions,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 3, Number 3, September 1977, pages 253-256.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "walker_sample.f90">walker_sample.f90</a>, the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "walker_sample_prb.f90">walker_sample_prb.f90</a>, the calling program;
+        </li>
+        <li>
+          <a href = "walker_sample_prb_output.txt">walker_sample_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_CHOOSE</b> computes the binomial coefficient C(N,K) as an I4.
+        </li>
+        <li>
+          <b>I4_CHOOSE_TEST</b> tests I4_CHOOSE.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB</b> returns a scaled pseudorandom I4 between A and B.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB_TEST</b> tests I4_UNIFORM_AB.
+        </li>
+        <li>
+          <b>NORMALIZE</b> scales a vector X so its entries sum to 1.
+        </li>
+        <li>
+          <b>NORMALIZE_TEST</b> tests NORMALIZE.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01</b> returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01_TEST</b> tests R8_UNIFORM_01
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_PRINT_TEST</b> tests R8VEC_PRINT.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_01</b> returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_01_TEST</b> tests R8VEC_UNIFORM_01.
+        </li>
+        <li>
+          <b>RANDOM_PERMUTATION</b> applies a random permutation to an array.
+        </li>
+        <li>
+          <b>RANDOM_PERMUTATION_TEST</b> tests RANDOM_PERMUTATION.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>WALKER_BUILD</b> sets up the data for a Walker sampler.
+        </li>
+        <li>
+          <b>WALKER_BUILD_TEST</b> tests WALKER_BUILD.
+        </li>
+        <li>
+          <b>WALKER_SAMPLER</b> returns a random sample i=1..N with prob X(i).
+        </li>
+        <li>
+          <b>WALKER_SAMPLER_TEST</b> tests WALKER_SAMPLER.
+        </li>
+        <li>
+          <b>WALKER_VERIFY</b> verifies a Walker Sampler structure.
+        </li>
+        <li>
+          <b>WALKER_VERIFY_TEST</b> tests WALKER_VERIFY.
+        </li>
+        <li>
+          <b>ZIPF_PROBABILITY</b> sets up a Zipf probability vector.
+        </li>
+        <li>
+          <b>ZIPF_PROBABILITY_TEST</b> tests ZIPF_PROBABILITY.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 February 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/walker_sample/walker_sample.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:36:56 GMT -->
+</html>

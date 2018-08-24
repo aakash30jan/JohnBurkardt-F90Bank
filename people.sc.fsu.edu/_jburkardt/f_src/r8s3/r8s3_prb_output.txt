@@ -1,0 +1,535 @@
+18 September 2015  10:52:36.083 AM
+ 
+R8S3_PRB
+  FORTRAN90 version:
+  Test the R8S3 library.
+ 
+R8S3_DIAGONAL_TEST
+  R8S3_DIAGONAL rearranges an R8S3 matrix
+  so that the diagonal is listed first.
+ 
+  Matrix order M =                6
+  Matrix order N =                6
+  Matrix nonzeros NZ_NUM =       20
+  Symmetry option SYM =           0
+ 
+  Before rearrangement:
+       K  ROW(K)  COL(K)      A(K)
+ 
+         1         1         5     15.0000    
+         2         3         6     36.0000    
+         3         4         2     42.0000    
+         4         6         2     62.0000    
+         5         5         3     53.0000    
+         6         2         4     24.0000    
+         7         6         4     64.0000    
+         8         3         5     35.0000    
+         9         1         1     11.0000    
+        10         2         6     26.0000    
+        11         4         4     44.0000    
+        12         6         6     66.0000    
+        13         5         5     55.0000    
+        14         4         1     41.0000    
+        15         4         6     46.0000    
+        16         3         3     33.0000    
+        17         6         1     61.0000    
+        18         2         2     22.0000    
+        19         3         1     31.0000    
+        20         4         3     43.0000    
+ 
+  After rearrangement:
+       K  ROW(K)  COL(K)      A(K)
+ 
+         1         1         1     11.0000    
+         2         2         2     22.0000    
+         3         3         3     33.0000    
+         4         4         4     44.0000    
+         5         5         5     55.0000    
+         6         6         6     66.0000    
+         7         6         4     64.0000    
+         8         3         5     35.0000    
+         9         1         5     15.0000    
+        10         2         6     26.0000    
+        11         6         2     62.0000    
+        12         2         4     24.0000    
+        13         5         3     53.0000    
+        14         4         1     41.0000    
+        15         4         6     46.0000    
+        16         4         2     42.0000    
+        17         6         1     61.0000    
+        18         3         6     36.0000    
+        19         3         1     31.0000    
+        20         4         3     43.0000    
+ 
+R8S3_DIF2_TEST
+  R8S3_DIF2 sets an R8S3 matrix to the second difference.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  R8S3 matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  R8S3 matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+ 
+R8S3_INDICATOR
+  R8S3_INDICATOR sets up an R8S3 indicator matrix.
+ 
+  Matrix order M =                6
+  Matrix order N =                6
+  Matrix nonzeros NZ_NUM =       20
+  Symmetry option SYM =           0
+ 
+  The R8S3 indicator matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    11.0000          0.            0.            0.         15.0000    
+    2       0.         22.0000          0.         24.0000          0.      
+    3    31.0000          0.         33.0000          0.         35.0000    
+    4    41.0000       42.0000       43.0000       44.0000          0.      
+    5       0.            0.         53.0000          0.         55.0000    
+    6    61.0000       62.0000          0.         64.0000          0.      
+ 
+  Col:        6       
+  Row
+  ---
+    2    26.0000    
+    3    36.0000    
+    4    46.0000    
+    6    66.0000    
+ 
+R8S3_JAC_SL_TEST
+  R8S3_JAC_SL uses Jacobi iteration to solve a linear system
+  with an R8S3 matrix.
+ 
+  Matrix order M =               10
+  Matrix order N =               10
+  Matrix nonzeros NZ_NUM =        0
+  Symmetry option SYM =           0
+  Iterations per call    =       25
+ 
+  Solving A * x = b.
+ 
+ 
+  Current solution estimate:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   0.00000    
+       6   0.00000    
+       7   0.00000    
+       8   0.00000    
+       9   0.00000    
+      10   0.00000    
+ 
+  Current solution estimate:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   0.00000    
+       6   0.00000    
+       7   0.00000    
+       8   0.00000    
+       9   0.00000    
+      10   0.00000    
+ 
+  Current solution estimate:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   0.00000    
+       6   0.00000    
+       7   0.00000    
+       8   0.00000    
+       9   0.00000    
+      10   0.00000    
+ 
+R8S3_MTV_TEST
+  R8S3_MTV computes b=A'*x, where A is an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                4
+  Matrix nonzeros NZ_NUM =       11
+  Symmetry option SYM =           0
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+       5   5.00000    
+ 
+  b=A'*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+       5   5.00000    
+ 
+  b=A'*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   6.00000    
+ 
+R8S3_MV_TEST
+  R8S3_MV computes b=A*x, where A is an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                4
+  Matrix nonzeros NZ_NUM =       11
+  Symmetry option SYM =           0
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+ 
+  b=A*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   5.00000    
+       5  -4.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+       5   5.00000    
+ 
+  b=A*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   6.00000    
+ 
+R8S3_PRINT_TEST
+  R8S3_PRINT prints an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  R8S3 matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  R8S3 matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+ 
+R8S3_PRINT_SOME_TEST
+  R8S3_PRINT_SOME prints some of an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  Rows 2:4, Cols 3:5:
+ 
+  Col:        3             4             5       
+  Row
+  ---
+    2   -1.00000          0.            0.      
+    3    2.00000      -1.00000          0.      
+    4   -1.00000       2.00000      -1.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  Rows 2:4, Cols 3:5:
+ 
+  Col:        3             4             5       
+  Row
+  ---
+    2   -1.00000          0.            0.      
+    3    2.00000      -1.00000          0.      
+    4   -1.00000       2.00000      -1.00000    
+ 
+R8S3_RANDOM_TEST
+  R8S3_RANDOM randomizes an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1   0.218418      0.661187E-01      0.            0.            0.      
+    2       0.        0.956318          0.        0.257578          0.      
+    3       0.        0.109957      0.829509          0.        0.438290E-01
+    4   0.633966          0.            0.        0.561695      0.617272E-01
+    5   0.449539          0.        0.401306          0.        0.415307    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =       10
+  Symmetry option SYM    =        1
+ 
+  R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1   0.218418          0.            0.        0.633966      0.109957    
+    2       0.        0.956318      0.661187E-01      0.            0.      
+    3       0.        0.661187E-01  0.829509          0.        0.438290E-01
+    4   0.633966          0.            0.        0.561695          0.      
+    5   0.109957          0.        0.438290E-01      0.        0.415307    
+ 
+R8S3_READ_TEST
+  R8S3_READ_SIZE reads the size of an R8S3 matrix.
+  R8S3_READ reads an R8S3 matrix from a file.
+ 
+  Matrix order M =               99
+  Matrix order N =               99
+  Matrix nonzeros NZ_NUM =      298
+  Symmetry option SYM    =        0
+ 
+  Initial 10x10 block of recovered R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+    6       0.            0.            0.            0.        -1.00000    
+ 
+  Col:        6             7             8             9            10       
+  Row
+  ---
+    5   -1.00000          0.            0.            0.            0.      
+    6    2.00000      -1.00000          0.            0.            0.      
+    7   -1.00000       2.00000      -1.00000          0.            0.      
+    8       0.        -1.00000       2.00000      -1.00000          0.      
+    9       0.            0.        -1.00000       2.00000      -1.00000    
+   10       0.            0.            0.        -1.00000       2.00000    
+ 
+  Deleting the matrix data file "r8s3_matrix.txt".
+ 
+R8S3_RES_TEST
+  R8S3_MRES computes r=b-A*x, where A is an R8S3 matrix.
+ 
+  Matrix order M =                5
+  Matrix order N =                4
+  Matrix nonzeros NZ_NUM =       11
+  Symmetry option SYM =           0
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+ 
+  r=b-A*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   0.00000    
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =        9
+  Symmetry option SYM    =        1
+ 
+  x:
+ 
+       1   1.00000    
+       2   2.00000    
+       3   3.00000    
+       4   4.00000    
+       5   5.00000    
+ 
+  r=b-A*x:
+ 
+       1   0.00000    
+       2   0.00000    
+       3   0.00000    
+       4   0.00000    
+       5   0.00000    
+ 
+R8S3_TO_R8GE_TEST
+  R8S3_TO_R8GE converts an R8S3 matrix to R8GE format.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  R8S3 matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+ 
+  R8GE matrix A:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000       0.00000       0.00000       0.00000    
+    2   -1.00000       2.00000      -1.00000       0.00000       0.00000    
+    3    0.00000      -1.00000       2.00000      -1.00000       0.00000    
+    4    0.00000       0.00000      -1.00000       2.00000      -1.00000    
+    5    0.00000       0.00000       0.00000      -1.00000       2.00000    
+ 
+R8S3_WRITE_TEST
+  R8S3_WRITE writes an R8S3 matrix to a file.
+ 
+  Matrix order M =              100
+  Matrix order N =              100
+  Matrix nonzeros NZ_NUM =      298
+  Symmetry option SYM =           0
+ 
+  Initial 10x10 block of R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+    1    2.00000      -1.00000          0.            0.            0.      
+    2   -1.00000       2.00000      -1.00000          0.            0.      
+    3       0.        -1.00000       2.00000      -1.00000          0.      
+    4       0.            0.        -1.00000       2.00000      -1.00000    
+    5       0.            0.            0.        -1.00000       2.00000    
+    6       0.            0.            0.            0.        -1.00000    
+ 
+  Col:        6             7             8             9            10       
+  Row
+  ---
+    5   -1.00000          0.            0.            0.            0.      
+    6    2.00000      -1.00000          0.            0.            0.      
+    7   -1.00000       2.00000      -1.00000          0.            0.      
+    8       0.        -1.00000       2.00000      -1.00000          0.      
+    9       0.            0.        -1.00000       2.00000      -1.00000    
+   10       0.            0.            0.        -1.00000       2.00000    
+ 
+  R8S3_WRITE wrote the matrix data to "r8s3_matrix.txt".
+ 
+R8S3_ZEROS_TEST
+  R8S3_ZEROS sets an R8S3 matrix to zeros.
+ 
+  Matrix order M =                5
+  Matrix order N =                5
+  Matrix nonzeros NZ_NUM =       13
+  Symmetry option SYM =           0
+ 
+  R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+ 
+  Matrix order M         =        5
+  Matrix order N         =        5
+  Matrix nonzeros NZ_NUM =       10
+  Symmetry option SYM    =        1
+ 
+  R8S3 matrix:
+ 
+  Col:        1             2             3             4             5       
+  Row
+  ---
+ 
+R8S3_PRB
+  Normal end of execution.
+ 
+18 September 2015  10:52:36.104 AM

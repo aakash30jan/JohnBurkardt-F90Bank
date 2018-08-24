@@ -1,0 +1,208 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/beta_nc/beta_nc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      BETA_NC - Cumulative Density Function (CDF) of Noncentral Beta Distribution.
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BETA_NC <br> Cumulative Density Function (CDF) of Noncentral Beta Distribution.
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BETA_NC</b>
+      is a FORTRAN90 library which
+      evaluates the cumulative distribution function (CDF) of
+      the noncentral Beta distribution.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BETA_NC</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/beta_nc/beta_nc.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/beta_nc/beta_nc.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/beta_nc/beta_nc.html">a FORTRAN77 version</a> and
+      <a href = "beta_nc.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/beta_nc/beta_nc.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../asa063/asa063.html">
+      ASA063</a>,
+      a FORTRAN90 library which
+      evaluates the incomplete Beta function.
+    </p>
+
+    <p>
+      <a href = "../asa109/asa109.html">
+      ASA109</a>,
+      a FORTRAN90 library which
+      inverts the incomplete Beta function.
+    </p>
+
+    <p>
+      <a href = "../asa226/asa226.html">
+      ASA226</a>,
+      a FORTRAN90 library which
+      computes the CDF of the noncentral Beta distribution.
+    </p>
+
+    <p>
+      <a href = "../asa310/asa310.html">
+      ASA310</a>,
+      a FORTRAN90 library which
+      computes the CDF of the noncentral Beta distribution.
+    </p>
+
+    <p>
+      <a href = "../cdflib/cdflib.html">
+      CDFLIB</a>,
+      a FORTRAN90 library which
+      evaluates the cumulative density function (CDF), inverse CDF,
+      and certain other inverse functions, for distributions including
+      beta, binomial, chi-square, noncentral chi-square, F, noncentral F,
+      gamma, negative binomial, normal, Poisson, and students T,
+      by Barry Brown, James Lovato, Kathy Russell.
+    </p>
+
+    <p>
+      <a href = "../prob/prob.html">
+      PROB</a>,
+      a FORTRAN90 library which
+      evaluates and inverts a number of probabilistic distributions.
+    </p>
+
+    <p>
+      <a href = "../test_values/test_values.html">
+      TEST_VALUES</a>,
+      a FORTRAN90 library which
+      contains sample values for a number of distributions.
+    </p>
+
+    <p>
+      <a href = "../toms179/toms179.html">
+      TOMS179</a>,
+      a FORTRAN90 library which
+      evaluates the incomplete Beta function.
+    </p>
+
+    <p>
+      <a href = "../toms708/toms708.html">
+      TOMS708</a>,
+      a FORTRAN90 library which
+      evaluates the incomplete Beta function.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Harry Posten,<br>
+          An Effective Algorithm for the Noncentral Beta Distribution Function,<br>
+          The American Statistician,<br>
+          Volume 47, Number 2, May 1993, pages 129-131.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "beta_nc.f90">beta_nc.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "beta_nc_prb.f90">beta_nc_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "beta_nc_prb_output.txt">beta_nc_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>ALOGAM</b> computes the logarithm of the Gamma function.
+        </li>
+        <li>
+          <b>BETA_NONCENTRAL_CDF</b> evaluates the noncentral Beta CDF.
+        </li>
+        <li>
+          <b>BETA_NONCENTRAL_CDF_VALUES</b> returns some values of the noncentral Beta CDF.
+        </li>
+        <li>
+          <b>BETAIN</b> computes the incomplete Beta function ratio.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 January 2008.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/beta_nc/beta_nc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:22 GMT -->
+</html>

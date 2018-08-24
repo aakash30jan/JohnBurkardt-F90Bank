@@ -1,0 +1,271 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/tsg/tsg.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:33:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TSG - TASMANIAN Sparse Grid Library
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TSG <br> TASMANIAN Sparse Grid Library
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TSG</b> 
+      includes a FORTRAN90 library which
+      demonstrates how a FORTRAN program can interface with the
+      C++ TasmanianSparseGrid (TSG) package,
+      which implements routines for working with sparse grids,
+      to efficiently estimate integrals or compute interpolants of
+      scalar functions of multidimensional arguments.
+    </p>
+
+    <p>
+      Note that the FORTRAN interface is incomplete and experimental.
+    </p>
+
+    <p>
+      TSG can create three kinds of rules:
+      <ul>
+        <li>
+          Global grids, for globally smooth functions;
+        </li>
+        <li>
+          Local polynomial grids, a piecewise polynomial approach 
+          for non-smooth functions
+        </li>
+        <li>
+          Wavelet grids, also for non-smooth functions, but this option
+          can sometimes achieve better accuracy with fewer points.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      TSG is a family of algorithms for constructing multidimensional
+      quadrature and interpolation rules from tensor products of 1-dimensional
+      versions of such rules.
+    </p>
+
+    <p>
+      TSG includes a large variety of 1-dimensional rules, which are generally
+      defined, by default, over the interval [-1,+1].  In that case, the 
+      multidimensional quadrature and interpolation rules will be defined over
+      the hypercube [-1,+1]^d, but a simple linear transformation can be
+      carried out by TSG to redefine the linearly redefine the region. 
+    </p>
+
+    <p>
+      The one-dimensional rules that can be used include:
+      <ul>
+        <li>
+          Chebyshev;
+        </li>
+        <li>
+          Clenshaw Curtis;
+        </li>
+        <li>
+          Fejer Type 2;
+        </li>
+        <li>
+          Gauss Chebyshev Type 1;
+        </li>
+        <li>
+          Gauss Chebyshev Type 2;
+        </li>
+        <li>
+          Gauss Gegenbauer;
+        </li>
+        <li>
+          Gauss Hermite;
+        </li>
+        <li>
+          Gauss Jacobi;
+        </li>
+        <li>
+          Gauss Laguerre;
+        </li>
+        <li>
+          Gauss Legendre;
+        </li>
+        <li>
+          Local polynomial;
+        </li>
+        <li>
+          Local polynomial zero;
+        </li>
+        <li>
+          Local wavelet.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The TasmanianSparseGrid library is available for download from
+      <a href = "http://tasmanian.ornl.gov/">
+                 http://tasmanian.ornl.gov/ </a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_gpl.txt">the GNU GPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TSG</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/tsg/tsg.html">a C++ version</a> and
+      <a href = "tsg.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/tsg/tsg.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../sgmg/sgmg.html">
+      SGMG</a>,
+      a FORTRAN90 library which
+      creates a sparse grid dataset based on a mixed set of 1D factor rules,
+      and experiments with the use of a linear growth rate 
+      for the quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../sgmga/sgmga.html">
+      SGMGA</a>,
+      a FORTRAN90 library which
+      creates sparse grids based on a mixture of 1D quadrature rules,
+      allowing anisotropic weights for each dimension.
+    </p>
+
+    <p>
+      <a href = "../sparse_grid_cc/sparse_grid_cc.html">
+      SPARSE_GRID_CC</a>,
+      a FORTRAN90 library which
+      creates sparse grids based on Clenshaw-Curtis rules.
+    </p>
+
+    <p>
+      <a href = "../sparse_grid_hw/sparse_grid_hw.html">
+      SPARSE_GRID_HW</a>,
+      a FORTRAN90 library which
+      creates sparse grids based on Gauss-Legendre, Gauss-Hermite,
+      Gauss-Patterson, or a nested variation of Gauss-Hermite rules,
+      by Florian Heiss and Viktor Winschel.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Miroslav Stoyanov, Oak Ridge National Laboratory, mkstoyanov@gmail.com.
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Miro Stoyanov,<br>
+          User Manual: TASMANIAN Sparse Grids,<br>
+          ORNL Report, <br>
+          Oak Ridge National Laboratory, August 2013.
+        </li>
+        <li>
+          Yang Wang, Raghurama Reddy, Roberto Gomez, Junwoo Lim, Sergiu Sanielevici,
+          Jaideep Ray, James Sutherland, Jackie Chen,<br>
+          A General Approach to Creating Fortran Interface for C++ Application Libraries,<br>
+          Current Trends in High Performance Computing and its Applications, pages 145-154,<br>
+          edited by Wu Zhang, Zhangxin Chen, Roland Glowinski, Weiqin Tong,<br>
+          Springer, 2005,<br>
+          ISBN13: 978-3540257851,<br>
+          LC: QA76.88.I5663.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>TSG_PRB</b> is a very simple program which calls a few of the
+      TasmanianSparseGrids software library.
+      <ul>
+        <li>
+          <a href = "tsg_prb.f90">tsg_prb.f90</a>, the calling program;
+        </li>
+        <li>
+          <a href = "tsg_prb_output.txt">tsg_prb_output.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      A number of support files are needed.
+      <ul>
+        <li>
+          <a href = "Makefile">Makefile</a>, a makefile.
+        </li>
+        <li>
+          <a href = "tsgFBridge.f90">tsgFBridge.f90</a>,
+          currently contains interface routines for 
+          tsgFBridgeGetPoints() and tsgFBridgeGetNeededPoints().
+        </li>
+        <li>
+          <a href = "tsgFCWrapper.cpp">tsgFCWrapper.cpp</a>
+          a C++ library of interface routines allowing FORTRAN
+          access.
+        </li>
+        <li>
+          <a href = "tsgFModule.f90">tsgFModule.f90</a>
+          a module which declares the interface routines.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../cpp_src.html">
+      the C++ source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 November 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/tsg/tsg.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:34:00 GMT -->
+</html>

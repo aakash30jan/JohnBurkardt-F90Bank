@@ -1,0 +1,197 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/triangle_interpolate/triangle_interpolate.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:30:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TRIANGLE_INTERPOLATE - Interpolation on a Triangle
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TRIANGLE_INTERPOLATE <br>  Interpolation on a Triangle
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TRIANGLE_INTERPOLATE</b>
+      is a FORTRAN90 library which
+      demonstrates some simple techniques for interpolating data on a triangle.
+    </p>
+
+    <p>
+      In the most common case, the value of a quantity is known at the vertices
+      of a triangle, and a reasonable interpolated value is desired at some
+      point p in the interior of that triangle.  This can be done by linear
+      interpolation.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TRIANGLE_INTERPOLATE</b> is available in
+      <a href = "triangle_interpolate.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/triangle_interpolate/triangle_interpolate.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/triangle_interpolate/triangle_interpolate.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../fem_basis/fem_basis.html">
+      FEM_BASIS</a>,
+      a FORTRAN90 library which
+      can define basis functions for the finite element method (FEM) 
+      for any degree in an M-dimensional simplex (1D interval, 2D triangle,
+      3D tetrahedron, and higher dimensional generalizations.)
+    </p>
+
+    <p>
+      <a href = "../geometry/geometry.html">
+      GEOMETRY</a>,
+      a FORTRAN90 library which
+      performs geometric calculations in 2, 3 and N dimensional space.
+    </p>
+
+    <p>
+      <a href = "../toms886/toms886.html">
+      TOMS886</a>,
+      a FORTRAN90 library which
+      defines the Padua points for interpolation in a 2D region,
+      including the rectangle, triangle, and ellipse,
+      by Marco Caliari, Stefano de Marchi, Marco Vianello.
+      This is a version of ACM TOMS algorithm 886.
+    </p>
+
+    <p>
+      <a href = "../triangle_analyze/triangle_analyze.html">
+      TRIANGLE_ANALYZE</a>,
+      a FORTRAN90 program which
+      reads a triangle defined in a file, and uses the triangle_properties()
+      library to compute angles, area, centroid, circumcircle, edge lengths, 
+      incircle, orientation, orthocenter, and quality.
+    </p>
+
+    <p>
+      <a href = "../triangle_fekete_rule/triangle_fekete_rule.html">
+      TRIANGLE_FEKETE_RULE</a>,
+      a FORTRAN90 library which
+      defines Fekete rules for quadrature or interpolation
+      over the interior of a triangle in 2D.
+    </p>
+
+    <p>
+      <a href = "../triangle_grid/triangle_grid.html">
+      TRIANGLE_GRID</a>,
+      a FORTRAN90 library which
+      computes a grid of points
+      over the interior of a triangle in 2D.
+    </p>
+
+    <p>
+      <a href = "../triangle_histogram/triangle_histogram.html">
+      TRIANGLE_HISTOGRAM</a>,
+      a FORTRAN90 program which
+      computes histograms of data on the unit triangle in 2D.
+    </p>
+
+    <p>
+      <a href = "../triangle_properties/triangle_properties.html">
+      TRIANGLE_PROPERTIES</a>,
+      a FORTRAN90 library which
+      can compute properties, including angles, area, centroid, circumcircle,
+      edge lengths, incircle, orientation, orthocenter, and quality, 
+      of a triangle in 2D.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangle_interpolate.f90">triangle_interpolate.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangle_interpolate_prb.f90">triangle_interpolate_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "triangle_interpolate_prb_output.txt">triangle_interpolate_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>R8VEC_UNIFORM_01</b> returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TRIANGLE_AREA</b> computes the area of a triangle in 2D.
+        </li>
+        <li>
+          <b>TRIANGLE_INTERPOLATE_LINEAR</b> interpolates data given on a triangle's vertices.
+        </li>
+        <li>
+          <b>UNIFORM_IN_TRIANGLE_MAP1</b> maps uniform points into a triangle.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 19 January 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/triangle_interpolate/triangle_interpolate.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:30:18 GMT -->
+</html>

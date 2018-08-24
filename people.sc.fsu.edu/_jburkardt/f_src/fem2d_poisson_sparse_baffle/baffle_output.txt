@@ -1,0 +1,192 @@
+January 25 2013   1:40:49.799 PM
+ 
+FEM2D_POISSON_SPARSE
+  FORTRAN90 version:
+ 
+  A version of FEM2D_POISSON using sparse storage
+  and an iterative solver.
+ 
+  Solution of the Poisson equation in an arbitrary region
+  in 2 dimensions.
+ 
+  - DEL H(x,y) DEL U(x,y) + K(x,y) * U(x,y) = F(x,y) in the region
+ 
+                    U(x,y) = G(x,y) on the boundary.
+ 
+  The finite element method is used,
+  with triangular elements,
+  which must be a 3 node linear triangle.
+ 
+  Node file is "baffle_nodes.txt".
+  Element file is "baffle_elements.txt".
+  Number of nodes =               512
+ 
+  First 10 nodes
+ 
+  Row         1             2       
+  Col
+ 
+    1    0.00000       1.00000    
+    2    0.00000       1.37500    
+    3    0.00000       1.75000    
+    4    0.00000       2.12500    
+    5    0.00000       2.50000    
+    6    0.00000       2.87500    
+    7    0.00000       3.25000    
+    8    0.00000       3.62500    
+    9    0.00000       4.00000    
+   10    0.00000       4.37500    
+ 
+  Element order =                   3
+  Number of elements =            874
+ 
+  First 10 elements
+ 
+  Row       1      2      3
+  Col
+ 
+    1     317    306    298
+    2      28      3     18
+    3       4      3     28
+    4      28     33      4
+    5      72     69     57
+    6      49     33     28
+    7     114    106    122
+    8      84     80     67
+    9      88     69     72
+   10     147    133    131
+ 
+  Quadrature order =                 3
+ 
+  Number of nonzero coefficients NZ_NUM =     3308
+ 
+  Part of Finite Element matrix A:
+ 
+  Col:        1             2             3             4             5
+  Row
+  ---
+    1   0.925899     -0.405114       0.00000       0.00000       0.00000    
+    2  -0.405114       2.06613     -0.370937       0.00000       0.00000    
+    3    0.00000     -0.370937       1.86995     -0.528324       0.00000    
+    4    0.00000       0.00000     -0.528324       1.84140     -0.412654    
+    5    0.00000       0.00000       0.00000     -0.412654       2.05364    
+    6    0.00000       0.00000       0.00000       0.00000     -0.382925    
+ 
+  Col:        6             7             8             9            10
+  Row
+  ---
+    5  -0.382925       0.00000       0.00000       0.00000       0.00000    
+    6    1.75240     -0.389630       0.00000       0.00000       0.00000    
+    7  -0.389630       2.04239     -0.428216       0.00000       0.00000    
+    8    0.00000     -0.428216       1.74296     -0.343709       0.00000    
+    9    0.00000       0.00000     -0.343709       1.90310     -0.474999    
+   10    0.00000       0.00000       0.00000     -0.474999       1.88456    
+ 
+  Part of right hand side vector F:
+ 
+         1  0.81684830E-01
+         2  0.71605730E-01
+         3  0.14574345    
+         4  0.21434168    
+         5  0.74742670E-01
+         6  0.17805744    
+         7  0.65253598E-01
+         8  0.14463460    
+         9  0.85275214E-01
+        10  0.76656028E-01
+ 
+  Part of A after adjustment for Dirichlet condition:
+ 
+  Col:        1             2             3             4             5
+  Row
+  ---
+    1    1.00000       0.00000       0.00000       0.00000       0.00000    
+    2    0.00000       1.00000       0.00000       0.00000       0.00000    
+    3    0.00000       0.00000       1.00000       0.00000       0.00000    
+    4    0.00000       0.00000       0.00000       1.00000       0.00000    
+    5    0.00000       0.00000       0.00000       0.00000       1.00000    
+ 
+  Col:        6             7             8             9            10
+  Row
+  ---
+    6    1.00000       0.00000       0.00000       0.00000       0.00000    
+    7    0.00000       1.00000       0.00000       0.00000       0.00000    
+    8    0.00000       0.00000       1.00000       0.00000       0.00000    
+    9    0.00000       0.00000       0.00000       1.00000       0.00000    
+   10    0.00000       0.00000       0.00000       0.00000       1.00000    
+ 
+  Part of F after adjustment for Dirichlet condition:
+ 
+         1   0.0000000    
+         2   0.0000000    
+         3   0.0000000    
+         4   0.0000000    
+         5   0.0000000    
+         6   0.0000000    
+         7   0.0000000    
+         8   0.0000000    
+         9   0.0000000    
+        10   0.0000000    
+  ITR =        1  Residual =    22.4453    
+  K =          1  Residual =    8.11090    
+  K =          2  Residual =    5.46359    
+  K =          3  Residual =    3.72912    
+  K =          4  Residual =    2.70686    
+  K =          5  Residual =    2.01206    
+  K =          6  Residual =    1.33620    
+  K =          7  Residual =   0.773980    
+  K =          8  Residual =   0.399518    
+  K =          9  Residual =   0.217129    
+  K =         10  Residual =   0.126072    
+  K =         11  Residual =   0.718644E-01
+  K =         12  Residual =   0.382729E-01
+  K =         13  Residual =   0.218797E-01
+  K =         14  Residual =   0.141424E-01
+  K =         15  Residual =   0.895071E-02
+  K =         16  Residual =   0.483571E-02
+  K =         17  Residual =   0.257604E-02
+  K =         18  Residual =   0.138985E-02
+  K =         19  Residual =   0.822672E-03
+  K =         20  Residual =   0.531744E-03
+  ITR =        2  Residual =   0.531744E-03
+  K =          1  Residual =   0.400467E-03
+  K =          2  Residual =   0.252209E-03
+  K =          3  Residual =   0.143165E-03
+  K =          4  Residual =   0.772489E-04
+  K =          5  Residual =   0.429428E-04
+  K =          6  Residual =   0.265632E-04
+  K =          7  Residual =   0.167421E-04
+  K =          8  Residual =   0.974224E-05
+  K =          9  Residual =   0.545471E-05
+  K =         10  Residual =   0.298395E-05
+  K =         11  Residual =   0.158750E-05
+  K =         12  Residual =   0.846080E-06
+ 
+MGMRES:
+  Iterations =       32
+  Final Residual =   0.846080E-06
+ 
+  Part of the solution vector U:
+ 
+         1  0.99981098E-09
+         2  0.43775491E-08
+         3  0.37970832E-08
+         4  0.25711640E-08
+         5  0.19010705E-08
+         6  0.30265888E-09
+         7  0.11790638E-08
+         8  0.50332784E-09
+         9  0.20062748E-09
+        10  0.29019816E-08
+ 
+FEM2D_POISSON_SPARSE:
+  Wrote an ASCII file
+    "baffle_solution.txt"
+  of the form
+    U ( X(I), Y(I) )
+  which can be used for plotting.
+ 
+FEM2D_POISSON_SPARSE:
+  Normal end of execution.
+ 
+January 25 2013   1:40:49.882 PM

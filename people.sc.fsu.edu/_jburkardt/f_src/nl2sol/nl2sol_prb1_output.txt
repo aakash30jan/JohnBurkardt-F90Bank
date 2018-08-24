@@ -1,0 +1,96 @@
+12 March 2015   1:34:42.300 PM
+ 
+NL2SOL_PRB1:
+  FORTRAN90 version
+  Test the NL2SOL library.
+ 
+TEST01:
+  Test the NL2SOL routine,
+  which requires a user residual and jacobian.
+  
+      I     Initial X(i)      D(i)
+  
+     1     0.300000E+01     0.707E+01
+     2     0.100000E+01     0.507E+01
+ 
+    it    nf      f        reldf      preldf     reldx
+  
+     0     1  0.847E+02
+     1     2  0.678E+01  0.920E+00  0.980E+00  0.272E+00
+     2     3  0.120E+01  0.823E+00  0.847E+00  0.618E+00
+     3     4  0.523E+00  0.564E+00  0.815E+00  0.417E+00
+     4     5  0.400E+00  0.235E+00  0.284E+00  0.174E+00
+     5     6  0.390E+00  0.260E-01  0.515E-01  0.978E-01
+     6     7  0.387E+00  0.846E-02  0.846E-02  0.416E-01
+     7     8  0.387E+00  0.413E-04  0.378E-04  0.267E-02
+     8     9  0.387E+00  0.374E-06  0.391E-06  0.296E-03
+     9    10  0.387E+00  0.633E-08  0.906E-08  0.418E-04
+    10    11  0.387E+00  0.677E-09  0.678E-09  0.108E-04
+    11    12  0.387E+00  0.106E-13  0.105E-13  0.496E-07
+  
+Relative function convergence.
+  
+ function     0.386600E+00   reldx        0.496426E-07
+ func. evals      12         grad. evals      12
+ preldf       0.105468E-13   npreldf      0.105468E-13
+  
+    2 extra function evaluations for covariance.
+    3 extra gradient evaluations for covariance.
+ 
+     I      Final X(I)        D(I)          G(I)
+ 
+    1    -0.155437E+00     0.138E+01    -0.469E-09
+    2     0.694564E+00     0.145E+01    -0.183E-08
+  
+Covariance = scale * H**-1 * (J' * J) * H**-1
+  
+ row  1    0.3446E+00
+ row  2   -0.2142E+00  0.4440E+00
+ 
+TEST02:
+  Test the NL2SNO routine,
+  which requires only a user residual.
+  The jacobian is approximated internally.
+  
+      I     Initial X(i)      D(i)
+  
+     1     0.300000E+01     0.707E+01
+     2     0.100000E+01     0.507E+01
+ 
+    it    nf      f        reldf      preldf     reldx
+  
+     0     1  0.847E+02
+     1     2  0.678E+01  0.920E+00  0.980E+00  0.272E+00
+     2     3  0.120E+01  0.823E+00  0.847E+00  0.618E+00
+     3     4  0.523E+00  0.564E+00  0.815E+00  0.417E+00
+     4     5  0.400E+00  0.235E+00  0.284E+00  0.174E+00
+     5     6  0.390E+00  0.260E-01  0.515E-01  0.978E-01
+     6     7  0.387E+00  0.846E-02  0.846E-02  0.416E-01
+     7     8  0.387E+00  0.413E-04  0.378E-04  0.267E-02
+     8     9  0.387E+00  0.374E-06  0.391E-06  0.296E-03
+     9    10  0.387E+00  0.633E-08  0.906E-08  0.418E-04
+    10    11  0.387E+00  0.677E-09  0.677E-09  0.108E-04
+    11    12  0.387E+00  0.106E-13  0.109E-13  0.505E-07
+  
+Relative function convergence.
+  
+ function     0.386600E+00   reldx        0.505231E-07
+ func. evals      12         grad. evals      12
+ preldf       0.109253E-13   npreldf      0.109253E-13
+  
+    5 extra function evaluations for covariance.
+ 
+     I      Final X(I)        D(I)          G(I)
+ 
+    1    -0.155437E+00     0.138E+01     0.150E-08
+    2     0.694564E+00     0.145E+01     0.339E-08
+  
+Covariance = scale * H**-1 * (J' * J) * H**-1
+  
+ row  1    0.3446E+00
+ row  2   -0.2142E+00  0.4440E+00
+ 
+NL2SOL_PRB1:
+  Normal end of execution.
+ 
+12 March 2015   1:34:42.300 PM

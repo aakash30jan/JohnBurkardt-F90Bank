@@ -1,0 +1,189 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/backtrack_binary_rc/backtrack_binary_rc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:22:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      BACKTRACK_BINARY_RC - Binary Backtrack Search Using Reverse Communication
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BACKTRACK_BINARY_RC <br> Binary Backtrack Search Using Reverse Communication
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BACKTRACK_BINARY_RC</b>
+      is a FORTRAN90 library which
+      carries out a backtrack search for a set of binary decisions, using
+      reverse communication (RC).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BACKTRACK_BINARY_RC</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/backtrack_binary_rc/backtrack_binary_rc.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/backtrack_binary_rc/backtrack_binary_rc.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/backtrack_binary_rc/backtrack_binary_rc.html">a FORTRAN77 version</a> and
+      <a href = "backtrack_binary_rc.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/backtrack_binary_rc/backtrack_binary_rc.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/backtrack_binary_rc/backtrack_binary_rc.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../bisection_rc/bisection_rc.html">
+      BISECTION_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution to the equation F(X)=0 using bisection
+      within a user-supplied change of sign interval [A,B].
+      The procedure is written using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../cg_rc/cg_rc.html">
+      CG_RC</a>,
+      a FORTRAN90 library which
+      implements the conjugate gradient method for solving 
+      a positive definite sparse linear system A*x=b, 
+      using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../local_min_rc/local_min_rc.html">
+      LOCAL_MIN_RC</a>,
+      a FORTRAN90 library which
+      finds a local minimum of a scalar function of a scalar variable, 
+      without the use of derivative information,
+      using reverse communication (RC),
+      by Richard Brent.
+    </p>
+
+    <p>
+      <a href = "../root_rc/root_rc.html">
+      ROOT_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a scalar nonlinear equation f(x) = 0, 
+      or a system of nonlinear equations,
+      using reverse communication (RC), by Gaston Gonnet.
+    </p>
+
+    <p>
+      <a href = "../roots_rc/roots_rc.html">
+      ROOTS_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a system of nonlinear equations f(x) = 0, 
+      using reverse communication (RC), by Gaston Gonnet.
+    </p>
+
+    <p>
+      <a href = "../sort_rc/sort_rc.html">
+      SORT_RC</a>,
+      a FORTRAN90 library which
+      can sort a list of any kind of objects,
+      using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../subset/subset.html">
+      SUBSET</a>,
+      a FORTRAN90 library which
+      enumerates, generates, randomizes, ranks and unranks combinatorial objects
+      including combinations, compositions, Gray codes, index sets, partitions, 
+      permutations, polynomials, subsets, and Young tables.  Backtracking 
+      routines are included to solve some combinatorial problems.
+    </p>
+
+    <p>
+      <a href = "../zero_rc/zero_rc.html">
+      ZERO_RC</a>,
+      a FORTRAN90 library which
+      seeks a solution of a scalar nonlinear equation f(x) = 0, 
+      using reverse communication (RC), by Richard Brent.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "backtrack_binary_rc.f90">backtrack_binary_rc.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "backtrack_binary_rc_prb.f90">backtrack_binary_rc_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "backtrack_binary_rc_prb_output.txt">backtrack_binary_rc_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>BACKBIN_RC</b> uses reverse communication for binary backtracking.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 December 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/backtrack_binary_rc/backtrack_binary_rc.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:22:55 GMT -->
+</html>

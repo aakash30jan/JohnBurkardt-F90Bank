@@ -1,0 +1,31 @@
+Use minimum degree ordering on A'*A.
+Factor time  =     0.00
+Factor flops = 1.944650e+05	Mflops =   134.02
+Solve time   =     0.00
+Solve flops = 2.201600e+04	Mflops =   150.64
+#NZ in factor L = 5869
+#NZ in factor U = 5539
+#NZ in L+U = 11008
+L\U MB 0.138	total MB needed 0.570	expansions 0
+13 March 2014   9:16:09.750 PM
+ 
+D_HB
+  FORTRAN90/OpenMP version
+ 
+  First 10 entries of solution:
+ 
+   1     31.8065    
+   2     30.7966    
+   3     30.7966    
+   4     31.3164    
+   5     31.8065    
+   6     32.3065    
+   7     32.3065    
+   8     31.8065    
+   9     31.8065    
+  10     28.8163    
+ 
+D_HB
+  Normal end of execution.
+ 
+13 March 2014   9:16:09.754 PM

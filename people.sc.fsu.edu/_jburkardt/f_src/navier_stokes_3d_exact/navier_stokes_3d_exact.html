@@ -1,0 +1,186 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:57:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      NAVIER_STOKES_3D_EXACT - Exact solutions to the 3D Incompressible Time-Dependent Navier Stokes Equations
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      NAVIER_STOKES_3D_EXACT<br> 
+      Exact solutions to the <br>
+      3D Incompressible Time-Dependent Navier Stokes Equations
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>NAVIER_STOKES_3D_EXACT</b>,
+      a FORTRAN90 library which
+      evaluates exact solutions to the incompressible time-dependent
+      Navier-Stokes equations over an arbitrary domain in 3D.
+    </p>
+
+    <p>
+      The given velocity and pressure fields
+      are exact solutions for the 3D incompressible time-dependent
+      Navier Stokes equations over any region.
+    </p>
+
+    <p>
+      To define a typical problem, one chooses a bounded spatial region 
+      and a starting time, and then imposes boundary and initial conditions
+      by referencing the exact solution appropriately.
+    </p>
+
+    <p>
+      In the Ethier reference, a calculation is made for the cube centered
+      at (0,0,0) with a "radius" of 1 unit, and over the time interval
+      from t = 0 to t = 0.1, with parameters a = PI/4 and d = PI/2,
+      and with Dirichlet boundary conditions on all faces of the cube.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>NAVIER_STOKES_3D_EXACT</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html">a FORTRAN77 version</a> and
+      <a href = "navier_stokes_3d_exact.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../navier_stokes_2d_exact/navier_stokes_2d_exact.html">
+      NAVIER_STOKES_2D_EXACT</a>,
+      a FORTRAN90 library which
+      evaluates exact solutions to the incompressible time-dependent
+      Navier-Stokes equations over an arbitrary domain in 2D.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/navier_stokes_mesh3d/navier_stokes_mesh3d.html">
+      NAVIER_STOKES_MESH3D</a>,
+      MATLAB data files which
+      define meshes for several
+      3D test problems involving the Navier Stokes equations
+      for flow flow, provided by Leo Rebholz.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Martin Bazant, Henry Moffatt,<br>
+          Exact solutions of the Navier-Stokes equations having steady vortex structures,<br>
+          Journal of Fluid Mechanics,<br>
+          Volume 541, pages 55-64, 2005.
+        </li>
+        <li>
+          Johannes Burgers,<br>
+          A mathematical model illustrating the theory of turbulence,<br>
+          Advances in Applied Mechanics,<br>
+          Volume 1, pages 171-199, 1948.
+        </li>
+        <li>
+          C Ross Ethier, David Steinman,<br>
+          Exact fully 3D Navier-Stokes solutions for benchmarking,<br>
+          International Journal for Numerical Methods in Fluids,<br>
+          Volume 19, Number 5, March 1994, pages 369-375.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ns3de.f90">ns3de.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ns3de_prb.f90">ns3de_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "ns3de_prb_output.txt">ns3de_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>RESID_ETHIER</b> evaluates the residual of the Ethier exact Navier Stokes solution.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>UVWP_ETHIER</b> evaluates the Ethier exact Navier Stokes solution.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 January 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/navier_stokes_3d_exact/navier_stokes_3d_exact.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:57:37 GMT -->
+</html>

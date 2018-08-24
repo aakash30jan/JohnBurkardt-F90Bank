@@ -1,0 +1,42 @@
+16 September 2016   7:11:31.695 PM
+
+FIRE_SERIAL
+  FORTRAN90 version
+  A probabilistic simulation of a forest fire.
+  The probability of tree-to-tree spread is   0.500000    
+  The random number generator is seeded by   1239427985
+
+  Fire starts at tree( 5,15)
+
+  Map of fire damage.
+  Fire started at "*".
+  Burned trees are indicated by ".".
+  Unburned trees are indicated by "X".
+
+  XXXXXXXXX....XX.....
+  XXXXXXX......XX.....
+  XXXXXXX.............
+  XXXXXX........X...XX
+  XXXXXXX.......*.....
+  XXXX................
+  XX...XX....XX.X....X
+  XXX..XX....X.......X
+  XXX..............X..
+  XXX.............XX..
+  XXX.................
+  XX...X.X....X.......
+  XXX..............X..
+  XXX..............X..
+  XXXX............XXXX
+  XXXXX.X.........XXXX
+  XXXXXXX.....X...XXXX
+  XXXXXXXXX..XX...XXXX
+  XXXXXXXXXXXX...XXXXX
+  XXXXXXXXXXXX...XXXXX
+
+  Percentage of forest burned =   0.585000    
+
+FIRE_SERIAL:
+  Normal end of execution.
+
+16 September 2016   7:11:31.697 PM

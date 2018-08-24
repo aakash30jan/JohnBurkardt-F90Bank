@@ -1,0 +1,225 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/besselj/besselj.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      BESSELJ - Bessel J functions of noninteger order
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BESSELJ <br> Bessel J functions of noninteger order
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BESSELJ</b>
+      is a FORTRAN90 library which
+      evaluates Bessel J functions of noninteger order.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BESSELJ</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/besselj/besselj.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/besselj/besselj.html">a C++ version</a> and
+      <a href = "besselj.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/besselj/besselj.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/besselj/besselj.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../fn/fn.html">
+      FN</a>,
+      a FORTRAN90 library which
+      approximates elementary and special functions using Chebyshev polynomials;
+      functions include Airy, Bessel I, J, K and Y, beta, 
+      confluent hypergeometric, error, gamma, log gamma, Pochhammer, Spence; 
+      integrals include hyperbolic cosine, cosine, Dawson, exponential, 
+      logarithmic, hyperbolic sine, sine; by Wayne Fullerton.
+    </p>
+
+    <p>
+      <a href = "../specfun/specfun.html">
+      SPECFUN</a>,
+      a FORTRAN90 library which
+      computes special functions, including Bessel I, J, K and Y functions,
+      and the Dawson, E1, EI, Erf, Gamma, log Gamma, Psi/Digamma functions,
+      by William Cody and Laura Stoltz;
+    </p>
+
+    <p>
+      <a href = "../special_functions/special_functions.html">
+      SPECIAL_FUNCTIONS</a>,
+      a FORTRAN90 library which
+      computes the Beta, Error, Gamma, Lambda, Psi functions,
+      the Airy, Bessel I, J, K and Y, Hankel, Jacobian elliptic, Kelvin, 
+      Mathieu, Struve functions,
+      spheroidal angular functions, parabolic cylinder functions,
+      hypergeometric functions,
+      the Bernoulli and Euler numbers,
+      the Hermite, Laguerre and Legendre polynomials, 
+      the cosine, elliptic, exponential, Fresnel and sine integrals,
+      by Shanjie Zhang, Jianming Jin;
+    </p>
+
+    <p>
+      <a href = "../toms715/toms715.html">
+      TOMS715</a>,
+      a FORTRAN90 library which
+      evaluates special functions, including the Bessel I, J, K, and Y functions
+      of order 0, of order 1, and of any real order, Dawson's integral, 
+      the error function, exponential integrals, the gamma function, 
+      the normal distribution function, the psi function.
+      This is a version of ACM TOMS algorithm 715.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Donald Amos, SL Daniel, MK Weston,<br>
+          CDC 6600 subroutines IBESS and JBESS for Bessel functions
+          I(NU,X) and J(NU,X),<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 3, Number 1, March 1977, pages 76-92.
+        </li>
+        <li>
+          William Cody,<br>
+          Algorithm 715:
+          SPECFUN - A Portable FORTRAN Package of
+          Special Function Routines and Test Drivers,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 19, Number 1, March 1993, pages 22-32.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "besselj.f90">besselj.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "besselj_prb.f90">besselj_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "besselj_prb_output.txt">besselj_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>BESSEL_JX_VALUES</b> returns some values of the Jx Bessel function.
+        </li>
+        <li>
+          <b>DBESJ</b> computes Bessel J functions of non integer order.
+        </li>
+        <li>
+          <b>D1MACH</b> returns double precision real machine constants.
+        </li>
+        <li>
+          <b>D9LGMC</b> computes the log Gamma correction factor.
+        </li>
+        <li>
+          <b>DASYJY</b> computes Bessel J and Y functions of large order.
+        </li>
+        <li>
+          <b>DCSEVL</b> evaluates a Chebyshev series.
+        </li>
+        <li>
+          <b>DJAIRY</b> computes the Airy function Ai(x) and its derivative.
+        </li>
+        <li>
+          <b>DGAMLM</b> computes bounds for the argument in the Gamma function.
+        </li>
+        <li>
+          <b>DGAMMA</b> computes the complete Gamma function.
+        </li>
+        <li>
+          <b>DLNGAM</b> computes the logarithm of the absolute value of the Gamma function.
+        </li>
+        <li>
+          <b>I1MACH</b> returns integer machine constants.
+        </li>
+        <li>
+          <b>INITDS</b> determines the necessary length of a Chebyshev series.
+        </li>
+        <li>
+          <b>RJBESL</b> evaluates a sequence of Bessel J functions.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>XERMSG</b> processes error messages.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 January 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/besselj/besselj.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:19 GMT -->
+</html>

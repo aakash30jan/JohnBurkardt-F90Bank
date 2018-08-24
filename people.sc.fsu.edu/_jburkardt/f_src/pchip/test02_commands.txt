@@ -1,0 +1,14 @@
+# test02_commands.txt
+#
+# Usage:
+#  gnuplot < test02_commands.txt
+#
+set term png
+set output "test02.png"
+set xlabel "<---X--->"
+set ylabel "<---Y--->"
+set title "Data and Piecewise Cubic Hermite Interpolant"
+set grid
+set style data lines
+plot "test02_data.txt" using 1:2 with points pt 7 ps 2 lc rgb "blue",\
+     "test02_interp.txt" using 1:2 lw 3 linecolor rgb "red"

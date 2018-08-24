@@ -1,0 +1,289 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/blas0/blas0.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      BLAS0 - Auxilliary Functions for Basic Linear Algebra Subprograms (BLAS)
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BLAS0 <br> Auxilliary Functions for Basic Linear Algebra Subprograms (BLAS)
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BLAS0</b>
+      is a FORTRAN90 library which
+      contains auxilliary functions for the Basic Linear Algebra Subprograms
+      (BLAS).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BLAS0</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/blas0/blas0.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/blas0/blas0.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/blas0/blas0.html">a FORTRAN77 version</a> and
+      <a href = "blas0.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/blas0/blas0.html">a MATLAB version</a> 
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../blas1_c/blas1_c.html">
+      BLAS1_C</a>,
+      a FORTRAN90 library which
+      contains basic linear algebra subprograms (BLAS) 
+      for vector-vector operations,
+      using single precision complex arithmetic,
+      by Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh.
+    </p>
+
+    <p>
+      <a href = "../blas1_d/blas1_d.html">
+      BLAS1_D</a>,
+      a FORTRAN90 library which
+      contains basic linear algebra subprograms (BLAS) 
+      for vector-vector operations,
+      using double precision real arithmetic,
+      by Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh.
+    </p>
+
+    <p>
+      <a href = "../blas1_s/blas1_s.html">
+      BLAS1_S</a>,
+      a FORTRAN90 library which
+      contains basic linear algebra subprograms (BLAS) 
+      for vector-vector operations,
+      using single precision real arithmetic,
+      by Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh.
+    </p>
+
+    <p>
+      <a href = "../blas1_z/blas1_z.html">
+      BLAS1_Z</a>,
+      a FORTRAN90 library which
+      contains basic linear algebra subprograms (BLAS) 
+      for vector-vector operations,
+      using double precision complex arithmetic,
+      by Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh,<br>
+          Algorithm 539:
+          Basic Linear Algebra Subprograms for Fortran Usage,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 5, Number 3, September 1979, pages 308-323.
+        </li>
+      </ol>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "blas0.f90">blas0.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "blas0_prb.f90">blas0_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "blas0_prb_output.txt">blas0_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>C4_UNIFORM_01</b> returns a unit pseudorandom C4.
+        </li>
+        <li>
+          <b>C4MAT_PRINT</b> prints a C4MAT.
+        </li>
+        <li>
+          <b>C4MAT_PRINT_SOME</b> prints some of a C4MAT.
+        </li>
+        <li>
+          <b>C4MAT_TEST</b> sets up a test matrix.
+        </li>
+        <li>
+          <b>C4MAT_TEST_INVERSE</b> returns the inverse of the test matrix.
+        </li>
+        <li>
+          <b>C8_UNIFORM_01</b> returns a unit pseudorandom C8.
+        </li>
+        <li>
+          <b>C8MAT_PRINT</b> prints a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_PRINT_SOME</b> prints some of a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_TEST</b> sets up a test matrix.
+        </li>
+        <li>
+          <b>C8MAT_TEST_INVERSE</b> returns the inverse of the test matrix.
+        </li>
+        <li>
+          <b>CABS1</b> returns the L1 norm of a single precision complex number.
+        </li>
+        <li>
+          <b>CABS2</b> returns the L2 norm of a single precision complex number.
+        </li>
+        <li>
+          <b>CMACH</b> computes machine parameters for single precision complex arithmetic.
+        </li>
+        <li>
+          <b>CSIGN1</b> is a single precision complex transfer-of-sign function.
+        </li>
+        <li>
+          <b>CSIGN2</b> is a single precision complex transfer-of-sign function.
+        </li>
+        <li>
+          <b>DMACH</b> computes machine parameters for double precision arithmetic.
+        </li>
+        <li>
+          <b>LSAME</b> returns TRUE if CA is the same letter as CB regardless of case.
+        </li>
+        <li>
+          <b>R4_ABS</b> returns the absolute value of an R4.
+        </li>
+        <li>
+          <b>R4_SIGN</b> returns the sign of an R4.
+        </li>
+        <li>
+          <b>R4_UNIFORM_01</b> returns a unit pseudorandom R4.
+        </li>
+        <li>
+          <b>R4_UNIFORM_AB</b> returns a scaled pseudorandom R4.
+        </li>
+        <li>
+          <b>R4MAT_PRINT</b> prints an R4MAT.
+        </li>
+        <li>
+          <b>R4MAT_PRINT_SOME</b> prints some of an R4MAT.
+        </li>
+        <li>
+          <b>R4MAT_TEST</b> sets up a test matrix.
+        </li>
+        <li>
+          <b>R4VEC_PRINT</b> prints an R4VEC.
+        </li>
+        <li>
+          <b>R8_ABS</b> returns the absolute value of an R8.
+        </li>
+        <li>
+          <b>R8_SIGN</b> returns the sign of an R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01</b> returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <b>R8_UNIFORM_AB</b> returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <b>R8MAT_PRINT</b> prints an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT_SOME</b> prints some of an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_TEST</b> sets up a test matrix.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>SMACH</b> computes machine parameters for single precision arithmetic.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>XERBLA</b> is an error handler for the LAPACK routines.
+        </li>
+        <li>
+          <b>ZABS1</b> returns the L1 norm of a double precision complex number.
+        </li>
+        <li>
+          <b>ZABS2</b> returns the L2 norm of a double precision complex number.
+        </li>
+        <li>
+          <b>ZMACH</b> computes machine parameters for double precision complex arithmetic.
+        </li>
+        <li>
+          <b>ZSIGN1</b> is a double precision complex transfer-of-sign function.
+        </li>
+        <li>
+          <b>ZSIGN2</b> is a double precision complex transfer-of-sign function.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 April 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/blas0/blas0.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:23:37 GMT -->
+</html>

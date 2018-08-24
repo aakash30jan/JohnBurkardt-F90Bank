@@ -1,0 +1,36 @@
+Use minimum degree ordering on A'*A.
+Factor time  =     0.00
+Factor flops = 5.869000e+04	Mflops =    36.98
+Solve time   =     0.00
+Solve flops = 4.392800e+04	Mflops =   192.53
+#NZ in factor L = 5869
+#NZ in factor U = 5539
+#NZ in L+U = 11008
+L\U MB 0.138	total MB needed 0.570	expansions -1
+13 March 2014   9:07:09.577 PM
+ 
+C_HB
+  FORTRAN90/OpenMP version
+  CGSSV factors and solves a linear system
+  using single precision complex arithmetic.
+  Matrix data read from file.
+  Matrix order N =    400
+  Matrix nonzeros NNZ =   1920
+ 
+  First 10 entries of computed solution:
+ 
+ -0.200029      -2.00013    
+ -0.199623      -1.99989    
+ -0.199623      -1.99989    
+ -0.199961      -2.00030    
+ -0.200030      -2.00013    
+ -0.200098      -1.99996    
+ -0.200098      -1.99996    
+ -0.200030      -2.00013    
+ -0.200030      -2.00013    
+ -0.200466      -1.99900    
+ 
+C_HB:
+  Normal end of execution.
+ 
+13 March 2014   9:07:09.603 PM

@@ -1,0 +1,13 @@
+14 April 2014   4:28:22.225 PM
+ 
+SPARSE_GRID_HW_PRB
+  FORTRAN90 version
+  Test the SPARSE_GRID_HW library.
+
+CCL_SPARSE_TEST:
+  CCL_ORDER + CC sparse grid:
+  Sparse Clenshaw Curtis Linear quadrature over [0,1].
+
+   D  Level   Nodes    SG error    MC error
+
+  10      8  584665  .93874E-11  .15257E-03

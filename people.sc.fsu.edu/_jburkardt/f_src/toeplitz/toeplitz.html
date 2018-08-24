@@ -1,0 +1,580 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:27:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TOEPLITZ - Solution of Toeplitz linear systems
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TOEPLITZ <br> Solution of Toeplitz linear systems
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TOEPLITZ</b>
+      is a FORTRAN90 library which
+      solves a variety of Toeplitz and circulant linear systems.
+    </p>
+
+    <p>
+      The package can also handle circulant Toeplitz systems, and
+      some other more complicated but related forms.
+    </p>
+
+    <p>
+      The <b>TOEPLITZ</b> package was written in the early 1980's by
+      a joint working group of American and Soviet mathematicians.
+    </p>
+
+    <p>
+      The original, true, correct version of TOEPLITZ is available
+      in the TOEPLITZ subdirectory of
+      <a href = "http://www.netlib.org/">the NETLIB web site</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TOEPLITZ</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/toeplitz/toeplitz.html">a FORTRAN77 version</a> and
+      <a href = "toeplitz.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../blas1/blas1.html">
+      BLAS1</a>,
+      a FORTRAN90 library which
+      contains the level 1 Basic Linear
+      Algebra Subprograms.
+    </p>
+
+    <p>
+      <a href = "../linpack/linpack.html">
+      LINPACK</a>,
+      a FORTRAN90 library which
+      carries out the factorization and solution
+      of linear systems of a variety of types.
+    </p>
+
+    <p>
+      <a href = "../linplus/linplus.html">
+      LINPLUS</a>,
+      a FORTRAN90 library which
+      includes some routines for manipulating Toeplitz matrices.
+    </p>
+
+    <p>
+      <a href = "../test_mat/test_mat.html">
+      TEST_MAT</a>,
+      a FORTRAN90 library which
+      includes some routines which define sample Toeplitz matrices.
+    </p>
+
+    <p>
+      <a href = "../toeplitz_cholesky/toeplitz_cholesky.html">
+      TOEPLITZ_CHOLESKY</a>,
+      a FORTRAN90 library which
+      computes the Cholesky factorization of a nonnegative definite symmetric
+      Toeplitz matrix.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Oleg Arushanian, MK Samarin, Valentin Voevodin, Evgeny Tyrtyshnikov,
+          Burton Garbow, James Boyle, Wayne Cowell, Kenneth Dritz,<br>
+          The TOEPLITZ Package User's Guide,<br>
+          Argonne National Laboratory,<br>
+          ANL-83-16, 1983.
+        </li>
+        <li>
+          Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart,<br>
+          LINPACK User's Guide,<br>
+          SIAM, 1979,<br>
+          ISBN13: 978-0-898711-72-1.
+        </li>
+        <li>
+          Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh,<br>
+          Basic Linear Algebra Subprograms for Fortran Usage,<br>
+          Algorithm 539,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 5, Number 3, September 1979, pages 308-323.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "toeplitz.f90">toeplitz.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "toeplitz_prb.f90">toeplitz_prb.f90</a>, a sample problem.
+        </li>
+        <li>
+          <a href = "toeplitz_prb_output.txt">toeplitz_prb_output.txt</a>, sample problem
+          output.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>C4_ABS1</b> computes the L1 absolute value of a C4.
+        </li>
+        <li>
+          <b>C4BTO_SL</b> solves the C4 block Toeplitz linear system A * X = B.
+        </li>
+        <li>
+          <b>C4CCC_SL</b> solves the C4 double column circulant system A * X = B.
+        </li>
+        <li>
+          <b>C4CCG_SL</b> solves the C4 CCG linear system A * X = B.
+        </li>
+        <li>
+          <b>C4CC_SL</b> solves the C4 column circulant system A * X = B.
+        </li>
+        <li>
+          <b>C4CCT_SL</b> solves the C4 CCT linear system A * X = B..
+        </li>
+        <li>
+          <b>C4CG_SL</b> solves the C4 CG linear system A * X = B.
+        </li>
+        <li>
+          <b>C4CI_MXV</b> multiplies a C4 circulant matrix times a vector.
+        </li>
+        <li>
+          <b>C4CI_PRINT</b> prints a C4 circulant matrix.
+        </li>
+        <li>
+          <b>C4CI_PRINT_SOME</b> prints some of a C4 circulant matrix.
+        </li>
+        <li>
+          <b>C4CI_RANDOM</b> randomizes a C4 circulant matrix.
+        </li>
+        <li>
+          <b>C4CI_SL</b> solves the C4 circulant system A * X = B.
+        </li>
+        <li>
+          <b>C4CTG_SL</b> solves the C4 CTG linear system A * X = B.
+        </li>
+        <li>
+          <b>C4CT_SL</b> solves the C4 CT linear system A * X = B.
+        </li>
+        <li>
+          <b>C4GEFA</b> factors a C4 matrix by gaussian elimination.
+        </li>
+        <li>
+          <b>C4GESL</b> solves the C4 general system A * X = B.
+        </li>
+        <li>
+          <b>C4SALW</b> Fourier transforms the rows of a C4 rectangular matrix.
+        </li>
+        <li>
+          <b>C4_SWAP</b> swaps two C4's.
+        </li>
+        <li>
+          <b>C4TG_SL1</b> solves a C4 TG linear system.
+        </li>
+        <li>
+          <b>C4TG_SL</b> solves a linear system involving a C4 TG matrix.
+        </li>
+        <li>
+          <b>C4TO_MXV</b> multiplies a C4 Toeplitz matrix times a vector.
+        </li>
+        <li>
+          <b>C4TO_PRINT</b> prints a C4 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C4TO_PRINT_SOME</b> prints some of a C4 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C4TO_RANDOM</b> randomizes a C4 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C4TO_SL</b> solves the C4 Toeplitz system A * X = B.
+        </li>
+        <li>
+          <b>C4TO_VXM</b> multiplies a vector times a C4 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C4TRDI</b> computes the determinant and inverse of a C4 triangular matrix.
+        </li>
+        <li>
+          <b>C4VEC_AMAX_INDEX</b> indexes the C4VEC element of maximum absolute value.
+        </li>
+        <li>
+          <b>C4VEC_AXPY</b> adds a constant times one C4VEC to another.
+        </li>
+        <li>
+          <b>C4VEC_DOTC</b> forms the dot product of two C4 vectors, conjugating the first.
+        </li>
+        <li>
+          <b>C4VEC_INDICATOR</b> sets a C4VEC to the indicator vector.
+        </li>
+        <li>
+          <b>C4VEC_NRM2</b> computes the unitary norm of a C4 vector.
+        </li>
+        <li>
+          <b>C4VEC_PRINT</b> prints a C4VEC, with an optional title.
+        </li>
+        <li>
+          <b>C4VEC_PRINT_SOME</b> prints some of a C4VEC.
+        </li>
+        <li>
+          <b>C4VEC_SCAL</b> scales a C4 vector by a constant.
+        </li>
+        <li>
+          <b>C4VEC_SCAL_R4</b> scales a C4 vector by an R4 constant.
+        </li>
+        <li>
+          <b>C4VEC_UNIFORM_01</b> returns a unit pseudorandom C4VEC.
+        </li>
+        <li>
+          <b>C8_ABS1</b> computes the L1 absolute value of a C8.
+        </li>
+        <li>
+          <b>C8BTO_SL</b> solves the C8 block Toeplitz linear system A * X = B.
+        </li>
+        <li>
+          <b>C8CCC_SL</b> solves the C8 double column circulant system A * X = B.
+        </li>
+        <li>
+          <b>C8CCG_SL</b> solves the C8 CCG linear system A * X = B.
+        </li>
+        <li>
+          <b>C8CC_SL</b> solves the C8 column circulant system A * X = B.
+        </li>
+        <li>
+          <b>C8CCT_SL</b> solves the C8 CCT linear system A * X = B.
+        </li>
+        <li>
+          <b>C8CG_SL</b> solves the C8 CG linear system A * X = B.
+        </li>
+        <li>
+          <b>C8CI_MXV</b> multiplies a C8 circulant matrix times a vector.
+        </li>
+        <li>
+          <b>C8CI_PRINT</b> prints a C8 circulant matrix.
+        </li>
+        <li>
+          <b>C8CI_PRINT_SOME</b> prints some of a C8 circulant matrix.
+        </li>
+        <li>
+          <b>C8CI_RANDOM</b> randomizes a C8 circulant matrix.
+        </li>
+        <li>
+          <b>C8CI_SL</b> solves the C8 circulant system A * X = B.
+        </li>
+        <li>
+          <b>C8CTG_SL</b> solves the C8 CTG linear system A * X = B.
+        </li>
+        <li>
+          <b>C8CT_SL</b> solves the C8 CT linear system A * X = B.
+        </li>
+        <li>
+          <b>C8GEFA</b> factors a C8 matrix by gaussian elimination.
+        </li>
+        <li>
+          <b>C8GESL</b> solves the C8 general system A * X = B.
+        </li>
+        <li>
+          <b>C8SALW</b> Fourier transforms the rows of a C8 rectangular matrix.
+        </li>
+        <li>
+          <b>C8_SWAP</b> swaps two C8's.
+        </li>
+        <li>
+          <b>C8TG_SL1</b> solves a C8 TG linear system.
+        </li>
+        <li>
+          <b>C8TG_SL</b> solves a linear system involving a C8 TG matrix.
+        </li>
+        <li>
+          <b>C8TO_MXV</b> multiplies a C8 Toeplitz matrix times a vector.
+        </li>
+        <li>
+          <b>C8TO_PRINT</b> prints a C8 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C8TO_PRINT_SOME</b> prints some of a C8 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C8TO_RANDOM</b> randomizes a C8 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C8TO_SL</b> solves the C8 Toeplitz system A * X = B.
+        </li>
+        <li>
+          <b>C8TO_VXM</b> multiplies a vector times a C8 Toeplitz matrix.
+        </li>
+        <li>
+          <b>C8TRDI</b> computes the determinant and inverse of a C8 triangular matrix.
+        </li>
+        <li>
+          <b>C8VEC_AMAX_INDEX</b> indexes the C8VEC element of maximum absolute value.
+        </li>
+        <li>
+          <b>C8VEC_AXPY</b> adds a constant times one C8VEC to another.
+        </li>
+        <li>
+          <b>C8VEC_DOTC</b> forms the dot product of two C8 vectors, conjugating the first.
+        </li>
+        <li>
+          <b>C8VEC_INDICATOR</b> sets a C8VEC to the indicator vector.
+        </li>
+        <li>
+          <b>C8VEC_NRM2</b> computes the unitary norm of a C8 vector.
+        </li>
+        <li>
+          <b>C8VEC_PRINT</b> prints a C8VEC, with an optional title.
+        </li>
+        <li>
+          <b>C8VEC_PRINT_SOME</b> prints some of a C8VEC.
+        </li>
+        <li>
+          <b>C8VEC_SCAL</b> scales a C8 vector by a constant.
+        </li>
+        <li>
+          <b>C8VEC_SCAL_R8</b> scales a C8 vector by an R8 constant.
+        </li>
+        <li>
+          <b>C8VEC_UNIFORM_01</b> returns a unit pseudorandom C8VEC.
+        </li>
+        <li>
+          <b>R4BTO_MXV</b> computes the real block Toeplitz matrix product A * X = B.
+        </li>
+        <li>
+          <b>R4BTO_PRINT</b> prints a block Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4BTO_PRINT_SOME</b> prints some of a block Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4BTO_SL</b> solves the real block Toeplitz linear system A * X = B.
+        </li>
+        <li>
+          <b>R4BTO_TO_R4GE</b> converts a block Toeplitz matrix to a Linpack General matrix.
+        </li>
+        <li>
+          <b>R4BTO_VXM</b> computes the real block Toeplitz matrix product X * A = B.
+        </li>
+        <li>
+          <b>R4CC_QR</b> computes QR factorization of a real M by L column circulant matrix.
+        </li>
+        <li>
+          <b>R4GEFA</b> factors a real matrix.
+        </li>
+        <li>
+          <b>R4GESL</b> solves a real general linear system A * X = B.
+        </li>
+        <li>
+          <b>R4_RANDOM</b> returns a random real in a given range.
+        </li>
+        <li>
+          <b>R4TO_MXV</b> multiplies a Toeplitz matrix times a vector.
+        </li>
+        <li>
+          <b>R4TO_PRINT</b> prints a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4TO_PRINT_SOME</b> prints some of a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4TO_RANDOM</b> randomizes a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4TO_SL</b> solves the real Toeplitz system A * X = B.
+        </li>
+        <li>
+          <b>R4TO_VXM</b> multiplies a vector times a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R4TRDI</b> computes the determinant and inverse of a real triangular matrix.
+        </li>
+        <li>
+          <b>R4VEC_AMAX</b> returns the maximum absolute value of the entries in a vector.
+        </li>
+        <li>
+          <b>R4VEC_AMAX_INDEX</b> indexes the R4 vector element of maximum absolute value.
+        </li>
+        <li>
+          <b>R4VEC_AXPY</b> adds a constant times one vector to another.
+        </li>
+        <li>
+          <b>R4VEC_DOT</b> forms the dot product of two vectors.
+        </li>
+        <li>
+          <b>R4VEC_INDICATOR</b> sets a real vector to the indicator vector.
+        </li>
+        <li>
+          <b>R4VEC_NRM2</b> computes the Euclidean norm of a vector.
+        </li>
+        <li>
+          <b>R4VEC_PRINT</b> prints a real vector.
+        </li>
+        <li>
+          <b>R4VEC_PRINT_SOME</b> prints "some" of a real vector.
+        </li>
+        <li>
+          <b>R4VEC_RANDOM</b> returns a random real vector in a given range.
+        </li>
+        <li>
+          <b>R4VEC_SCAL</b> scales a vector by a constant.
+        </li>
+        <li>
+          <b>R4VEC_UNIFORM_01</b> returns a unit pseudorandom R4VEC.
+        </li>
+        <li>
+          <b>R8BTO_MXV</b> computes the R8 block Toeplitz matrix product A * X = B.
+        </li>
+        <li>
+          <b>R8BTO_PRINT</b> prints a block Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8BTO_PRINT_SOME</b> prints some of a block Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8BTO_SL</b> solves the real block Toeplitz linear system A * X = B.
+        </li>
+        <li>
+          <b>R8BTO_TO_R8GE</b> converts a block Toeplitz matrix to a Linpack General matrix.
+        </li>
+        <li>
+          <b>R8BTO_VXM</b> computes the real block Toeplitz matrix product X * A = B.
+        </li>
+        <li>
+          <b>R8CC_QR</b> computes QR factorization of a real M by L column circulant matrix.
+        </li>
+        <li>
+          <b>R8GEFA</b> factors a real matrix.
+        </li>
+        <li>
+          <b>R8GESL</b> solves a real general linear system A * X = B.
+        </li>
+        <li>
+          <b>R8_RANDOM</b> returns a random real in a given range.
+        </li>
+        <li>
+          <b>R8TO_MXV</b> multiplies a Toeplitz matrix times a vector.
+        </li>
+        <li>
+          <b>R8TO_PRINT</b> prints a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8TO_PRINT_SOME</b> prints some of a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8TO_RANDOM</b> randomizes a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8TO_SL</b> solves the real Toeplitz system A * X = B.
+        </li>
+        <li>
+          <b>R8TO_VXM</b> multiplies a vector times a Toeplitz matrix.
+        </li>
+        <li>
+          <b>R8TRDI</b> computes the determinant and inverse of a real triangular matrix.
+        </li>
+        <li>
+          <b>R8VEC_AMAX</b> returns the maximum absolute value of the entries in a vector.
+        </li>
+        <li>
+          <b>R8VEC_AMAX_INDEX</b> indexes the R8 vector element of maximum absolute value.
+        </li>
+        <li>
+          <b>R8VEC_AXPY</b> adds a constant times one vector to another.
+        </li>
+        <li>
+          <b>R8VEC_DOT</b> forms the dot product of two vectors.
+        </li>
+        <li>
+          <b>R8VEC_INDICATOR</b> sets a real vector to the indicator vector.
+        </li>
+        <li>
+          <b>R8VEC_NRM2</b> computes the Euclidean norm of a vector.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints a real vector.
+        </li>
+        <li>
+          <b>R8VEC_PRINT_SOME</b> prints "some" of a real vector.
+        </li>
+        <li>
+          <b>R8VEC_RANDOM</b> returns a random real vector in a given range.
+        </li>
+        <li>
+          <b>R8VEC_SCAL</b> scales a vector by a constant.
+        </li>
+        <li>
+          <b>R8VEC_UNIFORM_01</b> returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 October 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:28:01 GMT -->
+</html>

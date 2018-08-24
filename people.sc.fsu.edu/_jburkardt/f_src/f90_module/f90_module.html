@@ -1,0 +1,180 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_module/f90_module.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      F90_MODULE - Using the FORTRAN90 Module Statement
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      F90_MODULE <br> Using the FORTRAN90 Module Statement
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>F90_MODULE</b>
+      is a directory of FORTRAN90 programs which
+      illustrate the use of the FORTRAN90 module statement.
+    </p>
+
+    <p>
+      For programmers familiar with older versions of FORTRAN, the module
+      statement was an attempt. in part, to provide the functionality of the 
+      "common block" and the "include statement", while doing so in a 
+      cleaner, safer way, which also eased the use of
+      certain other features of modern programming such as encapsulation,
+      prescribed and checkable interfaces, and public/private data and functions.
+    </p>
+
+    <p>
+      In my opinion, the module statement is inadequate, poorly designed,
+      documented, and implemented, and a regrettable further step down the
+      road of making every single program a byzantine, inaccessible and
+      unalterable labyrinth that compiles and runs for one set of data
+      and one user under one compiler on one computer.  Nonetheless,
+      occasionally I have to use the module statement, or help other people
+      who are using it, and for that reason I have thought a little about
+      how it works.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>F90_MODULE</b> is available in
+      <a href = "f90_module.html">a FORTRAN90 version</a>.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Programs and Data:
+    </h3>
+
+    <p>
+      <a href = "../f90_return/f90_return.html">
+      F90_RETURN</a>,
+      FORTRAN90 programs which
+      illustrates how a FORTRAN90 program can return a program status value
+      to the calling environment.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jeanne Adams, Walter Brainerd, Jeanne Martin, Brian Smith,
+          Jerrold Wagener,<br>
+          Fortran90 Handbook,<br>
+          Complete ANSI/ISO Reference,<br>
+          McGraw Hill, 1992,<br>
+          ISBN: 0-07-000406-4,<br>
+          LC: QA76.73.F28.F67.
+        </li>
+        <li>
+          Ian Chivers, Jane Sleightholme,<br>
+          Introduction to Programming with Fortran,<br>
+          Springer, 2005,<br>
+          ISBN: 1846280532,<br>
+          LC: QA76.73.F29.C48.
+        </li>
+        <li>
+          Miles Ellis, Ivor Philips, Thomas Lahey,<br>
+          Fortran90 Programming,<br>
+          Addison-Wesley, 1994,<br>
+          ISBN: 0-201-54446-6,<br>
+          LC: QA76.73.F25E435.
+        </li>
+        <li>
+          Michael Metcalf,<br>
+          Fortran95/2003 Explained,<br>
+          Oxford, 2004,<br>
+          ISBN: 0198526938,<br>
+          LC: QA76.73.F235.M48.
+        </li>
+        <li>
+          Larry Nyhoff, Sanford Leestma,<br>
+          Introduction to Fortran90 for Engineers and Scientists,<br>
+          Prentice-Hall, 1996,<br>
+          ISBN: 0135052157,<br>
+          LC: QA76.73.F25N925.
+        </li>
+        <li>
+          James Ortega,<br>
+          An Introduction to FORTRAN90 for Scientific Computing,<br>
+          Oxford, 1994,<br>
+          ISBN: 0-19-517213-2,<br>
+          LC: QA76.73.O75.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>DUCK</b> shows that, when multiple files are to be compiled,
+      files defining modules must be compiled BEFORE files that invoke
+      those modules.  (This example was run on a Linux system, with the
+      gfortran compiler.  Its behavior, and the auxilliary files it
+      creates, may vary in other environments.)  (By the way, this example
+      disclosed to me the appalling fact that if a function is defined
+      in a module, then the type of the function must NOT be explicitly
+      declared in any other procedures within the module, nor within 
+      any external procedure that "uses" the module, because in some
+      vague and undocumented way, the module definition includes what
+      amounts to a definition of the type of the function.  Of course,
+      for all I know, this behavior may also vary from compiler to compiler.)
+      <ul>
+        <li>
+          <a href = "duck.f90">duck.f90</a>, defines a module called "duck"
+          containing subroutines flink and plink, and function grink.
+        </li>
+        <li>
+          <a href = "duck_prb.f90">duck_prb.f90</a>, a program which
+          says "include duck".
+        </li>
+        <li>
+          <a href = "duck_prb_output.txt">duck_prb_output.txt</a>,
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 April 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_module/f90_module.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:02 GMT -->
+</html>

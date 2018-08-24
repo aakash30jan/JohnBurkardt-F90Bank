@@ -1,0 +1,471 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/r8pp/r8pp.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:10:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      R8PP - Positive Definite Packed Matrix Utilities
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      R8PP <br> Positive Definite Packed Matrix Utilities
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>R8PP</b> 
+      is a FORTRAN90 library which 
+      carries out some basic linear algebra operations on R8PP matrices
+      (real 64 bit precision positive definite symmetric packed format).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>R8PP</b> is available in 
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/r8pp/r8pp.html">a C version </a> and 
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/r8pp/r8pp.html">a C++ version </a> and 
+      <a href = "r8pp.html">a FORTRAN90 version </a> and 
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/r8pp/r8pp.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/r8pp/r8pp.html">a Python version</a> 
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../r83/r83.html">
+      R83</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83 matrices
+      (real, 64 bit, tridiagonal 3xN format).
+    </p>
+
+    <p>
+      <a href = "../r83_np/r83_np.html">
+      R83_NP</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83_NP matrices
+      (real, 64 bit, tridiagonal 3xN format, nonpivoting factorization).
+    </p>
+
+    <p>
+      <a href = "../r83p/r83p.html">
+      R83P</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83P matrices
+      (real, 64 bit, tridiagonal periodic format).
+    </p>
+
+    <p>
+      <a href = "../r83s/r83s.html">
+      R83S</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83S matrices
+      (real, 64 bit, tridiagonal scalar format).
+    </p>
+
+    <p>
+      <a href = "../r83t/r83t.html">
+      R83T</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83T matrices
+      (real, 64 bit, tridiagonal Mx3 format).
+    </p>
+
+    <p>
+      <a href = "../r83v/r83v.html">
+      R83V</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R83V matrices
+      (real, 64 bit, tridiagonal three vector format).
+    </p>
+
+    <p>
+      <a href = "../r85/r85.html">
+      R85</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R85 matrices
+      (real, 64 bit, pentadiagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8bb/r8bb.html">
+      R8BB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BB matrices
+      (real, 64 bit, border banded format).
+    </p>
+
+    <p>
+      <a href = "../r8blt/r8blt.html">
+      R8BLT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BLT matrices
+      (real, 64 bit, band lower triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8bto/r8bto.html">
+      R8BTO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BTO matrices
+      (real, 64 bit, block Toeplitz format).
+    </p>
+
+    <p>
+      <a href = "../r8but/r8but.html">
+      R8BUT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8BUT matrices
+      (real, 64 bit, band upper triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8cb/r8cb.html">
+      R8CB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CB matrices
+      (real, 64 bit, Compressed Band format).
+    </p>
+
+    <p>
+      <a href = "../r8cbb/r8cbb.html">
+      R8CBB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CBB matrices
+      (real, 64 bit, Compressed Border Banded format).
+    </p>
+
+    <p>
+      <a href = "../r8cc/r8cc.html">
+      R8CC</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CC matrices
+      (real, 64 bit, Compressed Column (Colptr,Row,Value) format).
+    </p>
+
+    <p>
+      <a href = "../r8ci/r8ci.html">
+      R8CI</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8CI matrices
+      (real, 64 bit, circulant format).
+    </p>
+
+    <p>
+      <a href = "../r8col/r8col.html">
+      R8COL</a>,
+      a FORTRAN90 library which 
+      contains utility routines for R8COL's, that is,
+      double precision real MxN arrays, considered as N column vectors,
+      each of length M.  The data may be thought of as a matrix of
+      multiple columns, and many operations will be carried out columnwise.
+    </p>
+
+    <p>
+      <a href = "../r8gb/r8gb.html">
+      R8GB</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GB matrices
+      (real, 64 bit, General Banded format).
+    </p>
+
+    <p>
+      <a href = "../r8gd/r8gd.html">
+      R8GD</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GD matrices
+      (real, 64 bit, general diagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8ge/r8ge.html">
+      R8GE</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8GE matrices
+      (real, 64 bit, General format).
+    </p>
+
+    <p>
+      <a href = "../r8ge_np/r8ge_np.html">
+      R8GE_NP</a>,
+      a FORTRAN90 library which
+      contains nonpivoting linear algebra routines for R8GE matrices
+      (real, 64 bit, General Nonpivoting format).
+    </p>
+
+    <p>
+      <a href = "../r8lt/r8lt.html">
+      R8LT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8LT matrices
+      (real, 64 bit, lower triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8ltt/r8ltt.html">
+      R8LTT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8LTT matrices
+      (real, 64 bit, lower triangular Toeplitz format).
+    </p>
+
+    <p>
+      <a href = "../r8ncf/r8ncf.html">
+      R8NCF</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8NCF matrices
+      (real, 64 bit, nonsymmetric coordinate format).
+    </p>
+
+    <p>
+      <a href = "../r8pbl/r8pbl.html">
+      R8PBL</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PBL matrices
+      (real, 64 bit, positive definite symmetric band lower format).
+    </p>
+
+    <p>
+      <a href = "../r8pbu/r8pbu.html">
+      R8PBU</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PBU matrices
+      (real, 64 bit, positive definite symmetric band upper format).
+    </p>
+
+    <p>
+      <a href = "../r8po/r8po.html">
+      R8PO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8PO matrices
+      (real, 64 bit, positive definite symmetric format).
+    </p>
+
+    <p>
+      <a href = "../r8ri/r8ri.html">
+      R8RI</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8RI matrices
+      (real, 64 bit, row indexed format).
+    </p>
+
+    <p>
+      <a href = "../r8row/r8row.html">
+      R8ROW</a>,
+      a FORTRAN90 library which 
+      contains utility routines for R8ROW's, that is,
+      double precision real MxN arrays, considered as M row vectors,
+      each of length N.  The data may be thought of as a matrix of
+      multiple rows, and many operations will be carried out rowwise.
+    </p>
+
+    <p>
+      <a href = "../r8s3/r8s3.html">
+      R8S3</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8S3 matrices
+      (real, 64 bit, SLAP Triad (I,J,AIJ) format).
+    </p>
+
+    <p>
+      <a href = "../r8sd/r8sd.html">
+      R8SD</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SD matrices
+      (real, 64 bit, symmetric diagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8sm/r8sm.html">
+      R8SM</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SM (Sherman-Morrison) matrices
+      (real, 64 bit, A-u*v' format).
+    </p>
+
+    <p>
+      <a href = "../r8sp/r8sp.html">
+      R8SP</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8SP matrices
+      (real, 64 bit, SLAP Triad (I,J,AIJ) format).
+    </p>
+
+    <p>
+      <a href = "../r8sr/r8sr.html">
+      R8SR</a>,
+      a FORTRAN90 library which 
+      carries out linear algebra operations for R8SR matrices
+      (real, 64 bit, diagonal + compressed row offdiagonal format).
+    </p>
+
+    <p>
+      <a href = "../r8ss/r8ss.html">
+      R8SS</a>,
+      a FORTRAN90 library which 
+      carries out linear algebra operations for R8SS matrices
+      (real, 64 bit, symmetric skyline format).
+    </p>
+
+    <p>
+      <a href = "../r8sto/r8sto.html">
+      R8STO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8STO matrices
+      (real, 64 bit, symmetric Toeplitz N format).
+    </p>
+
+    <p>
+      <a href = "../r8to/r8to.html">
+      R8TO</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8TO matrices
+      (real, 64 bit, Toeplitz 2*N-1 format).
+    </p>
+
+    <p>
+      <a href = "../r8ut/r8ut.html">
+      R8UT</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8UT matrices
+      (real, 64 bit, upper triangular format).
+    </p>
+
+    <p>
+      <a href = "../r8vm/r8vm.html">
+      R8VM</a>,
+      a FORTRAN90 library which
+      contains linear algebra routines for R8VM matrices
+      (real, 64 bit, Vandermonde format).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "r8pp.f90">r8pp.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "r8pp_prb.f90">r8pp_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "r8pp_prb_output.txt">r8pp_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_LOG_10</b> returns the integer part of the logarithm base 10 of an I4.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01</b> returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <b>R8GE_PRINT</b> prints an R8GE matrix.
+        </li>
+        <li>
+          <b>R8GE_PRINT_SOME</b> prints some of an R8GE matrix.
+        </li>
+        <li>
+          <b>R8PP_DET</b> computes the determinant of an R8PP matrix factored by R8PP_FA.
+        </li>
+        <li>
+          <b>R8PP_DIF2</b> sets up an R8PP second difference matrix.
+        </li>
+        <li>
+          <b>R8PP_FA</b> factors an R8PP matrix.
+        </li>
+        <li>
+          <b>R8PP_INDICATOR</b> sets up an R8PP indicator matrix.
+        </li>
+        <li>
+          <b>R8PP_MV</b> multiplies an R8PP matrix by an R8VEC.
+        </li>
+        <li>
+          <b>R8PP_PRINT</b> prints an R8PP matrix.
+        </li>
+        <li>
+          <b>R8PP_PRINT_SOME</b> prints some of an R8PP matrix.
+        </li>
+        <li>
+          <b>R8PP_RANDOM</b> randomizes an R8PP matrix.
+        </li>
+        <li>
+          <b>R8PP_SL</b> solves an R8PP system factored by R8PP_FA.
+        </li>
+        <li>
+          <b>R8PP_TO_R8GE</b> copies an R8PP matrix to an R8GE matrix.
+        </li>
+        <li>
+          <b>R8PP_ZEROS</b> zeroes an R8PP matrix.
+        </li>
+        <li>
+          <b>R8VEC_INDICATOR1</b> sets an R8VEC to the indicator1 vector.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 17 June 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/r8pp/r8pp.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:10:37 GMT -->
+</html>

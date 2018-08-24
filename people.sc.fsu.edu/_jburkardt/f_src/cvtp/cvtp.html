@@ -1,0 +1,272 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/cvtp/cvtp.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:32:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      CVTP - Centroidal Voronoi Tessellation on Logical Torus
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      CVTP <br> Centroidal Voronoi Tessellation on Logical Torus
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>CVTP</b> 
+      is a FORTRAN90 library which 
+      creates CVTP's, that is, Centroidal Voronoi Tessellations
+      of a periodic region.
+    </p>
+
+    <p>
+      A 2D unit logical torus is the unit square, but with "wraparound".
+      This is the connectivity frequently seen in video games, in which
+      a spaceship flies off the top of the screen and immediately reappears
+      at the bottom of the screen.  In the general M-dimensional case,
+      the extreme minimum and maximum values of each coordinate are
+      identified, and modular arithmetic may be used to determine
+      distances.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>CVTP</b> is available in
+      <a href = "cvtp.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../cvt/cvt.html">
+      CVT</a>,
+      a FORTRAN90 library which
+      computes a Centroidal Voronoi Tessellation.
+    </p>
+
+    <p>
+      <a href = "../cvt_dataset/cvt_dataset.html">
+      CVT_DATASET</a>,
+      a FORTRAN90 program which
+      defines and computes a CVT.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/datasets/cvtp/cvtp.html">
+      CVTP</a>,
+      a dataset directory which
+      contains examples of CVTP's, that is, Centroidal Voronoi Tessellations
+      on a periodic domain.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Franz Aurenhammer,<br>
+          Voronoi diagrams - 
+          a study of a fundamental geometric data structure,<br>
+          ACM Computing Surveys,<br>
+          Volume 23, Number 3, pages 345-405, September 1991.
+        </li>
+        <li>
+          John Burkardt, Max Gunzburger, Janet Peterson, Rebecca Brannon,<br>
+          User Manual and Supporting Information for Library of Codes
+          for Centroidal Voronoi Placement and Associated Zeroth,
+          First, and Second Moment Determination,<br>
+          Sandia National Laboratories Technical Report SAND2002-0099,<br>
+          February 2002.
+        </li>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review, Volume 41, 1999, pages 637-676.
+        </li>
+        <li>
+          Lili Ju, Qiang Du, Max Gunzburger,<br>
+          Probabilistic methods for centroidal Voronoi tessellations
+          and their parallel implementations,<br>
+          Parallel Computing,<br>
+          Volume 28, 2002, pages 1477-1500.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvtp.f90">cvtp.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvtp_prb.f90">cvtp_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "cvtp_prb_output.txt">cvtp_prb_output.txt</a>,
+          the output from a run of the sample program.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_1X1</b> is a nonperiodic CVT of 400 points on the region [0,1]x[0,1]:
+      <ul>
+        <li>
+          <a href = "cvt_1x1.txt">cvt_1x1.txt</a>,
+          the list of point coordinates.
+        </li>
+        <li>
+          <a href = "cvt_1x1.png">cvt_1x1.png</a>,
+          a PNG image of the set.
+        </li>
+        <li>
+          <a href = "cvt_1x1_double.png">cvt_1x1_double.png</a>,
+          a plot of the data (X,Y) and (X+1,Y) together on the 
+          domain [0,2]x[0,1] showing a boundary effect at X=1.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_1X2</b> is a nonperiodic CVT of 400 points on the region [0,1]x[0,2]:
+      <ul>
+        <li>
+          <a href = "cvt_1x2.txt">cvt_1x2.txt</a>,
+          the list of point coordinates.
+        </li>
+        <li>
+          <a href = "cvt_1x2.png">cvt_1x2.png</a>,
+          a PNG image of the set.
+        </li>
+        <li>
+          <a href = "cvt_1x2_double.html">cvt_1x2_double.png</a>,
+          a plot of the data (X,Y) and (X+1,Y) together on the 
+          domain [0,2]x[0,2] showing a boundary effect at X=1.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVTP_1X1</b> is a periodic CVT of 400 points on the region [0,1]x[0,1]:
+      <ul>
+        <li>
+          <a href = "cvtp_1x1.txt">cvtp_1x1.txt</a>,
+          the list of point coordinates.
+        </li>
+        <li>
+          <a href = "cvtp_1x1.png">cvtp_1x1.png</a>,
+          a PNG image of the set.
+        </li>
+        <li>
+          <a href = "cvtp_1x1_double.png">cvtp_1x1_double.png</a>,
+          a plot of the data (X,Y) and (X+1,Y) together on the 
+          domain [0,2]x[0,1] showing no boundary effect at X=1.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVTP_1X2</b> is a periodic CVT of 400 points on the region [0,1]x[0,2]:
+      <ul>
+        <li>
+          <a href = "cvtp_1x2.txt">cvtp_1x2.txt</a>,
+          the list of point coordinates.
+        </li>
+        <li>
+          <a href = "cvtp_1x2.png">cvtp_1x2.png</a>,
+          a PNG image of the set.
+        </li>
+        <li>
+          <a href = "cvtp_1x2_double.png">cvtp_1x2_double.png</a>,
+          a plot of the data (X,Y) and (X+1,Y) together on the 
+          domain [0,2]x[0,2] showing no boundary effect at X=1.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>CVTP_FIND_CLOSEST</b> finds the Voronoi cell generator closest to a point X.
+        </li>
+        <li>
+          <b>CVTP_ITERATION</b> takes one step of the CVT iteration.
+        </li>
+        <li>
+          <b>CVTP_REGION_SAMPLER</b> returns a sample point in the physical region.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>R8_UNIFORM_01</b> returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <b>R8MAT_WRITE</b> writes an R8MAT file.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 28 July 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/cvtp/cvtp.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:33:02 GMT -->
+</html>

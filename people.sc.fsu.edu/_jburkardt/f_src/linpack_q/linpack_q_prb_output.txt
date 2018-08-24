@@ -1,0 +1,121 @@
+15 March 2016   8:10:42.612 PM
+ 
+LINPACK_Q_PRB
+  FORTRAN90 version
+  Test the LINPACK_Q library.
+ 
+QGECO_TEST
+  QGECO factors a general matrix and computes
+  its reciprocal condition number;
+  QGESL can be called afterwards to solve a factored linear system.
+  The matrix size is N =        3
+ 
+  Factor the matrix.
+  The reciprocal matrix condition number =   0.246445E-01
+ 
+  Solve the linear system.
+ 
+  Solution returned by QGESL
+  (Should be (1,2,3))
+ 
+     1.00000    
+     2.00000    
+     3.00000    
+ 
+  Call QGESL for a new right hand 
+  side for the same, factored matrix.
+ 
+  Solve a linear system.
+ 
+  Solution returned by QGESL
+  (should be (1,0,0))
+ 
+     1.00000    
+     0.00000    
+     0.00000    
+ 
+  Call QGESL for transposed problem.
+ 
+  Call QGESL to solve a transposed linear system.
+ 
+  Solution returned by QGESL
+  (should be (-1,0,1))
+ 
+    -1.00000    
+   -0.342388E-33
+     1.00000    
+ 
+QGEDI_TEST
+  QGEDI computes the inverse and determinant
+  of a matrix factored by QGEFA.
+  The matrix size is N =        3
+ 
+  Factor the matrix
+ 
+  Get the inverse and determinant
+ 
+  The determinant =    2.70000     * 10 **    1.00000    
+ 
+  The inverse matrix:
+ 
+    -1.77778      0.888889     -0.111111    
+     1.55556     -0.777778      0.222222    
+   -0.111111      0.222222     -0.111111    
+ 
+QGEFA_TEST
+  QGEFA factors a general matrix,
+  which can then be solved by QGESL.
+ 
+  The number of equations is N =        3
+ 
+  The matrix A:
+ 
+     1.00000       2.00000       3.00000    
+     4.00000       5.00000       6.00000    
+     7.00000       8.00000       0.00000    
+ 
+  The right hand side B is 
+ 
+     14.0000    
+     32.0000    
+     23.0000    
+ 
+  Factor the matrix
+ 
+  Solve the linear system.
+ 
+  QGESL returns the solution:
+  (Should be (1,2,3))
+ 
+     1.00000    
+     2.00000    
+     3.00000    
+ 
+QGESL_TEST
+  QGESL solves a factored linear system after it
+  has been factored by QGEFA.
+  The matrix size is N =      100
+ 
+  Factor the matrix.
+ 
+  Solve the linear system.
+ 
+  The first and last five solution entries:
+  (All of them should be 1.)
+ 
+         1     1.00000    
+         2     1.00000    
+         3     1.00000    
+         4     1.00000    
+         5     1.00000    
+  ......  ..............
+        96     1.00000    
+        97     1.00000    
+        98     1.00000    
+        99     1.00000    
+       100     1.00000    
+ 
+LINPACK_Q_PRB
+  Normal end of execution.
+ 
+15 March 2016   8:10:42.641 PM

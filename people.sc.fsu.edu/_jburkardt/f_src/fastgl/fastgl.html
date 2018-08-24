@@ -1,0 +1,185 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/fastgl/fastgl.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      FASTGL - Fast computation of Gauss-Legendre Quadrature Points and Weights
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FASTGL <br> Fast computation of Gauss-Legendre Quadrature Points and Weights
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FASTGL</b>
+      is a FORTRAN90 library which
+      carries out the fast computation of the K-th value and weight of an
+      N-point Gauss-Legendre quadrature rule, 
+      by Ignace Bogaert.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FASTGL</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/fastgl/fastgl.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/fastgl/fastgl.html">a C++ version</a> and
+      <a href = "fastgl.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/fastgl/fastgl.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/fastgl/fastgl.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../legendre_rule/legendre_rule.html">
+      LEGENDRE_RULE</a>,
+      a FORTRAN90 program which
+      computes a Gauss-Legendre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../quadmom/quadmom.html">
+      QUADMOM</a>,
+      a FORTRAN90 library which
+      computes a Gaussian quadrature rule for a weight function rho(x)
+      based on the Golub-Welsch procedure that only requires knowledge
+      of the moments of rho(x).
+    </p>
+
+    <p>
+      <a href = "../quadrule/quadrule.html">
+      QUADRULE</a>,
+      a FORTRAN90 library which
+      contains information about quadrature rules, both as tabulated values,
+      and as computational procedures.
+    </p>
+
+    <p>
+      <a href = "../toms655/toms655.html">
+      TOMS655</a>,
+      a FORTRAN90 library which
+      computes the weights for interpolatory quadrature rules;
+      this library is commonly called IQPACK,
+      by Sylvan Elhay and Jaroslav Kautsky.
+    </p>
+
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Ignace Bogaert,<br>
+          Iteration-free computation of Gauss-Legendre quadrature nodes and weights,<br>
+          SIAM Journal on Scientific Computing,<br>
+          Volume 36, Number 3, 2014, pages A1008-1026.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fastgl.f90">fastgl.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fastgl_prb.f90">fastgl_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "fastgl_prb_output.txt">fastgl_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>BESSELJZERO</b> computes the kth zero of the J0(X) Bessel function.
+        </li>
+        <li>
+          <b>BESSELJ1SQUARED</b> computes the square of BesselJ(1, BesselZero(0,k))
+        </li>
+        <li>
+          <b>GLPAIR</b> computes the k-th Gauss-Legendre pair of an N-point rule.
+        </li>
+        <li>
+          <b>GLPAIRS</b> computes a node-weight pair, with k limited to half the range.
+        </li>
+        <li>
+          <b>GLPAIRTABULATED</b> returns tabulated theta and weight values.
+        </li>
+        <li>
+          <b>LEGENDRE_THETA</b> returns the K-th theta coordinate in an L point rule.
+        </li>
+        <li>
+          <b>LEGENDRE_WEIGHT</b> returns the K-th weight in an L-point Legendre rule.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 January 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/fastgl/fastgl.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:14 GMT -->
+</html>

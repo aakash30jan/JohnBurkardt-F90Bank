@@ -1,0 +1,24 @@
+
+duck.f90 contains a module called duck.
+duck_prb.f90 wants to include duck.
+This means that duck.f90 must be compiled before duck_prb.f90.
+
+Example 1 (will fail):
+  gfortran duck_prb.f90 duck.f90
+/tmp/ccw36rNi.o: In function `MAIN__':
+duck_prb.f90:(.text+0x22): undefined reference to `__duck_MOD_flink'
+duck_prb.f90:(.text+0xa7): undefined reference to `__duck_MOD_grink'
+collect2: ld returned 1 exit status
+
+Example 2 (succeeds):
+  gfortran duck.f90 duck_prb.f90
+ Toop =           24
+ Boop =           14
+
+Example 3 (succeeds):
+  gfortran -c duck.f90
+  gfortran duck_prb.f90 duck.o
+ Toop =           24
+ Boop =           14
+
+End of example.

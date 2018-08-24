@@ -1,0 +1,186 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/solve/solve.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:15:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      SOLVE - Linear Solver for Double Dimensioned Arrays
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SOLVE <br> Linear Solver for Double Dimensioned Arrays
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SOLVE</b>
+      is a FORTRAN90 library which
+      solves a linear system of equations A*x=b using Gauss elimination.
+    </p>
+
+    <p>
+      There are many automatic ways to solve linear systems, as in MATLAB,
+      and sophisticated packages such as LAPACK.  However, this simpler
+      set of routines may have some uses for students, beginners and those
+      who need a quick and simple solver that can be replaced later if
+      it turns out to be inadequate.
+    </p>
+
+    <p>
+      This library is useful because:
+      <ul>
+        <li>
+          it shows the steps involved in a simple Gauss-elimination procedure;
+        </li>
+        <li>
+          it can be used to count the number of operations in Gauss-elimination;
+        </li>
+        <li>
+          it can be used as a guide for writing a corresponding program
+          in another language;
+        </li>
+        <li>
+          its performance can be compared to corresponding versions in C
+          or Fortran;
+        </li>
+        <li>
+          it can be used as a starting point for exploring band storage,
+          sparse storage, iterative solutions and other topics in linear 
+          algebra.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SOLVE</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/c_src/solve/solve.html">a C version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/cpp_src/solve/solve.html">a C++ version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/solve/solve.html">a FORTRAN77 version</a> and
+      <a href = "solve.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/solve/solve.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../linpack/linpack.html">
+      LINPACK</a>,
+      a FORTRAN90 library which
+      solves linear systems for a variety of matrix storage schemes,
+      real or complex arithmetic, and single or double precision.
+      It includes a routine for computing the singular value decomposition (SVD)
+      of a rectangular matrix.
+      The original version of this library is 
+      by Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart.
+    </p>
+
+    <p>
+      <a href = "../qr_solve/qr_solve.html">
+      QR_SOLVE</a>,
+      a FORTRAN90 library which
+      computes the linear least squares (LLS) solution of a rectangular 
+      linear system A*x=b.
+    </p>
+
+    <p>
+      <a href = "../r8lib/r8lib.html">
+      R8LIB</a>,
+      a FORTRAN90 library which
+      contains many utility routines 
+      using double precision real (R8) arithmetic.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "solve.f90">solve.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "solve_prb.f90">solve_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "solve_prb_output.txt">solve_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>R8MAT_FS</b> factors and solves a linear system with one right hand side.
+        </li>
+        <li>
+          <b>R8MAT_PRINT</b> prints an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT_SOME</b> prints some of an R8MAT.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on Thu May 29 10:01:48 2014
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/solve/solve.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:15:21 GMT -->
+</html>

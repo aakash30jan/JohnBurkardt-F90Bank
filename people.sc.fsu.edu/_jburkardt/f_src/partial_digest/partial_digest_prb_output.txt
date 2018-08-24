@@ -1,0 +1,52 @@
+ 8 December 2013  12:03:58.063 PM
+ 
+PARTIAL_DIGEST_PRB:
+  FORTRAN90 version
+  Test the PARTIAL_DIGEST library.
+  
+ TEST01
+   PARTIAL_DIGEST_RECUR generates solutions to the partial
+   digest problem, using recursion
+ 
+  The number of objects to place is N =        5
+ 
+  The original placement was 0,3,6,8,10.
+  These placements generate the following distances:
+ 
+  Distance array:
+ 
+         1             2
+         2             2
+         3             3
+         4             3
+         5             4
+         6             5
+         7             6
+         8             7
+         9             8
+        10            10
+ 
+  PARTIAL_DIGEST_RECUR may recover the original placements
+  from the pairwise distances.  It may also find other
+  placements that have the same distance array.
+ 
+  Solution:
+ 
+         1             0
+         2            10
+         3             8
+         4             3
+         5             6
+ 
+  Solution:
+ 
+         1             0
+         2            10
+         3             2
+         4             7
+         5             4
+ 
+PARTIAL_DIGEST_PRB:
+  Normal end of execution.
+ 
+ 8 December 2013  12:03:58.064 PM

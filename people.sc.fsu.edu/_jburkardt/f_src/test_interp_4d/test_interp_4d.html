@@ -1,0 +1,221 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_interp_4d/test_interp_4d.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:24:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      TEST_INTERP_4D - Interpolation Tests Based on 4D Functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_INTERP_4D <br> Interpolation Tests Based on 4D Functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_INTERP_4D</b>
+      is a FORTRAN90 library which
+      can provide the values of certain scalar functions of a 4D argument
+      that are useful for testing an interpolation algorithm using a varying number of points.
+    </p>
+
+    <p>
+      The problems available include:
+      <ol>
+        <li>
+          4D Runge example, f(x) = 1 / ( w^2 + x^2 + y^2 + z^2 + 1 ), [-5,5]^4.
+        </li>
+        <li>
+          Press example, f(x) = 514.1890*exp(-2.0*norm(x-(0.3,0.3,0.3,0.3)
+          * x(1)*x(2)*x(3)*x(4) * (1-x(1))*(1-x(2))*(1-x(3))*(1-x(4)) , [0,1]^4.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_INTERP_FUN_4D</b> is available in
+      <a href = "../test_interp_fun_4d/test_interp_fun_4d.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../chebyshev/chebyshev.html">
+      CHEBYSHEV</a>,
+      a FORTRAN90 library which
+      computes the Chebyshev interpolant/approximant to a given function
+      over an interval.
+    </p>
+
+    <p>
+      <a href = "../rbf_interp/rbf_interp.html">
+      RBF_INTERP</a>,
+      a FORTRAN90 library which
+      defines and evaluates radial basis interpolants to multidimensional data.
+    </p>
+
+    <p>
+      <a href = "../test_interp_fun/test_interp_fun.html">
+      TEST_INTERP_FUN</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation in 1D,
+      provided as functions (x,f(x)).
+    </p>
+
+    <p>
+      <a href = "../test_interp_2d/test_interp_2d.html">
+      TEST_INTERP_2D</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation in 2D,
+      provided as functions f(x,y).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Samuel Conte, Carl deBoor,<br>
+          Elementary Numerical Analysis,<br>
+          Second Edition,<br>
+          McGraw Hill, 1972,<br>
+          ISBN: 07-012446-4,<br>
+          LC: QA297.C65.
+        </li>
+        <li>
+          Carl deBoor,<br>
+          A Practical Guide to Splines,<br>
+          Springer, 2001,<br>
+          ISBN: 0387953663,<br>
+          LC: QA1.A647.v27.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_interp_4d.f90">test_interp_4d.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_interp_4d_prb.f90">test_interp_4d_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "test_interp_4d_prb_output.txt">test_interp_4d_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>P00_4D</b> evaluates the function for any problem.
+        </li>
+        <li>
+          <b>P00_LIM_2D</b> returns the interpolation interval for any problem.
+        </li>
+        <li>
+          <b>P00_PROB_NUM</b> returns the number of problems.
+        </li>
+        <li>
+          <b>P00_STORY</b> prints the "story" for any problem.
+        </li>
+        <li>
+          <b>P00_TITLE</b> returns the title of any problem.
+        </li>
+        <li>
+          <b>P01_4D</b> evaluates the function for problem 1.
+        </li>
+        <li>
+          <b>P01_LIM_4D</b> returns the interpolation interval for problem 1.
+        </li>
+        <li>
+          <b>P01_STORY</b> prints the "story" for problem 1.
+        </li>
+        <li>
+          <b>P01_TITLE</b> returns the title of problem 1.
+        </li>
+        <li>
+          <b>P02_4D</b> evaluates the function for problem 2.
+        </li>
+        <li>
+          <b>P02_LIM_4D</b> returns the interpolation interval for problem 2.
+        </li>
+        <li>
+          <b>P02_STORY</b> prints the "story" for problem 2.
+        </li>
+        <li>
+          <b>P02_TITLE</b> returns the title of problem 2.
+        </li>
+        <li>
+          <b>R8VEC_EVEN_SELECT</b> returns the I-th of N evenly spaced values in [ XLO, XHI ].
+        </li>
+        <li>
+          <b>R8VEC_EVEN2_SELECT</b> returns the I-th of N evenly spaced midpoint values.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 July 2012.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/test_interp_4d/test_interp_4d.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:24:22 GMT -->
+</html>

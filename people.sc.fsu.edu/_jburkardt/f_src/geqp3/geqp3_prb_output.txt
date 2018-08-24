@@ -1,0 +1,79 @@
+29 September 2014   9:54:10.964 PM
+ 
+GEQP3_PRB
+  FORTRAN90 version:
+  Test the GEQP3 library.
+
+TEST01
+  DGEQP3 computes the QR factorization,
+  with column pivoting,
+  of a M by N rectangular matrix A = Q * R,
+  with N <= M,
+  using real ( kind = 8 ) arithmetic.
+
+  Least squares solutions of A*X=B can then
+  be computed by calling:
+  DORMQR to compute QTB = Q' * B, and
+  DTRSM to solve R * X = QTB.
+
+  M =    6
+  N =    5
+  NRHS =    2
+  TOL =   0.100000E-01
+ 
+  The R8CMAT A:
+ 
+  Col          1             2             3             4             5      
+  Row
+ 
+    1: -0.900000E-01  0.140000     -0.460000      0.680000       1.29000    
+    2:  -1.56000      0.200000      0.290000       1.09000      0.510000    
+    3:  -1.48000     -0.430000      0.890000     -0.710000     -0.960000    
+    4:  -1.09000      0.840000      0.770000       2.11000      -1.27000    
+    5:  0.800000E-01  0.550000      -1.13000      0.140000       1.74000    
+    6:  -1.59000     -0.720000       1.06000       1.24000      0.340000    
+ 
+  The R8CMAT B:
+ 
+  Col          1             2      
+  Row
+ 
+    1:   7.40000       2.70000    
+    2:   4.20000         -3.      
+    3:  -8.30000      -9.60000    
+    4:   1.80000       1.10000    
+    5:   8.60000          4.      
+    6:   2.10000      -5.70000    
+  Estimated rank of A =    4
+ 
+  Least-squares solutions:
+ 
+  Col          1             2      
+  Row
+ 
+    1:  0.976665       4.01589    
+    2:   1.98608       2.98670    
+    3:      0.            0.      
+    4:   2.99272       2.00322    
+    5:   4.02716      0.997606    
+ 
+  Square root of residual sums of squares:
+ 
+        0.253883E-01  0.365141E-01
+ 
+  Residuals:
+ 
+  Col          1             2      
+  Row
+ 
+    1:  0.202438E-01  0.580841E-02
+    2: -0.104588E-01  0.248411E-01
+    3:  0.960988E-02 -0.778362E-02
+    4:  0.389619E-02 -0.865836E-02
+    5: -0.327623E-02 -0.197559E-01
+    6: -0.266529E-02 -0.125145E-01
+ 
+GEQP3_PRB
+  Normal end of execution.
+ 
+29 September 2014   9:54:10.965 PM

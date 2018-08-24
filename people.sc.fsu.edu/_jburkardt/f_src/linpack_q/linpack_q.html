@@ -1,0 +1,296 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/linpack_q/linpack_q.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:54:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      LINPACK_Q - Linear Algebra Library - Quadruple Precision
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LINPACK_Q <br> Linear Algebra Library <br> Quadruple Precision
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LINPACK_Q</b>
+      is a FORTRAN90 library which
+      implements some of the LINPACK library of linear solvers,
+      using quadruple precision.
+    </p>
+
+    <p>
+      Quadruple precision real variables are declared by using a 
+      <b>selected_real_kind()</b> statement first: 
+      <pre>
+  integer, parameter :: qp = selected_real_kind ( 33, 4931 )
+      </pre>
+      after which, variables may be declared by statements like
+      <pre>
+  real ( kind = qp ) x(*)
+      </pre>
+      Constants that need more than single precision should
+      include the "Q" marker:
+      <pre>
+        pi = 3.1415925....(lots of digits)....762Q+00
+      </pre>
+      or else the value will be truncated to single precision,
+      one of Fortran's unnecessary, unnoticeable defects
+      that has been zealously preserved through decades.
+    </p>
+
+    <p>
+      If your compiler doesn't support the requested quadruple precision
+      arithmetic, then qp is returned as -1, and your code will not compile.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LINPACK_Q</b> is available in
+      <a href = "../linpack_d/linpack_d.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../blas1_d/blas1_d.html">
+      BLAS1_D</a>,
+      a FORTRAN90 library which
+      contains basic linear algebra routines for vector-vector operations,
+      using double precision real arithmetic.
+    </p>
+
+    <p>
+      <a href = "../condition/condition.html">
+      CONDITION</a>,
+      a FORTRAN90 library which
+      implements methods of computing or estimating the condition number of a matrix.
+    </p>
+
+    <p>
+      <a href = "../geqp3/geqp3.html">
+      GEQP3</a>,
+      a FORTRAN90 library which 
+      contains the portion of the LAPACK library that carries out the
+      QR factorization, with column pivoting, of an M by N rectangular matrix, 
+      with N <= M.
+    </p>
+
+    <p>
+      <a href = "../lapack_examples/lapack_examples.html">
+      LAPACK_EXAMPLES</a>,
+      a FORTRAN90 program which
+      demonstrates the use of the LAPACK linear algebra library.
+    </p>
+
+    <p>
+      <a href = "../linpack_bench/linpack_bench.html">
+      LINPACK_BENCH</a>,
+      a FORTRAN90 program which
+      is a benchmark which measures the time
+      taken by LINPACK to solve a particular linear system.
+    </p>
+
+    <p>
+      <a href = "../linpack_c/linpack_c.html">
+      LINPACK_C</a>,
+      a FORTRAN90 library which
+      is a version of LINPACK for single precision
+      complex arithmetic.
+    </p>
+
+    <p>
+      <a href = "../linpack_d/linpack_d.html">
+      LINPACK_D</a>,
+      a FORTRAN90 library which
+      is a version of LINPACK for double precision
+      real arithmetic.
+    </p>
+
+    <p>
+      <a href = "../linpack_s/linpack_s.html">
+      LINPACK_S</a>,
+      a FORTRAN90 library which
+      is a version of LINPACK for single precision
+      real arithmetic.
+    </p>
+
+    <p>
+      <a href = "../linpack_z/linpack_z.html">
+      LINPACK_Z</a>,
+      a FORTRAN90 library which
+      is a version of LINPACK for double precision
+      complex arithmetic.
+    </p>
+
+    <p>
+      <a href = "../nms/nms.html">
+      NMS</a>,
+      a FORTRAN90 library which
+      includes LINPACK.
+    </p>
+
+    <p>
+      <a href = "../qr_solve/qr_solve.html">
+      QR_SOLVE</a>,
+      a FORTRAN90 library which
+      computes the least squares solution of a linear system A*x=b.
+    </p>
+
+    <p>
+      <a href = "../slatec/slatec.html">
+      SLATEC</a>,
+      a FORTRAN90 library which
+      includes LINPACK.
+    </p>
+
+    <p>
+      <a href = "../svd_demo/svd_demo.html">
+      SVD_DEMO</a>,
+      a FORTRAN90 program which
+      demonstrates the singular value decomposition for a simple example.
+    </p>
+
+    <p>
+      <a href = "../test_mat/test_mat.html">
+      TEST_MAT</a>,
+      a FORTRAN90 library which
+      defines test matrices, some of
+      which have known determinants, eigenvalues and eigenvectors,
+      inverses and so on.
+    </p>
+
+    <p>
+      <a href = "../toeplitz_cholesky/toeplitz_cholesky.html">
+      TOEPLITZ_CHOLESKY</a>,
+      a FORTRAN90 library which
+      computes the Cholesky factorization of a nonnegative definite symmetric
+      Toeplitz matrix.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart,<br>
+          LINPACK User's Guide,<br>
+          SIAM, 1979,<br>
+          ISBN13: 978-0-898711-72-1,<br>
+          LC: QA214.L56.
+        </li>
+        <li>
+          Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh,<br>
+          Algorithm 539,
+          Basic Linear Algebra Subprograms for Fortran Usage,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 5, Number 3, September 1979, pages 308-323.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "linpack_q.f90">linpack_q.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "linpack_q_prb.f90">linpack_q_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "linpack_q_prb_output.txt">linpack_q_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>IQAMAX</b> finds the index of the vector element of maximum absolute value.
+        </li>
+        <li>
+          <b>QAXPY</b> adds a constant times one vector to another.
+        </li>
+        <li>
+          <b>QGECO</b> factors a matrix and estimates its condition number.
+        </li>
+        <li>
+          <b>QGEDI:</b> determinant and inverse of a matrix factored by QGECO or QGEFA.
+        </li>
+        <li>
+          <b>QGEFA</b> factors a real matrix.
+        </li>
+        <li>
+          <b>QGESL</b> solves a real general linear system A * X = B.
+        </li>
+        <li>
+          <b>QSCAL</b> scales a vector by a constant.
+        </li>
+        <li>
+          <b>QSWAP</b> interchanges two vectors.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 15 March 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/linpack_q/linpack_q.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:54:52 GMT -->
+</html>

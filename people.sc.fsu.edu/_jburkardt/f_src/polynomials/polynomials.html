@@ -1,0 +1,543 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/polynomials/polynomials.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:06:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      POLYNOMIALS - Polynomials for Global Optimization Tests
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      POLYNOMIALS <br> Polynomials for Global Optimization Tests
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>POLYNOMIALS</b>
+      is a FORTRAN90 library which
+      defines multivariate polynomials over rectangular domains, for
+      which certain information is to be determined, such as the maximum
+      and minimum values.
+    <p>
+
+    <p>
+      Polynomials include
+      <ul>
+        <li>
+          <b>butcher</b>;
+        </li>
+        <li>
+          <b>camel</b>;
+        </li>
+        <li>
+          <b>camera</b>;
+        </li>
+        <li>
+          <b>caprasse</b>;
+        </li>
+        <li>
+          <b>cyclic5</b>;
+        </li>
+        <li>
+          <b>cyclic7</b>;
+        </li>
+        <li>
+          <b>cyclic8</b>;
+        </li>
+        <li>
+          <b>goldstein_price</b>;
+        </li>
+        <li>
+          <b>hairer</b>;
+        </li>
+        <li>
+          <b>heart</b>, heart dipole;
+        </li>
+        <li>
+          <b>himmelblau</b>;
+        </li>
+        <li>
+          <b>hunecke</b>;
+        </li>
+        <li>
+          <b>kearfott</b>;
+        </li>
+        <li>
+          <b>lv3</b>, adaptive Lotka-Volterra 3 system;
+        </li>
+        <li>
+          <b>lv4</b>, adaptive Lotka-Volterra 4 system;
+        </li>
+        <li>
+          <b>magnetism6</b>;
+        </li>
+        <li>
+          <b>magnetism7</b>;
+        </li>
+        <li>
+          <b>quadratic</b>;
+        </li>
+        <li>
+          <b>rd</b>, 3 variable reaction diffusion;
+        </li>
+        <li>
+          <b>reimer5</b>;
+        </li>
+        <li>
+          <b>reimer6</b>;
+        </li>
+        <li>
+          <b>rosenbrock</b>;
+        </li>
+        <li>
+          <b>schwefel</b>;
+        </li>
+        <li>
+          <b>smith1</b>;
+        </li>
+        <li>
+          <b>smith2</b>;
+        </li>
+        <li>
+          <b>virasoro</b>;
+        </li>
+        <li>
+          <b>wright</b>;
+        </li>
+        <li>
+          <b>zakharov</b>;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>POLYNOMIALS</b> is available in
+      <a href = "polynomials.html">a FORTRAN90 version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/polynomials/polynomials.html">a MATLAB version</a> and
+      <a href = "https://people.sc.fsu.edu/~jburkardt/py_src/polynomials/polynomials.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../asa047/asa047.html">
+      ASA047</a>,
+      a FORTRAN90 library which
+      minimizes a scalar function of several variables using the Nelder-Mead algorithm.
+    </p>
+
+    <p>
+      <a href = "../brent/brent.html">
+      BRENT</a>,
+      a FORTRAN90 library which
+      contains Richard Brent's routines for finding the zero, local minimizer,
+      or global minimizer of a scalar function of a scalar argument, without
+      the use of derivative information.
+    </p>
+
+    <p>
+      <a href = "../compass_search/compass_search.html">
+      COMPASS_SEARCH</a>,
+      a FORTRAN90 library which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm that does not use derivatives.
+    </p>
+
+    <p>
+      <a href = "../test_opt/test_opt.html">
+      TEST_OPT</a>,
+      a FORTRAN90 library which
+      defines test problems for the minimization of a scalar function
+      of several variables.
+    </p>
+
+    <p>
+      <a href = "../test_opt_con/test_opt_con.html">
+      TEST_OPT_CON</a>,
+      a FORTRAN90 library which
+      defines test problems for the minimization of a scalar function
+      of several variables, with the search constrained to lie within a 
+      specified hyper-rectangle.
+    </p>
+
+    <p>
+      <a href = "../test_optimization/test_optimization.html">
+      TEST_OPTIMIZATION</a>,
+      a FORTRAN90 library which
+      defines test problems for the minimization of a scalar function
+      of several variables, as described by Molga and Smutnicki.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Cesar Munoz, Anthony Narkawicz,<br>
+          Formalization of Bernstein polynomials and applications to global 
+          optimization,<br>
+          Journal of Automated Reasoning,<br>
+          Volume 51, Number 2, 2013, pages 151-196.
+        </li>
+        <li>
+          Sashwati Ray, PSV Nataraj,<br>
+          An efficient algorithm for range computation of polynomials using the
+          Bernstein form,<br>
+          Journal of Global Optimization,<br>
+          Volume 45, 2009, pages 403-426.
+        </li>
+        <li>
+          Andrew Smith,<br>
+          Fast construction of constant bound functions for sparse polynomials,<br>
+          Journal of Global Optimization,<br>
+          Volume 43, 2009, pages 445-458.
+        </li>
+        <li>
+          Jan Verschelde,<br>
+          PHCPACK: A general-purpose solver for polynomial systems by 
+          homotopy continuation,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 25, Number 2, June 1999, pages 251-276.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polynomials.f90">polynomials.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polynomials_prb.f90">polynomials_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "polynomials_prb_output.txt">polynomials_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>BUTCHER_B</b> returns the bounds in the butcher problem.
+        </li>
+        <li>
+          <b>BUTCHER_F</b> returns the function in the butcher problem.
+        </li>
+        <li>
+          <b>BUTCHER_M</b> returns the number of variables in the butcher problem.
+        </li>
+        <li>
+          <b>CAMEL_B</b> returns the bounds in the camel problem.
+        </li>
+        <li>
+          <b>CAMEL_F</b> returns the function in the camel problem.
+        </li>
+        <li>
+          <b>CAMEL_M</b> returns the number of variables in the camel problem.
+        </li>
+        <li>
+          <b>CAMERA_B</b> returns the bounds in the camera problem.
+        </li>
+        <li>
+          <b>CAMERA_F</b> returns the function in the camera problem.
+        </li>
+        <li>
+          <b>CAMERA_M</b> returns the number of variables in the camera problem.
+        </li>
+        <li>
+          <b>CAPRASSE_B</b> returns the bounds in the caprasse problem.
+        </li>
+        <li>
+          <b>CAPRASSE_F</b> returns the function in the caprasse problem.
+        </li>
+        <li>
+          <b>CAPRASSE_M</b> returns the number of variables in the caprasse problem.
+        </li>
+        <li>
+          <b>CYCLIC5_B</b> returns the bounds in the cyclic5 problem.
+        </li>
+        <li>
+          <b>CYCLIC5_F</b> returns the function in the cyclic5 problem.
+        </li>
+        <li>
+          <b>CYCLIC5_M</b> returns the number of variables in the cyclic5 problem.
+        </li>
+        <li>
+          <b>CYCLIC7_B</b> returns the bounds in the cyclic7 problem.
+        </li>
+        <li>
+          <b>CYCLIC7_F</b> returns the function in the cyclic7 problem.
+        </li>
+        <li>
+          <b>CYCLIC7_M</b> returns the number of variables in the cyclic7 problem.
+        </li>
+        <li>
+          <b>CYCLIC8_B</b> returns the bounds in the cyclic8 problem.
+        </li>
+        <li>
+          <b>CYCLIC8_F</b> returns the function in the cyclic8 problem.
+        </li>
+        <li>
+          <b>CYCLIC8_M</b> returns the number of variables in the cyclic8 problem.
+        </li>
+        <li>
+          <b>GOLDSTEIN_PRICE_B</b> returns the bounds in the goldstein_price problem.
+        </li>
+        <li>
+          <b>GOLDSTEIN_PRICE_F</b> returns the function in the goldstein_price problem.
+        </li>
+        <li>
+          <b>GOLDSTEIN_PRICE_M</b> returns the number of variables in the goldstein_price problem.
+        </li>
+        <li>
+          <b>HAIRER_B</b> returns the bounds in the hairer problem.
+        </li>
+        <li>
+          <b>HAIRER_F</b> returns the function in the hairer problem.
+        </li>
+        <li>
+          <b>HAIRER_M</b> returns the number of variables in the hairer problem.
+        </li>
+        <li>
+          <b>HEART_B</b> returns the bounds in the heart problem.
+        </li>
+        <li>
+          <b>HEART_F</b> returns the function in the heart problem.
+        </li>
+        <li>
+          <b>HEART_M</b> returns the number of variables in the heart problem.
+        </li>
+        <li>
+          <b>HIMMELBLAU_B</b> returns the bounds in the himmelblau problem.
+        </li>
+        <li>
+          <b>HIMMELBLAU_F</b> returns the function in the himmelblau problem.
+        </li>
+        <li>
+          <b>HIMMELBLAU_M</b> returns the number of variables in the himmelblau problem.
+        </li>
+        <li>
+          <b>HUNECKE_B</b> returns the bounds in the hunecke problem.
+        </li>
+        <li>
+          <b>HUNECKE_F</b> returns the function in the hunecke problem.
+        </li>
+        <li>
+          <b>HUNECKE_M</b> returns the number of variables in the hunecke problem.
+        </li>
+        <li>
+          <b>KEARFOTT_B</b> returns the bounds in the kearfott problem.
+        </li>
+        <li>
+          <b>KEARFOTT_F</b> returns the function in the kearfott problem.
+        </li>
+        <li>
+          <b>KEARFOTT_M</b> returns the number of variables in the kearfott problem.
+        </li>
+        <li>
+          <b>LV3_B</b> returns the bounds in the lv3 problem.
+        </li>
+        <li>
+          <b>LV3_F</b> returns the function in the lv3 problem.
+        </li>
+        <li>
+          <b>LV3_M</b> returns the number of variables in the lv3 problem.
+        </li>
+        <li>
+          <b>LV4_B</b> returns the bounds in the lv4 problem.
+        </li>
+        <li>
+          <b>LV4_F</b> returns the function in the lv4 problem.
+        </li>
+        <li>
+          <b>LV4_M</b> returns the number of variables in the lv4 problem.
+        </li>
+        <li>
+          <b>MAGNETISM6_B</b> returns the bounds in the magnetism6 problem.
+        </li>
+        <li>
+          <b>MAGNETISM6_F</b> returns the function in the magnetism6 problem.
+        </li>
+        <li>
+          <b>MAGNETISM6_M</b> returns the number of variables in the magnetism6 problem.
+        </li>
+        <li>
+          <b>MAGNETISM7_B</b> returns the bounds in the magnetism7 problem.
+        </li>
+        <li>
+          <b>MAGNETISM7_F</b> returns the function in the magnetism7 problem.
+        </li>
+        <li>
+          <b>MAGNETISM7_M</b> returns the number of variables in the magnetism7 problem.
+        </li>
+        <li>
+          <b>QUADRATIC_B</b> returns the bounds in the quadratic problem.
+        </li>
+        <li>
+          <b>QUADRATIC_F</b> returns the function in the quadratic problem.
+        </li>
+        <li>
+          <b>QUADRATIC_M</b> returns the number of variables in the quadratic problem.
+        </li>
+        <li>
+          <b>R8MAT_UNIFORM_ABVEC</b> returns a scaled pseudorandom R8MAT.
+        </li>
+        <li>
+          <b>RD_B</b> returns the bounds in the rd problem.
+        </li>
+        <li>
+          <b>RD_F</b> returns the function in the rd problem.
+        </li>
+        <li>
+          <b>RD_M</b> returns the number of variables in the rd problem.
+        </li>
+        <li>
+          <b>REIMER5_B</b> returns the bounds in the reimer5 problem.
+        </li>
+        <li>
+          <b>REIMER5_F</b> returns the function in the reimer5 problem.
+        </li>
+        <li>
+          <b>REIMER5_M</b> returns the number of variables in the reimer5 problem.
+        </li>
+        <li>
+          <b>REIMER6_B</b> returns the bounds in the reimer6 problem.
+        </li>
+        <li>
+          <b>REIMER6_F</b> returns the function in the reimer6 problem.
+        </li>
+        <li>
+          <b>REIMER6_M</b> returns the number of variables in the reimer6 problem.
+        </li>
+        <li>
+          <b>ROSENBROCK_B</b> returns the bounds in the rosenbrock problem.
+        </li>
+        <li>
+          <b>ROSENBROCK_F</b> returns the function in the rosenbrock problem.
+        </li>
+        <li>
+          <b>ROSENBROCK_M</b> returns the number of variables in the rosenbrock problem.
+        </li>
+        <li>
+          <b>SCHWEFEL_B</b> returns the bounds in the schwefel problem.
+        </li>
+        <li>
+          <b>SCHWEFEL_F</b> returns the function in the schwefel problem.
+        </li>
+        <li>
+          <b>SCHWEFEL_M</b> returns the number of variables in the schwefel problem.
+        </li>
+        <li>
+          <b>SMITH1_B</b> returns the bounds in the smith1 problem.
+        </li>
+        <li>
+          <b>SMITH1_F</b> returns the function in the smith1 problem.
+        </li>
+        <li>
+          <b>SMITH1_M</b> returns the number of variables in the smith1 problem.
+        </li>
+        <li>
+          <b>SMITH2_B</b> returns the bounds in the smith2 problem.
+        </li>
+        <li>
+          <b>SMITH2_F</b> returns the function in the smith2 problem.
+        </li>
+        <li>
+          <b>SMITH2_M</b> returns the number of variables in the smith2 problem.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>VIRASORO_B</b> returns the bounds in the virasoro problem.
+        </li>
+        <li>
+          <b>VIRASORO_F</b> returns the function in the virasoro problem.
+        </li>
+        <li>
+          <b>VIRASORO_M</b> returns the number of variables in the virasoro problem.
+        </li>
+        <li>
+          <b>WRIGHT_B</b> returns the bounds in the wright problem.
+        </li>
+        <li>
+          <b>WRIGHT_F</b> returns the function in the wright problem.
+        </li>
+        <li>
+          <b>WRIGHT_M</b> returns the number of variables in the wright problem.
+        </li>
+        <li>
+          <b>ZAKHAROV_B</b> returns the bounds in the zakharov problem.
+        </li>
+        <li>
+          <b>ZAKHAROV_F</b> returns the function in the zakharov problem.
+        </li>
+        <li>
+          <b>ZAKHAROV_M</b> returns the number of variables in the zakharov problem.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 08 December 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/polynomials/polynomials.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 21:06:24 GMT -->
+</html>

@@ -1,0 +1,303 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/geqp3/geqp3.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:44:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      GEQP3 - QR Factorization of a Rectangular Matrix
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      GEQP3 <br> QR Factorization of a Rectangular Matrix
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GEQP3</b> 
+      is a FORTRAN90 library which 
+      contains the portion of the LAPACK library that carries out the
+      QR factorization, with column pivoting, of an M by N rectangular matrix, 
+      with N <= M.
+    </p>
+
+    <p>
+     The factorization can be written as 
+     <pre>
+       A = Q *  R0 * P'
+
+         = Q * (R) * P',
+               (0)
+     </pre>
+     where
+     <ul>
+       <li>
+        Q is an M by M orthogonal matrix;
+       </li>
+       <li>
+        R0 is an M by N upper trapezoidal matrix, which
+        is guaranteed to include a final M-N by N block of zeros.
+       </li>
+       <li>
+        R is an N by N upper triangular matrix, whose diagonal elements
+        are in descending magnitude, and some of which may be zero if the
+        system does not have full column rank N.
+       </li>
+       <li>
+        P is an N by N permutation matrix that reflects the column pivoting;
+       </li>
+     </ul>
+    <p>
+
+    <p>
+      The rank of A can be estimated by the rank of R, which, in turn,
+      can be estimated by taking a tolerance T, and comparing the consecutive
+      diagonal elements of R to T * R(1,1).  If K is the last diagonal element
+      which is at least T * R(1,1) in magnitude, we estimate the rank as K.  
+    <p>
+
+    <p>
+      Thereafter, a least squares soluation of the linear system A*X=B can be
+      determined by:
+      <pre>
+        X = P * ( inv ( R(1:k,1:k) ) * ( Q' * B )(1:k,1:k) )
+                ( 0                                        )   
+      </pre>   
+    <p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>GEQP3</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/geqp3/geqp3.html">a FORTRAN77 version</a> and
+      <a href = "geqp3.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../band_qr/band_qr.html">
+      BAND_QR</a>,
+      a FORTRAN90 library which
+      computes the QR factorization of a banded matrix, and can solve
+      related linear systems,
+      by Alfredo Remon, Enrique Quintana-Orti, Gregorio Quintana-Orti.
+    </p>
+
+    <p>
+      <a href = "../lapack_examples/lapack_examples.html">
+      LAPACK_EXAMPLES</a>,
+      a FORTRAN90 program which
+      demonstrates the use of the LAPACK linear algebra library.
+    </p>
+
+    <p>
+      <a href = "../linpack/linpack.html">
+      LINPACK</a>,
+      a FORTRAN90 library which
+      solves linear systems for a variety of matrix storage schemes,
+      real or complex arithmetic, and single or double precision.
+      It includes a routine for computing the singular value decomposition (SVD)
+      of a rectangular matrix.
+      The original version of this library is 
+      by Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart.
+    </p>
+
+    <p>
+      <a href = "../qr_solve/qr_solve.html">
+      QR_SOLVE</a>,
+      a FORTRAN90 library which
+      computes the least squares solution of a linear system A*x=b.
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Edward Anderson, Zhaojun Bai, Christian Bischof, Susan Blackford, 
+          James Demmel, Jack Dongarra, Jeremy DuCroz, Anne Greenbaum, 
+          Sven Hammarling, Alan McKenney, Danny Sorensen,<br>
+          LAPACK User's Guide,<br>
+          Third Edition,<br>
+          SIAM, 1999,<br>
+          ISBN: 0898714478,<br>
+          LC: QA76.73.F25L36
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "geqp3.f90">geqp3.f90</a>, the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "geqp3_prb.f90">geqp3_prb.f90</a>, a sample calling
+          program;
+        </li>
+        <li>
+          <a href = "geqp3_prb_output.txt">geqp3_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>DCOPY</b> copies a vector X to a vector Y.
+        </li>
+        <li>
+          <b>DGEMM</b> computes C = alpha * A * B and related operations.
+        </li>
+        <li>
+          <b>DGEMV</b> computes y := alpha * A * x + beta * y for general matrix A.
+        </li>
+        <li>
+          <b>DGEQP3</b> computes a QR factorization with column pivoting using Level 3 BLAS.
+        </li>
+        <li>
+          <b>DGEQRF</b> computes a QR factorization of a real M by N matrix A = Q * R.
+        </li>
+        <li>
+          <b>DGEQR2</b> computes a QR factorization of a real M by N matrix A = Q * R.
+        </li>
+        <li>
+          <b>DGER</b> computes A := alpha*x*y' + A.
+        </li>
+        <li>
+          <b>DLAMC3</b> forces A and B to be stored prior to doing the addition.
+        </li>
+        <li>
+          <b>DLAMCH</b> determines real ( kind = 8 ) machine parameters.
+        </li>
+        <li>
+          <b>DLAPY2</b> returns sqrt ( X^2 + Y^2 ), while avoiding unnecessary overflow.
+        </li>
+        <li>
+          <b>DLAQP2</b> QR factors with column pivoting the block A(OFFSET+1:M,1:N).
+        </li>
+        <li>
+          <b>DLAQPS</b> computes a step of QR factorization with column pivoting.
+        </li>
+        <li>
+          <b>DLARF</b> applies a real elementary reflector to an M by N matrix.
+        </li>
+        <li>
+          <b>DLARFB</b> applies a block reflector to a general rectangular matrix.
+        </li>
+        <li>
+          <b>DLARFG</b> generates a real elementary reflector H of order N.
+        </li>
+        <li>
+          <b>DLARFT</b> forms the triangular factor T of a real block reflector H of order N.
+        </li>
+        <li>
+          <b>DNRM2</b> returns the euclidean norm of a vector.
+        </li>
+        <li>
+          <b>DORM2R</b> overwrites M by N matrix C with Q*C, Q'*C, C*Q or C*Q'.
+        </li>
+        <li>
+          <b>DORMQR</b> replaces the rectangular matrix C by Q*C, Q'*C, C*Q or C*Q'.
+        </li>
+        <li>
+          <b>DSCAL</b> scales a vector by a constant.
+        </li>
+        <li>
+          <b>DSWAP</b> interchanges two vectors.
+        </li>
+        <li>
+          <b>DTRMM</b> performs B:=A*B or B:=B*A, A triangular, B rectangular.
+        </li>
+        <li>
+          <b>DTRMV</b> computes x: = A*x or x = A'*x for a triangular matrix A.
+        </li>
+        <li>
+          <b>DTRSM</b> performs B:=inv(A)*C or B:=C*inv(A), B and C rectangular, A triangular.
+        </li>
+        <li>
+          <b>IDAMAX</b> indexes the array element of maximum absolute value.
+        </li>
+        <li>
+          <b>IEEECK</b> verifies that infinity and NAN arithmetic are safe.
+        </li>
+        <li>
+          <b>ILADLC</b> scans matrix A for its last nonzero column.
+        </li>
+        <li>
+          <b>ILADLR</b> returns the index of the last nonzero row of a matrix.
+        </li>
+        <li>
+          <b>ILAENV</b> returns problem-dependent parameters.
+        </li>
+        <li>
+          <b>IPARMQ</b> sets problem and machine dependent parameters.
+        </li>
+        <li>
+          <b>LSAME</b> returns TRUE if CA is the same letter as CB regardless of case.
+        </li>
+        <li>
+          <b>XERBLA</b> is an error handler for the LAPACK routines.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 March 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/geqp3/geqp3.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:44:08 GMT -->
+</html>

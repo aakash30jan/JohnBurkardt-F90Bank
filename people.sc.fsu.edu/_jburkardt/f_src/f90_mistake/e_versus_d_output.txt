@@ -1,0 +1,25 @@
+
+E_VERSUS_D:
+  FORTRAN90 version.
+  Demonstrating that FORTRAN constants are single precision
+  by default, no matter how many digits you type.
+  The only cure is to use the "D" exponent marker.
+
+TEST01
+
+  X1 and X2 are both double precision variables.
+
+  We initialize them with almost identical statements:
+
+    x1 = 1.2345678901234567890E+00
+    x2 = 1.2345678901234567890D+00
+
+  But X1 and X2 do not receive the same values, which we can
+  verify by printing them, or by computing their difference.
+
+  X1           =      1.2345678806304931641    
+  X2           =      1.2345678901234566904    
+  X3 = X1 - X2 =    -0.94929635263696354741E-08
+
+E_VERSUS_D:
+  Normal end of execution.

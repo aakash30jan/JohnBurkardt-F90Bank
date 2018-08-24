@@ -1,0 +1,19 @@
+21 May 2013   8:40:30.595 AM
+ 
+INITIAL_ORBIT
+  FORTRAN90 version
+  This simulation follows a small body for two orbits
+  around a relatively massive body - such as Mercury around
+  the sun.
+  Kepler's equations for a two body system are used.
+  Note that the orbit is NOT an ellipse.  But that's OK,
+  because the planet is far from its equilibrium orbit.
+ 
+  Use RKF45 for the ODE integrator.
+  Created data file "initial_orbit_data.txt".
+  Created command file "initial_orbit_commands.txt".
+ 
+INITIAL_ORBIT
+  Normal end of execution.
+ 
+21 May 2013   8:40:30.605 AM

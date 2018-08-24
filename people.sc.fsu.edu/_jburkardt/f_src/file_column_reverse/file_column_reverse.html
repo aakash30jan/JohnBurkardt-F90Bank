@@ -1,0 +1,181 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/file_column_reverse/file_column_reverse.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:42:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      FILE_COLUMN_REVERSE - Reverse the columns of a file.
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FILE_COLUMN_REVERSE <br> Reverse the columns of a file.
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FILE_COLUMN_REVERSE</b>
+      is a FORTRAN90 program which creates a copy of a file in which
+      the columns are reverse, that is, the characters on each line appear
+      in reverse order.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>reverse_columns</b> <i>input</i> <i>output</i>
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>input</i> is the name of the input file;
+        </li>
+        <li>
+          <i>output</i> is the name of the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FILE_COLUMN_REVERSE</b> is available in
+      <a href = "../reverse_columns/reverse_columns.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../file_row_reverse/file_row_reverse.html">
+      FILE_ROW_REVERSE</a>,
+      a FORTRAN90 program which
+      makes a copy of a file with the lines (rows) in reverse order.
+    </p>
+
+    <p>
+      <a href = "../file_transpose/file_transpose.html">
+      FILE_TRANSPOSE</a>,
+      a FORTRAN90 program which
+      makes a transposed copy of a file, in which the I-th word of the J-th line
+      becomes the J-th word of the I-th line.
+    </p>
+
+    <p>
+      <a href = "../filum/filum.html">
+      FILUM</a>,
+      a FORTRAN90 library which
+      can work with information in text files.
+    </p>
+
+    <p>
+      <a href = "../table_columns/table_columns.html">
+      TABLE_COLUMNS</a>,
+      a FORTRAN90 program which
+      reads a table file of N points
+      in M dimensions and creates a new file by copying various
+      columns, with repetition and shuffling;
+    </p>
+
+    <p>
+      <a href = "../table_columns_permute/table_columns_permute.html">
+      TABLE_COLUMNS_PERMUTE</a>,
+      a FORTRAN90 program which
+      reads a table file
+      where each line has COL_NUM values, and permutes the columns
+      according to the user's prescription;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "file_column_reverse.f90">file_column_reverse.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "input.txt">input.txt</a>,
+          an example of an input file.
+        </li>
+        <li>
+          <a href = "tupni.txt">tupni.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>REVERSE_COLUMNS</b> makes a copy of a file with each line reversed.
+        </li>
+        <li>
+          <b>FILE_REVERSE_COLUMNS</b> makes a copy of a file with each lines reversed.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>S_REVERSE</b> reverses the characters in a string.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 November 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/file_column_reverse/file_column_reverse.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:42:35 GMT -->
+</html>

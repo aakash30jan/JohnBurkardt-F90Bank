@@ -1,0 +1,8 @@
+ 
+F90_RETURN
+  FORTRAN90 version
+  Demonstrate how a FORTRAN90 program can return an
+  integer program status value to the calling environment.
+ 
+F90_RETURN - Fatal error!
+  Sum exceeds 250.

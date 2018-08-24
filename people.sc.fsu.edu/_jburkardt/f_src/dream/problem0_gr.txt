@@ -1,0 +1,2 @@
+DREAM.F90:Monitored_parameter_interchains_Gelman_Rubin_R_statistic
+        10              3.0731          4.6453          3.4098          2.9219          1.7213          4.9785          2.3667          3.1096          2.9537          4.1890

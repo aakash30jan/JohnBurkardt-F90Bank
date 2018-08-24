@@ -1,0 +1,82 @@
+ 6 December 2012   9:13:56.143 AM
+ 
+TEST_INTERP_4D_PRB
+  FORTRAN90 version
+  Test the TEST_INTERP_4D library.
+ 
+TEST01
+  Demonstrate some of the bookkeeping routines.
+  P00_PROB_NUM returns the number of problems.
+  P00_TITLE returns the problem title.
+  P00_LIMIT returns the problem limits.
+ 
+  Number of problems =        2
+ 
+  Problem        1
+  Problem TITLE = "4D Runge example, f(x,y) = 1 / ( w^2 + x^2 + y^2 + x^2 + 1 )".
+  Problem lower limit A =    5.00000    
+  Problem upper limit B =    5.00000    
+ 
+  Problem        2
+  Problem TITLE = "Press offcenter Gaussian".
+  Problem lower limit A =    1.00000    
+  Problem upper limit B =    1.00000    
+ 
+TEST02
+  P00_STORY prints the problem "story".
+ 
+  Problem        1
+ 
+  This is a 4D version of Runge's function.
+  In 1D, equally spaced interpolation nodes
+  result in a sequence of interpolants that
+  become highly oscillatory.
+ 
+  Problem        2
+ 
+  This is an example from William Press.
+  It is an offcenter Gaussian tapered in the
+  unit hypercube, zero at the edges.
+ 
+TEST03
+  Nearest neighbor interpolation.
+  Evaluate the function on an NxN equally spaced grid.
+  The interpolated value at any point is the value
+  at the nearest interpolating node.
+  Estimate the integral of the square of the error
+  between the function and the interpolant.
+ 
+  Problem        1
+  4D Runge example, f(x,y) = 1 / ( w^2 + x^2 + y^2 + x^2 + 1 )
+  -5.00000     <= X(1) <=    5.00000    
+  -5.00000     <= X(2) <=    5.00000    
+  -5.00000     <= X(3) <=    5.00000    
+  -5.00000     <= X(4) <=    5.00000    
+ 
+     Grid Side  RMS error
+ 
+       1       1     663.477    
+       2      16     786.004    
+       4     256     786.004    
+       8    4096     266.884    
+      16   65536     115.442    
+ 
+  Problem        2
+  Press offcenter Gaussian
+   0.00000     <= X(1) <=    1.00000    
+   0.00000     <= X(2) <=    1.00000    
+   0.00000     <= X(3) <=    1.00000    
+   0.00000     <= X(4) <=    1.00000    
+ 
+     Grid Side  RMS error
+ 
+       1       1    0.375161E-01
+       2      16    0.237497E-01
+       4     256    0.133742E-01
+       8    4096    0.592264E-02
+      16   65536    0.308720E-02
+ 
+TEST_INTERP_4D_PRB
+  Normal end of execution.
+ 
+ 6 December 2012   9:13:56.144 AM

@@ -1,0 +1,173 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_to_f77/f90_to_f77.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      F90_TO_F77 - Conversion of FORTRAN90 to FORTRAN77
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      F90_TO_F77 <br> Conversion of FORTRAN90 to FORTRAN77
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>F90_TO_F77</b>
+      is a FORTRAN90 program which
+      assists in the conversion of a FORTRAN90 source code file to the
+      FORTRAN77 format.
+    </p>
+
+    <p>
+      Only a few modifications are made; the user will surely have to go
+      into the file and make further modifications by hand.  The changes
+      made by the program include:
+      <ul>
+        <li>
+          Input lines recognized as comments will be output with a
+          first character of "c".
+        </li>
+        <li>
+          Noncomment input lines which begin in column 1 or 2 will be
+          indented to start in column 6.
+        </li>
+        <li>
+          Other noncomment input lines will be indented 4 extra spaces.
+        </li>
+        <li>
+          Noncomment output lines will automatically be broken into
+          segments that are no more than 72 characters long, with
+          excess information continued on the next line.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>f90_to_f77</b> <i>input.f90</i> <i>output.f</i>
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>input.f90</i> is the input FORTRAN90 file;
+        </li>
+        <li>
+          <i>output.f</i> is the output file, which has been converted.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>F90_TO_F77</b> is available in
+      <a href = "f90_to_f77.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../f77_to_f90/f77_to_f90.html">
+      F77_TO_F90</a>,
+      a FORTRAN90 program which
+      converts a FORTRAN77 file to FORTRAN90 format,
+      by Michael Metcalfe;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "f90_to_f77.f90">f90_to_f77.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "file.f90">file.f90</a>,
+          a sample FORTRAN90 file.
+        </li>
+        <li>
+          <a href = "file.f">file.f</a>,
+          the resulting FORTRAN77 file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>MAIN</b> is the main program for F90_TO_F77.
+        </li>
+        <li>
+          <b>HANDLE</b> copies an F90 file making an F77 version.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>S_TAB_BLANKS</b> replaces TAB characters by 6 spaces.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 June 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/f90_to_f77/f90_to_f77.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:37:07 GMT -->
+</html>

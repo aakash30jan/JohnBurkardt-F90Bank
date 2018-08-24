@@ -1,0 +1,14 @@
+27 August 2013  10:20:05.979 PM
+
+FD2D_HEAT_STEADY_PRB:
+  FORTRAN90 version
+ 
+  Created graphics data file "test01_data.txt".
+  Created graphics command file "test01_commands.txt".
+ 
+  Mean value of U is    15.0070    
+
+FD2D_HEAT_STEADY_PRB:
+  Normal end of execution.
+
+27 August 2013  10:20:06.087 PM

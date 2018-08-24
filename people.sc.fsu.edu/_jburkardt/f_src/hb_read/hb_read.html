@@ -1,0 +1,389 @@
+<html>
+
+  
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/hb_read/hb_read.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:46:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>
+      HB_READ - Simplified Harwell-Boeing Sparse Matrix File Reader
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HB_READ <br> Simplified Harwell-Boeing Sparse Matrix File Reader
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HB_READ</b>
+      is a FORTRAN90 library which
+      reads files in the Harwell Boeing (HB) sparse matrix format.
+      This is a simplified interface intended to handle only the
+      most common format, complex unsymmetric assembled (CUA)
+      or real unsymmetric assembled (RUA).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.sc.fsu.edu/~jburkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>HB_READ</b> is available in
+      <a href = "https://people.sc.fsu.edu/~jburkardt/f77_src/hb_read/hb_read.html">a FORTRAN77 version</a> and
+      <a href = "hb_read.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../dlap_io/dlap_io.html">
+      DLAP_IO</a>,
+      a FORTRAN90 library which
+      reads and writes matrices in a variety of formats, and includes a routine for reading
+      matrices in HB format.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/data/hb/hb.html">
+      HB</a>,
+      a dataset directory which
+      contains a collection of sparse matrices in the HB format.
+    </p>
+
+    <p>
+      <a href = "../hb_io/hb_io.html">
+      HB_IO</a>,
+      a FORTRAN90 library which
+      reads and writes sparse linear systems stored in the Harwell Boeing (HB)
+      format for sparse matrices.  This library is intended to handle the
+      full range of HB formats.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/hb_to_msm/hb_to_msm.html">
+      HB_TO_MSM</a>,
+      a MATLAB program which
+      reads an HB file and converts the matrix to MATLAB's sparse matrix format.
+    </p>
+
+    <p>
+      <a href = "../hb_to_st/hb_to_st.html">
+      HB_TO_ST</a>,
+      a FORTRAN90 program which
+      converts the sparse matrix information stored in a Harwell-Boeing
+      file into a sparse triplet file.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/datasets/hbsmc/hbsmc.html">
+      HBSMC</a>,
+      a dataset directory which
+      contains the Harwell Boeing Sparse Matrix Collection;
+    </p>
+
+    <p>
+      <a href = "../linplus/linplus.html">
+      LINPLUS</a>,
+      a FORTRAN90 library which
+      contains some routines to manipulate matrices stored in the HB sparse matrix
+      format.
+    </p>
+
+    <p>
+      <a href = "../mm_io/mm_io.html">
+      MM_IO</a>,
+      a FORTRAN90 library which
+      reads and writes matrices in the Matrix Market format.
+    </p>
+
+    <p>
+      <a href = "https://people.sc.fsu.edu/~jburkardt/m_src/msm_to_hb/msm_to_hb.html">
+      MSM_TO_HB</a>,
+      a MATLAB program which
+      takes a matrix in MATLAB's sparse
+      matrix format and writes it out in the HB format.
+    </p>
+
+    <p>
+      <a href = "../st_io/st_io.html">
+      ST_IO</a>,
+      a FORTRAN90 library which
+      reads and writes sparse linear systems 
+      stored in the Sparse Triplet (ST) format.
+    </p>
+
+    <p>
+      <a href = "../superlu/superlu.html">
+      SUPERLU</a>,
+      FORTRAN90 programs which
+      illustrate how to use the SUPERLU library,
+      which applies a fast direct solution method to solve
+      sparse linear systems,
+      by James Demmel, John Gilbert, and Xiaoye Li.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Iain Duff, Roger Grimes, John Lewis,<br>
+          User's Guide for the Harwell-Boeing Sparse Matrix Collection,<br>
+          Technical Report TR/PA/92/86, CERFACS,<br>
+          October 1992.
+        </li>
+        <li>
+          Iain Duff, Roger Grimes, John Lewis,<br>
+          The Rutherford-Boeing Sparse Matrix Collection,<br>
+          Technical Report RAL-TR-97-031,<br>
+          Rutherford Appleton Laboratory, 1997.
+        </li>
+        <li>
+          Iain Duff, Roger Grimes, John Lewis,<br>
+          Sparse Matrix Test Problems,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 15, pages 1-14, March 1989.
+        </li>
+        <li>
+          <a href = "http://math.nist.gov/MatrixMarket/data/Harwell-Boeing/">
+                     http://math.nist.gov/MatrixMarket/data/Harwell-Boeing/</a>
+          the Harwell-Boeing area of the MatrixMarket web site.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hb_read.f90">hb_read.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hb_read_prb.f90">hb_read_prb.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "hb_read_prb_output.txt">hb_read_prb_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Various Harwell-Boeing matrices used by the tests include:
+      <ul>
+        <li>
+          <a href = "cavity_big_rua.txt">cavity_big_rua.txt</a>,
+          a real unsymmetric assembled 5030x5030 matrix stored in a 
+          Harwell Boeing matrix file, with 132463 nonzeros.
+        </li>
+        <li>
+          <a href = "cavity_small_rua.txt">cavity_small_rua.txt</a>,
+          a real unsymmetric assembled 92x92 matrix stored in a 
+          Harwell Boeing matrix file, with 1363 nonzeros.
+        </li>
+        <li>
+          <a href = "cg05_cua.txt">cg05_cua.txt</a>,
+          a complex unsymmetric assembled 25x25 matrix stored in a 
+          Harwell Boeing matrix file, with 105 nonzeros.
+        </li>
+        <li>
+          <a href = "cg20_cua.txt">cg20_cua.txt</a>,
+          a complex unsymmetric assembled 400x400 matrix stored in a 
+          Harwell Boeing matrix file, with 1920 nonzeros.
+        </li>
+        <li>
+          <a href = "cmat_cua.txt">cmat_cua.txt</a>,
+          a complex unsymmetric assembled 1280x1280 matrix stored in a 
+          Harwell Boeing matrix file, with 22778 nonzeros.
+        </li>
+        <li>
+          <a href = "g05_rua.txt">g05_rua.txt</a>,
+          a real unsymmetric assembled 25x25 matrix stored in a 
+          Harwell Boeing matrix file, with 105 nonzeros.
+        </li>
+        <li>
+          <a href = "g10_rua.txt">g10_rua.txt</a>,
+          a real unsymmetric assembled 100x100 matrix stored in a 
+          Harwell Boeing matrix file, with 460 nonzeros.
+        </li>
+        <li>
+          <a href = "g20_rua.txt">g20_rua.txt</a>,
+          a real unsymmetric assembled 400x400 matrix stored in a 
+          Harwell Boeing matrix file, with 1920 nonzeros.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>C4_HB_DATA_READ</b> reads the data for a C4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C4_HB_HEADER_PRINT</b> prints the header for a C4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C4_HB_HEADER_READ</b> reads the header for a C4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C4_HB_QUICK_PRINT</b> prints a sparse matrix in C4 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>C4_HB_QUICK_READ</b> reads a sparse matrix in C4 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>C4_HB_STRUCTURE_PRINT</b> prints the structure of a C4 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>C4_HB_VALUES_PRINT</b> prints the values of a C4 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>C4MAT_PRINT_SOME</b> prints some of a C4MAT.
+        </li>
+        <li>
+          <b>C8_HB_READ</b> reads a sparse matrix in C8 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>C8_HB_DATA_READ</b> reads the data for a C8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C8_HB_HEADER_PRINT</b> prints the header for a C8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C8_HB_HEADER_READ</b> reads the header for a C8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>C8_HB_QUICK_PRINT</b> prints a sparse matrix in C8 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>C8_HB_QUICK_READ</b> reads a sparse matrix in C8 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>C8_HB_STRUCTURE_PRINT</b> prints the structure of a C8 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>C8_HB_VALUES_PRINT</b> prints the values of a C8 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>C8MAT_PRINT</b> prints a C8MAT.
+        </li>
+        <li>
+          <b>C8MAT_PRINT_SOME</b> prints some of a C8MAT.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>R4_HB_DATA_READ</b> reads the data for an R4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R4_HB_HEADER_PRINT</b> prints the header for an R4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R4_HB_HEADER_READ</b> reads the header for an R4 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R4_HB_QUICK_PRINT</b> prints a sparse matrix in R4 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>R4_HB_QUICK_READ</b> reads a sparse matrix in R4 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>R4_HB_STRUCTURE_PRINT</b> prints the structure of an R4 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>R4_HB_VALUES_PRINT</b> prints the values of an R4 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>R4MAT_PRINT</b> prints an R4MAT.
+        </li>
+        <li>
+          <b>R4MAT_PRINT_SOME</b> prints some of an R4MAT.
+        </li>
+        <li>
+          <b>R8_HB_DATA_READ</b> reads the data for an R8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R8_HB_HEADER_PRINT</b> prints the header for an R8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R8_HB_HEADER_READ</b> reads the header for an R8 Harwell-Boeing file.
+        </li>
+        <li>
+          <b>R8_HB_QUICK_PRINT</b> prints a sparse matrix in R8 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>R8_HB_QUICK_READ</b> reads a sparse matrix in R8 Harwell-Boeing format.
+        </li>
+        <li>
+          <b>R8_HB_STRUCTURE_PRINT</b> prints the structure of an R8 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>R8_HB_VALUES_PRINT</b> prints the values of an R8 Harwell-Boeing matrix.
+        </li>
+        <li>
+          <b>R8MAT_PRINT</b> prints an R8MAT.
+        </li>
+        <li>
+          <b>R8MAT_PRINT_SOME</b> prints some of an R8MAT.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 February 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+
+<!-- Mirrored from people.sc.fsu.edu/~jburkardt/f_src/hb_read/hb_read.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 21 Nov 2017 20:46:33 GMT -->
+</html>
